@@ -1,0 +1,47 @@
+@mixin buttons($color) {
+  padding: 14px 40px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  @if $color == black {
+    background: var(--black-color);
+    color: var(--white-color);
+    transition: var(--transition) !important;
+    &:hover {
+      color: var(--white-color);
+      background: var(--primary-color);
+    }
+
+    .bi {
+      color: var(--white-color);
+      font-size: var(--p-bold);
+    }
+  }
+
+  @if $color == yellow {
+    padding: 14px 31.5px;
+    border-radius: 5px;
+    outline: none;
+    font-size: var(--p-regular);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    background: var(--primary-color);
+    transition: var(--transition);
+
+    &:hover {
+      background: var(--white-color);
+      color: #14142b;
+    }
+
+    .bi {
+      color: #14142b;
+      font-size: var(--p-bold);
+    }
+  }
+}

@@ -3,9 +3,9 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header>
-      <nav class="navbar navbar-expand-lg sticky-top navbar-light py-4">
-        <div class="container">
-          <Link class="navbar-brand" href="/">
+      <nav className="navbar navbar-expand-lg fixed-top navbar-light py-4">
+        <div className="container">
+          <Link className="navbar-brand" href="/">
             <svg
               width="120"
               height="35"
@@ -40,45 +40,45 @@ const Header = () => {
           </Link>
 
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navmenu"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav nav-top ms-auto">
-              <li class="nav-item">
-                <Link class="nav-link" aria-current="page" href="/">
+          <div className="collapse navbar-collapse" id="navmenu">
+            <ul className="navbar-nav nav-top ms-auto">
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" href="/">
                   About Us
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" href="/">
+              <li className="nav-item">
+                <Link className="nav-link" href="/">
                   Advertise
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" href="/">
+              <li className="nav-item">
+                <Link className="nav-link" href="/">
                   How To
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" href="/">
+              <li className="nav-item">
+                <Link className="nav-link" href="/">
                   Contact Us
                 </Link>
               </li>
             </ul>
 
-            <ul class="navbar-nav ms-auto">
-              <div class="nav-login d-flex ">
-                <Link href="/" class="btn login-btn me-5" type="submit">
+            <ul className="navbar-nav ms-auto">
+              <div className="nav-login d-flex ">
+                <Link href="/" className="btn login-btn me-5" type="submit">
                   Login
                 </Link>
 
-                <Link href="/" class="btn register-btn" type="submit">
+                <Link href="/" className="btn register-btn" type="submit">
                   Get Started
                 </Link>
               </div>

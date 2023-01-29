@@ -3,8 +3,8 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer>
-      <div class="container">
-        <div class="footer-top">
+      <div className="container">
+        <div className="footer-top">
           <svg
             width="120"
             height="35"
@@ -37,7 +37,7 @@ const Footer = () => {
             />
           </svg>
 
-          <p class="mt-3">
+          <p className="mt-3">
             Hapartment makes it easy to find your dream home. Search for your
             ideal apartment and compare price points across major cities.
             Contact the property owner, who will be happy to point you in the
@@ -45,9 +45,9 @@ const Footer = () => {
           </p>
         </div>
 
-        <div class="row footer-middle mt-5">
-          <div class="col-lg-3 col-md-6 text-white">
-            <small class="d-block my-3">Property</small>
+        <div className="row footer-middle mt-5">
+          <div className="col-lg-3 col-md-6 text-white">
+            <small className="d-block my-3">Property</small>
 
             <ul>
               <li>
@@ -62,8 +62,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 text-white">
-            <small class="d-block my-3">Company</small>
+          <div className="col-lg-3 col-md-6 text-white">
+            <small className="d-block my-3">Company</small>
 
             <ul>
               <li>
@@ -78,8 +78,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 text-white">
-            <small class="d-block my-3">Resources</small>
+          <div className="col-lg-3 col-md-6 text-white">
+            <small className="d-block my-3">Resources</small>
 
             <ul>
               <li>
@@ -94,40 +94,40 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 newsletter">
-            <small class="d-block my-3">Join our newsletter</small>
+          <div className="col-lg-3 col-md-6 newsletter">
+            <small className="d-block my-3">Join our newsletter</small>
 
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
               <input
                 type="text"
-                class="form-control text-white"
+                className="form-control text-white"
                 placeholder="Enter email here"
                 aria-label="subscript"
                 aria-describedby="button-addon2"
               />
-              <button class="btn" type="button" id="button-addon2">
+              <button className="btn" type="button" id="button-addon2">
                 Subscribe
               </button>
             </div>
 
-            <div class="branding d-flex flex-wrap align-items-center justify-content-between">
+            <div className="branding d-flex flex-wrap align-items-center justify-content-between">
               <img src="/apple.svg" alt="" className="apple" />
               <img src="/play.svg" alt="" className="play" />
             </div>
           </div>
         </div>
 
-        <div class="row footer-bottom mt-5 text-white">
-          <div class="col-sm-6 text-box">
-            <span class="d-block">Copyright ©2023 hapartment.org</span>
+        <div className="row footer-bottom mt-5 text-white">
+          <div className="col-sm-6 text-box">
+            <span className="d-block">Copyright ©2023 hapartment.org</span>
           </div>
 
-          <div class="col-sm-6 icon-box">
-            <div class="footer-icons">
-              <i class="bi bi-facebook"></i>
-              <i class="bi bi-instagram"></i>
-              <i class="bi bi-twitter"></i>
-              <i class="bi bi-linkedin"></i>
+          <div className="col-sm-6 icon-box">
+            <div className="footer-icons">
+              <i className="bi bi-facebook"></i>
+              <i className="bi bi-instagram"></i>
+              <i className="bi bi-twitter"></i>
+              <i className="bi bi-linkedin"></i>
             </div>
           </div>
         </div>

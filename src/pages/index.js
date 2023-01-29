@@ -1,3 +1,7 @@
+import Connect from "@/components/connect";
+import Hero from "@/components/hero";
+import Search from "@/components/search";
+import Steps from "@/components/steps";
 import Head from "next/head";
 
 export default function Home() {
@@ -9,7 +13,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="main-container"></main>
+
+      <Hero />
+      <Connect />
+      <Steps />
+      <Search />
     </>
   );
 }

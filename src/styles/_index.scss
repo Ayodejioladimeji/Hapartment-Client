@@ -1,7 +1,160 @@
-.btn {
-  background: primaryColor !important;
-}
+@use "mixins" as *;
 
-.main-container {
-  background: var(--primary-color);
+section {
+  padding: 100px 0;
+
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
+
+  h1 {
+    font-size: var(--h1);
+    font-weight: 900;
+    line-height: 60px;
+
+    @media (min-width: 1400px) {
+      width: 70%;
+    }
+
+    @media (max-width: 768px) {
+      font-size: var(--h2);
+    }
+
+    span.coloured {
+      color: var(--primary-color);
+    }
+  }
+
+  &.white {
+    background: var(--white-color);
+    color: #000000;
+
+    button {
+      @include buttons(black);
+    }
+  }
+
+  &.light {
+    background: var(--light-color) !important;
+    color: var(--black-color);
+
+    button {
+      @include buttons(green);
+    }
+  }
+  &.black {
+    background: var(--black-color) !important;
+    color: var(--white-color);
+
+    p {
+      color: var(--white-color);
+    }
+
+    button {
+      @include buttons(green);
+    }
+  }
+  &.green {
+    color: var(--black-color);
+    background: var(--primary);
+
+    button {
+      @include buttons(black);
+    }
+  }
+
+  p {
+    line-height: 30px;
+    color: var(--text-color);
+
+    span.coloured {
+      color: var(--primary-color);
+    }
+
+    @media (min-width: 1400px) {
+      width: 75%;
+    }
+  }
+
+  h3 {
+    font-size: var(--h4);
+    font-weight: 900;
+    line-height: 45px;
+
+    span.coloured {
+      color: var(--primary-color);
+    }
+
+    @media (min-width: 1400px) {
+      width: 70%;
+    }
+
+    @media (max-width: 768px) {
+      font-size: var(--h5);
+    }
+  }
+
+  h4 {
+    font-size: var(--p-bolder);
+    font-weight: 900;
+    line-height: 35px;
+  }
+
+  h5 {
+    font-size: var(--h5);
+    margin-bottom: 30px;
+    font-weight: 900;
+
+    @media (max-width: 768px) {
+      font-size: var(--h6);
+    }
+  }
+
+  h6 {
+    font-size: var(--p-bolder);
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: var(--p-bolc);
+    }
+  }
+
+  .quick-search {
+    margin-top: 32px;
+
+    .form-control {
+      padding-left: 0;
+      border: none;
+      border-radius: 0 !important;
+      border-bottom: 1px solid var(--border-color) !important;
+
+      input {
+        border: none !important;
+        font-size: 16px;
+        border: none;
+        font-size: var(--p-medium);
+        padding: 8px;
+        width: 100%;
+      }
+
+      @media (min-width: 1400px) {
+        width: 60%;
+      }
+    }
+  }
+
+  .bi {
+    color: var(--primary-color);
+    font-size: var(--h5);
+  }
+
+  span.coloured {
+    color: var(--primary-color);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
