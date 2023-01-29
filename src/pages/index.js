@@ -1,4 +1,5 @@
 import Connect from "@/components/connect";
+import Discover from "@/components/discover";
 import Hero from "@/components/hero";
 import Search from "@/components/search";
 import Steps from "@/components/steps";
@@ -18,6 +19,7 @@ export default function Home() {
       <Connect />
       <Steps />
       <Search />
+      <Discover />
     </>
   );
 }

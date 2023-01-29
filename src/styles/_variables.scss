@@ -4,7 +4,7 @@
   --black-color: #141414;
   --primary-color: #449342;
   --text-color: #8f8f8f;
-  --lighter-color: #f5f1f1;
+  --lighter-color: #fbf8f8;
   --light-color: #f1f1f1;
   --border-color: #cccccc;
 
@@ -19,9 +19,9 @@
   --p-bolder: 18px;
   --h6: 20px;
   --h5: 24px;
-  --h4: 30px;
+  --h4: 32px;
   --h3: 36px;
-  --h2: 40px;
+  --h2: 44px;
   --h1: 46px;
 
   /* SHADOWS AND TRANSITIONS */
@@ -42,6 +42,7 @@ button:focus,
 .btn:focus {
   outline: none !important;
   box-shadow: none !important;
+  border: 1px solid var(--primary-color) !important;
 }
 textarea {
   resize: none;
@@ -71,6 +72,7 @@ body {
 /* Navbar Styling */
 .navbar {
   background: var(--white-color);
+  box-shadow: var(--shadows);
 
   .navbar-nav {
     .nav-item {

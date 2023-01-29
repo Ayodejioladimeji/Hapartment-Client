@@ -42,6 +42,14 @@ section {
       @include buttons(green);
     }
   }
+  &.lighter {
+    background: var(--lighter-color) !important;
+    color: var(--black-color);
+
+    button {
+      @include buttons(green);
+    }
+  }
   &.black {
     background: var(--black-color) !important;
     color: var(--white-color);
