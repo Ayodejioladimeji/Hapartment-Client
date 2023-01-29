@@ -63,11 +63,11 @@ section {
     }
   }
   &.green {
-    color: var(--black-color);
-    background: var(--primary);
+    color: var(--white-color);
+    background: var(--primary-color);
 
     button {
-      @include buttons(black);
+      @include buttons(white);
     }
   }
 

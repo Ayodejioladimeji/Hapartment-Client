@@ -40,7 +40,7 @@
         .nav-link {
           background: #f9f9f9;
           font-family: var(--lora);
-          border: none;
+          border: none !important;
           font-size: var(--p-bold);
           border-radius: 0;
           padding: 15px 40px;
@@ -185,7 +185,11 @@
   .search-right {
     display: flex;
     align-items: center;
-    justify-content: flex-end !important;
+    justify-content: flex-end;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
 
     .searchimg {
       width: 90%;
@@ -204,10 +208,10 @@
   h3 {
     text-align: center;
     width: 100%;
-    margin-bottom: 100px !important;
+    margin-bottom: 80px !important;
 
     @media (max-width: 992px) {
-      margin-bottom: 60px !important;
+      margin-bottom: 50px !important;
     }
   }
 }
@@ -361,6 +365,76 @@
         width: 100%;
         height: 100%;
       }
+    }
+  }
+}
+
+// The property section
+
+.property {
+  p {
+    width: 100%;
+    color: var(--white-color);
+  }
+
+  .property-left {
+    padding: 30px;
+
+    @media (min-width: 1400px) {
+      padding: 80px;
+    }
+  }
+
+  .property-right {
+    border-left: 1px solid var(--white-color);
+    padding: 30px;
+
+    @media (min-width: 1400px) {
+      padding: 80px;
+    }
+
+    @media (max-width: 767px) {
+      border-left: none;
+      border-top: 1px solid var(--white-color);
+      padding-top: 80px;
+      margin-top: 30px;
+    }
+  }
+}
+
+// The safety tips section
+.tips {
+  .tips-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    .tipsimg {
+      width: 85%;
+      height: 85%;
+
+      @media (max-width: 565px) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .tips-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      margin-top: 20px;
+    }
+
+    h3 {
+      color: var(--primary-color);
     }
   }
 }
