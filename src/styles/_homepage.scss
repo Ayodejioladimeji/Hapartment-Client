@@ -16,6 +16,16 @@
 
 // The connect section
 .connect {
+  .connectimg {
+    width: 90%;
+    height: 90%;
+
+    @media (max-width: 565px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .connect-right {
     display: flex;
     align-items: center;
@@ -49,6 +59,7 @@
         &.active {
           background: var(--primary-color) !important;
           color: var(--white-color) !important;
+          border: none !important;
         }
       }
     }
@@ -175,6 +186,16 @@
     display: flex;
     align-items: center;
     justify-content: flex-end !important;
+
+    .searchimg {
+      width: 90%;
+      height: 90%;
+
+      @media (max-width: 565px) {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 
@@ -290,6 +311,55 @@
       small {
         color: var(--text-color);
         font-size: var(--p-regular);
+      }
+    }
+  }
+}
+
+// The Different section
+.different-heading {
+  @media (min-width: 1400px) {
+    width: 40%;
+  }
+}
+
+.different {
+  @media (max-width: 992px) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .different-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h6 {
+      color: var(--primary-color);
+    }
+  }
+
+  .different-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 767px) {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .differentimg {
+      width: 90%;
+      height: 90%;
+
+      @media (max-width: 565px) {
+        width: 100%;
+        height: 100%;
       }
     }
   }

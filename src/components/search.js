@@ -101,7 +101,7 @@ const Search = () => {
           </div>
 
           <div className="col-md-6 search-right">
-            <Image src={searchImg} alt="" />
+            <Image src={searchImg} alt="" className="searchimg" />
           </div>
         </div>
       </div>

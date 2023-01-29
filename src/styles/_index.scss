@@ -4,7 +4,7 @@ section {
   padding: 100px 0;
 
   @media (max-width: 768px) {
-    padding: 50px 0;
+    padding: 70px 0;
   }
 
   h1 {
@@ -95,6 +95,7 @@ section {
 
     @media (min-width: 1400px) {
       width: 70%;
+      line-height: 45px;
     }
 
     @media (max-width: 768px) {
@@ -121,9 +122,10 @@ section {
   h6 {
     font-size: var(--p-bolder);
     font-weight: 700;
+    line-height: 30px;
 
     @media (max-width: 768px) {
-      font-size: var(--p-bolc);
+      font-size: var(--p-bold);
     }
   }
 

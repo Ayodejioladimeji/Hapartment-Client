@@ -126,13 +126,13 @@ const Steps = () => {
           <div className="col-md-6 steps-right d-none d-md-flex">
             <div className="steps-image-box">
               {toggleState === 1 && (
-                <Image src={stepone} alt="" class="connect-image" />
+                <Image src={stepone} alt="" className="connect-image" />
               )}
               {toggleState === 2 && (
-                <Image src={steptwo} alt="" class="connect-image" />
+                <Image src={steptwo} alt="" className="connect-image" />
               )}
               {toggleState === 3 && (
-                <Image src={stepthree} alt="" class="connect-image" />
+                <Image src={stepthree} alt="" className="connect-image" />
               )}
               {toggleState === 4 && (
                 <Image src={stepfour} alt="" class="connect-image" />

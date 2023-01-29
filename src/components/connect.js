@@ -8,7 +8,7 @@ const Connect = () => {
       <div className="container">
         <div className="row connect">
           <div className="col-md-6 connect-left">
-            <Image src={connectImg} alt="" />
+            <Image src={connectImg} alt="" className="connectimg" />
           </div>
 
           <div className="col-md-6 connect-right">
