@@ -191,6 +191,7 @@ footer {
         background: transparent;
         border: 1px solid var(--text-color);
         color: var(--white-color);
+        border-radius: 5px 0 0 5px !important;
 
         &:focus {
           background: transparent;
@@ -202,6 +203,8 @@ footer {
         background: var(--primary-color);
         font-size: var(--p-regular);
         color: var(--white-color);
+        padding-left: 25px;
+        padding-right: 25px;
       }
 
       .branding {
