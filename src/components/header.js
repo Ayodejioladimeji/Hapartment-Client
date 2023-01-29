@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light py-4">
+      <nav class="navbar navbar-expand-lg sticky-top navbar-light py-4">
         <div class="container">
           <Link class="navbar-brand" href="/">
             <svg
@@ -74,11 +74,9 @@ const Header = () => {
 
             <ul class="navbar-nav ms-auto">
               <div class="nav-login d-flex ">
-                <li class="nav-item me-5">
-                  <Link class="nav-link" aria-current="page" href="/">
-                    Login
-                  </Link>
-                </li>
+                <Link href="/" class="btn login-btn me-5" type="submit">
+                  Login
+                </Link>
 
                 <Link href="/" class="btn register-btn" type="submit">
                   Get Started
