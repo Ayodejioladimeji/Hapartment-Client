@@ -16,7 +16,7 @@ const Search = () => {
                   class="form-select "
                   aria-label="Default select example"
                 >
-                  <option selected>Select property type</option>
+                  <option defaultValue>Select property type</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -26,7 +26,7 @@ const Search = () => {
                   class="form-select "
                   aria-label="Default select example"
                 >
-                  <option selected>Choose bathroom</option>
+                  <option defaultValue>Choose bathroom</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -36,7 +36,7 @@ const Search = () => {
                   class="form-select "
                   aria-label="Default select example"
                 >
-                  <option selected>Choose toilet</option>
+                  <option defaultValue>Choose toilet</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -46,7 +46,7 @@ const Search = () => {
                   class="form-select "
                   aria-label="Default select example"
                 >
-                  <option selected>Select state</option>
+                  <option defaultValue>Select state</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -56,7 +56,7 @@ const Search = () => {
                   class="form-select "
                   aria-label="Default select example"
                 >
-                  <option selected>Select city</option>
+                  <option defaultValue>Select city</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -66,7 +66,7 @@ const Search = () => {
                   class="form-select "
                   aria-label="Default select example"
                 >
-                  <option selected>Choose furnishing</option>
+                  <option defaultValue>Choose furnishing</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -76,7 +76,7 @@ const Search = () => {
                   class="form-select "
                   aria-label="Default select example"
                 >
-                  <option selected>Min price / annum</option>
+                  <option defaultValue>Min price / annum</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -86,7 +86,7 @@ const Search = () => {
                   class="form-select "
                   aria-label="Default select example"
                 >
-                  <option selected>Max price / annum</option>
+                  <option defaultValue>Max price / annum</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>

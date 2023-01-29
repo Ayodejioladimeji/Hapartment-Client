@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lato:wght@400;700;900&display=swap");
+
 :root {
   /* THE COLOURS */
   --white-color: #fff;
@@ -75,6 +77,11 @@ body {
   box-shadow: var(--shadows);
 
   .navbar-nav {
+    @media (max-width: 768px) {
+      &:first-child {
+        margin-top: 20px;
+      }
+    }
     .nav-item {
       margin-right: 15px;
 
@@ -108,7 +115,7 @@ body {
       }
 
       @media (max-width: 768px) {
-        margin: 15px 0;
+        margin: 10px 0 15px 0;
       }
     }
     .register-btn {
@@ -220,7 +227,7 @@ footer {
           cursor: pointer;
 
           @media (max-width: 768px) {
-            width: 30% !important;
+            width: 40% !important;
           }
         }
 
@@ -228,9 +235,10 @@ footer {
           width: 40% !important;
           object-fit: contain;
           cursor: pointer;
+          margin-right: 10px;
 
           @media (max-width: 768px) {
-            width: 25% !important;
+            width: 35% !important;
           }
         }
       }
