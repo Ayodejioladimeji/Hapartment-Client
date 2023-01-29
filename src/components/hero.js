@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="white">
       <div className="container">
         <div className="row hero">
-          <div className="col-md-6 hero-left">
+          <div className="col-lg-6 hero-left">
             <h1 className="mb-4">
               Easy <span className="coloured">way</span> to find a perfect
               <span className="coloured"> home</span>
@@ -33,7 +33,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="col-md-6 hero-right">
+          <div className="col-lg-6 hero-right">
             <Image src={heroImg} alt="" />
           </div>
         </div>

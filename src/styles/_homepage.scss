@@ -1,9 +1,10 @@
 // The hero section
 .hero {
-  margin-top: 70px;
-  @media (max-width: 768px) {
+  margin-top: 90px;
+  @media (max-width: 900px) {
     display: flex;
     flex-direction: column-reverse;
+    margin-top: 60px;
   }
 
   .hero-right {
@@ -148,7 +149,7 @@
         margin-left: 10px;
       }
 
-      @media (max-width: 1200px) {
+      @media (max-width: 1280px) {
         width: 100%;
       }
 

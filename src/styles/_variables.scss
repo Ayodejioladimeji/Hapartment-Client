@@ -19,9 +19,9 @@
   --p-bolder: 18px;
   --h6: 20px;
   --h5: 24px;
-  --h4: 30px;
+  --h4: 32px;
   --h3: 36px;
-  --h2: 40px;
+  --h2: 44px;
   --h1: 46px;
 
   /* SHADOWS AND TRANSITIONS */
@@ -71,6 +71,7 @@ body {
 /* Navbar Styling */
 .navbar {
   background: var(--white-color);
+  box-shadow: var(--shadows);
 
   .navbar-nav {
     .nav-item {
