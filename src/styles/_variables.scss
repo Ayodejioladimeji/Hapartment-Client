@@ -1,7 +1,238 @@
-$primary-color: #64ff00 !important;
+:root {
+  /* THE COLOURS */
+  --white-color: #fff;
+  --black-color: #141414;
+  --primary-color: #449342;
+  --text-color: #8f8f8f;
+  --light-color: #f1f1f1;
+  --border-color: #cccccc;
 
-:export {
-  primaryColor: $primary-color;
+  /* THE FONT-FAMILIES */
+  --lato: "Lato";
+
+  /* FONT SIZES */
+
+  --p-regular: 12px;
+  --p-medium: 14px;
+  --p-bold: 16px;
+  --p-bolder: 18px;
+  --h6: 20px;
+  --h5: 24px;
+  --h4: 30px;
+  --h3: 36px;
+  --h2: 40px;
+  --h1: 44px;
+
+  /* SHADOWS AND TRANSITIONS */
+  --shadows: 0px 2px 2px rgba(65, 111, 244, 0.2);
+  --transition: all 0.3s linear;
+}
+
+html {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+:focus,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+textarea {
+  resize: none;
+}
+ul,
+ul li {
+  list-style-type: none;
+}
+input {
+  padding: 15px 10px !important;
+  border-radius: 5px !important;
+  font-size: var(--p-medium) !important;
+}
+body {
+  font-size: var(--font-bold);
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-font-smoothing: antialiased !important;
+  width: 100%;
 }
 
 // Global styling for sections defined here
+
+/* Navbar Styling */
+.navbar {
+  background: var(--white-color);
+
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: var(--text-color) !important;
+        font-family: var(--merriweather);
+        font-size: var(--p-medium);
+      }
+    }
+
+    .register-btn {
+      background: var(--button-color);
+      color: var(--white-color);
+      font-size: var(--p-regular);
+      width: 110px;
+      padding: 10px;
+      font-weight: bold;
+      transition: var(--transition);
+
+      &:hover {
+        background: var(--primary-color);
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border: none !important;
+    color: var(--black-color);
+
+    // &:focus {
+    //   box-shadow: none !important;
+    // }
+  }
+}
+
+/* ============================================= */
+/* Footer styling */
+
+footer {
+  background: var(--dark-background);
+  padding-top: 90px;
+  padding-bottom: 20px;
+
+  .footer-top {
+    img {
+      width: 70px;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    p {
+      color: var(--white-color);
+      width: 70%;
+      font-size: var(p-medium);
+      line-height: 25px;
+      font-weight: normal;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-middle {
+    small {
+      font-weight: 700;
+      font-size: var(--p-bold);
+      font-family: var(--lora);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        font-size: var(--p-regular);
+        line-height: 30px;
+        font-weight: normal;
+
+        a {
+          color: var(--white-color);
+          transition: var(--transition);
+
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+
+    .newsletter {
+      color: var(--primary-color);
+
+      input {
+        font-size: var(--p-regular);
+        padding: 10px 0 10px 10px;
+        background: transparent;
+        border: 1px solid var(--text-color);
+        color: var(--white-color);
+
+        &:focus {
+          background: transparent;
+          box-shadow: none;
+        }
+      }
+
+      button {
+        background: var(--primary-color);
+        font-size: var(--p-regular);
+
+        &:hover {
+          color: var(--white-color);
+        }
+      }
+
+      .branding {
+        display: flex !important;
+        align-items: center;
+        padding-left: 0 !important;
+
+        .play {
+          width: 45%;
+          object-fit: contain;
+          cursor: pointer;
+
+          @media (max-width: 768px) {
+            width: 30%;
+          }
+        }
+
+        .apple {
+          width: 40%;
+          object-fit: contain;
+          cursor: pointer;
+
+          @media (max-width: 768px) {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--deep-background);
+    padding-top: 10px;
+
+    span {
+      font-size: var(--p-regular);
+    }
+
+    .text-box {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .footer-icons {
+      color: var(--primary-color);
+      font-size: var(--h5);
+      cursor: pointer;
+    }
+  }
+}
