@@ -8,7 +8,7 @@ const Search = () => {
       <div className="container">
         <div className="row search">
           <div className="col-md-6 search-left">
-            <h3 className="mb-4">Search for available apartments</h3>
+            <h3 className="mb-5">Search for available apartments</h3>
 
             <div className="search-box">
               <div className="box">

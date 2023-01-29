@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 //
 
 const Discover = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(listingdata);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    setData(listingdata);
-    setLoading(false);
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setData(listingdata);
+  //   setLoading(false);
+  // }, []);
 
   if (loading) return <p>Loading....</p>;
   if (!data) return <p>No data found</p>;
@@ -36,12 +36,12 @@ const Discover = () => {
 
 export default Discover;
 
-export async function getStaticProps() {
-  const listing = await listingdata();
+// export function getStaticProps() {
+//   const listing = listingdata;
 
-  return {
-    props: {
-      listing: listing,
-    },
-  };
-}
+//   return {
+//     props: {
+//       listing: listing,
+//     },
+//   };
+// }

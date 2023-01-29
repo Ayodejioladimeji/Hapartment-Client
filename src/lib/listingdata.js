@@ -73,4 +73,28 @@ export const listingdata = [
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)",
     time: "September 28, 2023",
   },
+  {
+    id: 7,
+    image: image.src,
+    title: "3 Bedroom flat",
+    price: "550,000",
+    address: "12 Melly road, Lekki lagos state",
+    bathrooms: "1",
+    toilets: "1",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)",
+    time: "September 28, 2023",
+  },
+  {
+    id: 8,
+    image: image.src,
+    title: "Room & Parlour self contain",
+    price: "150,000",
+    address: "22 Iwalesin street, Alagbado lagos",
+    bathrooms: "2",
+    toilets: "2",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)",
+    time: "September 28, 2023",
+  },
 ];
