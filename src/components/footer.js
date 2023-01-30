@@ -111,8 +111,20 @@ const Footer = () => {
             </div>
 
             <div className="branding d-flex flex-wrap align-items-center justify-content-between">
-              <img src="/apple.svg" alt="" className="apple" />
-              <img src="/play.svg" alt="" className="play" />
+              <Image
+                src="/apple.svg"
+                alt=""
+                className="apple"
+                width="200"
+                height="100"
+              />
+              <Image
+                src="/play.svg"
+                alt=""
+                className="play"
+                width="200"
+                height="100"
+              />
             </div>
           </div>
         </div>

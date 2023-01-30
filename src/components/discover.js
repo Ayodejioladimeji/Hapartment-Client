@@ -25,7 +25,7 @@ const Discover = () => {
 
           <div className="discover-box">
             {data.map((item) => (
-              <Card {...item} />
+              <Card {...item} key={item.id} />
             ))}
           </div>
         </div>
