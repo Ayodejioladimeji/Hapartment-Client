@@ -92,13 +92,17 @@
     .steps-image-box {
       width: 50%;
       height: 80%;
+
+      @media (max-width: 768px) {
+        width: 70%;
+      }
     }
   }
 }
 
 // The search section
 .search {
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: flex;
     flex-direction: column-reverse;
   }
