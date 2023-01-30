@@ -110,7 +110,7 @@ const Footer = () => {
               </button>
             </div>
 
-            <div className="branding d-flex flex-wrap align-items-center justify-content-between">
+            <div className="branding d-flex flex-wrap align-items-center">
               <Image
                 src="/apple.svg"
                 alt=""
