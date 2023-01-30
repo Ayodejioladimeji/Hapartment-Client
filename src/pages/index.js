@@ -1,4 +1,5 @@
 import Connect from "@/components/connect";
+import Different from "@/components/different";
 import Discover from "@/components/discover";
 import Hero from "@/components/hero";
 import Search from "@/components/search";
@@ -20,6 +21,7 @@ export default function Home() {
       <Steps />
       <Search />
       <Discover />
+      <Different />
     </>
   );
 }
