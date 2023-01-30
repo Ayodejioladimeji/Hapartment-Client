@@ -4,7 +4,7 @@
   --black-color: #141414;
   --primary-color: #449342;
   --text-color: #8f8f8f;
-  --lighter-color: #f5f1f1;
+  --lighter-color: #fbf8f8;
   --light-color: #f1f1f1;
   --border-color: #cccccc;
 
@@ -42,6 +42,7 @@ button:focus,
 .btn:focus {
   outline: none !important;
   box-shadow: none !important;
+  border: 1px solid var(--primary-color) !important;
 }
 textarea {
   resize: none;

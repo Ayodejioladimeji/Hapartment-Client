@@ -4,7 +4,7 @@ import searchImg from "../../public/search-image.svg";
 
 const Search = () => {
   return (
-    <section className="white">
+    <section className="white main-search">
       <div className="container">
         <div className="row search">
           <div className="col-md-6 search-left">

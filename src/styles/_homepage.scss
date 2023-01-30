@@ -165,3 +165,120 @@
     justify-content: flex-end;
   }
 }
+
+// the discover section
+.discover {
+  h3 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 100px !important;
+
+    @media (max-width: 992px) {
+      margin-bottom: 60px !important;
+    }
+  }
+}
+
+.discover-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 565px) {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 10px;
+    border-radius: 5px;
+
+    .card-image {
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+    }
+
+    .card-content {
+      margin-top: 10px;
+
+      p {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 90%;
+      }
+
+      .address {
+        display: flex;
+        align-items: center;
+
+        .bi {
+          font-size: var(--p-bold);
+          color: var(--text-color);
+          margin-right: 10px;
+        }
+        span {
+          font-size: var(--p-medium);
+          color: var(--text-color);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 80%;
+          display: block;
+        }
+      }
+
+      .card-box {
+        display: flex;
+        margin-top: 15px;
+
+        .bath {
+          display: flex;
+          align-items: center;
+
+          &:first-child {
+            margin-right: 10px;
+          }
+
+          .bath-box {
+            height: 25px;
+            width: 25px;
+            background: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            border-radius: 50%;
+
+            .bi {
+              font-size: var(--p-regular);
+            }
+          }
+
+          span {
+            color: var(--text-color);
+            font-size: var(--p-medium);
+          }
+        }
+      }
+    }
+
+    .card-footer {
+      text-align: center;
+      small {
+        color: var(--text-color);
+        font-size: var(--p-regular);
+      }
+    }
+  }
+}
