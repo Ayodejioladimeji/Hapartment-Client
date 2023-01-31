@@ -32,7 +32,11 @@ const Places = () => {
               alt=""
               className="placesimg places-img-background"
             />
-            {/* <Image src={placesImg2} alt="" className="placesimg " /> */}
+            <Image
+              src={placesImg2}
+              alt=""
+              className="placesimg places-img-top"
+            />
           </div>
         </div>
       </div>

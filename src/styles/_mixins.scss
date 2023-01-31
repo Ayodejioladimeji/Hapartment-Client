@@ -22,6 +22,21 @@
     }
   }
 
+  @if $color == green {
+    background: var(--primary-color);
+    color: var(--white-color);
+    transition: var(--transition) !important;
+    &:hover {
+      color: var(--primary-color);
+      background: var(--white-color);
+    }
+
+    .bi {
+      color: var(--white-color);
+      font-size: var(--p-bold);
+    }
+  }
+
   @if $color == white {
     background: var(--white-color);
     color: var(--black-color);

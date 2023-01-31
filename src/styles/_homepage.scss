@@ -466,6 +466,7 @@
     align-items: center;
     justify-content: flex-end;
     position: relative;
+    overflow: hidden;
 
     @media (max-width: 767px) {
       justify-content: center;
@@ -475,6 +476,7 @@
     .placesimg {
       width: 90%;
       height: 90%;
+      object-fit: contain;
 
       @media (max-width: 565px) {
         width: 100%;
