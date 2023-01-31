@@ -4,7 +4,7 @@ import aboutImg from "../../public/about-image.svg";
 const AboutUs = () => {
   return (
     <>
-      <section className="white mt-5">
+      <section className="white">
         <div className="container">
           <div className="row about-box">
             <div className="col-lg-6 about-left">
