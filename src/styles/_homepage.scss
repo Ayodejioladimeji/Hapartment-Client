@@ -1,6 +1,7 @@
 // The hero section
 .hero {
-  margin-top: 90px;
+  margin-top: 120px;
+
   @media (max-width: 900px) {
     display: flex;
     flex-direction: column-reverse;
@@ -16,15 +17,15 @@
 
 // The connect section
 .connect {
-  .connectimg {
-    width: 90%;
-    height: 90%;
+  // .connectimg {
+  //   width: 90%;
+  //   height: 90%;
 
-    @media (max-width: 565px) {
-      width: 100%;
-      height: 100%;
-    }
-  }
+  //   @media (max-width: 565px) {
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+  // }
 
   .connect-right {
     display: flex;
@@ -436,5 +437,66 @@
     h3 {
       color: var(--primary-color);
     }
+  }
+}
+
+// The places section
+.places {
+  @media (max-width: 992px) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .places-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h6 {
+      color: var(--primary-color);
+    }
+  }
+
+  .places-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+
+    @media (max-width: 767px) {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .placesimg {
+      width: 90%;
+      height: 90%;
+
+      @media (max-width: 565px) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .places-img-background {
+      animation: hero-image-spin infinite 50s linear;
+    }
+
+    .places-img-top {
+      position: absolute;
+    }
+  }
+}
+
+@keyframes hero-image-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

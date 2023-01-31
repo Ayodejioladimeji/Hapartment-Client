@@ -2,6 +2,7 @@ import Connect from "@/components/connect";
 import Different from "@/components/different";
 import Discover from "@/components/discover";
 import Hero from "@/components/hero";
+import Places from "@/components/places";
 import Property from "@/components/property";
 import SafetyTips from "@/components/safetytips";
 import Search from "@/components/search";
@@ -26,6 +27,7 @@ export default function Home() {
       <Different />
       <Property />
       <SafetyTips />
+      <Places />
     </>
   );
 }
