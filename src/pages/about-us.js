@@ -7,7 +7,7 @@ const AboutUs = () => {
       <section className="white">
         <div className="container">
           <div className="row about-box">
-            <div className="col-lg-6 about-left">
+            <div className="col-md-6 about-left">
               <h1 className="mb-3">How are we different from others.</h1>
 
               <p className="mb-3">
@@ -17,7 +17,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="col-lg-6 about-image-box">
+            <div className="col-md-6 about-image-box">
               <Image src={aboutImg} alt="" className="aboutimg" />
             </div>
           </div>
