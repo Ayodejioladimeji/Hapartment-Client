@@ -20,6 +20,10 @@ section {
       font-size: var(--h2);
     }
 
+    @media (max-width: 565px) {
+      font-size: var(--h3);
+    }
+
     span.coloured {
       color: var(--primary-color);
     }
@@ -65,6 +69,10 @@ section {
   &.green {
     color: var(--white-color);
     background: var(--primary-color);
+
+    p {
+      color: var(--white-color);
+    }
 
     button {
       @include buttons(white);
