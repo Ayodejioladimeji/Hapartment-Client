@@ -7,7 +7,7 @@ const AboutUs = () => {
       <section className="white mt-5">
         <div className="container">
           <div className="row about-box">
-            <div className="col-lg-6 bg-danger">
+            <div className="col-lg-6 about-left">
               <h1 className="mb-3">How are we different from others.</h1>
 
               <p className="mb-3">
