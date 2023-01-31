@@ -51,7 +51,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navmenu">
             <ul className="navbar-nav nav-top ms-auto">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" href="/">
+                <Link className="nav-link" aria-current="page" href="/about-us">
                   About Us
                 </Link>
               </li>

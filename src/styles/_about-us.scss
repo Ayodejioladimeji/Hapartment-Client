@@ -1,0 +1,22 @@
+.about-image-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @media (max-width: 992px) {
+    justify-content: center;
+  }
+
+  .aboutimg {
+    border: none;
+    height: 90%;
+    width: 90%;
+    object-fit: contain;
+    background: transparent;
+  }
+}
+
+.bi {
+  font-size: var(--p-bolder);
+  margin-left: 5px;
+}
