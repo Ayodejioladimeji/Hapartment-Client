@@ -506,12 +506,15 @@
 // The download section
 .download {
   .download-left {
-    // padding: 100px 0;
     padding-left: 130px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+
+    h3 {
+      color: var(--primary-color);
+    }
 
     .appstore-image {
       width: 160px;
@@ -532,5 +535,6 @@
   .download-right {
     padding: 100px 0;
     text-align: center;
+    background: var(--primary-color);
   }
 }

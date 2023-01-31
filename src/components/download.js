@@ -8,7 +8,7 @@ const Download = () => {
     <div className="download">
       <div className="container-fluid">
         <div className="row">
-          <section className="col-md-6 download-left">
+          <section className="col-md-6 white download-left">
             <h3 class="mb-3">Download our mobile app</h3>
 
             <h6 className="mb-4">
@@ -26,7 +26,7 @@ const Download = () => {
             </div>
           </section>
 
-          <div className="col-md-6 download-right bg-success">
+          <div className="col-md-6 download-right">
             <Image src={download} alt="" class="download-image" />
           </div>
         </div>
