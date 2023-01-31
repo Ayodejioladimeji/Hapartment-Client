@@ -502,3 +502,35 @@
     transform: rotate(360deg);
   }
 }
+
+// The download section
+.download {
+  .download-left {
+    // padding: 100px 0;
+    padding-left: 130px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    .appstore-image {
+      width: 160px;
+
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+    .playstore-image {
+      width: 170px;
+
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .download-right {
+    padding: 100px 0;
+    text-align: center;
+  }
+}
