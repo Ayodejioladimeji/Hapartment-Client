@@ -505,36 +505,52 @@
 
 // The download section
 .download {
-  .download-left {
-    padding-left: 130px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-
-    h3 {
-      color: var(--primary-color);
+  .row {
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column-reverse;
     }
 
-    .appstore-image {
-      width: 160px;
+    .download-left {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
 
-      &:first-child {
-        margin-right: 15px;
+      @media (max-width: 768px) {
+        margin-top: 20px;
+      }
+
+      h3 {
+        color: var(--primary-color);
+      }
+
+      .appstore-image {
+        width: 160px;
+
+        &:first-child {
+          margin-right: 15px;
+        }
+      }
+      .playstore-image {
+        width: 170px;
+
+        &:first-child {
+          margin-right: 15px;
+        }
       }
     }
-    .playstore-image {
-      width: 170px;
 
-      &:first-child {
-        margin-right: 15px;
+    .download-right {
+      .download-image {
+        width: 90%;
+        height: 90%;
+
+        @media (max-width: 565px) {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
-  }
-
-  .download-right {
-    padding: 100px 0;
-    text-align: center;
-    background: var(--primary-color);
   }
 }

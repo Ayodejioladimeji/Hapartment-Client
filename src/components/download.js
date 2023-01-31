@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const Download = () => {
   return (
-    <div className="download">
-      <div className="container-fluid">
+    <section className="white download">
+      <div className="container">
         <div className="row">
-          <section className="col-md-6 white download-left">
+          <div className="col-md-6 download-left">
             <h3 class="mb-3">Download our mobile app</h3>
 
             <h6 className="mb-4">
@@ -24,14 +24,14 @@ const Download = () => {
               <Image src={appstore} alt="" class="appstore-image" />
               <Image src={playstore} alt="" class="playstore-image" />
             </div>
-          </section>
+          </div>
 
           <div className="col-md-6 download-right">
             <Image src={download} alt="" class="download-image" />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
