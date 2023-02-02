@@ -1,0 +1,85 @@
+.faqs {
+  /* text-align: center; */
+  padding: 120px 10px;
+}
+
+.faqs-div {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.faqs-left {
+  width: 50%;
+  border-right: 1px solid var(--hero);
+  padding: 0 20px;
+  height: 70vh;
+}
+.faqs-left h1 {
+  margin-bottom: 10px;
+  font-size: var(--font-big);
+  color: var(--primary-color);
+}
+
+.faqs-right {
+  width: 50%;
+  padding: 0 20px;
+  height: 70vh;
+}
+
+.faqs-right h1 {
+  margin-bottom: 10px;
+  font-size: var(--font-big);
+  color: var(--primary-color);
+}
+
+/* THE RESPONSIVENESS */
+@media (min-width: 1200px) {
+  .faqs-left {
+    padding: 0 70px;
+  }
+  .faqs-right {
+    padding: 0 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faqs {
+    padding: 70px 10px;
+  }
+
+  .faqs-div {
+    flex-direction: column;
+    margin-top: 80px;
+  }
+
+  .faqs-left {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .faqs-left h1 {
+    font-size: var(--font-medium);
+  }
+
+  .faqs-right {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .faqs-right h1 {
+    font-size: var(--font-medium);
+  }
+}
+
+@media (max-width: 600px) {
+  .faqs-left {
+    padding: 0px;
+  }
+  .faqs-right {
+    padding: 0px;
+  }
+}

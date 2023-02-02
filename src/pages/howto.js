@@ -13,11 +13,9 @@ const HowTo = () => {
         <div className="container">
           <div className="row how-to-box d-flex">
             <div className="col-md-6 how-to-left">
-              <h3 className="mb-3" data-aos="fade-down" data-aos-once="true">
-                How to create Listings
-              </h3>
+              <h3 className="mb-3">How to create Listings</h3>
 
-              <p className="mb-3" data-aos="fade-right" data-aos-once="true">
+              <p className="mb-3">
                 A great platform for you to advertise your products for free
                 with high volumes of serious agents and renters browsing our
                 site.
@@ -41,20 +39,18 @@ const HowTo = () => {
           <div className="row watch-video-box">
             <div className="col-md-6 watch-video-left">
               <div className="underline mb-3"></div>
-              <h3 className="mb-3" data-aos="fade-down" data-aos-once="true">
-                Watch Video
-              </h3>
+              <h3 className="mb-3">Watch Video</h3>
 
-              <p className="mb-3" data-aos="fade-up" data-aos-once="true">
+              <p className="mb-3">
                 A great platform for you to advertise your products for free
                 with high volumes of serious agents and renters browsing our
                 site.
               </p>
-              <p className="mb-3" data-aos="fade-up" data-aos-once="true">
+              <p className="mb-3">
                 You can also follow the steps below to get your Listing approved
                 in just few minutes.
               </p>
-              <p className="mb-3" data-aos="fade-up" data-aos-once="true">
+              <p className="mb-3">
                 Meanwhile, if you do not follow the guidelines provided your
                 listings might be rejected.
               </p>
@@ -223,11 +219,9 @@ const HowTo = () => {
           <div className="row watch-video-box">
             <div className="col-md-6 watch-video-left">
               <div className="underline mb-3"></div>
-              <h3 className="mb-3" data-aos="fade-down" data-aos-once="true">
-                Step Six
-              </h3>
+              <h3 className="mb-3">Step Six</h3>
 
-              <p className="mb-3" data-aos="fade-up" data-aos-once="true">
+              <p className="mb-3">
                 Select <b>“Add Property Images” </b> to upload the
                 images/pictures of the property
               </p>

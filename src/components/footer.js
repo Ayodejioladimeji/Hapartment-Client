@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -83,13 +84,13 @@ const Footer = () => {
 
             <ul>
               <li>
-                <a href="">FAQ</a>
+                <Link href="/faqs">FAQ</Link>
               </li>
               <li>
-                <a href="">Terms Of Use</a>
+                <Link href="/terms">Terms Of Use</Link>
               </li>
               <li>
-                <a href="">Privacy Policy</a>
+                <Link href="/privacypolicy">Privacy Policy</Link>
               </li>
             </ul>
           </div>
