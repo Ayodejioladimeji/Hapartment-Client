@@ -44,6 +44,7 @@ const Header = () => {
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navmenu"
+            aria-controls="navmenu"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -51,23 +52,59 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navmenu">
             <ul className="navbar-nav nav-top ms-auto">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" href="/about-us">
-                  About Us
+                <Link className="nav-link" href="/about-us">
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    About Us
+                  </span>
+
+                  <span className="d-lg-block d-none">About Us</span>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" href="/">
-                  Advertise
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    Advertise
+                  </span>
+
+                  <span className="d-lg-block d-none">Advertise</span>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" href="/howto">
-                  How To
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    How To
+                  </span>
+
+                  <span className="d-lg-block d-none">How To</span>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" href="/">
-                  Contact Us
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    Contact Us
+                  </span>
+
+                  <span className="d-lg-block d-none">Contact Us</span>
                 </Link>
               </li>
             </ul>

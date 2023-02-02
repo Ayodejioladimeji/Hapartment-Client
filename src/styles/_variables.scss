@@ -61,6 +61,7 @@ input {
   border-radius: 5px !important;
   font-size: var(--p-medium) !important;
 }
+
 body {
   font-size: var(--font-bold);
   font-family: var(--lato);
@@ -96,6 +97,15 @@ body {
         color: var(--text-color) !important;
         font-size: var(--p-medium);
         border: none !important;
+
+        span {
+          &:focus {
+            outline: none !important;
+            box-shadow: none !important;
+            background: yellow;
+            border: none !important;
+          }
+        }
       }
     }
 
