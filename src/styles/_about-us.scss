@@ -1,7 +1,7 @@
 .about-box {
-  margin-top: 80px;
+  margin-top: 70px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -12,7 +12,7 @@
     justify-content: center;
     flex-direction: column;
 
-    h1 {
+    h3 {
       color: var(--primary-color);
     }
   }
@@ -22,16 +22,15 @@
     justify-content: flex-end;
     align-items: center;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       justify-content: center;
       align-items: flex-start;
     }
 
     .aboutimg {
       border: none;
-      height: 90%;
-      width: 90%;
-      // display: none;
+      height: 100%;
+      width: 70%;
     }
   }
 

@@ -76,6 +76,10 @@ body {
   background: var(--white-color);
   box-shadow: var(--shadows);
 
+  .navbar-brand {
+    border: none !important;
+  }
+
   .navbar-nav {
     @media (max-width: 768px) {
       &:first-child {
@@ -91,6 +95,7 @@ body {
       .nav-link {
         color: var(--text-color) !important;
         font-size: var(--p-medium);
+        border: none !important;
       }
     }
 

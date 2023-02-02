@@ -9,25 +9,25 @@ const Download = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6 download-left">
-            <h3 class="mb-3">Download our mobile app</h3>
+            <h3 className="mb-3">Download our mobile app</h3>
 
             <h6 className="mb-4">
               User friendly interface customized to meet your search needs
             </h6>
 
-            <p class="mb-4">
+            <p className="mb-4">
               Helping users search for shops and apartment is not just our
               passion, it is our mission.
             </p>
 
-            <div class="d-flex align-items-center justify-content-between">
-              <Image src={appstore} alt="" class="appstore-image" />
-              <Image src={playstore} alt="" class="playstore-image" />
+            <div className="d-flex align-items-center justify-content-between">
+              <Image src={appstore} alt="" className="appstore-image" />
+              <Image src={playstore} alt="" className="playstore-image" />
             </div>
           </div>
 
           <div className="col-md-6 download-right">
-            <Image src={download} alt="" class="download-image" />
+            <Image src={download} alt="" className="download-image" />
           </div>
         </div>
       </div>

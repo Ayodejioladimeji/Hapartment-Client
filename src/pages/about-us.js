@@ -8,7 +8,7 @@ const AboutUs = () => {
         <div className="container">
           <div className="row about-box">
             <div className="col-md-6 about-left">
-              <h1 className="mb-3">How are we different from others.</h1>
+              <h3 className="mb-3">How are we different from others.</h3>
 
               <p className="mb-3">
                 Hapartment offers instant access to apartment listings ranging
