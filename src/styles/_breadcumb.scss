@@ -1,21 +1,31 @@
+.bread {
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
 .breadcumb {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.breadcumb-image {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     justify-content: center;
   }
 
-  .breadcumb-image {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    img {
-      border: none;
-      height: 100%;
-      width: 70%;
-    }
+  img {
+    border: none;
+    height: 100%;
+    width: 70%;
 
     @media (max-width: 992px) {
       width: 90%;

@@ -56,62 +56,58 @@ const Contacts = () => {
         return (
           <div className="contact">
             <div className="contact-box">
-              <div className="contact-heading">
-                <h3>Drop a message for us</h3>
-              </div>
+              <h3 className="mb-3 py-3 mx-auto text-center">
+                Drop a message for us
+              </h3>
 
               <form onSubmit={handleSubmit}>
-                <div className="contact-form">
-                  <div className="form-box">
-                    <div className="boxs">
-                      <div className="form-control">
-                        <label>Name</label>
-                        <input
-                          type="text"
-                          name="name"
-                          placeholder="Please enter your name"
-                          value={values.name}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        />
-                        {errors.name && touched.name && (
-                          <div className="input_feedback">{errors.name}</div>
-                        )}
-                      </div>
+                <div className="form-control mb-3">
+                  <label>Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Please enter your name"
+                    value={values.name}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.name && touched.name && (
+                    <div className="input_feedback">{errors.name}</div>
+                  )}
+                </div>
 
-                      <div className="form-control">
-                        <label>Email</label>
-                        <input
-                          type="text"
-                          name="email"
-                          placeholder="Please enter your email"
-                          value={values.email}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        />
-                        {errors.email && touched.email && (
-                          <div className="input_feedback">{errors.email}</div>
-                        )}
-                      </div>
-                    </div>
+                <div className="form-control mb-3">
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Please enter your email"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.email && touched.email && (
+                    <div className="input_feedback">{errors.email}</div>
+                  )}
+                </div>
 
-                    <div className="form-group">
-                      <label>Message</label>
-                      <textarea
-                        value={values.message}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        name="message"
-                      />
-                      {errors.message && touched.message && (
-                        <div className="input_feedback">{errors.message}</div>
-                      )}
-                    </div>
+                <div className="form-control mb-3">
+                  <label>Message</label>
+                  <textarea
+                    value={values.message}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    name="message"
+                  />
+                  {errors.message && touched.message && (
+                    <div className="input_feedback">{errors.message}</div>
+                  )}
+                </div>
 
-                    <button type="submit" disabled={isSubmitting}>
-                      {isSubmitting ? "SENDING..." : "SEND"}
-                    </button>
-                  </div>
+                <div className="form-control">
+                  <button type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? "SENDING..." : "SEND"}
+                  </button>
                 </div>
               </form>
             </div>
