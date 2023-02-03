@@ -1,28 +1,19 @@
+import BreadCumb from "@/common/breadcumb";
 import Image from "next/image";
-import aboutImg from "../../public/about-image.svg";
+import aboutImg from "../../public/about-img.svg";
 
 const AboutUs = () => {
   return (
     <>
-      <section className="white">
-        <div className="container">
-          <div className="row about-box">
-            <div className="col-md-6 about-left">
-              <h3 className="mb-3">How are we different from others.</h3>
-
-              <p className="mb-3">
-                Hapartment offers instant access to apartment listings ranging
-                from luxirious homes to apartments in lower price ranges. We
-                provide clear and comprehensive categories for easy navigation.
-              </p>
-            </div>
-
-            <div className="col-md-6 about-image-box">
-              <Image src={aboutImg} alt="" className="aboutimg" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <BreadCumb
+        headingOne="How are we different from others"
+        headingTwo=""
+        subHeading=""
+        body="Hapartment offers instant access to apartment listings ranging
+        from luxirious homes to apartments in lower price ranges. We
+        provide clear and comprehensive categories for easy navigation."
+        image={aboutImg}
+      />
 
       <section className="green">
         <div className="container">
