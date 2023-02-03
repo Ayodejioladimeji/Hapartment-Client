@@ -11,6 +11,10 @@
   justify-content: center;
   flex-direction: column;
   height: 100%;
+
+  h3 {
+    color: var(--primary-color);
+  }
 }
 
 .breadcumb-image {

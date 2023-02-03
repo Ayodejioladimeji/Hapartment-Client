@@ -2,15 +2,15 @@ import Image from "next/image";
 
 const BreadCumb = ({ headingOne, headingTwo, subHeading, body, image }) => {
   return (
-    <section className="white">
+    <section className="white" style={{ background: "#F9FCF9" }}>
       <div className="container">
         <div className="row mt-5 bread">
           <div className="col-md-6">
             <div className="breadcumb">
               <h3 className="mb-3">{headingOne}</h3>
-              <h3 className="mb-3">{headingTwo}</h3>
+              {headingTwo !== "" && <h3 className="mb-3">{headingTwo}</h3>}
 
-              <h5 className="mb-3">{subHeading}</h5>
+              {subHeading !== "" && <h6 className="mb-3">{subHeading}</h6>}
 
               <p className="mb-3">{body}</p>
             </div>
