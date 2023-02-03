@@ -34,7 +34,7 @@ const Faqs = () => {
           </div>
 
           <div className="col-md-12 mb-5">
-            <div className="box-footer">
+            <div className="box-footer text-center">
               Have any questions? Email us at{" "}
               <span>support@hapartment.org</span>
             </div>
