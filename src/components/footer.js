@@ -52,13 +52,13 @@ const Footer = () => {
 
             <ul>
               <li>
-                <a href="how-it-works.html">Advertise With Us</a>
+                <Link href="/advertise">Advertise With Us</Link>
               </li>
               <li>
-                <a href="">Add Listings</a>
+                <Link href="/addlisting">Add Listings</Link>
               </li>
               <li>
-                <a href="">Watch a Demo</a>
+                <Link href="/watchdemo">Watch a Demo</Link>
               </li>
             </ul>
           </div>
@@ -68,13 +68,13 @@ const Footer = () => {
 
             <ul>
               <li>
-                <a href="about-us.html">About Us</a>
+                <Link href="/about-us">About Us</Link>
               </li>
               <li>
-                <a href="">How To</a>
+                <Link href="/howto">How To</Link>
               </li>
               <li>
-                <a href="contact.html">Contact Us</a>
+                <Link href="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>

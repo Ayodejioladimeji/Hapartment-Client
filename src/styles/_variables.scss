@@ -199,6 +199,7 @@ footer {
         a {
           color: var(--border-color);
           transition: var(--transition);
+          border: none !important;
 
           &:hover {
             color: var(--primary-color);
