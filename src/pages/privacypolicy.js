@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
             <h3 className="mb-5 fw-3">Hapartment’s Privacy Policy</h3>
 
             <div className="row">
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <p>
                     We collect and use your personal data because we need it to
@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h3>Our Responsibility</h3>
                   <p>
@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h3>Your Responsibility</h3>
                   <p>
@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h3>Your property information on Hapartment</h3>
                   <p>
@@ -67,7 +67,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h3>Data we collect about you</h3>
                   <p>
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h2>Information about you</h2>
                   <p>E.g Your full name and email address.</p>
@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h2>MyHapartment account information</h2>
                   <p>
@@ -136,7 +136,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h2>Marketing preferences</h2>
                   <p>E.g. Your marketing email subscription preferences.</p>
@@ -162,7 +162,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h2>
                     Information about how you use our products and services
@@ -189,7 +189,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h3>Ad platform remarketing and cookies</h3>
                   <p>
@@ -219,7 +219,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h2>Surveys and response</h2>
                   <p>E.g, Feedback tools on our websites, apps and emails.</p>
@@ -237,7 +237,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h3>Legal basis: Legitimate interest</h3>
                   <p>
@@ -263,7 +263,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
 
-              <div className="col-lg-8 col-md-12 mb-5">
+              <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <h3>Cookies</h3>
                   <p>
@@ -280,9 +280,11 @@ const PrivacyPolicy = () => {
               </div>
             </div>
 
-            <div className="box-footer">
-              Have any questions? Email us at{" "}
-              <span>support@hapartment.org</span>
+            <div className="col-lg-9 col-md-12 mb-5">
+              <div className="box-footer">
+                Have any questions? Email us at{" "}
+                <span>support@hapartment.org</span>
+              </div>
             </div>
           </div>
         </div>

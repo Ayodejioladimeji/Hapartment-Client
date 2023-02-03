@@ -1,0 +1,34 @@
+.faqs {
+  h4 {
+    font-size: var(--h5);
+    color: var(--primary-color);
+  }
+}
+
+// accordion section
+.accordion-item {
+  .accordion-header {
+    background: transparent !important;
+    border-bottom: 1px solid var(--light-color);
+    font-size: var(--p-medium);
+
+    .accordion-button {
+      background: transparent;
+      outline: none !important;
+      color: var(--black-color);
+      font-size: var(--p-medium);
+      padding-left: 15px;
+
+      &:hover {
+        color: var(--black-color);
+      }
+
+      &:focus {
+        border: none !important;
+      }
+    }
+  }
+  .accordion-body {
+    padding-left: 15px !important;
+  }
+}
