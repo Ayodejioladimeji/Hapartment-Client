@@ -1,8 +1,8 @@
 import BreadCumb from "@/common/breadcumb";
-import AgentAccordion from "@/components/agentaccordion";
-import RentersAccordion from "@/components/rentersaccordion";
 import faqImage from "../../public/faq-image.svg";
 import Head from "next/head";
+import AgentAccordion from "@/common/agentaccordion";
+import RenterAccordion from "./../common/renteraccordion";
 
 const Faqs = () => {
   return (
@@ -33,7 +33,7 @@ const Faqs = () => {
             <div className="col-md-6 mb-5">
               <div className="faqs">
                 <h4 className="mb-3">Renters</h4>
-                <RentersAccordion />
+                <RenterAccordion />
               </div>
             </div>
           </div>
