@@ -78,6 +78,10 @@
   border-radius: 5px;
   padding: 15px 25px;
   flex-wrap: wrap;
+
+  @media (max-width: 565px) {
+    padding: 15px 10px;
+  }
 }
 
 // list section

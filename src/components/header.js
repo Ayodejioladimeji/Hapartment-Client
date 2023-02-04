@@ -146,7 +146,16 @@ const Header = () => {
                   className="btn register-btn"
                   type="button"
                 >
-                  Search Listings
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    Search Listings
+                  </span>
+
+                  <span className="d-lg-block d-none">Search Listings</span>
                 </Link>
               </div>
             </ul>
