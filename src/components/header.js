@@ -111,12 +111,12 @@ const Header = () => {
 
             <ul className="navbar-nav ms-auto">
               <div className="nav-login d-flex ">
-                <Link href="/" className="btn login-btn me-5" type="submit">
+                {/* <Link href="/" className="btn login-btn me-5" type="submit">
                   Login
-                </Link>
+                </Link> */}
 
                 <Link href="/" className="btn register-btn" type="submit">
-                  Get Started
+                  Search Listings
                 </Link>
               </div>
             </ul>

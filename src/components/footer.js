@@ -55,7 +55,7 @@ const Footer = () => {
                 <Link href="/advertise">Advertise With Us</Link>
               </li>
               <li>
-                <Link href="/addlisting">Add Listings</Link>
+                <Link href="/addlisting">Search Listings</Link>
               </li>
               <li>
                 <Link href="/watchdemo">Watch a Demo</Link>
