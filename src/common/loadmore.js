@@ -13,16 +13,18 @@ const LoadMore = ({ loading, setLoading, setVisible }) => {
   return (
     <div className="text-center mt-5">
       {loading ? (
-        <BallTriangle
-          height={100}
-          width={100}
-          radius={5}
-          color="#4fa94d"
-          ariaLabel="ball-triangle-loading"
-          wrapperClass={{}}
-          wrapperStyle=""
-          visible={true}
-        />
+        <div className="mx-auto">
+          <BallTriangle
+            height={100}
+            width={100}
+            radius={5}
+            color="#4fa94d"
+            ariaLabel="ball-triangle-loading"
+            wrapperClass={{}}
+            wrapperStyle=""
+            visible={true}
+          />
+        </div>
       ) : (
         <button className="btn mx-auto" onClick={showItems}>
           Load more

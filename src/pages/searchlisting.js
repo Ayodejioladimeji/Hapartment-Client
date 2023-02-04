@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Card from "@/common/card";
 import { listingdata } from "@/lib/listingdata";
 import Image from "next/image";
-
 import banner1 from "../../public/banner1.jpeg";
 import banner2 from "../../public/banner2.jpeg";
 import banner3 from "../../public/banner3.jpeg";
@@ -14,7 +13,7 @@ import LoadMore from "@/common/loadmore";
 
 const SearchListing = () => {
   const [data, setData] = useState(listingdata);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(9);
 
   return (
