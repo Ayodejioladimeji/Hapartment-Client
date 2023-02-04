@@ -30,13 +30,13 @@ const Card = ({ ...item }) => {
         </div>
 
         <div className="card-box">
-          <div class="bath">
+          <div className="bath">
             <div className="bath-box">
               <FaBath className="bi" />
             </div>
             <span>{bathrooms} bathrooms</span>
           </div>
-          <div class="bath">
+          <div className="bath">
             <div className="bath-box">
               <FaToilet className="bi" />
             </div>

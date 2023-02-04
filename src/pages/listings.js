@@ -8,20 +8,13 @@ import banner3 from "../../public/banner3.jpeg";
 import banner4 from "../../public/banner4.jpeg";
 import banner5 from "../../public/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
-import Router from "next/router";
 
 //
 
-const SearchListing = () => {
+const Listings = () => {
   const [data, setData] = useState(listingdata);
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState(9);
-
-  const navigate = () => {
-    Router.push({
-      pathname: "/listings",
-    });
-  };
 
   return (
     <>
@@ -29,7 +22,7 @@ const SearchListing = () => {
         <div className="container">
           <div className="search-box">
             <h4>
-              Properties for rent in <span>Nigeria</span>
+              Properties for rent in <span>Ikeja, Lagos</span>
             </h4>
             <button className="btn mb-4 filteroptions">Filter Options</button>
 
@@ -114,7 +107,7 @@ const SearchListing = () => {
                 <option value="3">Three</option>
               </select>
 
-              <button className="btn search-button" onClick={navigate}>
+              <button className="btn search-button">
                 Search
                 <i className="bi bi-arrow-right-circle"></i>
               </button>
@@ -187,4 +180,4 @@ const SearchListing = () => {
   );
 };
 
-export default SearchListing;
+export default Listings;

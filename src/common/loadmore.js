@@ -11,16 +11,16 @@ const LoadMore = ({ loading, setLoading, setVisible }) => {
   };
 
   return (
-    <div className="text-center mt-5">
+    <div className="text-center my-5">
       {loading ? (
-        <div className="mx-auto">
+        <div className="d-flex align-items-center justify-content-center">
           <BallTriangle
-            height={100}
-            width={100}
+            height={60}
+            width={60}
             radius={5}
             color="#4fa94d"
             ariaLabel="ball-triangle-loading"
-            wrapperClass={{}}
+            wrapperclassName={{}}
             wrapperStyle=""
             visible={true}
           />
