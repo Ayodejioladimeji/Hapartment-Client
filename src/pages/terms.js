@@ -30,12 +30,11 @@ const Terms = () => {
                     <p>
                       Hapartment.org is operated by Hapartment Digital
                       Marketplace. By using this website and the services
-                      contained therein ('Services') you agree to comply with
-                      and be bound by the following terms and conditions ('Terms
-                      of Use'). If you do not agree to or accept these Terms of
-                      Use, you should not use this website. All references
-                      within these Terms of Use to 'we/us/our' refer to
-                      Hapartment.
+                      contained therein (Services) you agree to comply with and
+                      be bound by the following terms and conditions (Terms of
+                      Use). If you do not agree to or accept these Terms of Use,
+                      you should not use this website. All references within
+                      these Terms of Use to we/us/our refer to Hapartment.
                     </p>
                   </div>
                 </div>
@@ -80,7 +79,7 @@ const Terms = () => {
                         a breach of any relevant laws or regulations.
                       </li>
                       <li>
-                        You agree not to interfere with any other user's
+                        You agree not to interfere with any other users
                         enjoyment of our website or the Services.
                       </li>
                       <li>
@@ -153,7 +152,7 @@ const Terms = () => {
                       We are a digital marketplace that offers owners and agents
                       different ways to communicate. We host, develop, and
                       manage our own range of property listings. When you visit
-                      us, you'll find details of properties that match your
+                      us, youll find details of properties that match your
                       preferences; agents list them on their own sites and in
                       our network too. You get the best of both worlds
                     </p>
@@ -168,8 +167,8 @@ const Terms = () => {
                     <p>
                       We have used the best possible sources to present these
                       details, but if at any time you believe there are
-                      discrepancies, please don't hesitate to e-mail us so we
-                      can check them out.
+                      discrepancies, please dont hesitate to e-mail us so we can
+                      check them out.
                     </p>
 
                     <ol>

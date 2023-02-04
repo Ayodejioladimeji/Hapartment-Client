@@ -30,8 +30,8 @@ const PrivacyPolicy = () => {
                     We collect and use your personal data because we need it to
                     deliver our services. We also look after your privacy and
                     make sure you have a great experience every time you use our
-                    site or app. If you're happy with that, read on to learn
-                    more about how we deal with your data.
+                    site or app. If youre happy with that, read on to learn more
+                    about how we deal with your data.
                   </p>
                 </div>
               </div>
@@ -63,10 +63,10 @@ const PrivacyPolicy = () => {
                   <h3>Your property information on Hapartment</h3>
                   <p>
                     The property information we display on our websites and apps
-                    isn't about the occupants or owners of that property. If you
+                    isnt about the occupants or owners of that property. If you
                     have any questions about the property information we
-                    display, please contact our customer care team. If you're
-                    renting or letting a property that's being advertised on our
+                    display, please contact our customer care team. If youre
+                    renting or letting a property thats being advertised on our
                     website or apps, please direct any questions to your estate
                     agent.
                   </p>
@@ -97,10 +97,10 @@ const PrivacyPolicy = () => {
                   <h3>Why we collect this data</h3>
                   <p>
                     We use the information you give us to provide the services
-                    you need, and to make sure we're providing them to the right
+                    you need, and to make sure were providing them to the right
                     people. If you sign up for property alerts or marketing
                     emails, we will send them to your given email address. If
-                    you send a message through Hapartment, we'll share your
+                    you send a message through Hapartment, well share your
                     contact details with the relevant agent or developer so they
                     can contact you.
                   </p>
