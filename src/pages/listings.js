@@ -10,6 +10,7 @@ import banner5 from "../../public/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
 import Head from "next/head";
+import Modalsearch from "@/components/modalsearch";
 
 //
 
@@ -34,7 +35,13 @@ const Listings = () => {
                 Properties for rent in <span>Ikeja, Lagos</span>
               </h4>
             </div>
-            <button className="btn mb-4 filteroptions">Filter Options</button>
+            <button
+              className="btn mb-4 filteroptions"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Filter Options
+            </button>
 
             <div className="box">
               <select
@@ -186,6 +193,34 @@ const Listings = () => {
           </div>
         </div>
       </section>
+
+      {/* The modal section */}
+
+      <div
+        className="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5>Advanced filter options</h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div className="modal-body">
+              <Modalsearch />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

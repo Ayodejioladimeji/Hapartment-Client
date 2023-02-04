@@ -11,6 +11,7 @@ import LoadMore from "@/common/loadmore";
 import { useRouter } from "next/router";
 import Goback from "@/common/goback";
 import Head from "next/head";
+import Modalsearch from "@/components/modalsearch";
 
 //
 
@@ -37,13 +38,19 @@ const SearchListing = () => {
       <section className="white  search-listing mt-5">
         <div className="container">
           <div className="search-box">
-            <div className="mb-3 d-flex align-items-center">
+            <div className="mb-3 title d-flex align-items-center">
               <Goback />
               <h4>
                 Properties for rent in <span>Nigeria</span>
               </h4>
             </div>
-            <button className="btn mb-4 filteroptions">Filter Options</button>
+            <button
+              className="btn mb-4 filteroptions"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Filter Options
+            </button>
 
             <div className="box">
               <select
@@ -195,6 +202,34 @@ const SearchListing = () => {
           </div>
         </div>
       </section>
+
+      {/* The modal section */}
+
+      <div
+        className="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5>Advanced filter options</h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div className="modal-body">
+              <Modalsearch />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
