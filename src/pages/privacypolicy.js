@@ -68,7 +68,7 @@ const PrivacyPolicy = () => {
                     display, please contact our customer care team. If you're
                     renting or letting a property that's being advertised on our
                     website or apps, please direct any questions to your estate
-                    agent."
+                    agent.
                   </p>
                 </div>
               </div>

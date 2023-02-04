@@ -9,6 +9,7 @@ import banner4 from "../../public/banner4.jpeg";
 import banner5 from "../../public/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
+import Head from "next/head";
 
 //
 
@@ -19,6 +20,11 @@ const Listings = () => {
 
   return (
     <>
+      <Head>
+        <title>Properties</title>
+        <meta name="Hapartment is your one place to find apartments and manage your rentals" />
+      </Head>
+
       <section className="white  search-listing mt-5">
         <div className="container">
           <div className="search-box">

@@ -10,6 +10,7 @@ import banner5 from "../../public/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
 import { useRouter } from "next/router";
 import Goback from "@/common/goback";
+import Head from "next/head";
 
 //
 
@@ -25,6 +26,14 @@ const SearchListing = () => {
 
   return (
     <>
+      <Head>
+        <title>Search Listings</title>
+        <meta
+          name="Hapartment offers instant access to apartment listings ranging
+        from luxirious homes to apartments in lower price ranges."
+        />
+      </Head>
+
       <section className="white  search-listing mt-5">
         <div className="container">
           <div className="search-box">
