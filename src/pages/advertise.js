@@ -1,10 +1,15 @@
 import BreadCumb from "@/common/breadcumb";
-import React from "react";
+import Head from "next/head";
 import advertiseImage from "../../public/advertise-image.svg";
 
 const Advert = () => {
   return (
     <>
+      <Head>
+        <title>Advertise with us</title>
+        <meta name="Start advertising your products on Hapartment Digital Marketplace. Post your product for free and start attracting visitors to it. You will be able to track the number of people who end up purchasing through the website, and make changes to your product as needed" />
+      </Head>
+
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"
         headingTwo=""

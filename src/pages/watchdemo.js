@@ -1,11 +1,17 @@
 import BreadCumb from "@/common/breadcumb";
 import Image from "next/image";
+import Head from "next/head";
 import videoImage from "../../public/video-image.svg";
 import watchdemoImage from "../../public/watchdemo-image.svg";
 
 const WatchDemo = () => {
   return (
     <>
+      <Head>
+        <title>Watch a demo</title>
+        <meta name="We give you the ability to research, compare and see what offers are available for your next permanent residence. You will be able to see before hand if it is a suitable area and provides what you need and want in a home" />
+      </Head>
+
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"
         headingTwo=""

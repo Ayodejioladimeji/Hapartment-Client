@@ -1,10 +1,19 @@
 import BreadCumb from "@/common/breadcumb";
-import Image from "next/image";
 import aboutImg from "../../public/about-img.svg";
+import Head from "next/head";
 
 const AboutUs = () => {
   return (
     <>
+      <Head>
+        <title>About Us</title>
+        <meta
+          name="Hapartment offers instant access to apartment listings ranging
+        from luxirious homes to apartments in lower price ranges. We
+        provide clear and comprehensive categories for easy navigation."
+        />
+      </Head>
+
       <BreadCumb
         headingOne="How are we different from others"
         headingTwo=""

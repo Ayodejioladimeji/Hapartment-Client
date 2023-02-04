@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg fixed-top navbar-light py-4">
@@ -52,7 +55,12 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navmenu">
             <ul className="navbar-nav nav-top ms-auto">
               <li className="nav-item">
-                <Link className="nav-link" href="/about-us">
+                <Link
+                  className={`nav-link ${
+                    router.pathname === "/about-us" ? "green" : "grey"
+                  }`}
+                  href="/about-us"
+                >
                   <span
                     data-bs-toggle="collapse"
                     data-bs-target="#navmenu"
@@ -65,8 +73,14 @@ const Header = () => {
                   <span className="d-lg-block d-none">About Us</span>
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link className="nav-link" href="/advertise">
+                <Link
+                  className={`nav-link ${
+                    router.pathname === "/advertise" ? "green" : "grey"
+                  }`}
+                  href="/advertise"
+                >
                   <span
                     data-bs-toggle="collapse"
                     data-bs-target="#navmenu"
@@ -79,8 +93,14 @@ const Header = () => {
                   <span className="d-lg-block d-none">Advertise</span>
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link className="nav-link" href="/howto">
+                <Link
+                  className={`nav-link ${
+                    router.pathname === "/howto" ? "green" : "grey"
+                  }`}
+                  href="/howto"
+                >
                   <span
                     data-bs-toggle="collapse"
                     data-bs-target="#navmenu"
@@ -93,8 +113,14 @@ const Header = () => {
                   <span className="d-lg-block d-none">How To</span>
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link className="nav-link" href="/contact">
+                <Link
+                  className={`nav-link ${
+                    router.pathname === "/contact" ? "green" : "grey"
+                  }`}
+                  href="/contact"
+                >
                   <span
                     data-bs-toggle="collapse"
                     data-bs-target="#navmenu"

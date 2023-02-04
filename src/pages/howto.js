@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 import appstore from "../../public/appstore.svg";
 import playstore from "../../public/playstore.svg";
 import howtoImage from "../../public/howto-image.svg";
@@ -9,6 +10,15 @@ import stepTwo from "../../public/steptwo.svg";
 const HowTo = () => {
   return (
     <>
+      <Head>
+        <title>How to create listing</title>
+        <meta
+          name="A great platform for you to advertise your products for free
+                with high volumes of serious agents and renters browsing our
+                site."
+        />
+      </Head>
+
       <section className="white">
         <div className="container">
           <div className="row how-to-box d-flex">

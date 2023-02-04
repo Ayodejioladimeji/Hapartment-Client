@@ -1,12 +1,23 @@
 import BreadCumb from "@/common/breadcumb";
 import Contacts from "@/components/contacts";
 import contactImage from "../../public/contact2.svg";
+import Head from "next/head";
 
 //
 
 const Contact = () => {
   return (
     <>
+      <Head>
+        <title>Contact Us</title>
+        <meta
+          name="Our team works tirelessly to make searching for your dream home
+                effortless and rewarding , by offering clearly displayed quality
+                listings and slso provide simple mechanisms to contact the
+                agent."
+        />
+      </Head>
+
       <BreadCumb
         headingOne="Hi 👋🏼,"
         headingTwo="Connect with us Today"

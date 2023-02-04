@@ -1,9 +1,15 @@
 import BreadCumb from "@/common/breadcumb";
 import privacyImage from "../../public/privacy.svg";
+import Head from "next/head";
 
 const PrivacyPolicy = () => {
   return (
     <>
+      <Head>
+        <title>Privacy Policy</title>
+        <meta name="Hapartment is your one place to find apartments and manage your rentals" />
+      </Head>
+
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"
         headingTwo=""

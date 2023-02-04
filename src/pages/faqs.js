@@ -1,12 +1,17 @@
 import BreadCumb from "@/common/breadcumb";
 import AgentAccordion from "@/components/agentaccordion";
-import Accordion from "@/components/agentaccordion";
 import RentersAccordion from "@/components/rentersaccordion";
 import faqImage from "../../public/faq-image.svg";
+import Head from "next/head";
 
 const Faqs = () => {
   return (
     <>
+      <Head>
+        <title>FAQS</title>
+        <meta name="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers." />
+      </Head>
+
       <BreadCumb
         headingOne="Get answers to all questions you have"
         headingTwo=""

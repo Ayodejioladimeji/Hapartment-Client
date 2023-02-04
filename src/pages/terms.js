@@ -1,9 +1,15 @@
 import BreadCumb from "@/common/breadcumb";
 import termsImage from "../../public/terms-image.svg";
+import Head from "next/head";
 
 const Terms = () => {
   return (
     <>
+      <Head>
+        <title>Terms of Use</title>
+        <meta name="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there." />
+      </Head>
+
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"
         headingTwo=""
