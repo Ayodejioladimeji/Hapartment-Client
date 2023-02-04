@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg fixed-top navbar-light py-4">
@@ -44,6 +47,7 @@ const Header = () => {
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navmenu"
+            aria-controls="navmenu"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -51,35 +55,98 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navmenu">
             <ul className="navbar-nav nav-top ms-auto">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" href="/about-us">
-                  About Us
+                <Link
+                  className={`nav-link ${
+                    router.pathname === "/about-us" ? "green" : "grey"
+                  }`}
+                  href="/about-us"
+                >
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    About Us
+                  </span>
+
+                  <span className="d-lg-block d-none">About Us</span>
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link className="nav-link" href="/">
-                  Advertise
+                <Link
+                  className={`nav-link ${
+                    router.pathname === "/advertise" ? "green" : "grey"
+                  }`}
+                  href="/advertise"
+                >
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    Advertise
+                  </span>
+
+                  <span className="d-lg-block d-none">Advertise</span>
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link className="nav-link" href="/">
-                  How To
+                <Link
+                  className={`nav-link ${
+                    router.pathname === "/howto" ? "green" : "grey"
+                  }`}
+                  href="/howto"
+                >
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    How To
+                  </span>
+
+                  <span className="d-lg-block d-none">How To</span>
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link className="nav-link" href="/">
-                  Contact Us
+                <Link
+                  className={`nav-link ${
+                    router.pathname === "/contact" ? "green" : "grey"
+                  }`}
+                  href="/contact"
+                >
+                  <span
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu"
+                    className="d-lg-none d-md-block"
+                  >
+                    Contact Us
+                  </span>
+
+                  <span className="d-lg-block d-none">Contact Us</span>
                 </Link>
               </li>
             </ul>
 
             <ul className="navbar-nav ms-auto">
               <div className="nav-login d-flex ">
-                <Link href="/" className="btn login-btn me-5" type="submit">
+                {/* <Link href="/" className="btn login-btn me-5" type="submit">
                   Login
-                </Link>
+                </Link> */}
 
-                <Link href="/" className="btn register-btn" type="submit">
-                  Get Started
+                <Link
+                  href="/searchlisting"
+                  className="btn register-btn"
+                  type="button"
+                >
+                  Search Listings
                 </Link>
               </div>
             </ul>

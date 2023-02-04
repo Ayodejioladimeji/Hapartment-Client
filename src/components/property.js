@@ -18,7 +18,7 @@ const Property = () => {
 
             <button className="btn">
               List property
-              <i class="bi bi-arrow-right-circle"></i>
+              <i className="bi bi-arrow-right-circle"></i>
             </button>
           </div>
 
@@ -34,7 +34,7 @@ const Property = () => {
 
             <button className="btn">
               Search now
-              <i class="bi bi-arrow-right-circle"></i>
+              <i className="bi bi-arrow-right-circle"></i>
             </button>
           </div>
         </div>

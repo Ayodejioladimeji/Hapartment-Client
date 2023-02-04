@@ -22,7 +22,7 @@ const Places = () => {
                 apartment in minutes, for both short and long-term stays.
               </p>
 
-              <button class="btn">Get started</button>
+              <button className="btn">Get started</button>
             </div>
           </div>
 

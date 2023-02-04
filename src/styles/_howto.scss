@@ -1,0 +1,154 @@
+.how-to-box {
+  margin-top: 70px;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .how-to-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: var(--primary-color);
+    }
+
+    .appstore-image {
+      width: 140px;
+      height: 100%;
+      margin-right: 15px;
+    }
+
+    .playstore-image {
+      width: 150px;
+      height: 100%;
+    }
+  }
+
+  .how-to-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    .howto-image {
+      border: none;
+      height: 100%;
+      width: 70%;
+
+      @media (max-width: 992px) {
+        width: 90%;
+      }
+    }
+  }
+}
+
+// Create account section
+.watch-video-box {
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
+
+  .watch-video-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    .underline {
+      height: 3px;
+      width: 150px;
+      background: var(--white-color);
+    }
+
+    ol {
+      padding-left: 15px;
+
+      li {
+        line-height: 25px;
+        margin-bottom: 10px;
+        color: var(--white-color);
+        font-size: var(--p-bold);
+      }
+    }
+  }
+
+  .watch-video-image-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    img {
+      border: none;
+      height: 100%;
+      width: 60%;
+    }
+  }
+}
+
+// The step section
+
+.step-one-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  .underline {
+    height: 3px;
+    width: 150px;
+    background: var(--primary-color);
+  }
+
+  h3 {
+    color: var(--primary-color);
+  }
+  p {
+    color: var(--primary-color);
+  }
+
+  ol {
+    padding-left: 15px;
+
+    li {
+      line-height: 25px;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      font-size: var(--p-bold);
+    }
+  }
+}
+
+.step-one-image-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  img {
+    border: none;
+    height: 100%;
+    width: 60%;
+    object-fit: contain;
+    background: transparent;
+  }
+}

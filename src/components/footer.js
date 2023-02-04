@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -51,13 +52,13 @@ const Footer = () => {
 
             <ul>
               <li>
-                <a href="how-it-works.html">Advertise With Us</a>
+                <Link href="/advertise">Advertise With Us</Link>
               </li>
               <li>
-                <a href="">Add Listings</a>
+                <Link href="/searchlisting">Search Listings</Link>
               </li>
               <li>
-                <a href="">Watch a Demo</a>
+                <Link href="/watchdemo">Watch a Demo</Link>
               </li>
             </ul>
           </div>
@@ -67,13 +68,13 @@ const Footer = () => {
 
             <ul>
               <li>
-                <a href="about-us.html">About Us</a>
+                <Link href="/about-us">About Us</Link>
               </li>
               <li>
-                <a href="">How To</a>
+                <Link href="/howto">How To</Link>
               </li>
               <li>
-                <a href="contact.html">Contact Us</a>
+                <Link href="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -83,13 +84,13 @@ const Footer = () => {
 
             <ul>
               <li>
-                <a href="">FAQ</a>
+                <Link href="/faqs">FAQ</Link>
               </li>
               <li>
-                <a href="">Terms Of Use</a>
+                <Link href="/terms">Terms Of Use</Link>
               </li>
               <li>
-                <a href="">Privacy Policy</a>
+                <Link href="/privacypolicy">Privacy Policy</Link>
               </li>
             </ul>
           </div>
@@ -115,15 +116,15 @@ const Footer = () => {
                 src="/apple.svg"
                 alt=""
                 className="apple"
-                width="200"
-                height="100"
+                width={200}
+                height={100}
               />
               <Image
                 src="/play.svg"
                 alt=""
                 className="play"
-                width="200"
-                height="100"
+                width={200}
+                height={100}
               />
             </div>
           </div>

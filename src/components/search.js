@@ -13,7 +13,7 @@ const Search = () => {
             <div className="search-box">
               <div className="box">
                 <select
-                  class="form-select "
+                  className="form-select "
                   aria-label="Default select example"
                 >
                   <option defaultValue>Select property type</option>
@@ -23,7 +23,7 @@ const Search = () => {
                 </select>
 
                 <select
-                  class="form-select "
+                  className="form-select "
                   aria-label="Default select example"
                 >
                   <option defaultValue>Choose bathroom</option>
@@ -33,7 +33,7 @@ const Search = () => {
                 </select>
 
                 <select
-                  class="form-select "
+                  className="form-select "
                   aria-label="Default select example"
                 >
                   <option defaultValue>Choose toilet</option>
@@ -43,7 +43,7 @@ const Search = () => {
                 </select>
 
                 <select
-                  class="form-select "
+                  className="form-select "
                   aria-label="Default select example"
                 >
                   <option defaultValue>Select state</option>
@@ -53,7 +53,7 @@ const Search = () => {
                 </select>
 
                 <select
-                  class="form-select "
+                  className="form-select "
                   aria-label="Default select example"
                 >
                   <option defaultValue>Select city</option>
@@ -63,7 +63,7 @@ const Search = () => {
                 </select>
 
                 <select
-                  class="form-select "
+                  className="form-select "
                   aria-label="Default select example"
                 >
                   <option defaultValue>Choose furnishing</option>
@@ -73,7 +73,7 @@ const Search = () => {
                 </select>
 
                 <select
-                  class="form-select "
+                  className="form-select "
                   aria-label="Default select example"
                 >
                   <option defaultValue>Min price / annum</option>
@@ -83,7 +83,7 @@ const Search = () => {
                 </select>
 
                 <select
-                  class="form-select "
+                  className="form-select "
                   aria-label="Default select example"
                 >
                   <option defaultValue>Max price / annum</option>
@@ -94,7 +94,7 @@ const Search = () => {
 
                 <button className="btn">
                   Search
-                  <i class="bi bi-arrow-right-circle"></i>
+                  <i className="bi bi-arrow-right-circle"></i>
                 </button>
               </div>
             </div>

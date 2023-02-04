@@ -24,7 +24,7 @@ const Steps = () => {
             </h3>
 
             <div
-              class="mb-3 mt-5"
+              className="mb-3 mt-5"
               id={toggleState === 1 ? "active" : ""}
               onClick={() => toggleTab(1)}
             >
@@ -38,7 +38,7 @@ const Steps = () => {
             </div>
 
             <div
-              class="mb-3"
+              className="mb-3"
               id={toggleState === 2 ? "active" : ""}
               onClick={() => toggleTab(2)}
             >
@@ -52,7 +52,7 @@ const Steps = () => {
             </div>
 
             <div
-              class="mb-3"
+              className="mb-3"
               id={toggleState === 3 ? "active" : ""}
               onClick={() => toggleTab(3)}
             >
@@ -66,7 +66,7 @@ const Steps = () => {
             </div>
 
             <div
-              class="mb-3"
+              className="mb-3"
               id={toggleState === 4 ? "active" : ""}
               onClick={() => toggleTab(4)}
             >
@@ -80,7 +80,7 @@ const Steps = () => {
             </div>
 
             <div
-              class="mb-3"
+              className="mb-3"
               id={toggleState === 5 ? "active" : ""}
               onClick={() => toggleTab(5)}
             >
@@ -94,7 +94,7 @@ const Steps = () => {
             </div>
 
             <div
-              class="mb-3"
+              className="mb-3"
               id={toggleState === 6 ? "active" : ""}
               onClick={() => toggleTab(6)}
             >
@@ -108,7 +108,7 @@ const Steps = () => {
             </div>
 
             <div
-              class="mb-3"
+              className="mb-3"
               id={toggleState === 7 ? "active" : ""}
               onClick={() => toggleTab(7)}
             >
@@ -135,16 +135,16 @@ const Steps = () => {
                 <Image src={stepthree} alt="" className="connect-image" />
               )}
               {toggleState === 4 && (
-                <Image src={stepfour} alt="" class="connect-image" />
+                <Image src={stepfour} alt="" className="connect-image" />
               )}
               {toggleState === 5 && (
-                <Image src={stepfive} alt="" class="connect-image" />
+                <Image src={stepfive} alt="" className="connect-image" />
               )}
               {toggleState === 6 && (
-                <Image src={stepsix} alt="" class="connect-image" />
+                <Image src={stepsix} alt="" className="connect-image" />
               )}
               {toggleState === 7 && (
-                <Image src={steptwo} alt="" class="connect-image" />
+                <Image src={steptwo} alt="" className="connect-image" />
               )}
             </div>
           </div>

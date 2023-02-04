@@ -1,0 +1,70 @@
+.faqs {
+  h4 {
+    font-size: var(--h5);
+    color: var(--primary-color);
+  }
+}
+
+.accordion {
+  transition: all 0.5s;
+
+  .inactive {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--p-medium);
+    width: 100%;
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 0.7rem 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    border: 1px solid var(--light-color);
+  }
+
+  .title-wrapper {
+    font-size: var(--p-bold);
+    font-weight: 600;
+    transition: all 0.5s;
+    margin-bottom: -1px;
+    color: var(--text-color);
+  }
+
+  .accordion-icons {
+    font-size: var(--p-medium);
+    color: var(--primary-color);
+    transition-timing-function: ease-in;
+    transition: var(--transition);
+  }
+
+  .panel-close {
+    background: transparent;
+    box-sizing: border-box;
+    opacity: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition-timing-function: ease-out;
+    /* transition: all 0.5s; */
+    font-weight: 400;
+    transition: var(--transition);
+    margin-bottom: 20px;
+  }
+
+  .panel-open {
+    overflow: hidden;
+    background: transparent;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    transition-timing-function: ease-in;
+    line-height: 30px;
+    color: var(--text-color);
+    font-size: 13.5px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid var(--light-color);
+    border-top: none;
+  }
+}
