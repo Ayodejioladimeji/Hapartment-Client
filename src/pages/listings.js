@@ -8,6 +8,7 @@ import banner3 from "../../public/banner3.jpeg";
 import banner4 from "../../public/banner4.jpeg";
 import banner5 from "../../public/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
+import Goback from "@/common/goback";
 
 //
 
@@ -21,9 +22,12 @@ const Listings = () => {
       <section className="white  search-listing mt-5">
         <div className="container">
           <div className="search-box">
-            <h4>
-              Properties for rent in <span>Ikeja, Lagos</span>
-            </h4>
+            <div className="mb-3 d-flex align-items-center">
+              <Goback />
+              <h4>
+                Properties for rent in <span>Ikeja, Lagos</span>
+              </h4>
+            </div>
             <button className="btn mb-4 filteroptions">Filter Options</button>
 
             <div className="box">
