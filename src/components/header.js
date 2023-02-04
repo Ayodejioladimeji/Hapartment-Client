@@ -141,7 +141,11 @@ const Header = () => {
                   Login
                 </Link> */}
 
-                <Link href="/" className="btn register-btn" type="submit">
+                <Link
+                  href="/searchlisting"
+                  className="btn register-btn"
+                  type="button"
+                >
                   Search Listings
                 </Link>
               </div>

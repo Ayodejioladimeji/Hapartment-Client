@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 //
 
 const Discover = () => {
-  const [data, setData] = useState(listingdata);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   setData(listingdata);
-  //   setLoading(false);
-  // }, []);
+  useEffect(() => {
+    setLoading(true);
+    setData(listingdata);
+    setLoading(false);
+  }, []);
 
   if (loading) return <p>Loading....</p>;
   if (!data) return <p>No data found</p>;

@@ -153,6 +153,10 @@ body {
       &:hover {
         background: var(--black-color);
       }
+
+      @media (max-width: 992px) {
+        margin: 10px 0 15px 0;
+      }
     }
   }
 

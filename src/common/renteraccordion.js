@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { FiPlus, FiMinus } from "react-icons/fi";
-import { renterfaq } from "@/constants/faq";
+import { renterfaq } from "@/lib/faq";
 
 //
 
