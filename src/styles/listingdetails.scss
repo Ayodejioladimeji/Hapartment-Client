@@ -58,13 +58,13 @@
   }
 
   .carousel-item {
-    height: 100% !important;
-    background: yellow !important;
+    height: 600px;
     width: 100%;
 
     .carousel-image {
       width: 100% !important;
       height: 100% !important;
+      object-fit: cover;
     }
   }
 
