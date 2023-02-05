@@ -75,13 +75,13 @@ const ListingDetails = () => {
 
                 <div className="carousel-inner">
                   <div className="carousel-item active">
-                    {/* <Image src={banner1} className="carousel-image" alt="..." /> */}
+                    <Image src={banner1} className="carousel-image" alt="..." />
                   </div>
                   <div className="carousel-item">
-                    {/* <Image src={banner2} className="carousel-image" alt="..." /> */}
+                    <Image src={banner2} className="carousel-image" alt="..." />
                   </div>
                   <div className="carousel-item">
-                    {/* <Image src={banner3} className="carousel-image" alt="..." /> */}
+                    <Image src={banner3} className="carousel-image" alt="..." />
                   </div>
                 </div>
 
