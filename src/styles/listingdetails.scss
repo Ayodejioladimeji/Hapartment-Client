@@ -15,6 +15,12 @@
     font-size: var(--p-regular);
     color: var(--primary-color);
 
+    &:hover {
+      .bi {
+        color: var(--white-color);
+      }
+    }
+
     .bi {
       margin-top: 1px;
       color: var(--primary-color);
@@ -22,6 +28,7 @@
   }
 }
 
+// address section
 .address {
   color: var(--text-color);
 
@@ -34,12 +41,43 @@
 .price {
   font-size: var(--h3);
   font-weight: 900;
+
+  @media (max-width: 565px) {
+    margin-top: 10px;
+  }
 }
 
+// carousel section
 .carousel {
   height: 600px;
   width: 100%;
   background: var(--light-color);
+}
+
+// details section
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .details-box {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-color);
+    width: 200px;
+
+    @media (max-width: 565px) {
+      width: 100%;
+    }
+
+    .details-icons {
+      font-size: var(--p-bold);
+      margin-right: 10px;
+    }
+  }
 }
 
 // details tab section
@@ -56,7 +94,7 @@
           background: transparent;
           font-family: var(--lato);
           border: none;
-          font-size: var(--p-bold);
+          font-size: var(--p-bolder);
         }
       }
 
@@ -71,7 +109,7 @@
 
         &.active {
           background: transparent;
-          color: var(--text-color) !important;
+          color: var(--primary-color) !important;
           border: none !important;
           border-bottom: 2px solid var(--primary-color) !important;
         }
@@ -86,4 +124,45 @@
       }
     }
   }
+
+  // description section
+  .description {
+    .description-box {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--light-color);
+      margin-bottom: 20px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .facilities {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .facilities-box {
+          border-radius: 25px;
+          border: 1px solid var(--primary-color);
+          color: var(--primary-color);
+          padding: 10px 25px;
+          font-size: var(--p-regular);
+          margin-bottom: 10px;
+        }
+      }
+
+      .coloured {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// Disclaimer
+.disclaimer {
+  padding: 20px;
+  background: var(--light-color);
+  border-radius:5px;
 }
