@@ -142,7 +142,7 @@ const Header = () => {
                 </Link> */}
 
                 <Link
-                  href="/searchlisting"
+                  href="/listings"
                   className="btn register-btn"
                   type="button"
                 >

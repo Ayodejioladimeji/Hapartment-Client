@@ -1,0 +1,89 @@
+.back {
+  border: 1px solid var(--border-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  @media (max-width: 565px) {
+    padding: 10px;
+  }
+
+  .back-button {
+    padding: 7px 25px !important;
+    border-radius: 25px !important;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    font-size: var(--p-regular);
+    color: var(--primary-color);
+
+    .bi {
+      margin-top: 1px;
+      color: var(--primary-color);
+    }
+  }
+}
+
+.address {
+  color: var(--text-color);
+
+  .bi {
+    font-size: var(--p-bold);
+    margin-right: 10px;
+  }
+}
+
+.price {
+  font-size: var(--h3);
+  font-weight: 900;
+}
+
+.carousel {
+  height: 600px;
+  width: 100%;
+  background: var(--light-color);
+}
+
+// details tab section
+.details-tab {
+  .tab-section {
+    .nav-tabs {
+      border-bottom: 1px solid transparent;
+
+      .nav-item {
+        background: transparent;
+        font-family: var(--lato);
+
+        .nav-link {
+          background: transparent;
+          font-family: var(--lato);
+          border: none;
+          font-size: var(--p-bold);
+        }
+      }
+
+      a {
+        color: var(--text-color);
+        font-weight: 700;
+        border-bottom: 2px solid transparent !important;
+
+        &:focus {
+          border: none !important;
+        }
+
+        &.active {
+          background: transparent;
+          color: var(--text-color) !important;
+          border: none !important;
+          border-bottom: 2px solid var(--primary-color) !important;
+        }
+      }
+    }
+
+    .tab-content {
+      .package-box {
+        border: 1px solid var(--light-color);
+        border-radius: 8px;
+        background: var(--white-color);
+      }
+    }
+  }
+}
