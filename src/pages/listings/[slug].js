@@ -6,15 +6,23 @@ import banner4 from "../../../public/banner4.jpeg";
 import banner5 from "../../../public/banner5.jpeg";
 import Description from "./../../components/description";
 import { FaBath, FaBed, FaToilet } from "react-icons/fa";
+import { useRouter } from "next/router";
+
+//
 
 const ListingDetails = () => {
+  const router = useRouter();
+
+  const { image, title, price, address, bathrooms, toilets, time } =
+    router.query;
+
   return (
     <section className="white">
       <div className="container">
         <div className="row">
           <div className="col-lg-9 mt-5">
             <div className="back mb-4">
-              <button className="back-button">
+              <button className="back-button" onClick={() => router.back()}>
                 <i className="bi bi-chevron-left"></i> Go back
               </button>
             </div>
@@ -23,8 +31,8 @@ const ListingDetails = () => {
               <div className="col-md-8">
                 <h3>2 Bedroom flat</h3>
                 <div className="address">
-                  <i class="bi bi-geo-alt-fill"></i>
-                  22 Kofo Abayomi street, Ikeja, Lagos
+                  <i className="bi bi-geo-alt-fill"></i>
+                  {address}
                 </div>
               </div>
 
@@ -35,8 +43,78 @@ const ListingDetails = () => {
               </div>
             </div>
 
-            <div className="carousel my-4"></div>
+            <div className="carousel-container my-4">
+              <div
+                id="carouselExampleIndicators"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
+                {/* carousel indicators */}
+                <div className="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    className="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                </div>
 
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    {/* <Image src={banner1} className="carousel-image" alt="..." /> */}
+                  </div>
+                  <div className="carousel-item">
+                    {/* <Image src={banner2} className="carousel-image" alt="..." /> */}
+                  </div>
+                  <div className="carousel-item">
+                    {/* <Image src={banner3} className="carousel-image" alt="..." /> */}
+                  </div>
+                </div>
+
+                {/* next and previous buttons */}
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+
+            {/* details */}
             <div className="details">
               <div className="details-box">
                 <FaBed className="details-icons" />2 Bedrooms
@@ -50,35 +128,35 @@ const ListingDetails = () => {
             </div>
 
             <div className="details-tab mt-5">
-              <div class="tab-section">
-                <div class="deliver-box">
-                  <ul class="nav nav-tabs">
-                    <li class="nav-item">
+              <div className="tab-section">
+                <div className="deliver-box">
+                  <ul className="nav nav-tabs">
+                    <li className="nav-item">
                       <a
-                        class="nav-link active"
+                        className="nav-link active"
                         data-bs-toggle="tab"
                         href="#description"
                       >
                         Description
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-bs-toggle="tab" href="#map">
+                    <li className="nav-item">
+                      <a className="nav-link" data-bs-toggle="tab" href="#map">
                         View map
                       </a>
                     </li>
                   </ul>
                 </div>
 
-                <div class="tab-content">
-                  <div class="tab-pane active" id="description">
-                    <div class="package-box mt-4 px-4 py-3">
+                <div className="tab-content">
+                  <div className="tab-pane active" id="description">
+                    <div className="package-box mt-4 px-4 py-3">
                       <Description />
                     </div>
                   </div>
 
-                  <div class="tab-pane" id="map">
-                    <div class="package-box mt-4 px-4 py-3">map</div>
+                  <div className="tab-pane" id="map">
+                    <div className="package-box mt-4 px-4 py-3">map</div>
                   </div>
                 </div>
               </div>

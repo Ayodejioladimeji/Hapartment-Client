@@ -2,53 +2,63 @@ import cardImage from "../../public/card-image1.svg";
 import { FaBath, FaToilet } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 //
 
 const Card = ({ ...item }) => {
   const { image, title, price, address, bathrooms, toilets, time } = item;
+  const router = useRouter();
 
   const res1 = title.replace(" ", "-");
   const res2 = res1.replace(" ", "-");
   const res3 = res2.replace(" ", "-");
   const params_title = res3.replace(" ", "-");
 
+  // send data to the details page
+  const sendData = () => {
+    router.push({
+      pathname: `/listings/${params_title}`,
+      query: item,
+    });
+  };
+
   return (
-    <Link href={`/listings/${params_title}`}>
-      <div className="card">
-        <div className="card-image">
-          <Image src={image} alt="card-picture" width="200" height="150" />
+    // <Link href={`/listings/${params_title}`}>
+    <div className="card" onClick={sendData}>
+      <div className="card-image">
+        <Image src={image} alt="card-picture" width="200" height="150" />
+      </div>
+
+      <div className="card-content">
+        <p>{title}</p>
+        <h6 className="mb-3">₦{price}</h6>
+        <div className="address">
+          <i className="bi bi-geo-alt"></i>
+          <span>{address}</span>
         </div>
 
-        <div className="card-content">
-          <p>{title}</p>
-          <h6 className="mb-3">₦{price}</h6>
-          <div className="address">
-            <i className="bi bi-geo-alt"></i>
-            <span>{address}</span>
-          </div>
-
-          <div className="card-box">
-            <div className="bath">
-              <div className="bath-box">
-                <FaBath className="bi" />
-              </div>
-              <span>{bathrooms} bathrooms</span>
+        <div className="card-box">
+          <div className="bath">
+            <div className="bath-box">
+              <FaBath className="bi" />
             </div>
-            <div className="bath">
-              <div className="bath-box">
-                <FaToilet className="bi" />
-              </div>
-              <span>{toilets} toilets</span>
-            </div>
+            <span>{bathrooms} bathrooms</span>
           </div>
-        </div>
-
-        <div className="card-footer mt-4">
-          <small>Last updated : {time} </small>
+          <div className="bath">
+            <div className="bath-box">
+              <FaToilet className="bi" />
+            </div>
+            <span>{toilets} toilets</span>
+          </div>
         </div>
       </div>
-    </Link>
+
+      <div className="card-footer mt-4">
+        <small>Last updated : {time} </small>
+      </div>
+    </div>
+    // </Link>
   );
 };
 export default Card;
