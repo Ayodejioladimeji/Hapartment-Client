@@ -72,6 +72,11 @@
   .carousel-control-next {
     border: none !important;
     background: none !important;
+
+    .control {
+      font-size: var(--h2);
+      color: var(--black-color);
+    }
   }
 }
 

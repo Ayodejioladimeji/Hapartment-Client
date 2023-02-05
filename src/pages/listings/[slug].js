@@ -62,17 +62,14 @@ const ListingDetails = () => {
                 </div>
 
                 {/* next and previous buttons */}
+
                 <button
                   className="carousel-control-prev"
                   type="button"
                   data-bs-target="#carouselExampleIndicators"
                   data-bs-slide="prev"
                 >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Previous</span>
+                  <i className="bi control bi-arrow-left-circle-fill"></i>
                 </button>
 
                 <button
@@ -81,11 +78,7 @@ const ListingDetails = () => {
                   data-bs-target="#carouselExampleIndicators"
                   data-bs-slide="next"
                 >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Next</span>
+                  <i className="bi control bi-arrow-right-circle-fill"></i>
                 </button>
               </div>
             </div>
