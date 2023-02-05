@@ -1,11 +1,21 @@
 .modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+
   .modal-header {
+    background: var(--primary-color);
+
     h5 {
-      color: var(--primary-color);
+      color: var(--white-color);
       font-weight: 600;
     }
 
-    .btn-close {
+    .bi {
+      color: var(--white-color);
+      font-size: var(--h4);
+
       &:focus {
         border: none !important;
         outline: none !important;

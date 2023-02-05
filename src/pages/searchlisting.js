@@ -208,7 +208,7 @@ const SearchListing = () => {
       <div
         className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
@@ -216,12 +216,12 @@ const SearchListing = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5>Advanced filter options</h5>
-              <button
-                type="button"
-                className="btn-close"
+
+              <i
+                className="bi bi-x-circle-fill"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-              ></button>
+              ></i>
             </div>
 
             <div className="modal-body">
