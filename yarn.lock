@@ -662,6 +662,11 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+comma-separator@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/comma-separator/-/comma-separator-1.0.7.tgz#59d1e49d97fbb9cf6505a35c1015046f8bb393c3"
+  integrity sha512-yLxCLRlr7cKpRcXH9abZjRt6jWF/BBQNqkHRsSPKi/ER5/GVFtHsKg4ekTIyhGkEwT84dhgXOOhkf44gOccEhQ==
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"

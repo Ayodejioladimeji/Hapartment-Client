@@ -1,7 +1,7 @@
 import React from "react";
 import { BallTriangle } from "react-loader-spinner";
 
-const LoadMore = ({ load, setLoad, setVisible }) => {
+const LoadMore = ({ load, setLoad, setVisible, length }) => {
   const showItems = () => {
     setLoad(true);
     setTimeout(() => {

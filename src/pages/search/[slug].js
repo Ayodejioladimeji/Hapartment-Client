@@ -18,6 +18,7 @@ import LoadingPlaceHolder from "@/common/placeholder";
 import Placeholder from "@/common/placeholder";
 import { useRouter } from "next/router";
 import { getDataApis } from "@/utils/fetchData";
+import { sortValue } from "@/utils/utils";
 
 //
 
@@ -28,6 +29,10 @@ const SearchListings = () => {
   const [visible, setVisible] = useState(9);
   const router = useRouter();
   const cityname = router.query.slug;
+  const [sorting, setSorting] = useState("");
+
+  // Sorting the data
+  const sorted = sortValue(listings, sorting);
 
   // useEffect
   useEffect(() => {
@@ -161,17 +166,19 @@ const SearchListings = () => {
         <div className="container">
           <div className="filter mb-5 d-flex align-items-center justify-content-between">
             <div>
-              Results {visible} of {listings.length}
+              {listings.length > visible
+                ? `Results ${visible} of ${listings.length}`
+                : `Results ${listings.length} of ${listings.length}`}
             </div>
             <div className="filtering">
               <select
                 className="form-select "
                 aria-label="Default select example"
+                onChange={(e) => setSorting(e.target.value)}
               >
-                <option defaultValue>Default</option>
-                <option value="2">Most Recent</option>
+                <option value="1">Default</option>
+                <option value="2">Lowest Price</option>
                 <option value="3">Highest Price</option>
-                <option value="3">Lowest Price</option>
               </select>
             </div>
           </div>
@@ -182,7 +189,7 @@ const SearchListings = () => {
                 {loading ? (
                   <Placeholder />
                 ) : (
-                  listings
+                  sorted
                     .slice(0, visible)
                     .map((item) => <Card {...item} key={item._id} />)
                 )}
@@ -197,6 +204,8 @@ const SearchListings = () => {
                   load={load}
                   setLoad={setLoad}
                   setVisible={setVisible}
+                  length={listings.lenth}
+                  visible={visible}
                 />
               )}
             </div>
