@@ -3,11 +3,11 @@ import { useState, useContext, useEffect } from "react";
 import Card from "@/common/card";
 import { listingdata } from "@/lib/listingdata";
 import Image from "next/image";
-import banner1 from "../../public/banner1.jpeg";
-import banner2 from "../../public/banner2.jpeg";
-import banner3 from "../../public/banner3.jpeg";
-import banner4 from "../../public/banner4.jpeg";
-import banner5 from "../../public/banner5.jpeg";
+import banner1 from "../../../public/banner1.jpeg";
+import banner2 from "../../../public/banner2.jpeg";
+import banner3 from "../../../public/banner3.jpeg";
+import banner4 from "../../../public/banner4.jpeg";
+import banner5 from "../../../public/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
 import Head from "next/head";
@@ -16,15 +16,32 @@ import { DataContext } from "@/store/GlobalState";
 import Loading from "@/common/loading";
 import LoadingPlaceHolder from "@/common/placeholder";
 import Placeholder from "@/common/placeholder";
+import { useRouter } from "next/router";
+import { getDataApis } from "@/utils/fetchData";
 
 //
 
-const Listings = () => {
-  const { state } = useContext(DataContext);
-  const { listings, loading } = state;
-  const [data, setData] = useState(listingdata);
+const SearchListings = () => {
+  const [loading, setLoading] = useState(false);
+  const [listings, setListings] = useState([]);
   const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(9);
+  const router = useRouter();
+  const cityname = router.query.slug;
+
+  // useEffect
+  useEffect(() => {
+    setLoading(true);
+    if (cityname !== undefined) {
+      const getListing = async () => {
+        const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
+        const res = await getDataApis(`/search_listing?cityname=${city}`);
+        setListings(res.data);
+        setLoading(false);
+      };
+      getListing();
+    }
+  }, [cityname]);
 
   return (
     <>
@@ -39,7 +56,7 @@ const Listings = () => {
             <div className="mb-3 d-flex align-items-center">
               <Goback />
               <h4>
-                Properties for rent in <span>Ikeja, Lagos</span>
+                Properties for rent in <span>{cityname}</span>
               </h4>
             </div>
             <button
@@ -143,7 +160,9 @@ const Listings = () => {
       <section className="white">
         <div className="container">
           <div className="filter mb-5 d-flex align-items-center justify-content-between">
-            <div>Results 50 of 100</div>
+            <div>
+              Results {visible} of {listings.length}
+            </div>
             <div className="filtering">
               <select
                 className="form-select "
@@ -160,20 +179,18 @@ const Listings = () => {
           <div className="row">
             <div className="col-lg-9">
               <div className="list-box">
-                {listings
-                  .slice(0, visible)
-                  .map((item) =>
-                    loading ? <Placeholder /> : <Card {...item} key={item.id} />
-                  )}
+                {loading ? (
+                  <Placeholder />
+                ) : (
+                  listings
+                    .slice(0, visible)
+                    .map((item) => <Card {...item} key={item._id} />)
+                )}
               </div>
 
-              {!loading && listings.length === 0 && (
-                <div className="d-flex align-items-center justify-content-center">
-                  No available data
-                </div>
-              )}
-
-              {visible > listings.length || loading || listings.length === 0 ? (
+              {visible > listings?.length ||
+              loading ||
+              listings?.length === 0 ? (
                 ""
               ) : (
                 <LoadMore
@@ -239,4 +256,4 @@ const Listings = () => {
   );
 };
 
-export default Listings;
+export default SearchListings;

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
+
 import Card from "@/common/card";
 import { listingdata } from "@/lib/listingdata";
 import Image from "next/image";
@@ -8,40 +9,37 @@ import banner3 from "../../public/banner3.jpeg";
 import banner4 from "../../public/banner4.jpeg";
 import banner5 from "../../public/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
-import { useRouter } from "next/router";
 import Goback from "@/common/goback";
 import Head from "next/head";
 import Modalsearch from "@/components/modalsearch";
+import { DataContext } from "@/store/GlobalState";
+import Loading from "@/common/loading";
+import LoadingPlaceHolder from "@/common/placeholder";
+import Placeholder from "@/common/placeholder";
 
 //
 
-const SearchListing = () => {
+const SearchListings = () => {
+  const { state } = useContext(DataContext);
+  const { listings, loading } = state;
   const [data, setData] = useState(listingdata);
-  const [loading, setLoading] = useState(false);
+  const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(9);
-  const router = useRouter();
-
-  const navigate = () => {
-    router.push("/listings");
-  };
 
   return (
     <>
       <Head>
-        <title>Search Listings</title>
-        <meta
-          name="Hapartment offers instant access to apartment listings ranging
-        from luxirious homes to apartments in lower price ranges."
-        />
+        <title>Properties</title>
+        <meta name="Hapartment is your one place to find apartments and manage your rentals" />
       </Head>
 
       <section className="white  search-listing mt-5">
         <div className="container">
           <div className="search-box">
-            <div className="mb-3 title d-flex align-items-center">
+            <div className="mb-3 d-flex align-items-center">
               <Goback />
               <h4>
-                Properties for rent in <span>Nigeria</span>
+                Properties for rent in <span>Ikeja, Lagos</span>
               </h4>
             </div>
             <button
@@ -133,7 +131,7 @@ const SearchListing = () => {
                 <option value="3">Three</option>
               </select>
 
-              <button className="btn search-button" onClick={navigate}>
+              <button className="btn search-button">
                 Search
                 <i className="bi bi-arrow-right-circle"></i>
               </button>
@@ -162,17 +160,29 @@ const SearchListing = () => {
           <div className="row">
             <div className="col-lg-9">
               <div className="list-box">
-                {data.slice(0, visible).map((item) => (
-                  <Card {...item} key={item.id} />
-                ))}
+                {listings
+                  .slice(0, visible)
+                  .map((item) =>
+                    loading ? (
+                      <Placeholder />
+                    ) : (
+                      <Card {...item} key={item._id} />
+                    )
+                  )}
               </div>
 
-              {visible > data.length ? (
+              {!loading && listings.length === 0 && (
+                <div className="d-flex align-items-center justify-content-center">
+                  No available data
+                </div>
+              )}
+
+              {visible > listings.length || loading || listings.length === 0 ? (
                 ""
               ) : (
                 <LoadMore
-                  loading={loading}
-                  setLoading={setLoading}
+                  load={load}
+                  setLoad={setLoad}
                   setVisible={setVisible}
                 />
               )}
@@ -194,7 +204,6 @@ const SearchListing = () => {
               <div className="advert-image-box mb-5">
                 <Image src={banner4} alt="" />
               </div>
-
               <div className="adverts-box mb-3">
                 Place your Banner Adverts here
               </div>
@@ -216,12 +225,12 @@ const SearchListing = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5>Advanced filter options</h5>
-
-              <i
-                className="bi bi-x-circle-fill"
+              <button
+                type="button"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-              ></i>
+              ></button>
             </div>
 
             <div className="modal-body">
@@ -234,4 +243,4 @@ const SearchListing = () => {
   );
 };
 
-export default SearchListing;
+export default SearchListings;

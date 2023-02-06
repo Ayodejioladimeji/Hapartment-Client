@@ -1,4 +1,5 @@
 import Layout from "@/components/layout";
+import { DataProvider } from "@/store/GlobalState";
 import "@/styles/main.scss";
 import Script from "next/script";
 
@@ -13,9 +14,11 @@ export default function App({ Component, pageProps }) {
         crossorigin="anonymous"
       />
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <DataProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </DataProvider>
     </>
   );
 }

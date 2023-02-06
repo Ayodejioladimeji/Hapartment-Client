@@ -1,8 +1,35 @@
+import { ACTIONS } from "@/store/Actions";
+import { DataContext } from "@/store/GlobalState";
+import { getDataApis } from "@/utils/fetchData";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState, useContext } from "react";
+import { BallTriangle, MagnifyingGlass } from "react-loader-spinner";
 import heroImg from "../../public/hero-image.svg";
 
+//
+
 const Hero = () => {
+  const { state, dispatch } = useContext(DataContext);
+  const { loading } = state;
+  const [cityname, setCityname] = useState("");
+  const [error, setError] = useState("");
+  const [data, setData] = useState(null);
+  const router = useRouter();
+
+  // handle submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (cityname === "") {
+      setError("Please enter city name");
+      return;
+    }
+
+    router.push(`/search/${cityname}`);
+  };
+
   return (
     <section className="white">
       <div className="container">
@@ -22,14 +49,37 @@ const Hero = () => {
             <div className="quick-search">
               <h6 className="mb-3 bold">Quick Search</h6>
 
-              <div className="d-md-flex flex-lg-row flex-md-column">
-                <div className="form-control mb-2 d-flex align-items-center">
-                  <i className="bi bi-geo-alt"></i>
-                  <input type="text" placeholder="Enter your city name" />
+              <form onSubmit={handleSubmit}>
+                <div className="d-md-flex flex-lg-row flex-md-column">
+                  <div className="form-control mb-2 d-flex align-items-center">
+                    <i className="bi bi-geo-alt"></i>
+                    <input
+                      type="text"
+                      placeholder="Enter your location name (e.g Lagos)"
+                      value={cityname}
+                      onChange={(e) => setCityname(e.target.value)}
+                    />
+                  </div>
                 </div>
-              </div>
+                <span className="d-block text-danger">{error}</span>
 
-              <button className="btn hero-btn mt-4">Search</button>
+                {loading ? (
+                  <div>
+                    <MagnifyingGlass
+                      visible={true}
+                      height="60"
+                      width="60"
+                      ariaLabel="MagnifyingGlass-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="MagnifyingGlass-wrapper"
+                      glassColor="#c0efff"
+                      color="green"
+                    />
+                  </div>
+                ) : (
+                  <button className="btn hero-btn mt-4">Search</button>
+                )}
+              </form>
             </div>
           </div>
 

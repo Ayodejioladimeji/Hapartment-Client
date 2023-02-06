@@ -22,7 +22,7 @@ export default function Home() {
       <Connect />
       <Steps />
       <Search />
-      <Discover />
+      {/* <Discover /> */}
       <Different />
       <Property />
       <SafetyTips />

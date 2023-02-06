@@ -1,0 +1,4 @@
+export const ACTIONS = {
+  GET_LISTINGS: "GET_LISTINGS",
+  LOADING: "LOADING",
+};
