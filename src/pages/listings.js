@@ -163,7 +163,11 @@ const Listings = () => {
                 {listings
                   .slice(0, visible)
                   .map((item) =>
-                    loading ? <Placeholder /> : <Card {...item} key={item.id} />
+                    loading ? (
+                      <Placeholder />
+                    ) : (
+                      <Card {...item} key={item._id} />
+                    )
                   )}
               </div>
 
