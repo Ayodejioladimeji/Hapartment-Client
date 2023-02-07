@@ -164,7 +164,7 @@ const Listings = () => {
                   .slice(0, visible)
                   .map((item) =>
                     loading ? (
-                      <Placeholder />
+                      <Placeholder key={item._id} />
                     ) : (
                       <Card {...item} key={item._id} />
                     )
