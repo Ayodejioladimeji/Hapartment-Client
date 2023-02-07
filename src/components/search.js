@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import searchImg from "../../public/search-image.svg";
 
@@ -16,6 +17,7 @@ const initialState = {
 
 const Search = () => {
   const [values, setValues] = useState(initialState);
+  const router = useRouter();
   const {
     property_type,
     statename,
@@ -36,8 +38,8 @@ const Search = () => {
   // handlefilter method
   const handleFilter = (e) => {
     e.preventDefault();
-
-    console.log(values);
+    sessionStorage.setItem("filter", JSON.stringify(values));
+    router.push("/listings");
   };
 
   //
