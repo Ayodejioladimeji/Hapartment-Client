@@ -12,19 +12,45 @@ import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
 import Head from "next/head";
 import Modalsearch from "@/components/modalsearch";
-import { DataContext } from "@/store/GlobalState";
-import Loading from "@/common/loading";
-import LoadingPlaceHolder from "@/common/placeholder";
 import Placeholder from "@/common/placeholder";
 
 //
 
 const Listings = () => {
-  const { state } = useContext(DataContext);
-  const { listings, loading } = state;
-  const [data, setData] = useState(listingdata);
+  const [loading, setLoading] = useState(false);
+  const [listings, setListings] = useState([]);
   const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(9);
+  const cityname = "lagos";
+  const [sorting, setSorting] = useState("");
+  const [sort, setSort] = useState("");
+
+  // Sorting the data
+  const sortdata = filterValue(listings, sort);
+  const sorted = sortValue(sortdata, sorting);
+
+  // get data from the localstorage
+  const data = JSON.parse(localStorage.getItem("filter"));
+
+  console.log(data);
+
+  // useEffect
+  useEffect(() => {
+    setLoading(true);
+    if (cityname !== undefined) {
+      const getListing = async () => {
+        const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
+        const res = await getDataApis(`/search_listing?cityname=${city}`);
+        // const res = await getDataApis(
+        //   `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
+        // );
+
+        setListings(res.data);
+        setLoading(false);
+      };
+      getListing();
+    }
+  }, [cityname]);
 
   return (
     <>
@@ -39,7 +65,7 @@ const Listings = () => {
             <div className="mb-3 d-flex align-items-center">
               <Goback />
               <h4>
-                Properties for rent in <span>Ikeja, Lagos</span>
+                Properties for rent in <span>{cityname}</span>
               </h4>
             </div>
             <button
