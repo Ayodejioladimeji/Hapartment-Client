@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 
 import Card from "@/common/card";
-import { listingdata } from "@/lib/listingdata";
 import Image from "next/image";
 import banner1 from "../../../public/banner1.jpeg";
 import banner2 from "../../../public/banner2.jpeg";
@@ -12,13 +11,11 @@ import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
 import Head from "next/head";
 import Modalsearch from "@/components/modalsearch";
-import { DataContext } from "@/store/GlobalState";
-import Loading from "@/common/loading";
-import LoadingPlaceHolder from "@/common/placeholder";
 import Placeholder from "@/common/placeholder";
 import { useRouter } from "next/router";
 import { getDataApis } from "@/utils/fetchData";
-import { sortValue } from "@/utils/utils";
+import { filterValue, sortValue } from "@/utils/utils";
+import { strictRemoveComma } from "comma-separator";
 
 //
 
@@ -30,9 +27,11 @@ const SearchListings = () => {
   const router = useRouter();
   const cityname = router.query.slug;
   const [sorting, setSorting] = useState("");
+  const [sort, setSort] = useState("");
 
   // Sorting the data
-  const sorted = sortValue(listings, sorting);
+  const sortdata = filterValue(listings, sort);
+  const sorted = sortValue(sortdata, sorting);
 
   // useEffect
   useEffect(() => {
@@ -170,16 +169,38 @@ const SearchListings = () => {
                 ? `Results ${visible} of ${listings.length}`
                 : `Results ${listings.length} of ${listings.length}`}
             </div>
-            <div className="filtering">
-              <select
-                className="form-select "
-                aria-label="Default select example"
-                onChange={(e) => setSorting(e.target.value)}
-              >
-                <option value="1">Default</option>
-                <option value="2">Lowest Price</option>
-                <option value="3">Highest Price</option>
-              </select>
+
+            <div className="filter-container">
+              <div className="filtering">
+                <select
+                  className="form-select "
+                  aria-label="Default select example"
+                  onChange={(e) => setSort(e.target.value)}
+                >
+                  <option defaultValue>All Listings</option>
+                  <option value="1">Single Room</option>
+                  <option value="2">Room & Parlour</option>
+                  <option value="3">Room & Parlour Self contain</option>
+                  <option value="4">Self Contain</option>
+                  <option value="5">2 Bedroom Flat</option>
+                  <option value="6">3 Bedroom Flat</option>
+                  <option value="7">4 Bedroom Flat</option>
+                  <option value="8">5+ Bedroom Flat</option>
+                  <option value="9">Duplex</option>
+                </select>
+              </div>
+
+              <div className="filtering">
+                <select
+                  className="form-select "
+                  aria-label="Default select example"
+                  onChange={(e) => setSorting(e.target.value)}
+                >
+                  <option defaultValue>Default</option>
+                  <option value="1">Lowest Price</option>
+                  <option value="2">Highest Price</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -195,17 +216,17 @@ const SearchListings = () => {
                 )}
               </div>
 
-              {visible > listings?.length ||
-              loading ||
-              listings?.length === 0 ? (
+              {!loading && sorted.length === 0 && (
+                <div className="text-center">Listings not available</div>
+              )}
+
+              {visible > sorted?.length || loading || sorted?.length === 0 ? (
                 ""
               ) : (
                 <LoadMore
                   load={load}
                   setLoad={setLoad}
                   setVisible={setVisible}
-                  length={listings.lenth}
-                  visible={visible}
                 />
               )}
             </div>
