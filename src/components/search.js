@@ -1,8 +1,11 @@
+import propertyData from "@/constants/propertyData";
+import furnishingdata from "@/constants/furnishingdata";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import searchImg from "../../public/search-image.svg";
+import { prices } from "@/constants/prices";
 
 const initialState = {
   property_type: "",
@@ -17,6 +20,8 @@ const initialState = {
 
 const Search = () => {
   const [values, setValues] = useState(initialState);
+  const [states, setStates] = useState(null);
+
   const router = useRouter();
   const {
     property_type,
@@ -62,35 +67,13 @@ const Search = () => {
                     value={property_type}
                   >
                     <option defaultValue>Select property type</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-
-                  <select
-                    onChange={handleChange}
-                    className="form-select "
-                    aria-label="Default select example"
-                    name="statename"
-                    value={statename}
-                  >
-                    <option defaultValue>Choose bathroom</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-
-                  <select
-                    onChange={handleChange}
-                    className="form-select "
-                    aria-label="Default select example"
-                    name="cityname"
-                    value={cityname}
-                  >
-                    <option defaultValue>Choose toilet</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    {propertyData.map((item) => {
+                      return (
+                        <option key={item.id} value={item.value}>
+                          {item.value}
+                        </option>
+                      );
+                    })}
                   </select>
 
                   <select
@@ -99,6 +82,36 @@ const Search = () => {
                     aria-label="Default select example"
                     name="bathrooms"
                     value={bathrooms}
+                  >
+                    <option defaultValue>Choose bathroom</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5+">5+</option>
+                  </select>
+
+                  <select
+                    onChange={handleChange}
+                    className="form-select "
+                    aria-label="Default select example"
+                    name="toilets"
+                    value={toilets}
+                  >
+                    <option defaultValue>Choose toilet</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5+">5+</option>
+                  </select>
+
+                  <select
+                    onChange={handleChange}
+                    className="form-select "
+                    aria-label="Default select example"
+                    name="statename"
+                    value={statename}
                   >
                     <option defaultValue>Select state</option>
                     <option value="1">One</option>
@@ -110,8 +123,8 @@ const Search = () => {
                     onChange={handleChange}
                     className="form-select "
                     aria-label="Default select example"
-                    name="toilets"
-                    value={toilets}
+                    name="cityname"
+                    value={cityname}
                   >
                     <option defaultValue>Select city</option>
                     <option value="1">One</option>
@@ -127,9 +140,13 @@ const Search = () => {
                     value={furnishing}
                   >
                     <option defaultValue>Choose furnishing</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    {furnishingdata.map((item) => {
+                      return (
+                        <option key={item.id} value={item.value}>
+                          {item.value}
+                        </option>
+                      );
+                    })}
                   </select>
 
                   <select
@@ -140,9 +157,13 @@ const Search = () => {
                     value={min_price}
                   >
                     <option defaultValue>Min price / annum</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    {prices.map((item) => {
+                      return (
+                        <option key={item.id} value={item.value}>
+                          {item.value}
+                        </option>
+                      );
+                    })}
                   </select>
 
                   <select
@@ -153,9 +174,13 @@ const Search = () => {
                     value={max_price}
                   >
                     <option defaultValue>Max price / annum</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    {prices.map((item) => {
+                      return (
+                        <option key={item.id} value={item.value}>
+                          {item.value}
+                        </option>
+                      );
+                    })}
                   </select>
 
                   <button className="btn">
