@@ -185,17 +185,43 @@ const Listings = () => {
       <section className="white">
         <div className="container">
           <div className="filter mb-5 d-flex align-items-center justify-content-between">
-            <div>Results 50 of 100</div>
-            <div className="filtering">
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Default</option>
-                <option value="2">Most Recent</option>
-                <option value="3">Highest Price</option>
-                <option value="3">Lowest Price</option>
-              </select>
+            <div>
+              {listings.length > visible
+                ? `Results ${visible} of ${listings.length}`
+                : `Results ${listings.length} of ${listings.length}`}
+            </div>
+
+            <div className="filter-container">
+              <div className="filtering">
+                <select
+                  className="form-select "
+                  aria-label="Default select example"
+                  onChange={(e) => setSort(e.target.value)}
+                >
+                  <option defaultValue>All Listings</option>
+                  <option value="1">Single Room</option>
+                  <option value="2">Room & Parlour</option>
+                  <option value="3">Room & Parlour Self contain</option>
+                  <option value="4">Self Contain</option>
+                  <option value="5">2 Bedroom Flat</option>
+                  <option value="6">3 Bedroom Flat</option>
+                  <option value="7">4 Bedroom Flat</option>
+                  <option value="8">5+ Bedroom Flat</option>
+                  <option value="9">Duplex</option>
+                </select>
+              </div>
+
+              <div className="filtering">
+                <select
+                  className="form-select "
+                  aria-label="Default select example"
+                  onChange={(e) => setSorting(e.target.value)}
+                >
+                  <option defaultValue>Default</option>
+                  <option value="1">Lowest Price</option>
+                  <option value="2">Highest Price</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -214,7 +240,7 @@ const Listings = () => {
               </div>
 
               {!loading && listings.length === 0 && (
-                <div className="d-flex align-items-center justify-content-center">
+                <div className=" no-data d-flex align-items-center justify-content-center">
                   No available data
                 </div>
               )}
