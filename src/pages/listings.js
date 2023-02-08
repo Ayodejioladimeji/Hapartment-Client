@@ -13,6 +13,8 @@ import Goback from "@/common/goback";
 import Head from "next/head";
 import Modalsearch from "@/components/modalsearch";
 import Placeholder from "@/common/placeholder";
+import { filterValue, sortValue } from "@/utils/utils";
+import { getDataApis } from "@/utils/fetchData";
 
 //
 
@@ -21,36 +23,50 @@ const Listings = () => {
   const [listings, setListings] = useState([]);
   const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(9);
-  const cityname = "lagos";
   const [sorting, setSorting] = useState("");
   const [sort, setSort] = useState("");
+  const [localData, setLocalData] = useState(null);
 
   // Sorting the data
   const sortdata = filterValue(listings, sort);
   const sorted = sortValue(sortdata, sorting);
 
-  // get data from the localstorage
-  const data = JSON.parse(localStorage.getItem("filter"));
-
-  console.log(data);
+  useEffect(() => {
+    // get data from the localstorage
+    const data = sessionStorage.getItem("filter");
+    const parsedData = JSON.parse(data);
+    setLocalData(parsedData);
+  }, []);
 
   // useEffect
   useEffect(() => {
     setLoading(true);
-    if (cityname !== undefined) {
+    if (localData !== null) {
+      // destructure data from localData
+      const {
+        property_type,
+        statename,
+        cityname,
+        bathrooms,
+        toilets,
+        furnishing,
+        min_price,
+        max_price,
+      } = localData;
+
+      console.log(property_type);
+
       const getListing = async () => {
-        const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
-        const res = await getDataApis(`/search_listing?cityname=${city}`);
-        // const res = await getDataApis(
-        //   `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
-        // );
+        const res = await getDataApis(
+          `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
+        );
 
         setListings(res.data);
         setLoading(false);
       };
       getListing();
     }
-  }, [cityname]);
+  }, [localData]);
 
   return (
     <>
@@ -65,7 +81,7 @@ const Listings = () => {
             <div className="mb-3 d-flex align-items-center">
               <Goback />
               <h4>
-                Properties for rent in <span>{cityname}</span>
+                Properties for rent in <span>{localData?.cityname}</span>
               </h4>
             </div>
             <button
