@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import searchImg from "../../public/search-image.svg";
-import { prices } from "@/constants/prices";
 import { statesdata } from "@/constants/statesdata";
+import { strictAddComma } from "comma-separator";
 
 const initialState = {
   property_type: "",
@@ -15,25 +15,17 @@ const initialState = {
   bathrooms: "",
   toilets: "",
   furnishing: "",
-  min_price: "",
-  max_price: "",
 };
 
 const Search = () => {
   const [values, setValues] = useState(initialState);
   const [city, setCity] = useState([]);
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
 
   const router = useRouter();
-  const {
-    property_type,
-    statename,
-    cityname,
-    bathrooms,
-    toilets,
-    furnishing,
-    min_price,
-    max_price,
-  } = values;
+  const { property_type, statename, cityname, bathrooms, toilets, furnishing } =
+    values;
 
   // handleChange method
   const handleChange = (e) => {
@@ -53,7 +45,18 @@ const Search = () => {
   // handlefilter method
   const handleFilter = (e) => {
     e.preventDefault();
-    sessionStorage.setItem("filter", JSON.stringify(values));
+    const newData = {
+      property_type,
+      statename,
+      cityname,
+      bathrooms,
+      toilets,
+      furnishing,
+      min_price: minPrice,
+      max_price: maxPrice,
+    };
+
+    sessionStorage.setItem("filter", JSON.stringify(newData));
     router.push("/listings");
   };
 
@@ -66,7 +69,7 @@ const Search = () => {
           <div className="col-md-6 search-left">
             <h3 className="mb-5">Search for available apartments</h3>
 
-            <div className="filter-box">
+            <div className="search-box">
               <form onSubmit={handleFilter}>
                 <div className="box">
                   <select
@@ -167,32 +170,25 @@ const Search = () => {
                     })}
                   </select>
 
-                    <input
-                      type="text"
-                      onChange={handleChange}
-                      placeholder="min_price"
-                      name="min_price"
-                      value={min_price}
-                      className="input"
-                    />
-               
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      setMinPrice(strictAddComma(e.target.value))
+                    }
+                    placeholder="min_price"
+                    value={minPrice}
+                    className="form-control input"
+                  />
 
-                  <select
-                    onChange={handleChange}
-                    className="form-select "
-                    aria-label="Default select example"
-                    name="max_price"
-                    value={max_price}
-                  >
-                    <option defaultValue>Max price / annum</option>
-                    {prices.map((item) => {
-                      return (
-                        <option key={item.id} value={item.value}>
-                          {item.value}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      setMaxPrice(strictAddComma(e.target.value))
+                    }
+                    placeholder="max_price"
+                    value={maxPrice}
+                    className="form-control input"
+                  />
 
                   <button className="btn">
                     Search
