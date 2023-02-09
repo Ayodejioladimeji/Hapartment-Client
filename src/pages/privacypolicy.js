@@ -27,11 +27,11 @@ const PrivacyPolicy = () => {
               <div className="col-lg-9 col-md-12 mb-5">
                 <div className="privacy-div">
                   <p>
-                    We collect and use your personal data because we need it to
+                    {`We collect and use your personal data because we need it to
                     deliver our services. We also look after your privacy and
                     make sure you have a great experience every time you use our
                     site or app. If you're happy with that, read on to learn
-                    more about how we deal with your data.
+                    more about how we deal with your data.`}
                   </p>
                 </div>
               </div>
@@ -40,10 +40,10 @@ const PrivacyPolicy = () => {
                 <div className="privacy-div">
                   <h3>Our Responsibility</h3>
                   <p>
-                    At Hapartment, we want to be completely transparent about
+                    {` At Hapartment, we want to be completely transparent about
                     how we collect and process your personal data. As the
                     controller of your data, we decide how and why it is
-                    processed at any time when you use our products or services.
+                    processed at any time when you use our products or services.`}
                   </p>
                 </div>
               </div>
@@ -52,8 +52,8 @@ const PrivacyPolicy = () => {
                 <div className="privacy-div">
                   <h3>Your Responsibility</h3>
                   <p>
-                    Please read this policy and make sure you’re happy with it
-                    before using our services.
+                    {` Please read this policy and make sure you’re happy with it
+                    before using our services.`}
                   </p>
                 </div>
               </div>
@@ -62,13 +62,13 @@ const PrivacyPolicy = () => {
                 <div className="privacy-div">
                   <h3>Your property information on Hapartment</h3>
                   <p>
-                    The property information we display on our website and app
+                    {` The property information we display on our website and app
                     isn't about the occupants or owners of that property. If you
                     have any questions about the property information we
                     display, please contact our customer care team. If you're
                     renting or letting a property that's being advertised on our
                     website or app, please direct any questions to your estate
-                    agent.
+                    agent.`}
                   </p>
                 </div>
               </div>
@@ -77,14 +77,14 @@ const PrivacyPolicy = () => {
                 <div className="privacy-div">
                   <h3>Data we collect about you</h3>
                   <p>
-                    We collect personal information about you when you use our
+                    {` We collect personal information about you when you use our
                     services. This helps us to understand your requirements and
                     make sure that we provide you with the best possible
-                    experience when using our website.
+                    experience when using our website.`}
                   </p>
                   <p>
-                    In this section, we outline what information we collect
-                    about you when you use our services, and why we collect it.
+                    {`In this section, we outline what information we collect
+                    about you when you use our services, and why we collect it.`}
                   </p>
                 </div>
               </div>
@@ -96,20 +96,20 @@ const PrivacyPolicy = () => {
 
                   <h3>Why we collect this data</h3>
                   <p>
-                    We use the information you give us to provide the services
+                    {`We use the information you give us to provide the services
                     you need, and to make sure we're providing them to the right
                     people. If you sign up for property alerts or marketing
                     emails, we will send them to your given email address. If
                     you send a message through Hapartment, we'll share your
                     contact details with the relevant agent or developer so they
-                    can contact you.
+                    can contact you.`}
                   </p>
                   <h3>How it benefits you</h3>
                   <p>
-                    Hapartment is a property search tool that makes it easy for
+                    {`Hapartment is a property search tool that makes it easy for
                     you to find the best apartment for you. We offer email
                     alerts and marketing emails so that you can be informed
-                    about any developments in the market.
+                    about any developments in the market.`}
                   </p>
                 </div>
               </div>
@@ -118,20 +118,20 @@ const PrivacyPolicy = () => {
                 <div className="privacy-div">
                   <h2>MyHapartment account information</h2>
                   <p>
-                    E.g. Your login details, preferences and properties you save
-                    in your My Home service.
+                    {` E.g. Your login details, preferences and properties you save
+                    in your My Home service.`}
                   </p>
 
                   <h3>Why we collect this data</h3>
                   <p>
-                    We use the information you provide to maintain your account,
+                    {`We use the information you provide to maintain your account,
                     save your preferences and manage properties you save in our
                     My Home service. We also use this information with other
                     data like, when last time you logged into your account,
                     create audience segments. These segments help us make sure
                     any content or ads we share with you via email or mobile
                     devices, or on our website or elsewhere on the internet are
-                    relevant to you.
+                    relevant to you.`}
                   </p>
                   <h3>How it benefits you</h3>
                   <p>
@@ -149,21 +149,21 @@ const PrivacyPolicy = () => {
 
                   <h3>Why we collect this data</h3>
                   <p>
-                    We love your feedback and want to make sure that our
+                    {` We love your feedback and want to make sure that our
                     services meets your needs. We use this information so we can
                     remind you of all the ways we can help and hopefully
                     encourage you to use Hapartment more often. We do not share
                     your contact details with anyone, except with those third
                     parties who provide services to us, and subject to our
                     contract terms which require them to keep your data safe and
-                    not to use it for any other purpose.
+                    not to use it for any other purpose.`}
                   </p>
                   <h3>How it benefits you</h3>
                   <p>
-                    You get information about the latest properties that match
+                    {` You get information about the latest properties that match
                     your search criteria, we can also send you marketing emails
                     that are relevant to you. You’ll only hear from us about
-                    products and services we think will interest you.
+                    products and services we think will interest you.`}
                   </p>
                 </div>
               </div>

@@ -39,6 +39,12 @@
       font-size: 16px !important;
     }
 
+    input {
+      &::-webkit-input-placeholder {
+        color: var(--text-color);
+      }
+    }
+
     .search-button {
       display: flex;
       align-items: center;

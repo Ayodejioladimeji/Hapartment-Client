@@ -74,6 +74,7 @@ const Listings = () => {
     const data = sessionStorage.getItem("filter");
     const parsedData = JSON.parse(data);
     setLocalData(parsedData);
+    setValues(parsedData);
   }, []);
 
   // useEffect
@@ -297,7 +298,7 @@ const Listings = () => {
             </div>
 
             <div className="filter-container">
-              {/* <div className="filtering">
+              <div className="filtering">
                 <select
                   className="form-select "
                   aria-label="Default select example"
@@ -314,7 +315,7 @@ const Listings = () => {
                   <option value="8">5+ Bedroom Flat</option>
                   <option value="9">Duplex</option>
                 </select>
-              </div> */}
+              </div>
 
               <div className="filtering">
                 <select
@@ -342,8 +343,8 @@ const Listings = () => {
                 )}
               </div>
 
-              {!loading && listings.length === 0 && (
-                <div className=" no-data d-flex align-items-center justify-content-center">
+              {!loading && sorted.length === 0 && (
+                <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data
                 </div>
               )}
