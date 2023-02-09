@@ -3,9 +3,10 @@ import furnishingdata from "@/constants/furnishingdata";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import searchImg from "../../public/search-image.svg";
 import { prices } from "@/constants/prices";
+import { statesdata } from "@/constants/statesdata";
 
 const initialState = {
   property_type: "",
@@ -20,7 +21,7 @@ const initialState = {
 
 const Search = () => {
   const [values, setValues] = useState(initialState);
-  const [states, setStates] = useState(null);
+  const [city, setCity] = useState([]);
 
   const router = useRouter();
   const {
@@ -40,6 +41,15 @@ const Search = () => {
     setValues({ ...values, [name]: value });
   };
 
+  // get the city method
+  useEffect(() => {
+    statesdata.filter((item) => {
+      if (item.state === statename) {
+        setCity(item.lgas);
+      }
+    });
+  }, [statename]);
+
   // handlefilter method
   const handleFilter = (e) => {
     e.preventDefault();
@@ -56,7 +66,7 @@ const Search = () => {
           <div className="col-md-6 search-left">
             <h3 className="mb-5">Search for available apartments</h3>
 
-            <div className="search-box">
+            <div className="filter-box">
               <form onSubmit={handleFilter}>
                 <div className="box">
                   <select
@@ -114,9 +124,13 @@ const Search = () => {
                     value={statename}
                   >
                     <option defaultValue>Select state</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    {statesdata.map((item, index) => {
+                      return (
+                        <option key={index} value={item.state}>
+                          {item.state}
+                        </option>
+                      );
+                    })}
                   </select>
 
                   <select
@@ -127,9 +141,13 @@ const Search = () => {
                     value={cityname}
                   >
                     <option defaultValue>Select city</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    {city?.map((item, index) => {
+                      return (
+                        <option key={index} value={item}>
+                          {item}
+                        </option>
+                      );
+                    })}
                   </select>
 
                   <select
@@ -149,22 +167,15 @@ const Search = () => {
                     })}
                   </select>
 
-                  <select
-                    onChange={handleChange}
-                    className="form-select "
-                    aria-label="Default select example"
-                    name="min_price"
-                    value={min_price}
-                  >
-                    <option defaultValue>Min price / annum</option>
-                    {prices.map((item) => {
-                      return (
-                        <option key={item.id} value={item.value}>
-                          {item.value}
-                        </option>
-                      );
-                    })}
-                  </select>
+                    <input
+                      type="text"
+                      onChange={handleChange}
+                      placeholder="min_price"
+                      name="min_price"
+                      value={min_price}
+                      className="input"
+                    />
+               
 
                   <select
                     onChange={handleChange}

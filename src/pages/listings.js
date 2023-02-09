@@ -19,7 +19,7 @@ import { getDataApis } from "@/utils/fetchData";
 //
 
 const Listings = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [listings, setListings] = useState([]);
   const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(9);
@@ -31,6 +31,8 @@ const Listings = () => {
   const sortdata = filterValue(listings, sort);
   const sorted = sortValue(sortdata, sorting);
 
+  console.log(loading, sorted);
+
   useEffect(() => {
     // get data from the localstorage
     const data = sessionStorage.getItem("filter");
@@ -40,7 +42,6 @@ const Listings = () => {
 
   // useEffect
   useEffect(() => {
-    setLoading(true);
     if (localData !== null) {
       // destructure data from localData
       const {
@@ -54,15 +55,17 @@ const Listings = () => {
         max_price,
       } = localData;
 
-      console.log(property_type);
-
       const getListing = async () => {
-        const res = await getDataApis(
-          `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
-        );
+        try {
+          const res = await getDataApis(
+            `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
+          );
 
-        setListings(res.data);
-        setLoading(false);
+          setListings(res.data);
+          setLoading(false);
+        } catch (error) {
+          console.log(error);
+        }
       };
       getListing();
     }
@@ -228,15 +231,13 @@ const Listings = () => {
           <div className="row">
             <div className="col-lg-9">
               <div className="list-box">
-                {listings
-                  .slice(0, visible)
-                  .map((item) =>
-                    loading ? (
-                      <Placeholder key={item._id} />
-                    ) : (
-                      <Card {...item} key={item._id} />
-                    )
-                  )}
+                {loading ? (
+                  <Placeholder />
+                ) : (
+                  sorted
+                    .slice(0, visible)
+                    .map((item) => <Card {...item} key={item._id} />)
+                )}
               </div>
 
               {!loading && listings.length === 0 && (

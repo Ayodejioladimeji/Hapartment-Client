@@ -20,7 +20,7 @@ import { strictRemoveComma } from "comma-separator";
 //
 
 const SearchListings = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [listings, setListings] = useState([]);
   const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(9);
@@ -35,7 +35,7 @@ const SearchListings = () => {
 
   // useEffect
   useEffect(() => {
-    setLoading(true);
+    
     if (cityname !== undefined) {
       const getListing = async () => {
         const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
