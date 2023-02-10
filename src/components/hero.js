@@ -27,7 +27,12 @@ const Hero = () => {
       return;
     }
 
-    router.push(`/search/${cityname}`);
+    const newData = {
+      cityname,
+    };
+
+    sessionStorage.setItem("filter", JSON.stringify(newData));
+    router.push("/listings");
   };
 
   return (
@@ -55,7 +60,7 @@ const Hero = () => {
                     <i className="bi bi-geo-alt"></i>
                     <input
                       type="text"
-                      placeholder="Enter your location name (e.g Lagos)"
+                      placeholder="Enter your search"
                       value={cityname}
                       onChange={(e) => setCityname(e.target.value)}
                     />
@@ -63,22 +68,7 @@ const Hero = () => {
                 </div>
                 <span className="d-block text-danger">{error}</span>
 
-                {loading ? (
-                  <div>
-                    <MagnifyingGlass
-                      visible={true}
-                      height="60"
-                      width="60"
-                      ariaLabel="MagnifyingGlass-loading"
-                      wrapperStyle={{}}
-                      wrapperClass="MagnifyingGlass-wrapper"
-                      glassColor="#c0efff"
-                      color="green"
-                    />
-                  </div>
-                ) : (
-                  <button className="btn hero-btn mt-4">Search</button>
-                )}
+                <button className="btn hero-btn mt-4">Search</button>
               </form>
             </div>
           </div>
