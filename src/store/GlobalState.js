@@ -6,7 +6,7 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const initialState = {
     listings: [],
-    loading: false,
+    loading: true,
   };
 
   const [state, dispatch] = useReducer(reducers, initialState);

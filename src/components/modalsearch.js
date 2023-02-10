@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import Placeholder from "@/common/placeholder";
-import { filterValue, sortValue } from "@/utils/utils";
+import { useState, useEffect, useContext } from "react";
 import { getDataApis } from "@/utils/fetchData";
 import { statesdata } from "@/constants/statesdata";
 import propertyData from "@/constants/propertyData";
 import furnishingdata from "@/constants/furnishingdata";
 import { strictAddComma } from "comma-separator";
+import { DataContext } from "@/store/GlobalState";
+import { ACTIONS } from "@/store/Actions";
 
 const initialState = {
   property_type: "",
@@ -18,19 +17,12 @@ const initialState = {
 };
 
 const Modalsearch = () => {
-  const [loading, setLoading] = useState(true);
-  const [listings, setListings] = useState([]);
-  const [load, setLoad] = useState(false);
-  const [visible, setVisible] = useState(9);
-  const [sorting, setSorting] = useState("");
-  const [sort, setSort] = useState("");
-  const [localData, setLocalData] = useState(null);
+  const { dispatch } = useContext(DataContext);
   const [values, setValues] = useState(initialState);
   const [city, setCity] = useState([]);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
-  const router = useRouter();
   const { property_type, statename, cityname, bathrooms, toilets, furnishing } =
     values;
 
@@ -49,53 +41,6 @@ const Modalsearch = () => {
     });
   }, [statename]);
 
-  // Sorting the data
-  const sortdata = filterValue(listings, sort);
-  const sorted = sortValue(sortdata, sorting);
-
-  useEffect(() => {
-    // get data from the localstorage
-    const data = sessionStorage.getItem("filter");
-    const parsedData = JSON.parse(data);
-    setLocalData(parsedData);
-    if (parsedData !== null) {
-      setValues(parsedData);
-    }
-  }, []);
-
-  // useEffect
-  useEffect(() => {
-    if (localData !== null) {
-      // destructure data from localData
-      const {
-        property_type,
-        statename,
-        cityname,
-        bathrooms,
-        toilets,
-        furnishing,
-        min_price,
-        max_price,
-      } = localData;
-
-      const getListing = async () => {
-        try {
-          const res = await getDataApis(
-            `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
-          );
-
-          setListings(res.data);
-          setLoading(false);
-        } catch (error) {
-          console.log(error);
-          setLoading(false);
-        }
-      };
-      getListing();
-    }
-    setLoading(false);
-  }, [localData]);
-
   // handlefilter method
   const handleFilter = async (e) => {
     e.preventDefault();
@@ -111,20 +56,19 @@ const Modalsearch = () => {
     };
 
     try {
-      setLoading(true);
+      dispatch({ type: ACTIONS.LOADING, payload: true });
 
       const res = await getDataApis(
-        `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}`
+        `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${newData.min_price}&max_price=${newData.max_price}`
       );
 
-      setListings(res.data);
-      setLoading(false);
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+      sessionStorage.setItem("filter", JSON.stringify(newData));
     } catch (error) {
-      setLoading(false);
       console.log(error);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
     }
-
-    sessionStorage.setItem("filter", JSON.stringify(newData));
   };
 
   return (
@@ -245,7 +189,12 @@ const Modalsearch = () => {
             className="form-control input"
           />
 
-          <button className="btn search-button">
+          <button
+            onClick={handleFilter}
+            className="btn search-button"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
             Search
             <i className="bi bi-arrow-right-circle"></i>
           </button>

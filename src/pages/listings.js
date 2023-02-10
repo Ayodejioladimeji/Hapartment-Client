@@ -14,12 +14,14 @@ import Modalsearch from "@/components/modalsearch";
 import Placeholder from "@/common/placeholder";
 import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
+import { DataContext } from "@/store/GlobalState";
+import { ACTIONS } from "@/store/Actions";
 
 //
 
 const Listings = () => {
-  const [loading, setLoading] = useState(true);
-  const [listings, setListings] = useState([]);
+  const { state, dispatch } = useContext(DataContext);
+  const { listings, loading } = state;
   const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(9);
   const [sorting, setSorting] = useState("");
@@ -53,22 +55,22 @@ const Listings = () => {
   // a function to get the data
   const getSingleData = async () => {
     try {
-      setLoading(true);
+      dispatch({ type: ACTIONS.LOADING, payload: true });
       const { cityname } = localData;
 
       const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
       const res = await getDataApis(`/search_listing?cityname=${city}`);
-      setListings(res.data);
-      setLoading(false);
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
     } catch (error) {
       console.log(error);
-      setLoading(false);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
 
   const getMultipleData = async () => {
     try {
-      setLoading(true);
+      dispatch({ type: ACTIONS.LOADING, payload: true });
 
       const {
         property_type,
@@ -85,11 +87,11 @@ const Listings = () => {
         `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
       );
 
-      setListings(res.data);
-      setLoading(false);
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
     } catch (error) {
       console.log(error);
-      setLoading(false);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
 
@@ -105,7 +107,7 @@ const Listings = () => {
     }
 
     try {
-      setLoading(true);
+      dispatch({ type: ACTIONS.LOADING, payload: true });
       const newData = {
         cityname,
       };
@@ -114,12 +116,12 @@ const Listings = () => {
 
       const res = await getDataApis(`/search_listing?cityname=${city}`);
 
-      setListings(res.data);
-      setLoading(false);
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
       sessionStorage.setItem("filter", JSON.stringify(newData));
     } catch (error) {
       console.log(error);
-      setLoading(false);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
 
@@ -145,30 +147,30 @@ const Listings = () => {
             <div className="row">
               <div className="col-lg-6 col-md-8 col-sm-12">
                 <div className="quick-search">
-                  <form onSubmit={handleSubmit}>
-                    <div className="form-control d-flex align-items-center">
-                      <i className="bi bi-geo-alt"></i>
-                      <input
-                        type="text"
-                        placeholder="Enter your search"
-                        value={cityname}
-                        onChange={(e) => setCityname(e.target.value)}
-                      />
-                    </div>
+                  <div className="form-control d-flex align-items-center">
+                    <i className="bi bi-geo-alt"></i>
+                    <input
+                      type="text"
+                      placeholder="Enter your search"
+                      value={cityname}
+                      onChange={(e) => setCityname(e.target.value)}
+                    />
+                  </div>
 
-                    <span className="d-block text-danger">{error}</span>
+                  <span className="d-block text-danger">{error}</span>
 
-                    <div className="d-flex align-items-center">
-                      <button className="btn hero-btn">Search</button>
-                      <button
-                        className="btnfilteroptions"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                      >
-                        Filter Options
-                      </button>
-                    </div>
-                  </form>
+                  <div className="d-flex align-items-center">
+                    <button className="btn hero-btn" onClick={handleSubmit}>
+                      Search
+                    </button>
+                    <button
+                      className="btnfilteroptions"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      Filter Options
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
