@@ -1,7 +1,47 @@
+import ModalWrapper from "@/common/modalWrapper";
+import NewsletterModal from "@/common/newsletterModal";
+import NewsletterModalWrapper from "@/common/newsletterModalWrapper";
+import { ACTIONS } from "@/store/Actions";
+import { DataContext } from "@/store/GlobalState";
+import { postDataApi } from "@/utils/fetchData";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext, useState } from "react";
 
 const Footer = () => {
+  const { state, dispatch } = useContext(DataContext);
+  const { newsModal, loading } = state;
+  const [values, setValues] = useState("");
+  const [alert, setAlert] = useState("");
+
+  // handleSubmit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (values === "" || values === null) {
+      return;
+    }
+
+    try {
+      const newData = {
+        email: values,
+      };
+
+      dispatch({ type: ACTIONS.LOADING, payload: true });
+
+      const res = await postDataApi("/newsletter", newData);
+
+      setAlert(res.data.msg);
+
+      dispatch({ type: ACTIONS.NEWSMODAL, payload: true });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    } catch (err) {
+      // console.log(err.response.data.msg);
+      dispatch({ type: ACTIONS.NEWSMODAL, payload: true });
+      setAlert(err.response.data.msg);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    }
+  };
+
   return (
     <footer>
       <div className="container">
@@ -105,19 +145,32 @@ const Footer = () => {
                 placeholder="Enter email here"
                 aria-label="subscript"
                 aria-describedby="button-addon2"
+                value={values}
+                onChange={(e) => setValues(e.target.value)}
               />
-              <button className="btn" type="button" id="button-addon2">
-                Subscribe
+              <button
+                onClick={handleSubmit}
+                className="btn"
+                type="button"
+                id="button-addon2"
+              >
+                {loading ? "Sending..." : "Subscribe"}
               </button>
             </div>
 
-            <div className="branding d-flex flex-wrap align-items-center">
+            <div
+              className="branding d-flex flex-wrap align-items-center"
+              onClick={() =>
+                dispatch({ type: ACTIONS.OPENMODAL, payload: true })
+              }
+            >
               <Image
                 src="/apple.svg"
                 alt=""
                 className="apple"
                 width={200}
                 height={100}
+                quality={100}
               />
               <Image
                 src="/play.svg"
@@ -125,6 +178,7 @@ const Footer = () => {
                 className="play"
                 width={200}
                 height={100}
+                quality={100}
               />
             </div>
           </div>
@@ -132,19 +186,56 @@ const Footer = () => {
 
         <div className="row footer-bottom mt-5 text-white">
           <div className="col-sm-6 text-box">
-            <span className="d-block">Copyright ©2023 hapartment.org</span>
+            <span className="d-block">
+              Copyright {new Date().getFullYear()} hapartment.org
+            </span>
           </div>
 
           <div className="col-sm-6 icon-box">
             <div className="footer-icons">
-              <i className="bi bi-facebook"></i>
-              <i className="bi bi-instagram"></i>
-              <i className="bi bi-twitter"></i>
-              <i className="bi bi-linkedin"></i>
+              <a
+                href="https://www.facebook.com/profile.php?id=100085724386292&mibextid=ZbWKwL"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="bi bi-facebook"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/invites/contact/?i=1pqlgg45pg0nl&utm_content=pldblyb"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="bi bi-instagram"></i>
+              </a>
+
+              <a
+                href="https://twitter.com/Hapartment11?t=cmOAR5aAypWeGzbLvebt-A&s=09"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="bi bi-twitter"></i>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/hapartment-rentals"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="bi bi-linkedin"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
+
+      {/* modal section */}
+
+      {newsModal && (
+        <NewsletterModalWrapper>
+          <NewsletterModal alert={alert} />
+        </NewsletterModalWrapper>
+      )}
     </footer>
   );
 };

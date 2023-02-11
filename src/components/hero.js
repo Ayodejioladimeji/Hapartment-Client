@@ -1,8 +1,32 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
 import heroImg from "../../public/hero-image.svg";
 
+//
+
 const Hero = () => {
+  const [cityname, setCityname] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  // handle submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (cityname === "") {
+      setError("Please enter city name");
+      return;
+    }
+
+    const newData = {
+      cityname,
+    };
+
+    sessionStorage.setItem("filter", JSON.stringify(newData));
+    router.push("/listings");
+  };
+
   return (
     <section className="white">
       <div className="container">
@@ -22,14 +46,22 @@ const Hero = () => {
             <div className="quick-search">
               <h6 className="mb-3 bold">Quick Search</h6>
 
-              <div className="d-md-flex flex-lg-row flex-md-column">
-                <div className="form-control mb-2 d-flex align-items-center">
-                  <i className="bi bi-geo-alt"></i>
-                  <input type="text" placeholder="Enter your city name" />
+              <form onSubmit={handleSubmit}>
+                <div className="d-md-flex flex-lg-row flex-md-column">
+                  <div className="form-control mb-2 d-flex align-items-center">
+                    <i className="bi bi-geo-alt"></i>
+                    <input
+                      type="text"
+                      placeholder="Enter your search"
+                      value={cityname}
+                      onChange={(e) => setCityname(e.target.value)}
+                    />
+                  </div>
                 </div>
-              </div>
+                <span className="d-block text-danger">{error}</span>
 
-              <button className="btn hero-btn mt-4">Search</button>
+                <button className="btn hero-btn mt-4">Search</button>
+              </form>
             </div>
           </div>
 

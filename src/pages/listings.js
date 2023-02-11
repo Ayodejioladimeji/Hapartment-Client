@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
+
 import Card from "@/common/card";
-import { listingdata } from "@/lib/listingdata";
 import Image from "next/image";
 import banner1 from "../../public/banner1.jpeg";
 import banner2 from "../../public/banner2.jpeg";
@@ -11,13 +11,140 @@ import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
 import Head from "next/head";
 import Modalsearch from "@/components/modalsearch";
+import Placeholder from "@/common/placeholder";
+import { filterValue, sortValue } from "@/utils/utils";
+import { getDataApis } from "@/utils/fetchData";
+import { DataContext } from "@/store/GlobalState";
+import { ACTIONS } from "@/store/Actions";
 
 //
 
 const Listings = () => {
-  const [data, setData] = useState(listingdata);
-  const [loading, setLoading] = useState(false);
+  const { state, dispatch } = useContext(DataContext);
+  const { listings, loading } = state;
+  const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(9);
+  const [sorting, setSorting] = useState("");
+  const [sort, setSort] = useState("");
+  const [localData, setLocalData] = useState(null);
+  const [cityname, setCityname] = useState("");
+  const [error, setError] = useState("");
+
+  // Sorting the data
+  const sortdata = filterValue(listings, sort);
+  const sorted = sortValue(sortdata, sorting);
+
+  // To get data from the localstorage
+  useEffect(() => {
+    const data = sessionStorage.getItem("filter");
+    const parsedData = JSON.parse(data);
+    setLocalData(parsedData);
+  }, []);
+
+  // a function to get the data
+  const getSingleData = async () => {
+    try {
+      dispatch({ type: ACTIONS.LOADING, payload: true });
+      const { cityname } = localData;
+
+      const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
+      const res = await getDataApis(`/search_listing/${city}`);
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    }
+  };
+
+  const getMultipleData = async () => {
+    try {
+      dispatch({ type: ACTIONS.LOADING, payload: true });
+
+      const {
+        property_type,
+        statename,
+        cityname,
+        bathrooms,
+        toilets,
+        furnishing,
+        min_price,
+        max_price,
+      } = localData;
+
+      const res = await getDataApis(
+        `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
+      );
+
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    }
+  };
+
+  const getAllData = async () => {
+    try {
+      dispatch({ type: ACTIONS.LOADING, payload: true });
+
+      const res = await getDataApis("/all_listing");
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    }
+  };
+
+  // useEffect
+  useEffect(() => {
+    if (localData !== null) {
+      if (Object?.keys(localData).length === 1) {
+        getSingleData();
+      } else {
+        getMultipleData();
+      }
+    } else {
+      getAllData();
+    }
+  }, [localData]);
+
+  //
+
+  // handle submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (cityname === "") {
+      setError("Please enter city name");
+
+      setTimeout(() => {
+        setError("");
+      }, 2000);
+      return;
+    }
+
+    try {
+      dispatch({ type: ACTIONS.LOADING, payload: true });
+      const newData = {
+        cityname,
+      };
+
+      const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
+
+      const res = await getDataApis(`/search_listing/${city}`);
+
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+      sessionStorage.setItem("filter", JSON.stringify(newData));
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    }
+  };
+
+  //
 
   return (
     <>
@@ -28,106 +155,53 @@ const Listings = () => {
 
       <section className="white  search-listing mt-5">
         <div className="container">
-          <div className="search-box">
-            <div className="mb-3 d-flex align-items-center">
-              <Goback />
-              <h4>
-                Properties for rent in <span>Ikeja, Lagos</span>
-              </h4>
+          <div className="row">
+            <div className="col-lg-9 col-md-12">
+              <div className="filter-box">
+                <div className="mb-3 d-flex align-items-center">
+                  <Goback />
+                  <h4>
+                    Properties for rent in <span>{localData?.cityname}</span>
+                  </h4>
+                </div>
+
+                <div className="row">
+                  <div className="col-lg-6 col-md-8 col-sm-12">
+                    <div className="quick-search">
+                      <div className="form-control d-flex align-items-center">
+                        <i className="bi bi-geo-alt"></i>
+                        <input
+                          type="text"
+                          placeholder="Enter your search"
+                          value={cityname}
+                          onChange={(e) => setCityname(e.target.value)}
+                        />
+                      </div>
+
+                      <span className="d-block text-danger">{error}</span>
+
+                      <div className="d-flex align-items-center">
+                        <button className="btn hero-btn" onClick={handleSubmit}>
+                          Search
+                        </button>
+                        <button
+                          className="btnfilteroptions"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                        >
+                          Filter Options
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button
-              className="btn mb-4 filteroptions"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              Filter Options
-            </button>
 
-            <div className="box">
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Select property type</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Choose bathroom</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Choose toilet</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Select state</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Select city</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Choose furnishing</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Min price / annum</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Max price / annum</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
-              <button className="btn search-button">
-                Search
-                <i className="bi bi-arrow-right-circle"></i>
-              </button>
+            <div className="col-lg-3 d-none d-lg-block">
+              <div className="advert-image-box mb-5">
+                <Image src={banner4} alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -136,34 +210,70 @@ const Listings = () => {
       <section className="white">
         <div className="container">
           <div className="filter mb-5 d-flex align-items-center justify-content-between">
-            <div>Results 50 of 100</div>
-            <div className="filtering">
-              <select
-                className="form-select "
-                aria-label="Default select example"
-              >
-                <option defaultValue>Default</option>
-                <option value="2">Most Recent</option>
-                <option value="3">Highest Price</option>
-                <option value="3">Lowest Price</option>
-              </select>
+            <div>
+              {sorted.length > visible
+                ? `Results ${visible} of ${sorted.length}`
+                : `Results ${sorted.length} of ${sorted.length}`}
+            </div>
+
+            <div className="filter-container">
+              <div className="filtering">
+                <select
+                  className="form-select "
+                  aria-label="Default select example"
+                  onChange={(e) => setSort(e.target.value)}
+                >
+                  <option defaultValue>All Listings</option>
+                  <option value="1">Single Room</option>
+                  <option value="2">Room & Parlour</option>
+                  <option value="3">Room & Parlour Self contain</option>
+                  <option value="4">Self Contain</option>
+                  <option value="5">2 Bedroom Flat</option>
+                  <option value="6">3 Bedroom Flat</option>
+                  <option value="7">4 Bedroom Flat</option>
+                  <option value="8">5+ Bedroom Flat</option>
+                  <option value="9">Duplex</option>
+                </select>
+              </div>
+
+              <div className="filtering">
+                <select
+                  className="form-select "
+                  aria-label="Default select example"
+                  onChange={(e) => setSorting(e.target.value)}
+                >
+                  <option defaultValue>Default</option>
+                  <option value="1">Lowest Price</option>
+                  <option value="2">Highest Price</option>
+                </select>
+              </div>
             </div>
           </div>
 
           <div className="row">
             <div className="col-lg-9">
               <div className="list-box">
-                {data.slice(0, visible).map((item) => (
-                  <Card {...item} key={item.id} />
-                ))}
+                {loading ? (
+                  <Placeholder />
+                ) : (
+                  sorted
+                    .slice(0, visible)
+                    .map((item) => <Card {...item} key={item._id} />)
+                )}
               </div>
 
-              {visible > data.length ? (
+              {!loading && sorted.length === 0 && (
+                <div className="unavailable d-flex align-items-center justify-content-center">
+                  No available data
+                </div>
+              )}
+
+              {visible > sorted.length || loading || sorted.length === 0 ? (
                 ""
               ) : (
                 <LoadMore
-                  loading={loading}
-                  setLoading={setLoading}
+                  load={load}
+                  setLoad={setLoad}
                   setVisible={setVisible}
                 />
               )}
@@ -182,10 +292,9 @@ const Listings = () => {
               <div className="advert-image-box mb-5">
                 <Image src={banner3} alt="" />
               </div>
-              <div className="advert-image-box mb-5">
+              {/* <div className="advert-image-box mb-5">
                 <Image src={banner4} alt="" />
-              </div>
-
+              </div> */}
               <div className="adverts-box mb-3">
                 Place your Banner Adverts here
               </div>
@@ -199,7 +308,7 @@ const Listings = () => {
       <div
         className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >

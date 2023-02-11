@@ -1,8 +1,67 @@
+import propertyData from "@/constants/propertyData";
+import furnishingdata from "@/constants/furnishingdata";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import searchImg from "../../public/search-image.svg";
+import { statesdata } from "@/constants/statesdata";
+import { strictAddComma } from "comma-separator";
+
+const initialState = {
+  property_type: "",
+  statename: "",
+  cityname: "",
+  bathrooms: "",
+  toilets: "",
+  furnishing: "",
+};
 
 const Search = () => {
+  const [values, setValues] = useState(initialState);
+  const [city, setCity] = useState([]);
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+
+  const router = useRouter();
+  const { property_type, statename, cityname, bathrooms, toilets, furnishing } =
+    values;
+
+  // handleChange method
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  // get the city method
+  useEffect(() => {
+    statesdata.filter((item) => {
+      if (item.state === statename) {
+        setCity(item.lgas);
+      }
+    });
+  }, [statename]);
+
+  // handlefilter method
+  const handleFilter = (e) => {
+    e.preventDefault();
+    const newData = {
+      property_type,
+      statename,
+      cityname,
+      bathrooms,
+      toilets,
+      furnishing,
+      min_price: minPrice,
+      max_price: maxPrice,
+    };
+
+    sessionStorage.setItem("filter", JSON.stringify(newData));
+    router.push("/listings");
+  };
+
+  //
+
   return (
     <section className="white main-search">
       <div className="container">
@@ -11,92 +70,132 @@ const Search = () => {
             <h3 className="mb-5">Search for available apartments</h3>
 
             <div className="search-box">
-              <div className="box">
-                <select
-                  className="form-select "
-                  aria-label="Default select example"
-                >
-                  <option defaultValue>Select property type</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+              <form onSubmit={handleFilter}>
+                <div className="box">
+                  <select
+                    onChange={handleChange}
+                    className="form-select "
+                    aria-label="Default select example"
+                    name="property_type"
+                    value={property_type}
+                  >
+                    <option defaultValue>Select property type</option>
+                    {propertyData.map((item) => {
+                      return (
+                        <option key={item.id} value={item.value}>
+                          {item.value}
+                        </option>
+                      );
+                    })}
+                  </select>
 
-                <select
-                  className="form-select "
-                  aria-label="Default select example"
-                >
-                  <option defaultValue>Choose bathroom</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                  <select
+                    onChange={handleChange}
+                    className="form-select "
+                    aria-label="Default select example"
+                    name="bathrooms"
+                    value={bathrooms}
+                  >
+                    <option defaultValue>Choose bathroom</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5+">5+</option>
+                  </select>
 
-                <select
-                  className="form-select "
-                  aria-label="Default select example"
-                >
-                  <option defaultValue>Choose toilet</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                  <select
+                    onChange={handleChange}
+                    className="form-select "
+                    aria-label="Default select example"
+                    name="toilets"
+                    value={toilets}
+                  >
+                    <option defaultValue>Choose toilet</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5+">5+</option>
+                  </select>
 
-                <select
-                  className="form-select "
-                  aria-label="Default select example"
-                >
-                  <option defaultValue>Select state</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                  <select
+                    onChange={handleChange}
+                    className="form-select "
+                    aria-label="Default select example"
+                    name="statename"
+                    value={statename}
+                  >
+                    <option defaultValue>Select state</option>
+                    {statesdata.map((item, index) => {
+                      return (
+                        <option key={index} value={item.state}>
+                          {item.state}
+                        </option>
+                      );
+                    })}
+                  </select>
 
-                <select
-                  className="form-select "
-                  aria-label="Default select example"
-                >
-                  <option defaultValue>Select city</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                  <select
+                    onChange={handleChange}
+                    className="form-select "
+                    aria-label="Default select example"
+                    name="cityname"
+                    value={cityname}
+                  >
+                    <option defaultValue>Select city</option>
+                    {city?.map((item, index) => {
+                      return (
+                        <option key={index} value={item}>
+                          {item}
+                        </option>
+                      );
+                    })}
+                  </select>
 
-                <select
-                  className="form-select "
-                  aria-label="Default select example"
-                >
-                  <option defaultValue>Choose furnishing</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                  <select
+                    onChange={handleChange}
+                    className="form-select "
+                    aria-label="Default select example"
+                    name="furnishing"
+                    value={furnishing}
+                  >
+                    <option defaultValue>Choose furnishing</option>
+                    {furnishingdata.map((item) => {
+                      return (
+                        <option key={item.id} value={item.value}>
+                          {item.value}
+                        </option>
+                      );
+                    })}
+                  </select>
 
-                <select
-                  className="form-select "
-                  aria-label="Default select example"
-                >
-                  <option defaultValue>Min price / annum</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      setMinPrice(strictAddComma(e.target.value))
+                    }
+                    placeholder="min_price"
+                    value={minPrice}
+                    className="form-control input"
+                  />
 
-                <select
-                  className="form-select "
-                  aria-label="Default select example"
-                >
-                  <option defaultValue>Max price / annum</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      setMaxPrice(strictAddComma(e.target.value))
+                    }
+                    placeholder="max_price"
+                    value={maxPrice}
+                    className="form-control input"
+                  />
 
-                <button className="btn">
-                  Search
-                  <i className="bi bi-arrow-right-circle"></i>
-                </button>
-              </div>
+                  <button className="btn">
+                    Search
+                    <i className="bi bi-arrow-right-circle"></i>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
 

@@ -1,7 +1,12 @@
-import Image from "next/image";
-import searchImg from "../../public/search-image.svg";
+import { ACTIONS } from "@/store/Actions";
+import { DataContext } from "@/store/GlobalState";
+import { useRouter } from "next/router";
+import { useContext } from "react";
 
 const Property = () => {
+  const router = useRouter();
+  const { dispatch } = useContext(DataContext);
+
   return (
     <section className="green">
       <div className="container">
@@ -16,7 +21,12 @@ const Property = () => {
               comprehensive platform.
             </p>
 
-            <button className="btn">
+            <button
+              className="btn"
+              onClick={() =>
+                dispatch({ type: ACTIONS.OPENMODAL, payload: true })
+              }
+            >
               List property
               <i className="bi bi-arrow-right-circle"></i>
             </button>
@@ -32,7 +42,7 @@ const Property = () => {
               the property owner.
             </p>
 
-            <button className="btn">
+            <button className="btn" onClick={() => router.push("/listings")}>
               Search now
               <i className="bi bi-arrow-right-circle"></i>
             </button>

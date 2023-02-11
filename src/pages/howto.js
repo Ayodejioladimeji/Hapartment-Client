@@ -4,8 +4,12 @@ import appstore from "../../public/appstore.svg";
 import playstore from "../../public/playstore.svg";
 import howtoImage from "../../public/howto-image.svg";
 import video from "../../public/video.svg";
-import stepOne from "../../public/stepone.svg";
-import stepTwo from "../../public/steptwo.svg";
+import how1 from "../../public/how1.svg";
+import how2 from "../../public/how2.svg";
+import how3 from "../../public/how3.svg";
+import how4 from "../../public/how4.svg";
+import how5 from "../../public/how5.svg";
+import how6 from "../../public/how6.svg";
 
 const HowTo = () => {
   return (
@@ -77,7 +81,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={stepOne} alt="" />
+              <Image src={how1} alt="" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -106,7 +110,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={stepTwo} alt="" />
+              <Image src={how2} alt="" />
             </div>
           </div>
         </div>
@@ -116,7 +120,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={stepOne} alt="" />
+              <Image src={how3} alt="" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -180,7 +184,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={stepTwo} alt="" />
+              <Image src={how4} alt="" />
             </div>
           </div>
         </div>
@@ -190,7 +194,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={stepOne} alt="" />
+              <Image src={how5} alt="" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -249,7 +253,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={stepTwo} alt="" />
+              <Image src={how6} alt="" />
             </div>
           </div>
         </div>

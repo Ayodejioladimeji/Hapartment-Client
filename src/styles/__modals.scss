@@ -1,0 +1,119 @@
+.overlay-base {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition-property: background-color, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-after {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+
+.overlay-before {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+}
+
+.content-base {
+  position: relative;
+  margin: 0 auto;
+  border: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition-property: background-color, width, height;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.content-after {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  position: relative;
+  padding: 20px !important;
+  width: 30%;
+  z-index: 999999 !important;
+}
+
+.content-before {
+  width: 0%;
+  height: 0%;
+  background-color: transparent;
+}
+
+.onclose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.main-modal {
+  text-align: center;
+  width: 95%;
+
+  h3 {
+    font-size: var(--h5);
+    margin: 15px 0;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: var(--h2);
+    font-weight: 900;
+  }
+
+  .coloured {
+    font-weight: 600;
+  }
+
+  .timer-wrapper {
+    z-index: 2;
+
+    .timer-inner {
+      color: #333;
+      display: flex;
+      padding: 1rem;
+      background-color: rgba(256, 256, 256, 0.8);
+      border-radius: 5px;
+      width: 80%;
+      margin: 0 auto;
+      justify-content: space-around;
+    }
+
+    .timer-segment {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .divider,
+    .time {
+      font-size: var(--h2);
+      font-weight: 900;
+    }
+
+    .diver {
+      padding: 0 3rem;
+    }
+
+    .label {
+      font-size: var(--p-bold);
+    }
+  }
+}

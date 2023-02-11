@@ -1,18 +1,18 @@
 import React from "react";
 import { BallTriangle } from "react-loader-spinner";
 
-const LoadMore = ({ loading, setLoading, setVisible }) => {
+const LoadMore = ({ load, setLoad, setVisible, length }) => {
   const showItems = () => {
-    setLoading(true);
+    setLoad(true);
     setTimeout(() => {
       setVisible((prevState) => prevState + 3);
-      setLoading(false);
+      setLoad(false);
     }, 2000);
   };
 
   return (
     <div className="text-center my-5">
-      {loading ? (
+      {load ? (
         <div className="d-flex align-items-center justify-content-center">
           <BallTriangle
             height={60}

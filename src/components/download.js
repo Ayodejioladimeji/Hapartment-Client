@@ -2,8 +2,16 @@ import download from "../../public/download.svg";
 import appstore from "../../public/appstore.svg";
 import playstore from "../../public/playstore.svg";
 import Image from "next/image";
+import ModalWrapper from "@/common/modalWrapper";
+import DownloadModal from "@/common/downloadmodal";
+import { useContext, useState } from "react";
+import { DataContext } from "@/store/GlobalState";
+import { ACTIONS } from "@/store/Actions";
 
 const Download = () => {
+  const { state, dispatch } = useContext(DataContext);
+  const { isOpen } = state;
+
   return (
     <section className="white download">
       <div className="container">
@@ -20,7 +28,12 @@ const Download = () => {
               passion, it is our mission.
             </p>
 
-            <div className="d-flex align-items-center justify-content-between">
+            <div
+              className="d-flex align-items-center justify-content-between"
+              onClick={() =>
+                dispatch({ type: ACTIONS.OPENMODAL, payload: true })
+              }
+            >
               <Image src={appstore} alt="" className="appstore-image" />
               <Image src={playstore} alt="" className="playstore-image" />
             </div>
@@ -30,6 +43,12 @@ const Download = () => {
             <Image src={download} alt="" className="download-image" />
           </div>
         </div>
+
+        {isOpen && (
+          <ModalWrapper>
+            <DownloadModal />
+          </ModalWrapper>
+        )}
       </div>
     </section>
   );

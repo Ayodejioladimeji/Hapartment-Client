@@ -1,8 +1,17 @@
+import { ACTIONS } from "@/store/Actions";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Header = () => {
   const router = useRouter();
+
+  // Get all listings on Click
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    sessionStorage.clear();
+
+    router.push("/listings");
+  };
 
   return (
     <header>
@@ -141,11 +150,7 @@ const Header = () => {
                   Login
                 </Link> */}
 
-                <Link
-                  href="/searchlisting"
-                  className="btn register-btn"
-                  type="button"
-                >
+                <button className="btn register-btn" type="button">
                   <span
                     data-bs-toggle="collapse"
                     data-bs-target="#navmenu"
@@ -155,8 +160,10 @@ const Header = () => {
                     Search Listings
                   </span>
 
-                  <span className="d-lg-block d-none">Search Listings</span>
-                </Link>
+                  <span onClick={handleSubmit} className="d-lg-block d-none">
+                    Search Listings
+                  </span>
+                </button>
               </div>
             </ul>
           </div>
