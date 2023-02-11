@@ -8,6 +8,7 @@ import Description from "./../../components/description";
 import { FaBath, FaBed, FaToilet } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Slider from "@/common/Slider";
+import { getDataApis } from "@/utils/fetchData";
 
 //
 
@@ -153,7 +154,7 @@ const ListingDetails = (props) => {
 export default ListingDetails;
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:8000/api/v1/all_listing");
+  const res = await getDataApis("/all_listing");
   const data = await res.json();
   const thePaths = data.map((item) => {
     return { params: { slug: item._id } };
@@ -166,7 +167,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch("http://localhost:8000/api/v1/all_listing");
+  const res = await getDataApis("/all_listing");
   const data = await res.json();
   const thelistings = data.filter(
     (item) => item._id === context.params.slug
