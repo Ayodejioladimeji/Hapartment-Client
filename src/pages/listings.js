@@ -108,7 +108,7 @@ const Listings = () => {
     } else {
       getAllData();
     }
-  }, [localData, getSingleData, getMultipleData, getAllData]);
+  }, [localData]);
 
   //
 
@@ -295,7 +295,7 @@ const Listings = () => {
               {/* <div className="advert-image-box mb-5">
                 <Image src={banner4} alt="" />
               </div> */}
-              <div className="adverts-box mb-3 text-center">
+              <div className="adverts-box mb-3">
                 Place your Banner Adverts here
               </div>
             </div>

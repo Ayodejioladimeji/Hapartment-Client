@@ -10,23 +10,23 @@ const Layout = ({ children }) => {
   const { state, dispatch } = useContext(DataContext);
 
   // Get all listings on Click
-  const getAllData = async (e) => {
-    try {
-      dispatch({ type: ACTIONS.LOADING, payload: true });
-
-      const res = await getDataApis("/all_listing");
-
-      dispatch({ type: ACTIONS.ALL_LISTINGS, payload: res.data });
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    } catch (error) {
-      console.log(error);
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    }
-  };
 
   useEffect(() => {
+    const getAllData = async (e) => {
+      try {
+        dispatch({ type: ACTIONS.LOADING, payload: true });
+
+        const res = await getDataApis("/all_listing");
+
+        dispatch({ type: ACTIONS.ALL_LISTINGS, payload: res.data });
+        dispatch({ type: ACTIONS.LOADING, payload: false });
+      } catch (error) {
+        console.log(error);
+        dispatch({ type: ACTIONS.LOADING, payload: false });
+      }
+    };
     getAllData();
-  }, [getAllData]);
+  }, []);
 
   return (
     <>
