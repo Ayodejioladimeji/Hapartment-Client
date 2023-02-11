@@ -1,21 +1,14 @@
 import Card from "@/common/card";
+import Placeholder from "@/common/placeholder";
 import { listingdata } from "@/lib/listingdata";
-import { useEffect, useState } from "react";
+import { DataContext } from "@/store/GlobalState";
+import { useContext, useEffect, useState } from "react";
 
 //
 
 const Discover = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    setData(listingdata);
-    setLoading(false);
-  }, []);
-
-  if (loading) return <p>Loading....</p>;
-  if (!data) return <p>No data found</p>;
+  const { state } = useContext(DataContext);
+  const { listings, loading } = state;
 
   return (
     <section className="lighter ">
@@ -24,9 +17,13 @@ const Discover = () => {
           <h3>Discover some of our top apartments</h3>
 
           <div className="discover-box">
-            {data.map((item) => (
-              <Card {...item} key={item.id} />
-            ))}
+            {loading ? (
+              <Placeholder />
+            ) : (
+              listings.map(
+                (item, index) => index <= 5 && <Card {...item} key={item._id} />
+              )
+            )}
           </div>
         </div>
       </div>

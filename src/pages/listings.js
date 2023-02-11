@@ -103,6 +103,10 @@ const Listings = () => {
 
     if (cityname === "") {
       setError("Please enter city name");
+
+      setTimeout(() => {
+        setError("");
+      }, 2000);
       return;
     }
 
@@ -136,42 +140,52 @@ const Listings = () => {
 
       <section className="white  search-listing mt-5">
         <div className="container">
-          <div className="filter-box">
-            <div className="mb-3 d-flex align-items-center">
-              <Goback />
-              <h4>
-                Properties for rent in <span>{localData?.cityname}</span>
-              </h4>
-            </div>
+          <div className="row">
+            <div className="col-lg-9 col-md-12">
+              <div className="filter-box">
+                <div className="mb-3 d-flex align-items-center">
+                  <Goback />
+                  <h4>
+                    Properties for rent in <span>{localData?.cityname}</span>
+                  </h4>
+                </div>
 
-            <div className="row">
-              <div className="col-lg-6 col-md-8 col-sm-12">
-                <div className="quick-search">
-                  <div className="form-control d-flex align-items-center">
-                    <i className="bi bi-geo-alt"></i>
-                    <input
-                      type="text"
-                      placeholder="Enter your search"
-                      value={cityname}
-                      onChange={(e) => setCityname(e.target.value)}
-                    />
-                  </div>
+                <div className="row">
+                  <div className="col-lg-6 col-md-8 col-sm-12">
+                    <div className="quick-search">
+                      <div className="form-control d-flex align-items-center">
+                        <i className="bi bi-geo-alt"></i>
+                        <input
+                          type="text"
+                          placeholder="Enter your search"
+                          value={cityname}
+                          onChange={(e) => setCityname(e.target.value)}
+                        />
+                      </div>
 
-                  <span className="d-block text-danger">{error}</span>
+                      <span className="d-block text-danger">{error}</span>
 
-                  <div className="d-flex align-items-center">
-                    <button className="btn hero-btn" onClick={handleSubmit}>
-                      Search
-                    </button>
-                    <button
-                      className="btnfilteroptions"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      Filter Options
-                    </button>
+                      <div className="d-flex align-items-center">
+                        <button className="btn hero-btn" onClick={handleSubmit}>
+                          Search
+                        </button>
+                        <button
+                          className="btnfilteroptions"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                        >
+                          Filter Options
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="col-lg-3 d-none d-lg-block">
+              <div className="advert-image-box mb-5">
+                <Image src={banner4} alt="" />
               </div>
             </div>
           </div>
@@ -263,9 +277,9 @@ const Listings = () => {
               <div className="advert-image-box mb-5">
                 <Image src={banner3} alt="" />
               </div>
-              <div className="advert-image-box mb-5">
+              {/* <div className="advert-image-box mb-5">
                 <Image src={banner4} alt="" />
-              </div>
+              </div> */}
               <div className="adverts-box mb-3">
                 Place your Banner Adverts here
               </div>
