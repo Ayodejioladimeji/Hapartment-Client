@@ -24,6 +24,10 @@
     color: var(--primary-color);
   }
 
+  label {
+    margin-bottom: 8px;
+  }
+
   .form-control {
     border: none !important;
     input {
@@ -33,7 +37,6 @@
       outline: none;
       color: var(--text-color);
       font-size: 14px;
-      
     }
 
     textarea {

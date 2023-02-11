@@ -1,9 +1,17 @@
 import { Formik } from "formik";
 import * as EmailValidator from "email-validator";
+import { postDataApi } from "@/utils/fetchData";
+import { useState } from "react";
+import Modals from "@/common/modalWrapper";
+import ModalWrapper from "@/common/modalWrapper";
+import Modal from "@/common/modal";
 
 //
 
 const Contacts = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [alert, setAlert] = useState("");
+
   return (
     <Formik
       initialValues={{
@@ -13,7 +21,10 @@ const Contacts = () => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(async () => {
-          alert("Thank you for contacting us");
+          const res = await postDataApi("/contact", values);
+          setAlert(res.data.msg);
+          setIsOpen(true);
+
           values.name = "";
           values.email = "";
           values.message = "";
@@ -111,6 +122,14 @@ const Contacts = () => {
                 </div>
               </form>
             </div>
+
+            {/* modal section */}
+
+            {isOpen && (
+              <ModalWrapper isOpen={isOpen} setIsOpen={setIsOpen}>
+                <Modal alert={alert} />
+              </ModalWrapper>
+            )}
           </div>
         );
       }}
