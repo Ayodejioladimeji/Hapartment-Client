@@ -1,7 +1,12 @@
+import { ACTIONS } from "@/store/Actions";
+import { DataContext } from "@/store/GlobalState";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
 
 const Footer = () => {
+  const { dispatch } = useContext(DataContext);
+
   return (
     <footer>
       <div className="container">
@@ -111,13 +116,19 @@ const Footer = () => {
               </button>
             </div>
 
-            <div className="branding d-flex flex-wrap align-items-center">
+            <div
+              className="branding d-flex flex-wrap align-items-center"
+              onClick={() =>
+                dispatch({ type: ACTIONS.OPENMODAL, payload: true })
+              }
+            >
               <Image
                 src="/apple.svg"
                 alt=""
                 className="apple"
                 width={200}
                 height={100}
+                quality={100}
               />
               <Image
                 src="/play.svg"
@@ -125,6 +136,7 @@ const Footer = () => {
                 className="play"
                 width={200}
                 height={100}
+                quality={100}
               />
             </div>
           </div>
