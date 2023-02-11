@@ -49,6 +49,8 @@ const Listings = () => {
       } else {
         getMultipleData();
       }
+    } else {
+      getAllData();
     }
   }, [localData]);
 
@@ -87,6 +89,19 @@ const Listings = () => {
         `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
       );
 
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    }
+  };
+
+  const getAllData = async () => {
+    try {
+      dispatch({ type: ACTIONS.LOADING, payload: true });
+
+      const res = await getDataApis("/all_listing");
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
     } catch (error) {

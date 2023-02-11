@@ -1,9 +1,12 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import placesImg1 from "../../public/places-image1.svg";
 import placesImg2 from "../../public/places-image2.svg";
 //
 
 const Places = () => {
+  const router = useRouter();
+
   return (
     <section className="black">
       <div className="container">
@@ -22,7 +25,9 @@ const Places = () => {
                 apartment in minutes, for both short and long-term stays.
               </p>
 
-              <button className="btn">Get started</button>
+              <button className="btn" onClick={() => router.push("/listings")}>
+                Get started
+              </button>
             </div>
           </div>
 
