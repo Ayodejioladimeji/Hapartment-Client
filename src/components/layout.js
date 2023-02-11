@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       }
     };
     getAllData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
