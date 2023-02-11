@@ -20,15 +20,20 @@ const reducers = (state, action) => {
         loading: payload,
       };
 
-    case ACTIONS.OPENMODAL:
+    case ACTIONS.DOWNLOAD_MODAL:
       return {
         ...state,
-        isOpen: payload,
+        downloadModal: payload,
       };
-    case ACTIONS.NEWSMODAL:
+    case ACTIONS.NEWS_MODAL:
       return {
         ...state,
         newsModal: payload,
+      };
+    case ACTIONS.CONTACT_MODAL:
+      return {
+        ...state,
+        contactModal: payload,
       };
 
     default:

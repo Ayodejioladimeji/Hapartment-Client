@@ -150,7 +150,11 @@ const Header = () => {
                   Login
                 </Link> */}
 
-                <button className="btn register-btn" type="button">
+                <button
+                  className="btn register-btn"
+                  type="button"
+                  onClick={handleSubmit}
+                >
                   <span
                     data-bs-toggle="collapse"
                     data-bs-target="#navmenu"
@@ -160,9 +164,7 @@ const Header = () => {
                     Search Listings
                   </span>
 
-                  <span onClick={handleSubmit} className="d-lg-block d-none">
-                    Search Listings
-                  </span>
+                  <span className="d-lg-block d-none">Search Listings</span>
                 </button>
               </div>
             </ul>

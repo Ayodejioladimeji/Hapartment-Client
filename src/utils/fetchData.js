@@ -56,23 +56,3 @@ export const deleteDataApi = async (url, token) => {
   });
   return res;
 };
-
-// using fetch
-// const submit = async () => {
-//   const response = await fetch("/api/", {
-//     method: "POST",
-//     body: JSON.stringify({ comment }),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   });
-
-//   const data = await response.json();
-//   console.log(data);
-// };
-
-// export const fetchData = async (url) => {
-//   const response = await fetch(ENDPOINT + url);
-//   const data = response.json();
-//   return data;
-// };

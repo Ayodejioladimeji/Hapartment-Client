@@ -3,15 +3,15 @@ import { DataContext } from "@/store/GlobalState";
 import { useContext } from "react";
 import Modal from "react-modal";
 
-const NewsletterModal = ({ alert }) => {
+const ContactModal = ({ alert }) => {
   const { state, dispatch } = useContext(DataContext);
-  const { newsModal } = state;
+  const { contactModal } = state;
 
   return (
     <Modal
-      isOpen={newsModal}
+      isOpen={contactModal}
       onRequestClose={() =>
-        dispatch({ type: ACTIONS.NEWS_MODAL, payload: false })
+        dispatch({ type: ACTIONS.CONTACT_MODAL, payload: false })
       }
       overlayClassName={{
         base: "overlay-base",
@@ -27,13 +27,15 @@ const NewsletterModal = ({ alert }) => {
       ariaHideApp={false}
     >
       <i
-        onClick={() => dispatch({ type: ACTIONS.NEWS_MODAL, payload: false })}
+        onClick={() =>
+          dispatch({ type: ACTIONS.CONTACT_MODAL, payload: false })
+        }
         className="bi onclose bi-x-octagon"
       ></i>
       <div className="main-modal">
         <svg
-          width="40"
-          height="40"
+          width="60"
+          height="60"
           viewBox="0 0 60 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -45,11 +47,11 @@ const NewsletterModal = ({ alert }) => {
           />
         </svg>
 
-        <h3>Thank you😊</h3>
+        <h3>Message Received😊</h3>
         <p>{alert}</p>
       </div>
     </Modal>
   );
 };
 
-export default NewsletterModal;
+export default ContactModal;
