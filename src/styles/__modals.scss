@@ -45,6 +45,8 @@
   border-radius: 10px;
   position: relative;
   padding: 20px !important;
+  width: 100%;
+  z-index: 999999 !important;
 }
 
 .content-before {
@@ -63,6 +65,7 @@
 
 .main-modal {
   text-align: center;
+  width: 95%;
 
   h3 {
     font-size: var(--h5);
