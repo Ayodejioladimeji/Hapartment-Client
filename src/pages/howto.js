@@ -248,7 +248,7 @@ const HowTo = () => {
               <p>
                 Once all requierd information about the property has been
                 provided, click on
-                <b>“Create Listing”</b> for create new property.
+                <b> “Create Listing”</b> to create new property.
               </p>
             </div>
 

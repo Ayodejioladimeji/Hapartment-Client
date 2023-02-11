@@ -31,6 +31,10 @@
 .listing-details {
   h3 {
     font-size: var(--h4);
+
+    @media (max-width: 565px) {
+      font-size: var(--h5);
+    }
   }
   // address section
   .address {
@@ -48,6 +52,7 @@
 
     @media (max-width: 565px) {
       margin-top: 10px;
+      font-size: var(--h5);
     }
   }
 
