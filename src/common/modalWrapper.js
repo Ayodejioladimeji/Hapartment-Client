@@ -1,10 +1,18 @@
+import { ACTIONS } from "@/store/Actions";
+import { DataContext } from "@/store/GlobalState";
+import { useContext } from "react";
 import Modal from "react-modal";
 
-const ModalWrapper = ({ isOpen, setIsOpen, children }) => {
+const ModalWrapper = ({ children }) => {
+  const { state, dispatch } = useContext(DataContext);
+  const { isOpen } = state;
+
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={() => setIsOpen(false)}
+      onRequestClose={() =>
+        dispatch({ type: ACTIONS.OPENMODAL, payload: false })
+      }
       overlayClassName={{
         base: "overlay-base",
         afterOpen: "overlay-after",
@@ -19,7 +27,7 @@ const ModalWrapper = ({ isOpen, setIsOpen, children }) => {
       ariaHideApp={false}
     >
       <i
-        onClick={() => setIsOpen(false)}
+        onClick={() => dispatch({ type: ACTIONS.OPENMODAL, payload: false })}
         className="bi onclose bi-x-octagon"
       ></i>
       {children}

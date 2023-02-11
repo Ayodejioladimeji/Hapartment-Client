@@ -15,6 +15,12 @@ const reducers = (state, action) => {
         loading: payload,
       };
 
+    case ACTIONS.OPENMODAL:
+      return {
+        ...state,
+        isOpen: payload,
+      };
+
     default:
       return state;
   }

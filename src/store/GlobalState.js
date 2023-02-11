@@ -7,6 +7,7 @@ export const DataProvider = ({ children }) => {
   const initialState = {
     listings: [],
     loading: true,
+    isOpen: false,
   };
 
   const [state, dispatch] = useReducer(reducers, initialState);

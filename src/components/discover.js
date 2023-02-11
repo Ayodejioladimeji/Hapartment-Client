@@ -21,7 +21,7 @@ const Discover = () => {
               <Placeholder />
             ) : (
               listings.map(
-                (item, index) => index <= 5 && <Card {...item} key={item._id} />
+                (item, index) => index <= 7 && <Card {...item} key={item._id} />
               )
             )}
           </div>

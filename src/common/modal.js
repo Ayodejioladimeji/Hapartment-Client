@@ -16,7 +16,6 @@ const Modal = ({ alert }) => {
       </svg>
 
       <h3>Message Received😊</h3>
-      <p>Thank your for contacting us, we'll reply you as soon as possible</p>
       <p>{alert}</p>
     </div>
   );

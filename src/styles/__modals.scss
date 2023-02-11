@@ -8,7 +8,7 @@
   background-color: rgba(0, 0, 0, 0);
   opacity: 0;
   transition-property: background-color, opacity;
-  transition-duration: 500ms;
+  transition-duration: 300ms;
   transition-timing-function: ease-in-out;
   outline: 0;
   display: flex;
@@ -38,9 +38,8 @@
   width: 0%;
   background-color: transparent;
   transition-property: background-color, width, height;
-  transition-duration: 500ms;
+  transition-duration: 300ms;
   transition-timing-function: ease-in-out;
-  background: red;
 }
 
 .content-after {
@@ -77,5 +76,10 @@
     font-size: var(--h5);
     margin: 15px 0;
     font-weight: 700;
+  }
+
+  h1 {
+    font-size: var(--h2);
+    font-weight: 900;
   }
 }

@@ -442,6 +442,7 @@
 
       .appstore-image {
         width: 160px;
+        cursor: pointer;
 
         &:first-child {
           margin-right: 15px;
@@ -449,6 +450,7 @@
       }
       .playstore-image {
         width: 170px;
+        cursor: pointer;
 
         &:first-child {
           margin-right: 15px;
