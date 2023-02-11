@@ -295,7 +295,7 @@ const Listings = () => {
               {/* <div className="advert-image-box mb-5">
                 <Image src={banner4} alt="" />
               </div> */}
-              <div className="adverts-box mb-3">
+              <div className="adverts-box mb-3 text-center">
                 Place your Banner Adverts here
               </div>
             </div>
