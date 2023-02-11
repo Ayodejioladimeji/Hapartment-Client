@@ -28,12 +28,13 @@ export default function Slider({ images }) {
   return (
     <div className="container-slider">
       {images.map((obj, index) => {
+        console.log;
         return (
           <div
-            key={obj._id}
+            key={obj.id}
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
-            <Image src={obj.url} height={100} width={100} alt="" />
+            <Image src={obj.url} height={100} width={100} alt="" priority />
           </div>
         );
       })}
