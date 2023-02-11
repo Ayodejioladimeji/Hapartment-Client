@@ -155,8 +155,7 @@ export default ListingDetails;
 
 export async function getStaticPaths() {
   const response = await getDataApis("/all_listing");
-  const data = await response.json();
-  const thePaths = data.map((item) => {
+  const thePaths = response.map((item) => {
     return { params: { slug: item._id } };
   });
 
@@ -168,8 +167,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const response = await getDataApis("/all_listing");
-  const data = await response.json();
-  const thelistings = data.filter(
+  const thelistings = response.filter(
     (item) => item._id === context.params.slug
   )[0];
 
