@@ -1,11 +1,46 @@
+import ModalWrapper from "@/common/modalWrapper";
+import NewsletterModal from "@/common/newsletterModal";
+import NewsletterModalWrapper from "@/common/newsletterModalWrapper";
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
+import { postDataApi } from "@/utils/fetchData";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const Footer = () => {
-  const { dispatch } = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext);
+  const { newsModal, loading } = state;
+  const [values, setValues] = useState("");
+  const [alert, setAlert] = useState("");
+
+  // handleSubmit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (values === "" || values === null) {
+      return;
+    }
+
+    try {
+      const newData = {
+        email: values,
+      };
+
+      dispatch({ type: ACTIONS.LOADING, payload: true });
+
+      const res = await postDataApi("/newsletter", newData);
+
+      setAlert(res.data.msg);
+
+      dispatch({ type: ACTIONS.NEWSMODAL, payload: true });
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    } catch (err) {
+      // console.log(err.response.data.msg);
+      dispatch({ type: ACTIONS.NEWSMODAL, payload: true });
+      setAlert(err.response.data.msg);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
+    }
+  };
 
   return (
     <footer>
@@ -110,9 +145,16 @@ const Footer = () => {
                 placeholder="Enter email here"
                 aria-label="subscript"
                 aria-describedby="button-addon2"
+                value={values}
+                onChange={(e) => setValues(e.target.value)}
               />
-              <button className="btn" type="button" id="button-addon2">
-                Subscribe
+              <button
+                onClick={handleSubmit}
+                className="btn"
+                type="button"
+                id="button-addon2"
+              >
+                {loading ? "Sending..." : "Subscribe"}
               </button>
             </div>
 
@@ -157,6 +199,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* modal section */}
+
+      {newsModal && (
+        <NewsletterModalWrapper>
+          <NewsletterModal alert={alert} />
+        </NewsletterModalWrapper>
+      )}
     </footer>
   );
 };

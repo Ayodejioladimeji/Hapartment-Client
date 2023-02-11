@@ -20,6 +20,11 @@ const reducers = (state, action) => {
         ...state,
         isOpen: payload,
       };
+    case ACTIONS.NEWSMODAL:
+      return {
+        ...state,
+        newsModal: payload,
+      };
 
     default:
       return state;

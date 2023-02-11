@@ -36,8 +36,6 @@ const DownloadModal = ({ alert }) => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(partyTime);
-
   return (
     <div className="main-modal">
       <h3>Hey Guys😊</h3>
