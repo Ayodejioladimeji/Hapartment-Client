@@ -41,19 +41,6 @@ const Listings = () => {
     setLocalData(parsedData);
   }, []);
 
-  // useEffect
-  useEffect(() => {
-    if (localData !== null) {
-      if (Object?.keys(localData).length === 1) {
-        getSingleData();
-      } else {
-        getMultipleData();
-      }
-    } else {
-      getAllData();
-    }
-  }, [localData, getSingleData, getMultipleData, getAllData]);
-
   // a function to get the data
   const getSingleData = async () => {
     try {
@@ -109,6 +96,19 @@ const Listings = () => {
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
+
+  // useEffect
+  useEffect(() => {
+    if (localData !== null) {
+      if (Object?.keys(localData).length === 1) {
+        getSingleData();
+      } else {
+        getMultipleData();
+      }
+    } else {
+      getAllData();
+    }
+  }, [localData, getSingleData, getMultipleData, getAllData]);
 
   //
 

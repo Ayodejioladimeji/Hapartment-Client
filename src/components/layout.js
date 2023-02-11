@@ -9,10 +9,6 @@ import { getDataApis } from "@/utils/fetchData";
 const Layout = ({ children }) => {
   const { state, dispatch } = useContext(DataContext);
 
-  useEffect(() => {
-    getAllData();
-  }, [getAllData]);
-
   // Get all listings on Click
   const getAllData = async (e) => {
     try {
@@ -27,6 +23,10 @@ const Layout = ({ children }) => {
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
+
+  useEffect(() => {
+    getAllData();
+  }, [getAllData]);
 
   return (
     <>
