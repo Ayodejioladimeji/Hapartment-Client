@@ -7,29 +7,37 @@ import banner5 from "../../../public/banner5.jpeg";
 import Description from "./../../components/description";
 import { FaBath, FaBed, FaToilet } from "react-icons/fa";
 import { useRouter } from "next/router";
+import Slider from "@/common/Slider";
 
 //
 
-const ListingDetails = () => {
+const ListingDetails = (props) => {
   const router = useRouter();
 
-  const { image, title, price, address, bathrooms, toilets, time } =
-    router.query;
+  const {
+    address,
+    property_type,
+    price,
+    bathrooms,
+    bedrooms,
+    toilets,
+    images,
+  } = props.listing;
 
   return (
     <section className="white">
       <div className="container">
         <div className="row">
-          <div className="col-lg-9 mt-5">
+          <div className="listing-details col-lg-9 mt-5">
             <div className="back mb-4">
-              <button className="back-button" onClick={() => router.back()}>
+              <button className="back-button" onClick={() => router.push("/")}>
                 <i className="bi bi-chevron-left"></i> Go back
               </button>
             </div>
 
             <div className="row">
               <div className="col-md-8">
-                <h3>2 Bedroom flat</h3>
+                <h3>{property_type}</h3>
                 <div className="address">
                   <i className="bi bi-geo-alt-fill"></i>
                   {address}
@@ -38,61 +46,28 @@ const ListingDetails = () => {
 
               <div className="col-md-4">
                 <div className="price float-md-end float-sm-start">
-                  ₦ 500,000
+                  ₦ {price}
                 </div>
               </div>
             </div>
 
             <div className="carousel-container my-4">
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <Image src={banner1} className="carousel-image" alt="..." />
-                  </div>
-                  <div className="carousel-item">
-                    <Image src={banner2} className="carousel-image" alt="..." />
-                  </div>
-                  <div className="carousel-item">
-                    <Image src={banner3} className="carousel-image" alt="..." />
-                  </div>
-                </div>
-
-                {/* next and previous buttons */}
-
-                <button
-                  className="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="prev"
-                >
-                  <i className="bi control bi-arrow-left-circle-fill"></i>
-                </button>
-
-                <button
-                  className="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="next"
-                >
-                  <i className="bi control bi-arrow-right-circle-fill"></i>
-                </button>
-              </div>
+              <Slider images={images} />
             </div>
 
             {/* details */}
             <div className="details">
               <div className="details-box">
-                <FaBed className="details-icons" />2 Bedrooms
+                <FaBed className="details-icons" />
+                {bedrooms} Bedrooms
               </div>
               <div className="details-box">
-                <FaBath className="details-icons" />2 Bathrooms
+                <FaBath className="details-icons" />
+                {bathrooms} Bathrooms
               </div>
               <div className="details-box">
-                <FaToilet className="details-icons" />2 Toilets
+                <FaToilet className="details-icons" />
+                {toilets} Toilets
               </div>
             </div>
 
@@ -120,7 +95,7 @@ const ListingDetails = () => {
                 <div className="tab-content">
                   <div className="tab-pane active" id="description">
                     <div className="package-box mt-4 px-4 py-3">
-                      <Description />
+                      <Description item={props.listing} />
                     </div>
                   </div>
 
@@ -176,3 +151,30 @@ const ListingDetails = () => {
 };
 
 export default ListingDetails;
+
+export async function getStaticPaths() {
+  const res = await fetch("http://localhost:8000/api/v1/all_listing");
+  const data = await res.json();
+  const thePaths = data.map((item) => {
+    return { params: { slug: item._id } };
+  });
+
+  return {
+    paths: thePaths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const res = await fetch("http://localhost:8000/api/v1/all_listing");
+  const data = await res.json();
+  const thelistings = data.filter(
+    (item) => item._id === context.params.slug
+  )[0];
+
+  return {
+    props: {
+      listing: thelistings,
+    },
+  };
+}
