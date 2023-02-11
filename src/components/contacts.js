@@ -2,17 +2,18 @@ import { Formik } from "formik";
 import * as EmailValidator from "email-validator";
 import { postDataApi } from "@/utils/fetchData";
 import { useContext, useState } from "react";
-import Modals from "@/common/modalWrapper";
-import ModalWrapper from "@/common/modalWrapper";
+import Modals from "@/common/contactModal";
+import ModalWrapper from "@/common/contactModal";
 import Modal from "@/common/modal";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
+import ContactModal from "@/common/contactModal";
 
 //
 
 const Contacts = () => {
   const { state, dispatch } = useContext(DataContext);
-  const { isOpen } = state;
+  const { contactModal } = state;
   const [alert, setAlert] = useState("");
 
   return (
@@ -25,8 +26,9 @@ const Contacts = () => {
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(async () => {
           const res = await postDataApi("/contact", values);
+
           setAlert(res.data.msg);
-          dispatch({ type: ACTIONS.OPENMODAL, payload: true });
+          dispatch({ type: ACTIONS.CONTACT_MODAL, payload: true });
 
           values.name = "";
           values.email = "";
@@ -128,11 +130,7 @@ const Contacts = () => {
 
             {/* modal section */}
 
-            {isOpen && (
-              <ModalWrapper>
-                <Modal alert={alert} />
-              </ModalWrapper>
-            )}
+            {contactModal && <ContactModal alert={alert} />}
           </div>
         );
       }}

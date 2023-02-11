@@ -1,16 +1,18 @@
-import ModalWrapper from "@/common/modalWrapper";
+import DownloadModal from "@/common/downloadmodal";
+import ModalWrapper from "@/common/contactModal";
 import NewsletterModal from "@/common/newsletterModal";
-import NewsletterModalWrapper from "@/common/newsletterModalWrapper";
+import NewsletterModalWrapper from "@/common/newsletterModal";
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { postDataApi } from "@/utils/fetchData";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useState } from "react";
+import DownloadWrapper from "@/common/downloadWrapper";
 
 const Footer = () => {
   const { state, dispatch } = useContext(DataContext);
-  const { newsModal, loading } = state;
+  const { newsModal, downloadModal, loading } = state;
   const [values, setValues] = useState("");
   const [alert, setAlert] = useState("");
 
@@ -32,11 +34,11 @@ const Footer = () => {
 
       setAlert(res.data.msg);
 
-      dispatch({ type: ACTIONS.NEWSMODAL, payload: true });
+      dispatch({ type: ACTIONS.NEWS_MODAL, payload: true });
       dispatch({ type: ACTIONS.LOADING, payload: false });
     } catch (err) {
       // console.log(err.response.data.msg);
-      dispatch({ type: ACTIONS.NEWSMODAL, payload: true });
+      dispatch({ type: ACTIONS.NEWS_MODAL, payload: true });
       setAlert(err.response.data.msg);
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
@@ -161,7 +163,7 @@ const Footer = () => {
             <div
               className="branding d-flex flex-wrap align-items-center"
               onClick={() =>
-                dispatch({ type: ACTIONS.OPENMODAL, payload: true })
+                dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
               }
             >
               <Image
@@ -231,10 +233,12 @@ const Footer = () => {
 
       {/* modal section */}
 
-      {newsModal && (
-        <NewsletterModalWrapper>
-          <NewsletterModal alert={alert} />
-        </NewsletterModalWrapper>
+      {newsModal && <NewsletterModal alert={alert} />}
+
+      {downloadModal && (
+        <DownloadWrapper>
+          <DownloadModal />
+        </DownloadWrapper>
       )}
     </footer>
   );

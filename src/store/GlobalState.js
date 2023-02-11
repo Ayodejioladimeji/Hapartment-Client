@@ -8,8 +8,9 @@ export const DataProvider = ({ children }) => {
     allListings: [],
     listings: [],
     loading: true,
-    isOpen: false,
+    downloadModal: false,
     newsModal: false,
+    contactModal: false,
   };
 
   const [state, dispatch] = useReducer(reducers, initialState);

@@ -47,6 +47,14 @@
   padding: 20px !important;
   width: 30%;
   z-index: 999999 !important;
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
+
+  @media (max-width: 565px) {
+    width: 95%;
+  }
 }
 
 .content-before {
