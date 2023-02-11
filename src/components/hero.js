@@ -1,21 +1,13 @@
-import { ACTIONS } from "@/store/Actions";
-import { DataContext } from "@/store/GlobalState";
-import { getDataApis } from "@/utils/fetchData";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState, useContext } from "react";
-import { BallTriangle, MagnifyingGlass } from "react-loader-spinner";
+import { useState } from "react";
 import heroImg from "../../public/hero-image.svg";
 
 //
 
 const Hero = () => {
-  const { state, dispatch } = useContext(DataContext);
-  const { loading } = state;
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
-  const [data, setData] = useState(null);
   const router = useRouter();
 
   // handle submit

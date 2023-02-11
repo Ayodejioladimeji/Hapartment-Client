@@ -59,7 +59,7 @@ const Listings = () => {
       const { cityname } = localData;
 
       const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
-      const res = await getDataApis(`/search_listing?cityname=${city}`);
+      const res = await getDataApis(`/search_listing/${city}`);
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
     } catch (error) {
@@ -118,7 +118,7 @@ const Listings = () => {
 
       const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
 
-      const res = await getDataApis(`/search_listing?cityname=${city}`);
+      const res = await getDataApis(`/search_listing/${city}`);
 
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });

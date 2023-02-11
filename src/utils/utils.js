@@ -40,7 +40,7 @@ export const sortValue = (listings, sorting) => {
 };
 
 export const filterValue = (listings, sort) => {
-  return listings.filter((item) => {
+  return listings?.filter((item) => {
     if (sort === "1") {
       return item.property_type === "Single Room";
     } else if (sort === "2") {
