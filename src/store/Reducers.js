@@ -3,6 +3,11 @@ import { ACTIONS } from "./Actions";
 const reducers = (state, action) => {
   const { type, payload } = action;
   switch (type) {
+    case ACTIONS.ALL_LISTINGS:
+      return {
+        ...state,
+        allListings: payload,
+      };
     case ACTIONS.GET_LISTINGS:
       return {
         ...state,

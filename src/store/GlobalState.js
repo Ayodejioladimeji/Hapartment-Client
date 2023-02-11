@@ -5,6 +5,7 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const initialState = {
+    allListings: [],
     listings: [],
     loading: true,
     isOpen: false,

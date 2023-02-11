@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
 
       const res = await getDataApis("/all_listing");
 
-      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+      dispatch({ type: ACTIONS.ALL_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
     } catch (error) {
       console.log(error);

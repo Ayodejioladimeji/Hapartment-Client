@@ -8,7 +8,7 @@ import { useContext, useEffect, useState } from "react";
 
 const Discover = () => {
   const { state } = useContext(DataContext);
-  const { listings, loading } = state;
+  const { allListings, loading } = state;
 
   return (
     <section className="lighter ">
@@ -20,7 +20,7 @@ const Discover = () => {
             {loading ? (
               <Placeholder />
             ) : (
-              listings.map(
+              allListings.map(
                 (item, index) => index <= 7 && <Card {...item} key={item._id} />
               )
             )}
