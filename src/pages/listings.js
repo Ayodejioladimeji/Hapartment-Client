@@ -52,7 +52,7 @@ const Listings = () => {
     } else {
       getAllData();
     }
-  }, [localData]);
+  }, [localData, getSingleData, getMultipleData, getAllData]);
 
   // a function to get the data
   const getSingleData = async () => {

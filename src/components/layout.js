@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     getAllData();
-  }, []);
+  }, [getAllData]);
 
   // Get all listings on Click
   const getAllData = async (e) => {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import BtnSlider from "./BtnSlider";
 
@@ -32,7 +33,7 @@ export default function Slider({ images }) {
             key={obj._id}
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
-            <img src={obj.url} />
+            <Image src={obj.url} height={100} width={100} />
           </div>
         );
       })}
@@ -42,6 +43,7 @@ export default function Slider({ images }) {
       <div className="container-dots">
         {Array.from({ length: 7 }).map((item, index) => (
           <div
+            key={index}
             onClick={() => moveDot(index + 1)}
             className={slideIndex === index + 1 ? "dot active" : "dot"}
           ></div>
