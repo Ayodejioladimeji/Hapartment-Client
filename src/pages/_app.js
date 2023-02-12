@@ -2,8 +2,16 @@ import Layout from "@/components/layout";
 import { DataProvider } from "@/store/GlobalState";
 import "@/styles/main.scss";
 import Script from "next/script";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
+  // THE SECTION OF THE AOS
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }, []);
+
   return (
     <>
       <meta name="description" content="Easy way to find a perfect home" />
