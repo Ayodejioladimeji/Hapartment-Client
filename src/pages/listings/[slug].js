@@ -62,7 +62,15 @@ const ListingDetails = (props) => {
             <div className="details">
               <div className="details-box">
                 <FaBed className="details-icons" />
-                {bedrooms} Bedrooms
+                {bedrooms}{" "}
+                {bedrooms === "1"
+                  ? "Bedroom"
+                  : bedrooms === "2" ||
+                    bedrooms === "3" ||
+                    bedrooms === "4" ||
+                    bedrooms === "5+"
+                  ? "Bedrooms"
+                  : ""}
               </div>
               <div className="details-box">
                 <FaBath className="details-icons" />

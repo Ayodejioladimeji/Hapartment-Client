@@ -67,6 +67,9 @@ body {
   -moz-osx-font-smoothing: grayscale !important;
   -webkit-font-smoothing: antialiased !important;
   width: 100%;
+  -webkit-overflow-scrolling: touch !important;
+  overflow: none !important;
+  height: 100% !important;
 }
 
 // Global styling for sections defined here

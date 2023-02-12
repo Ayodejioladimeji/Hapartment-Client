@@ -30,6 +30,7 @@ const Listings = () => {
   const [localData, setLocalData] = useState(null);
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
+  // const [callback, setCallback] = useState(false);
 
   // Sorting the data
   const sortdata = filterValue(listings, sort);
@@ -161,9 +162,13 @@ const Listings = () => {
               <div className="filter-box">
                 <div className="mb-3 d-flex align-items-center">
                   <Goback />
-                  <h4>
-                    Properties for rent in <span>{localData?.cityname}</span>
-                  </h4>
+                  {localData !== null ? (
+                    <h4>
+                      Properties for rent in <span>{localData?.cityname}</span>
+                    </h4>
+                  ) : (
+                    <h4>All properties for rent</h4>
+                  )}
                 </div>
 
                 <div className="row">
