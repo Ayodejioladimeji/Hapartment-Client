@@ -103,7 +103,7 @@ const ListingDetails = (props) => {
                   </div>
 
                   <div className="tab-pane" id="map">
-                    <div className="package-box mt-4 px-4 py-3">
+                    <div className="package-box mt-4 py-3">
                       <Map lat={map[0].latitude} lng={map[0].longitude} />
                     </div>
                   </div>
