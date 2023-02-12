@@ -14,9 +14,16 @@ const Discover = () => {
     <section className="lighter ">
       <div className="container">
         <div className="discover">
-          <h3>Discover some of our top apartments</h3>
+          <h3 data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
+            Discover some of our top apartments
+          </h3>
 
-          <div className="discover-box">
+          <div
+            className="discover-box"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-delay="400"
+          >
             {loading ? (
               <Placeholder />
             ) : (
@@ -32,13 +39,3 @@ const Discover = () => {
 };
 
 export default Discover;
-
-// export function getStaticProps() {
-//   const listing = listingdata;
-
-//   return {
-//     props: {
-//       listing: listing,
-//     },
-//   };
-// }

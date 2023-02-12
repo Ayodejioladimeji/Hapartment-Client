@@ -12,7 +12,6 @@ const Connect = () => {
               data-aos="zoom-in-up"
               data-aos-once="true"
               data-aos-delay="600"
-              data-aos-offset="50"
             >
               <Image src={connectImg} alt="" className="connectimg" />
             </div>
@@ -37,7 +36,6 @@ const Connect = () => {
                     data-aos="fade-right"
                     data-aos-once="true"
                     data-aos-delay="1000"
-                    data-aos-offset="50"
                   >
                     <li className="nav-item">
                       <a
@@ -67,7 +65,6 @@ const Connect = () => {
                     data-aos="fade-up"
                     data-aos-once="true"
                     data-aos-delay="1400"
-                    data-aos-offset="50"
                   >
                     <ol>
                       <li>

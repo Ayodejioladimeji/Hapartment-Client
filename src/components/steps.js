@@ -47,7 +47,6 @@ const Steps = () => {
               data-aos="fade-up"
               data-aos-once="true"
               data-aos-delay="400"
-              data-aos-offset="50"
             >
               <h6>2. List Property</h6>
               {toggleState == 2 && (
@@ -65,7 +64,6 @@ const Steps = () => {
               data-aos="fade-up"
               data-aos-once="true"
               data-aos-delay="600"
-              data-aos-offset="50"
             >
               <h6>3. Basic Information</h6>
               {toggleState === 3 && (
@@ -83,7 +81,6 @@ const Steps = () => {
               data-aos="fade-up"
               data-aos-once="true"
               data-aos-delay="800"
-              data-aos-offset="50"
             >
               <h6>4. Property Details</h6>
               {toggleState === 4 && (
@@ -101,7 +98,6 @@ const Steps = () => {
               data-aos="fade-up"
               data-aos-once="true"
               data-aos-delay="1000"
-              data-aos-offset="50"
             >
               <h6>5. Add Descriptions</h6>
               {toggleState === 5 && (
@@ -119,7 +115,6 @@ const Steps = () => {
               data-aos="fade-up"
               data-aos-once="true"
               data-aos-delay="1200"
-              data-aos-offset="50"
             >
               <h6>6. Add Property Images</h6>
               {toggleState === 6 && (
@@ -137,7 +132,6 @@ const Steps = () => {
               data-aos="fade-up"
               data-aos-once="true"
               data-aos-delay="1400"
-              data-aos-offset="50"
             >
               <h6>7. Create Listings</h6>
               {toggleState === 7 && (
@@ -153,7 +147,7 @@ const Steps = () => {
           <div className="col-md-6 steps-right d-none d-md-flex">
             <div
               className="steps-image-box"
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-once="true"
               data-aos-delay="1200"
             >
@@ -176,7 +170,7 @@ const Steps = () => {
                 <Image src={stepsix} alt="" className="connect-image" />
               )}
               {toggleState === 7 && (
-                <Image src={steptwo} alt="" className="connect-image" />
+                <Image src={stepsix} alt="" className="connect-image" />
               )}
             </div>
           </div>
