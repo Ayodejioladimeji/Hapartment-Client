@@ -170,17 +170,19 @@ const Footer = () => {
                 src="/apple.svg"
                 alt=""
                 className="apple"
-                width={200}
+                width={100}
                 height={100}
                 quality={100}
+                style={{ width: "auto", height: "auto" }}
               />
               <Image
                 src="/play.svg"
                 alt=""
                 className="play"
-                width={200}
+                width={100}
                 height={100}
                 quality={100}
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
           </div>

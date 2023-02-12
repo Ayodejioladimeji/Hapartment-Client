@@ -1,7 +1,7 @@
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const Placeholder = () => {
+const MapSkeleton = () => {
   const styles = {
     border: "1px solid var(--light-color)",
     padding: "20px",
@@ -85,4 +85,4 @@ const Placeholder = () => {
   );
 };
 
-export default Placeholder;
+export default MapSkeleton;

@@ -9,6 +9,7 @@ import { FaBath, FaBed, FaToilet } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Slider from "@/common/Slider";
 import { getDataApis } from "@/utils/fetchData";
+import Map from "./../../utils/map";
 
 //
 
@@ -23,6 +24,7 @@ const ListingDetails = (props) => {
     bedrooms,
     toilets,
     images,
+    map,
   } = props.listing;
 
   return (
@@ -31,7 +33,7 @@ const ListingDetails = (props) => {
         <div className="row">
           <div className="listing-details col-lg-9 mt-5">
             <div className="back mb-4">
-              <button className="back-button" onClick={() => router.push("/")}>
+              <button className="back-button" onClick={() => router.back()}>
                 <i className="bi bi-chevron-left"></i> Go back
               </button>
             </div>
@@ -101,7 +103,9 @@ const ListingDetails = (props) => {
                   </div>
 
                   <div className="tab-pane" id="map">
-                    <div className="package-box mt-4 px-4 py-3">map</div>
+                    <div className="package-box mt-4 px-4 py-3">
+                      <Map lat={map[0].latitude} lng={map[0].longitude} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -138,7 +142,7 @@ const ListingDetails = (props) => {
               <Image src={banner3} alt="" />
             </div>
             <div className="advert-image-box mb-5">
-              <Image src={banner4} alt="" />
+              <Image src={banner4} alt="" priority={true} />
             </div>
 
             <div className="adverts-box mb-3">

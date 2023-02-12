@@ -16,6 +16,7 @@ import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
+import Map from "@/utils/map";
 
 //
 
@@ -277,6 +278,8 @@ const Listings = () => {
                   setVisible={setVisible}
                 />
               )}
+
+              <Map />
             </div>
 
             <div className="col-lg-3 ">
