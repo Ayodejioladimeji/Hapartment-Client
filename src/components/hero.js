@@ -86,6 +86,7 @@ const Hero = () => {
                   data-aos="fade-up"
                   data-aos-once="true"
                   data-aos-delay="2300"
+                  data-aos-offset="50"
                 >
                   <button className="btn hero-btn mt-4">Search</button>
                 </div>

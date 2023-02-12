@@ -19,7 +19,7 @@ const Steps = () => {
       <div className="container">
         <div className="row steps">
           <div className="col-md-6 steps-left">
-            <h3>
+            <h3 data-aos="fade-down" data-aos-once="true">
               Create listings in <span className="coloured">seven </span>steps
             </h3>
 
@@ -27,6 +27,9 @@ const Steps = () => {
               className="mb-3 mt-5"
               id={toggleState === 1 ? "active" : ""}
               onClick={() => toggleTab(1)}
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="200"
             >
               <h6>1. Login into your account</h6>
               {toggleState === 1 && (
@@ -41,6 +44,10 @@ const Steps = () => {
               className="mb-3"
               id={toggleState === 2 ? "active" : ""}
               onClick={() => toggleTab(2)}
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="400"
+              data-aos-offset="50"
             >
               <h6>2. List Property</h6>
               {toggleState == 2 && (
@@ -55,6 +62,10 @@ const Steps = () => {
               className="mb-3"
               id={toggleState === 3 ? "active" : ""}
               onClick={() => toggleTab(3)}
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="600"
+              data-aos-offset="50"
             >
               <h6>3. Basic Information</h6>
               {toggleState === 3 && (
@@ -69,6 +80,10 @@ const Steps = () => {
               className="mb-3"
               id={toggleState === 4 ? "active" : ""}
               onClick={() => toggleTab(4)}
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="800"
+              data-aos-offset="50"
             >
               <h6>4. Property Details</h6>
               {toggleState === 4 && (
@@ -83,6 +98,10 @@ const Steps = () => {
               className="mb-3"
               id={toggleState === 5 ? "active" : ""}
               onClick={() => toggleTab(5)}
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="1000"
+              data-aos-offset="50"
             >
               <h6>5. Add Descriptions</h6>
               {toggleState === 5 && (
@@ -97,6 +116,10 @@ const Steps = () => {
               className="mb-3"
               id={toggleState === 6 ? "active" : ""}
               onClick={() => toggleTab(6)}
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="1200"
+              data-aos-offset="50"
             >
               <h6>6. Add Property Images</h6>
               {toggleState === 6 && (
@@ -111,6 +134,10 @@ const Steps = () => {
               className="mb-3"
               id={toggleState === 7 ? "active" : ""}
               onClick={() => toggleTab(7)}
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="1400"
+              data-aos-offset="50"
             >
               <h6>7. Create Listings</h6>
               {toggleState === 7 && (
@@ -124,7 +151,12 @@ const Steps = () => {
           </div>
 
           <div className="col-md-6 steps-right d-none d-md-flex">
-            <div className="steps-image-box">
+            <div
+              className="steps-image-box"
+              data-aos="fade-left"
+              data-aos-once="true"
+              data-aos-delay="1200"
+            >
               {toggleState === 1 && (
                 <Image src={stepone} alt="" className="connect-image" />
               )}
