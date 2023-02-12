@@ -278,8 +278,6 @@ const Listings = () => {
                   setVisible={setVisible}
                 />
               )}
-
-              <Map />
             </div>
 
             <div className="col-lg-3 ">
