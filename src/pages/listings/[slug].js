@@ -138,7 +138,7 @@ const ListingDetails = (props) => {
               <Image src={banner3} alt="" />
             </div>
             <div className="advert-image-box mb-5">
-              <Image src={banner4} alt="" />
+              <Image src={banner4} alt="" priority={true} />
             </div>
 
             <div className="adverts-box mb-3">
