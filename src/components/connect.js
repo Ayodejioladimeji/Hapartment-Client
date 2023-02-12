@@ -8,19 +8,31 @@ const Connect = () => {
       <div className="container">
         <div className="row connect">
           <div className="col-md-6 connect-left">
-            <Image src={connectImg} alt="" className="connectimg" />
+            <div data-aos="fade-up" data-aos-once="true" data-aos-delay="600">
+              <Image src={connectImg} alt="" className="connectimg" />
+            </div>
           </div>
 
           <div className="col-md-6 connect-right">
             <div className="connect-box">
-              <h3 className="mb-4">
+              <h3
+                className="mb-4"
+                data-aos="fade-down"
+                data-aos-once="true"
+                data-aos-delay="500"
+              >
                 We connect <span className="coloured">agents</span> and
                 <span className="coloured"> renters</span> together
               </h3>
 
               <div className="mt-2">
                 <div className="tab-box">
-                  <ul className="nav nav-tabs">
+                  <ul
+                    className="nav nav-tabs"
+                    data-aos="fade-right"
+                    data-aos-once="true"
+                    data-aos-delay="1000"
+                  >
                     <li className="nav-item">
                       <a
                         className="nav-link active"
@@ -43,7 +55,13 @@ const Connect = () => {
                 </div>
 
                 <div className="tab-content mt-4">
-                  <div className="tab-pane active" id="agents">
+                  <div
+                    className="tab-pane active"
+                    id="agents"
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="1400"
+                  >
                     <ol>
                       <li>
                         Download our mobile app from Playstore or Applestore
