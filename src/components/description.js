@@ -1,6 +1,16 @@
 import moment from "moment";
 
-const Description = ({ item }) => {
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+  TwitterIcon,
+} from "next-share";
+
+const Description = ({ item, children }) => {
+  const shareUrl = "https://google.com";
   return (
     <div className="description">
       <div className="description-box">
@@ -55,6 +65,41 @@ const Description = ({ item }) => {
         <h6>Property Updated</h6>
 
         <p>{moment(item.updatedAt).format("MMMM Do YYYY")}</p>
+      </div>
+
+      <div className="description-box">
+        <h6>Share Property</h6>
+
+        <div>
+          <FacebookShareButton
+            url={"https://github.com/next-share"}
+            quote={
+              "next-share is a social share buttons for your next React apps."
+            }
+            hashtag={"#nextshare"}
+          >
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+
+          <WhatsappShareButton
+            url={"https://github.com/next-share"}
+            title={
+              "next-share is a social share buttons for your next React apps."
+            }
+            separator=":: "
+          >
+            <WhatsappIcon size={32} round />
+          </WhatsappShareButton>
+
+          <TwitterShareButton
+            url={"https://github.com/next-share"}
+            title={
+              "next-share is a social share buttons for your next React apps."
+            }
+          >
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+        </div>
       </div>
     </div>
   );

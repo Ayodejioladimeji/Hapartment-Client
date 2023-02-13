@@ -63,7 +63,7 @@ const Different = () => {
             className="col-md-6 different-right"
             data-aos="fade-down"
             data-aos-once="true"
-            data-aos-delay="400"
+            data-aos-delay="600"
           >
             <Image src={differentImg} alt="" className="differentimg" />
           </div>
