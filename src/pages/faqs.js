@@ -10,6 +10,17 @@ const Faqs = () => {
       <Head>
         <title>FAQS</title>
         <meta name="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers." />
+        <meta property="og:title" content="Frequently Asked Questions" />
+        <meta
+          property="og:description"
+          content="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers"
+        />
+
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.19_PM_b9elmi.jpg"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <BreadCumb
