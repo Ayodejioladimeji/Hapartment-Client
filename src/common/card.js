@@ -1,7 +1,5 @@
-import cardImage from "../../public/card-image1.svg";
 import { FaBath, FaToilet } from "react-icons/fa";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import moment from "moment";
 

@@ -2,11 +2,11 @@ import { useState, useContext, useEffect } from "react";
 
 import Card from "@/common/card";
 import Image from "next/image";
-import banner1 from "../../../public/banner1.jpeg";
-import banner2 from "../../../public/banner2.jpeg";
-import banner3 from "../../../public/banner3.jpeg";
-import banner4 from "../../../public/banner4.jpeg";
-import banner5 from "../../../public/banner5.jpeg";
+import banner1 from "../../../public/images/banner1.jpeg";
+import banner2 from "../../../public/images/banner2.jpeg";
+import banner3 from "../../../public/images/banner3.jpeg";
+import banner4 from "../../../public/images/banner4.jpeg";
+import banner5 from "../../../public/images/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
 import Head from "next/head";

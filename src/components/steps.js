@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Image from "next/image";
-import stepone from "../../public/how1.svg";
-import steptwo from "../../public/how2.svg";
-import stepthree from "../../public/how3.svg";
-import stepfour from "../../public/how4.svg";
-import stepfive from "../../public/how5.svg";
-import stepsix from "../../public/how6.svg";
+import stepone from "../../public/images/how1.svg";
+import steptwo from "../../public/images/how2.svg";
+import stepthree from "../../public/images/how3.svg";
+import stepfour from "../../public/images/how4.svg";
+import stepfive from "../../public/images/how5.svg";
+import stepsix from "../../public/images/how6.svg";
 
 const Steps = () => {
   const [toggleState, setToggleState] = useState(1);

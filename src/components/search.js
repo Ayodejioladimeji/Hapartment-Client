@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import searchImg from "../../public/search-image.svg";
+import searchImg from "../../public/images/search-image.svg";
 import { statesdata } from "@/constants/statesdata";
 import { strictAddComma } from "comma-separator";
 

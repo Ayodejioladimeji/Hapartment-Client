@@ -1,4 +1,4 @@
-import image from "../../public/card-image1.svg";
+import image from "../../public/images/card-image1.svg";
 
 export const listingdata = [
   {

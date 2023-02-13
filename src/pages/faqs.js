@@ -1,5 +1,5 @@
 import BreadCumb from "@/common/breadcumb";
-import faqImage from "../../public/faq-image.svg";
+import faqImage from "../../public/images/faq-image.svg";
 import Head from "next/head";
 import AgentAccordion from "@/common/agentaccordion";
 import RenterAccordion from "./../common/renteraccordion";

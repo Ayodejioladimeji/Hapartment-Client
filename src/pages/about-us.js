@@ -1,5 +1,5 @@
 import BreadCumb from "@/common/breadcumb";
-import aboutImg from "../../public/about-img.svg";
+import aboutImg from "../../public/images/about-img.svg";
 import Head from "next/head";
 
 const AboutUs = () => {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import placesImg1 from "../../public/places-image1.svg";
-import placesImg2 from "../../public/places-image2.svg";
+import placesImg1 from "../../public/images/places-image1.svg";
+import placesImg2 from "../../public/images/places-image2.svg";
 //
 
 const Places = () => {

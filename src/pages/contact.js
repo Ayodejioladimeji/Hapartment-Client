@@ -1,6 +1,6 @@
 import BreadCumb from "@/common/breadcumb";
 import Contacts from "@/components/contacts";
-import contactImage from "../../public/contact2.svg";
+import contactImage from "../../public/images/contact2.svg";
 import Head from "next/head";
 
 //

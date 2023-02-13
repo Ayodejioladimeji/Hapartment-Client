@@ -1,5 +1,5 @@
 import Image from "next/image";
-import differentImg from "../../public/different-image.svg";
+import differentImg from "../../public/images/different-image.svg";
 
 const Different = () => {
   return (

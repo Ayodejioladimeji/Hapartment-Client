@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import tipsImg from "../../public/tips-image.svg";
+import tipsImg from "../../public/images/tips-image.svg";
 
 const SafetyTips = () => {
   return (

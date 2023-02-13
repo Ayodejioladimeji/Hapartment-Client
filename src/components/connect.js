@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import connectImg from "../../public/connect-image.svg";
+import connectImg from "../../public/images/connect-image.svg";
 
 const Connect = () => {
   return (

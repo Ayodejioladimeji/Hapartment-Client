@@ -1,8 +1,7 @@
 import Card from "@/common/card";
 import Placeholder from "@/common/placeholder";
-import { listingdata } from "@/lib/listingdata";
 import { DataContext } from "@/store/GlobalState";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 //
 
