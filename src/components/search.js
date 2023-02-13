@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import searchImg from "../../public/search-image.svg";
+import searchImg from "../../public/images/search-image.svg";
 import { statesdata } from "@/constants/statesdata";
 import { strictAddComma } from "comma-separator";
 
@@ -67,12 +67,22 @@ const Search = () => {
       <div className="container">
         <div className="row search">
           <div className="col-md-6 search-left">
-            <h3 className="mb-5">Search for available apartments</h3>
+            <h3
+              className="mb-5"
+              data-aos="fade-right"
+              data-aos-once="true"
+              data-aos-delay="400"
+            >
+              Search for available apartments
+            </h3>
 
             <div className="search-box">
               <form onSubmit={handleFilter}>
                 <div className="box">
                   <select
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="200"
                     onChange={handleChange}
                     className="form-select "
                     aria-label="Default select example"
@@ -90,6 +100,9 @@ const Search = () => {
                   </select>
 
                   <select
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="400"
                     onChange={handleChange}
                     className="form-select "
                     aria-label="Default select example"
@@ -105,6 +118,9 @@ const Search = () => {
                   </select>
 
                   <select
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="600"
                     onChange={handleChange}
                     className="form-select "
                     aria-label="Default select example"
@@ -120,6 +136,9 @@ const Search = () => {
                   </select>
 
                   <select
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="800"
                     onChange={handleChange}
                     className="form-select "
                     aria-label="Default select example"
@@ -137,6 +156,9 @@ const Search = () => {
                   </select>
 
                   <select
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="1000"
                     onChange={handleChange}
                     className="form-select "
                     aria-label="Default select example"
@@ -154,6 +176,9 @@ const Search = () => {
                   </select>
 
                   <select
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="1200"
                     onChange={handleChange}
                     className="form-select "
                     aria-label="Default select example"
@@ -171,6 +196,9 @@ const Search = () => {
                   </select>
 
                   <input
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="1400"
                     type="text"
                     onChange={(e) =>
                       setMinPrice(strictAddComma(e.target.value))
@@ -181,6 +209,9 @@ const Search = () => {
                   />
 
                   <input
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="1600"
                     type="text"
                     onChange={(e) =>
                       setMaxPrice(strictAddComma(e.target.value))
@@ -190,7 +221,12 @@ const Search = () => {
                     className="form-control input"
                   />
 
-                  <button className="btn">
+                  <button
+                    className="btn"
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="1800"
+                  >
                     Search
                     <i className="bi bi-arrow-right-circle"></i>
                   </button>
@@ -200,7 +236,9 @@ const Search = () => {
           </div>
 
           <div className="col-md-6 search-right">
-            <Image src={searchImg} alt="" className="searchimg" />
+            <div data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
+              <Image src={searchImg} alt="" className="searchimg" />
+            </div>
           </div>
         </div>
       </div>

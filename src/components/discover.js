@@ -1,8 +1,7 @@
 import Card from "@/common/card";
 import Placeholder from "@/common/placeholder";
-import { listingdata } from "@/lib/listingdata";
 import { DataContext } from "@/store/GlobalState";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 //
 
@@ -14,9 +13,16 @@ const Discover = () => {
     <section className="lighter ">
       <div className="container">
         <div className="discover">
-          <h3>Discover some of our top apartments</h3>
+          <h3 data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
+            Discover some of our top apartments
+          </h3>
 
-          <div className="discover-box">
+          <div
+            className="discover-box"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-delay="800"
+          >
             {loading ? (
               <Placeholder />
             ) : (
@@ -32,13 +38,3 @@ const Discover = () => {
 };
 
 export default Discover;
-
-// export function getStaticProps() {
-//   const listing = listingdata;
-
-//   return {
-//     props: {
-//       listing: listing,
-//     },
-//   };
-// }

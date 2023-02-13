@@ -12,14 +12,9 @@ const Map = ({ lat, lng }) => {
     width: "100%",
   };
 
-  //   const defaultCenter = {
-  //     lat,
-  //     lng,
-  //   };
-
   const defaultCenter = {
-    lat: 41.3851,
-    lng: 2.1734,
+    lat,
+    lng,
   };
 
   if (!isLoaded) {
@@ -27,7 +22,7 @@ const Map = ({ lat, lng }) => {
   }
 
   return (
-    <GoogleMap mapContainerStyle={mapStyles} zoom={10} center={defaultCenter}>
+    <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
       <Marker position={defaultCenter} />
     </GoogleMap>
   );

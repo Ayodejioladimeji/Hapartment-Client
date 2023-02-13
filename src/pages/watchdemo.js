@@ -1,8 +1,8 @@
 import BreadCumb from "@/common/breadcumb";
 import Image from "next/image";
 import Head from "next/head";
-import videoImage from "../../public/video-image.svg";
-import watchdemoImage from "../../public/watchdemo-image.svg";
+import videoImage from "../../public/images/video-image.svg";
+import watchdemoImage from "../../public/images/watchdemo-image.svg";
 
 const WatchDemo = () => {
   return (

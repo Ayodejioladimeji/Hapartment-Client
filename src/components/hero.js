@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import heroImg from "../../public/hero-image.svg";
+import heroImg from "../../public/images/hero-image.svg";
 
 //
 
@@ -32,23 +32,46 @@ const Hero = () => {
       <div className="container">
         <div className="row hero">
           <div className="col-lg-6 hero-left">
-            <h1 className="mb-4">
+            <h1
+              className="mb-4"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="400"
+            >
               Easy <span className="coloured">way</span> to find a perfect
               <span className="coloured"> home</span>
             </h1>
 
-            <p className="mb-3">
+            <p
+              className="mb-3"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="700"
+            >
               We help users search for shops and apartments in the best location
               and provide them with adequate information to help them make
               well-informed decisions.
             </p>
 
             <div className="quick-search">
-              <h6 className="mb-3 bold">Quick Search</h6>
+              <h6
+                className="mb-3 bold"
+                data-aos="fade-right"
+                data-aos-once="true"
+                data-aos-delay="1000"
+              >
+                Quick Search
+              </h6>
 
               <form onSubmit={handleSubmit}>
                 <div className="d-md-flex flex-lg-row flex-md-column">
-                  <div className="form-control mb-2 d-flex align-items-center">
+                  <div
+                    className="form-control mb-2 d-flex align-items-center"
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="1300"
+                    data-aos-offset="50"
+                  >
                     <i className="bi bi-geo-alt"></i>
                     <input
                       type="text"
@@ -60,13 +83,22 @@ const Hero = () => {
                 </div>
                 <span className="d-block text-danger">{error}</span>
 
-                <button className="btn hero-btn mt-4">Search</button>
+                <div
+                  data-aos="fade-up"
+                  data-aos-once="true"
+                  data-aos-delay="1600"
+                  data-aos-offset="50"
+                >
+                  <button className="btn hero-btn mt-4">Search</button>
+                </div>
               </form>
             </div>
           </div>
 
           <div className="col-lg-6 hero-right">
-            <Image src={heroImg} alt="" priority />
+            <div data-aos="fade-up" data-aos-once="true" data-aos-delay="800">
+              <Image src={heroImg} alt="" priority />
+            </div>
           </div>
         </div>
       </div>

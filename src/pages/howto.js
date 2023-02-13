@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Head from "next/head";
-import appstore from "../../public/appstore.svg";
-import playstore from "../../public/playstore.svg";
-import howtoImage from "../../public/howto-image.svg";
-import video from "../../public/video.svg";
-import how1 from "../../public/how1.svg";
-import how2 from "../../public/how2.svg";
-import how3 from "../../public/how3.svg";
-import how4 from "../../public/how4.svg";
-import how5 from "../../public/how5.svg";
-import how6 from "../../public/how6.svg";
+import appstore from "../../public/images/appstore.svg";
+import playstore from "../../public/images/playstore.svg";
+import howtoImage from "../../public/images/howto-image.svg";
+import video from "../../public/images/video.svg";
+import how1 from "../../public/images/how1.svg";
+import how2 from "../../public/images/how2.svg";
+import how3 from "../../public/images/how3.svg";
+import how4 from "../../public/images/how4.svg";
+import how5 from "../../public/images/how5.svg";
+import how6 from "../../public/images/how6.svg";
 
 const HowTo = () => {
   return (

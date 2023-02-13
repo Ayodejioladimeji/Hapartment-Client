@@ -1,6 +1,6 @@
 import BreadCumb from "@/common/breadcumb";
 import Head from "next/head";
-import advertiseImage from "../../public/advertise-image.svg";
+import advertiseImage from "../../public/images/advertise-image.svg";
 
 const Advert = () => {
   return (

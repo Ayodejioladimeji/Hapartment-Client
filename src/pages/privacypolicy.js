@@ -1,5 +1,5 @@
 import BreadCumb from "@/common/breadcumb";
-import privacyImage from "../../public/privacy.svg";
+import privacyImage from "../../public/images/privacy.svg";
 import Head from "next/head";
 
 const PrivacyPolicy = () => {
