@@ -21,7 +21,7 @@ const Discover = () => {
             className="discover-box"
             data-aos="fade-up"
             data-aos-once="true"
-            data-aos-delay="400"
+            data-aos-delay="800"
           >
             {loading ? (
               <Placeholder />

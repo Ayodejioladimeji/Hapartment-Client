@@ -8,11 +8,7 @@ const Connect = () => {
       <div className="container">
         <div className="row connect">
           <div className="col-md-6 connect-left">
-            <div
-              data-aos="zoom-in-up"
-              data-aos-once="true"
-              data-aos-delay="600"
-            >
+            <div data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
               <Image src={connectImg} alt="" className="connectimg" />
             </div>
           </div>
@@ -23,7 +19,7 @@ const Connect = () => {
                 className="mb-4"
                 data-aos="fade-down"
                 data-aos-once="true"
-                data-aos-delay="500"
+                data-aos-delay="400"
               >
                 We connect <span className="coloured">agents</span> and
                 <span className="coloured"> renters</span> together
@@ -35,7 +31,7 @@ const Connect = () => {
                     className="nav nav-tabs"
                     data-aos="fade-right"
                     data-aos-once="true"
-                    data-aos-delay="1000"
+                    data-aos-delay="600"
                   >
                     <li className="nav-item">
                       <a
@@ -64,7 +60,7 @@ const Connect = () => {
                     id="agents"
                     data-aos="fade-up"
                     data-aos-once="true"
-                    data-aos-delay="1400"
+                    data-aos-delay="800"
                   >
                     <ol>
                       <li>
