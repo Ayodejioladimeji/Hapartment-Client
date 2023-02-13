@@ -8,6 +8,17 @@ const Terms = () => {
       <Head>
         <title>Terms of Use</title>
         <meta name="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there." />
+        <meta property="og:title" content="Terms Of Use" />
+        <meta
+          property="og:description"
+          content="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there."
+        />
+
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.18_PM_1_za9hx3.jpg"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <BreadCumb

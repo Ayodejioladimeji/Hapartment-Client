@@ -76,27 +76,27 @@ const Description = ({ item, children }) => {
           <div>
             <FacebookShareButton
               url={`https://hapartment-client.vercel.app/listings/${router.query.slug}`}
-              quote={item.description}
+              quote={`${item.property_type} - ${item.description} - Price : ${item.price}`}
               hashtag={"#hapartment"}
             >
               <FacebookIcon size={32} round />
             </FacebookShareButton>
           </div>
 
-          {/* <div className="mx-3"> */}
-          <WhatsappShareButton
-            url={`https://hapartment-client.vercel.app/listings/${router.query.slug}`}
-            title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
-            separator=":: "
-          >
-            <WhatsappIcon size={32} round />
-          </WhatsappShareButton>
-          {/* </div> */}
+          <div className="mx-3">
+            <WhatsappShareButton
+              url={`https://hapartment-client.vercel.app/listings/${router.query.slug}`}
+              title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
+              separator=":: "
+            >
+              <WhatsappIcon size={32} round />
+            </WhatsappShareButton>
+          </div>
 
           <div>
             <TwitterShareButton
               url={`https://hapartment-client.vercel.app/listings/${router.query.slug}`}
-              title={item.description}
+              title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
             >
               <TwitterIcon size={32} round />
             </TwitterShareButton>

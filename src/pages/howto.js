@@ -21,6 +21,19 @@ const HowTo = () => {
                 with high volumes of serious agents and renters browsing our
                 site."
         />
+        <meta property="og:title" content="How to create Listings" />
+        <meta
+          property="og:description"
+          content="A great platform for you to advertise your products for free
+          with high volumes of serious agents and renters browsing our
+          site."
+        />
+
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.17_PM_1_qix3ml.jpg"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <section className="white">

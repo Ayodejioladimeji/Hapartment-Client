@@ -153,6 +153,17 @@ const Listings = () => {
       <Head>
         <title>Properties</title>
         <meta name="Hapartment is your one place to find apartments and manage your rentals" />
+        <meta property="og:title" content="Property Listings" />
+        <meta
+          property="og:description"
+          content="Hapartment is your one place to find apartments and manage your rentals"
+        />
+
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_2_ifvu7a.jpg"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <section className="white  search-listing mt-5">
