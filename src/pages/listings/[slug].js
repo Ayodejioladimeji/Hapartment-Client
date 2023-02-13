@@ -53,13 +53,13 @@ const ListingDetails = (props) => {
           content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
         />
 
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/devsource/image/upload/v1671309144/hapartment/logo512_otvwxg.png"
-        />
+        <meta property="og:image" content={images[0].url} />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/" />
+        <meta
+          property="og:url"
+          content="https://hapartment-client-vercel.app/"
+        />
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta name="robots" content="index, nofollow" />

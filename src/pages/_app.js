@@ -47,7 +47,10 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/" />
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/"
+        />
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta name="robots" content="index, nofollow" />
