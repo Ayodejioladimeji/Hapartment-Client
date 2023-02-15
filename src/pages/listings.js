@@ -41,7 +41,7 @@ const Listings = () => {
     const data = sessionStorage.getItem("filter");
     const parsedData = JSON.parse(data);
     setLocalData(parsedData);
-  }, []);
+  }, [localData]);
 
   // a function to get the data
   const getSingleData = async () => {
