@@ -8,9 +8,11 @@ import {
   WhatsappShareButton,
   TwitterIcon,
 } from "next-share";
+import { useRouter } from "next/router";
 
 const Description = ({ item, children }) => {
-  const shareUrl = "https://google.com";
+  const router = useRouter();
+
   return (
     <div className="description">
       <div className="description-box">
@@ -70,33 +72,35 @@ const Description = ({ item, children }) => {
       <div className="description-box">
         <h6>Share Property</h6>
 
-        <div>
-          <FacebookShareButton
-            url={"https://github.com/next-share"}
-            quote={
-              "next-share is a social share buttons for your next React apps."
-            }
-            hashtag={"#nextshare"}
-          >
-            <FacebookIcon size={32} round />
-          </FacebookShareButton>
+        <div className="share-box">
+          <div>
+            <FacebookShareButton
+              url={`https://hapartment-client.vercel.app/listings/${router.query.slug}`}
+              quote={`${item.property_type} - ${item.description} - Price : ${item.price}`}
+              hashtag={"#hapartment"}
+            >
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+          </div>
 
-          <WhatsappShareButton
-            url={"https://hapartment.org"}
-            title={item.description}
-            separator=":: "
-          >
-            <WhatsappIcon size={32} round />
-          </WhatsappShareButton>
+          <div className="mx-3">
+            <WhatsappShareButton
+              url={`https://hapartment-client.vercel.app/listings/${router.query.slug}`}
+              title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
+              separator=":: "
+            >
+              <WhatsappIcon size={32} round />
+            </WhatsappShareButton>
+          </div>
 
-          <TwitterShareButton
-            url={"https://github.com/next-share"}
-            title={
-              "next-share is a social share buttons for your next React apps."
-            }
-          >
-            <TwitterIcon size={32} round />
-          </TwitterShareButton>
+          <div>
+            <TwitterShareButton
+              url={`https://hapartment-client.vercel.app/listings/${router.query.slug}`}
+              title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
+            >
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+          </div>
         </div>
       </div>
     </div>

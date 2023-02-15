@@ -16,6 +16,20 @@ const Contact = () => {
                 listings and slso provide simple mechanisms to contact the
                 agent."
         />
+        <meta property="og:title" content="Contact Us Today" />
+        <meta
+          property="og:description"
+          content="Our team works tirelessly to make searching for your dream home
+          effortless and rewarding , by offering clearly displayed quality
+          listings and slso provide simple mechanisms to contact the
+          agent."
+        />
+
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.18_PM_1_za9hx3.jpg"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <BreadCumb

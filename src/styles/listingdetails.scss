@@ -171,6 +171,11 @@
           color: var(--primary-color);
           font-weight: 600;
         }
+
+        .share-box {
+          display: flex;
+          align-items: center;
+        }
       }
     }
   }
