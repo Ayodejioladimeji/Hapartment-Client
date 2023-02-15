@@ -82,10 +82,8 @@ const Description = ({ item, children }) => {
           </FacebookShareButton>
 
           <WhatsappShareButton
-            url={"https://github.com/next-share"}
-            title={
-              "next-share is a social share buttons for your next React apps."
-            }
+            url={"https://hapartment.org"}
+            title={item.description}
             separator=":: "
           >
             <WhatsappIcon size={32} round />
