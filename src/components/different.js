@@ -65,7 +65,7 @@ const Different = () => {
             data-aos-once="true"
             data-aos-delay="600"
           >
-            <Image src={differentImg} alt="" className="differentimg" />
+            <Image src={differentImg} alt="picture" className="differentimg" />
           </div>
         </div>
       </div>

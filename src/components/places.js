@@ -48,7 +48,7 @@ const Places = () => {
             <div className=" places-right">
               <Image
                 src={placesImg1}
-                alt=""
+                alt="picture"
                 className="placesimg places-img-background"
                 data-aos="fade-up"
                 data-aos-once="true"
@@ -57,7 +57,7 @@ const Places = () => {
 
               <Image
                 src={placesImg2}
-                alt=""
+                alt="picture"
                 className="placesimg places-img-top"
                 data-aos="fade-up"
                 data-aos-once="true"

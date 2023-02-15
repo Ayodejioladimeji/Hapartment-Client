@@ -6,8 +6,51 @@ const Advert = () => {
   return (
     <>
       <Head>
-        <title>Advertise with us</title>
-        <meta name="Start advertising your products on Hapartment Digital Marketplace. Post your product for free and start attracting visitors to it. You will be able to track the number of people who end up purchasing through the website, and make changes to your product as needed" />
+        <title>Hapartment - Advertise with us</title>
+        {/* <meta
+          name="google-site-verification"
+          content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
+        /> */}
+
+        <meta
+          name="keywords"
+          content="Hapartment, hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="title" content="Hapartment - Advertise with us" />
+        <meta property="og:title" content="Hapartment - Advertise with us" />
+        <meta
+          property="og:description"
+          content="Start advertising your products on Hapartment Digital Marketplace. Post your product for free and start attracting visitors to it. You will be able to track the number of people who end up purchasing through the website, and make changes to your product as needed"
+        />
+
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/"
+        />
+        <meta name="twitter:card" content="Hapartment" />
+
+        <meta name="robots" content="index, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Hapartment Digital Marketplace" />
+
+        <meta
+          property="og:site_name"
+          content="Hapartment Digital Marketplace"
+        />
+        <meta
+          name="twitter:image:alt"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
+        />
       </Head>
 
       <BreadCumb

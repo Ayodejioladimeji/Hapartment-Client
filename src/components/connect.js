@@ -9,7 +9,7 @@ const Connect = () => {
         <div className="row connect">
           <div className="col-md-6 connect-left">
             <div data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
-              <Image src={connectImg} alt="" className="connectimg" />
+              <Image src={connectImg} alt="picture" className="connectimg" />
             </div>
           </div>
 

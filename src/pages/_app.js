@@ -21,10 +21,6 @@ export default function App({ Component, pageProps }) {
           content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
         /> */}
         <meta
-          name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
-        />
-        <meta
           name="keywords"
           content="Hapartment, hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
         />
@@ -32,10 +28,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <meta name="title" content="Hapartment - Homepage" />
-        <meta
-          property="og:title"
-          content="We help users search for apartment easily and provide them with adequate information to help them make well-informed decisions."
-        />
+        <meta property="og:title" content="Hapartment - Homepage" />
         <meta
           property="og:description"
           content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"

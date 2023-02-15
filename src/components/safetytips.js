@@ -9,7 +9,7 @@ const SafetyTips = () => {
         <div className="row tips">
           <div className="col-md-6 tips-left">
             <div data-aos="fade-up" data-aos-once="true" data-aos-delay="1000">
-              <Image src={tipsImg} alt="" className="tipsimg" />
+              <Image src={tipsImg} alt="picture" className="tipsimg" />
             </div>
           </div>
 

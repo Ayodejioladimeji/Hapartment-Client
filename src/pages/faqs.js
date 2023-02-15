@@ -8,9 +8,11 @@ const Faqs = () => {
   return (
     <>
       <Head>
-        <title>FAQS</title>
-        <meta name="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers." />
-        <meta property="og:title" content="Frequently Asked Questions" />
+        <title>Hapartment - FAQS</title>
+        <meta
+          property="og:title"
+          content="Hapartment - Frequently Asked Questions"
+        />
         <meta
           property="og:description"
           content="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers"

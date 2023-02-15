@@ -7,7 +7,7 @@ const BreadCumb = ({ headingOne, headingTwo, subHeading, body, image }) => {
         <div className="row mt-5 bread">
           <div className="col-md-6">
             <div className="breadcumb">
-              <h3 className="mb-3">{headingOne}</h3>
+              <h1 className="mb-3">{headingOne}</h1>
               {headingTwo !== "" && <h3 className="mb-3">{headingTwo}</h3>}
 
               {subHeading !== "" && <h6 className="mb-3">{subHeading}</h6>}
@@ -18,7 +18,7 @@ const BreadCumb = ({ headingOne, headingTwo, subHeading, body, image }) => {
 
           <div className="col-md-6">
             <div className="breadcumb-image">
-              <Image src={image} alt="" />
+              <Image src={image} alt="heading" />
             </div>
           </div>
         </div>

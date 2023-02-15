@@ -6,11 +6,52 @@ const AboutUs = () => {
   return (
     <>
       <Head>
-        <title>About Us</title>
+        <title>Hapartment - About Us</title>
+        {/* <meta
+          name="google-site-verification"
+          content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
+        /> */}
+
         <meta
-          name="Hapartment offers instant access to apartment listings ranging
+          name="keywords"
+          content="Hapartment, hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="title" content="Hapartment - About Us" />
+        <meta property="og:title" content="Hapartment - About Us" />
+        <meta
+          property="og:description"
+          content="Hapartment offers instant access to apartment listings ranging
         from luxirious homes to apartments in lower price ranges. We
         provide clear and comprehensive categories for easy navigation."
+        />
+
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/"
+        />
+        <meta name="twitter:card" content="Hapartment" />
+
+        <meta name="robots" content="index, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Hapartment Digital Marketplace" />
+
+        <meta
+          property="og:site_name"
+          content="Hapartment Digital Marketplace"
+        />
+        <meta
+          name="twitter:image:alt"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
         />
       </Head>
 

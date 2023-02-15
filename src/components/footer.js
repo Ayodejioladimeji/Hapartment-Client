@@ -168,7 +168,7 @@ const Footer = () => {
             >
               <Image
                 src="/images/apple.svg"
-                alt=""
+                alt="picture"
                 className="apple"
                 width={100}
                 height={100}
@@ -177,7 +177,7 @@ const Footer = () => {
               />
               <Image
                 src="/images/play.svg"
-                alt=""
+                alt="picture"
                 className="play"
                 width={100}
                 height={100}

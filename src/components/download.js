@@ -54,7 +54,7 @@ const Download = () => {
             >
               <Image
                 src={appstore}
-                alt=""
+                alt="picture"
                 className="appstore-image"
                 data-aos="fade-up"
                 data-aos-once="true"
@@ -62,7 +62,7 @@ const Download = () => {
               />
               <Image
                 src={playstore}
-                alt=""
+                alt="picture"
                 className="playstore-image"
                 data-aos="fade-up"
                 data-aos-once="true"
@@ -73,7 +73,7 @@ const Download = () => {
 
           <div className="col-md-6 download-right">
             <div data-aos="fade-down" data-aos-once="true" data-aos-delay="800">
-              <Image src={download} alt="" className="download-image" />
+              <Image src={download} alt="picture" className="download-image" />
             </div>
           </div>
         </div>

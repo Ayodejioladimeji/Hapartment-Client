@@ -151,9 +151,8 @@ const Listings = () => {
   return (
     <>
       <Head>
-        <title>Properties</title>
-        <meta name="Hapartment is your one place to find apartments and manage your rentals" />
-        <meta property="og:title" content="Property Listings" />
+        <title>Hapartment - Property Listings</title>
+        <meta property="og:title" content="Hapartment - Property Listings" />
         <meta
           property="og:description"
           content="Hapartment is your one place to find apartments and manage your rentals"
@@ -217,7 +216,7 @@ const Listings = () => {
 
             <div className="col-lg-3 d-none d-lg-block">
               <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="" />
+                <Image src={banner4} alt="picture" />
               </div>
             </div>
           </div>
@@ -298,19 +297,19 @@ const Listings = () => {
 
             <div className="col-lg-3 ">
               <div className="advert-image-box mb-5">
-                <Image src={banner1} alt="" />
+                <Image src={banner1} alt="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner5} alt="" />
+                <Image src={banner5} alt="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner2} alt="" />
+                <Image src={banner2} alt="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner3} alt="" />
+                <Image src={banner3} alt="picture" />
               </div>
               {/* <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="" />
+                <Image src={banner4} alt="picture" />
               </div> */}
               <div className="adverts-box mb-3">
                 Place your Banner Adverts here
