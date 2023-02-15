@@ -159,25 +159,29 @@ const Steps = () => {
               data-aos-delay="1200"
             >
               {toggleState === 1 && (
-                <Image src={stepone} alt="" className="connect-image" />
+                <Image src={stepone} alt="picture" className="connect-image" />
               )}
               {toggleState === 2 && (
-                <Image src={steptwo} alt="" className="connect-image" />
+                <Image src={steptwo} alt="picture" className="connect-image" />
               )}
               {toggleState === 3 && (
-                <Image src={stepthree} alt="" className="connect-image" />
+                <Image
+                  src={stepthree}
+                  alt="picture"
+                  className="connect-image"
+                />
               )}
               {toggleState === 4 && (
-                <Image src={stepfour} alt="" className="connect-image" />
+                <Image src={stepfour} alt="picture" className="connect-image" />
               )}
               {toggleState === 5 && (
-                <Image src={stepfive} alt="" className="connect-image" />
+                <Image src={stepfive} alt="picture" className="connect-image" />
               )}
               {toggleState === 6 && (
-                <Image src={stepsix} alt="" className="connect-image" />
+                <Image src={stepsix} alt="picture" className="connect-image" />
               )}
               {toggleState === 7 && (
-                <Image src={stepsix} alt="" className="connect-image" />
+                <Image src={stepsix} alt="picture" className="connect-image" />
               )}
             </div>
           </div>

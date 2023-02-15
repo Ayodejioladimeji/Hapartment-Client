@@ -6,9 +6,8 @@ const Terms = () => {
   return (
     <>
       <Head>
-        <title>Terms of Use</title>
-        <meta name="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there." />
-        <meta property="og:title" content="Terms Of Use" />
+        <title>Hapartment - Terms of Use</title>
+        <meta property="og:title" content="Hapartment -  Terms Of Use" />
         <meta
           property="og:description"
           content="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there."

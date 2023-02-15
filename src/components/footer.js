@@ -97,7 +97,7 @@ const Footer = () => {
                 <Link href="/advertise">Advertise With Us</Link>
               </li>
               <li>
-                <Link href="/searchlisting">Search Listings</Link>
+                <Link href="/listings">Search Listings</Link>
               </li>
               <li>
                 <Link href="/watchdemo">Watch a Demo</Link>
@@ -168,7 +168,7 @@ const Footer = () => {
             >
               <Image
                 src="/images/apple.svg"
-                alt=""
+                alt="picture"
                 className="apple"
                 width={100}
                 height={100}
@@ -177,7 +177,7 @@ const Footer = () => {
               />
               <Image
                 src="/images/play.svg"
-                alt=""
+                alt="picture"
                 className="play"
                 width={100}
                 height={100}

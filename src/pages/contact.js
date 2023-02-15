@@ -9,20 +9,28 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Contact Us</title>
+        {/* <meta
+          name="google-site-verification"
+          content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
+        /> */}
+
+        <title>Hapartment - Contact Us</title>
+
         <meta
-          name="Our team works tirelessly to make searching for your dream home
-                effortless and rewarding , by offering clearly displayed quality
-                listings and slso provide simple mechanisms to contact the
-                agent."
+          name="keywords"
+          content="Hapartment, hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
         />
-        <meta property="og:title" content="Contact Us Today" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="title" content="Hapartment - Contact Us Today" />
+        <meta property="og:title" content="Hapartment - Contact Us Today" />
         <meta
           property="og:description"
           content="Our team works tirelessly to make searching for your dream home
           effortless and rewarding , by offering clearly displayed quality
           listings and slso provide simple mechanisms to contact the
-          agent."
+          agent"
         />
 
         <meta
@@ -30,6 +38,26 @@ const Contact = () => {
           content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.18_PM_1_za9hx3.jpg"
         />
         <meta property="og:type" content="website" />
+
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/"
+        />
+        <meta name="twitter:card" content="Hapartment" />
+
+        <meta name="robots" content="index, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Hapartment Digital Marketplace" />
+
+        <meta
+          property="og:site_name"
+          content="Hapartment Digital Marketplace"
+        />
+        <meta
+          name="twitter:image:alt"
+          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
+        />
       </Head>
 
       <BreadCumb

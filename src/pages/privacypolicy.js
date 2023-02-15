@@ -6,9 +6,8 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Head>
-        <title>Privacy Policy</title>
-        <meta name="Hapartment is your one place to find apartments and manage your rentals" />
-        <meta property="og:title" content="Privacy Policy" />
+        <title>Hapartment - Privacy Policy</title>
+        <meta property="og:title" content="Hapartment - Privacy Policy" />
         <meta
           property="og:description"
           content="Hapartment is your one place to find apartments and manage your rentals"

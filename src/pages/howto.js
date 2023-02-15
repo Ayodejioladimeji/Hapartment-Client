@@ -15,13 +15,11 @@ const HowTo = () => {
   return (
     <>
       <Head>
-        <title>How to create listing</title>
+        <title>Hapartment - How To Create Listings</title>
         <meta
-          name="A great platform for you to advertise your products for free
-                with high volumes of serious agents and renters browsing our
-                site."
+          property="og:title"
+          content="Hapartment - How to create Listings"
         />
-        <meta property="og:title" content="How to create Listings" />
         <meta
           property="og:description"
           content="A great platform for you to advertise your products for free
@@ -40,7 +38,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row how-to-box d-flex">
             <div className="col-md-6 how-to-left">
-              <h3 className="mb-3">How to create Listings</h3>
+              <h1 className="mb-3">How to create Listings</h1>
 
               <p className="mb-3">
                 A great platform for you to advertise your products for free
@@ -49,13 +47,21 @@ const HowTo = () => {
               </p>
 
               <div className="d-flex align-items-center">
-                <Image src={appstore} alt="" className="appstore-image" />
-                <Image src={playstore} alt="" className="playstore-image" />
+                <Image
+                  src={appstore}
+                  alt="picture"
+                  className="appstore-image"
+                />
+                <Image
+                  src={playstore}
+                  alt="picture"
+                  className="playstore-image"
+                />
               </div>
             </div>
 
             <div className="col-md-6 how-to-right">
-              <Image src={howtoImage} alt="" className="howto-image" />
+              <Image src={howtoImage} alt="picture" className="howto-image" />
             </div>
           </div>
         </div>
@@ -84,7 +90,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={video} alt="" className="video" />
+              <Image src={video} alt="picture" className="video" />
             </div>
           </div>
         </div>
@@ -94,7 +100,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={how1} alt="" />
+              <Image src={how1} alt="picture" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -123,7 +129,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={how2} alt="" />
+              <Image src={how2} alt="picture" />
             </div>
           </div>
         </div>
@@ -133,7 +139,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={how3} alt="" />
+              <Image src={how3} alt="picture" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -197,7 +203,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={how4} alt="" />
+              <Image src={how4} alt="picture" />
             </div>
           </div>
         </div>
@@ -207,7 +213,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={how5} alt="" />
+              <Image src={how5} alt="picture" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -266,7 +272,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={how6} alt="" />
+              <Image src={how6} alt="picture" />
             </div>
           </div>
         </div>

@@ -188,19 +188,19 @@ const ListingDetails = (props) => {
 
             <div className="col-lg-3 mt-5">
               <div className="advert-image-box mb-5">
-                <Image src={banner1} alt="" />
+                <Image src={banner1} alt="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner5} alt="" />
+                <Image src={banner5} alt="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner2} alt="" />
+                <Image src={banner2} alt="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner3} alt="" />
+                <Image src={banner3} alt="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="" priority={true} />
+                <Image src={banner4} alt="picture" priority={true} />
               </div>
 
               <div className="adverts-box mb-3">

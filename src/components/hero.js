@@ -97,7 +97,7 @@ const Hero = () => {
 
           <div className="col-lg-6 hero-right">
             <div data-aos="fade-up" data-aos-once="true" data-aos-delay="800">
-              <Image src={heroImg} alt="" priority />
+              <Image src={heroImg} alt="picture" priority />
             </div>
           </div>
         </div>
