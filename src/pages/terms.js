@@ -7,10 +7,34 @@ const Terms = () => {
     <>
       <Head>
         <title>Hapartment - Terms of Use</title>
+        <meta
+          name="description"
+          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+        />
+        <meta
+          name="keywords"
+          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+        />
         <meta property="og:title" content="Hapartment -  Terms Of Use" />
         <meta
           property="og:description"
           content="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there."
+        />
+
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/terms"
+        />
+        <meta name="twitter:card" content="Hapartment" />
+
+        <meta name="robots" content="index, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Hapartment Digital Marketplace" />
+
+        <meta
+          property="og:site_name"
+          content="Hapartment Digital Marketplace"
         />
 
         <meta

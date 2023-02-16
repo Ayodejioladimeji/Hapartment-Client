@@ -10,12 +10,35 @@ const Faqs = () => {
       <Head>
         <title>Hapartment - FAQS</title>
         <meta
+          name="description"
+          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+        />
+        <meta
+          name="keywords"
+          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+        />
+        <meta
           property="og:title"
           content="Hapartment - Frequently Asked Questions"
         />
         <meta
           property="og:description"
           content="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers"
+        />
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/faqs"
+        />
+        <meta name="twitter:card" content="Hapartment" />
+
+        <meta name="robots" content="index, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Hapartment Digital Marketplace" />
+
+        <meta
+          property="og:site_name"
+          content="Hapartment Digital Marketplace"
         />
 
         <meta

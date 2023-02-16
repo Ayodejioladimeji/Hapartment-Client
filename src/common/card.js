@@ -41,6 +41,7 @@ const Card = ({ ...item }) => {
           alt="card-picture"
           width="200"
           height="150"
+          title="picture"
         />
       </div>
 
