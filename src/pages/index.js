@@ -23,7 +23,7 @@ export default function Home() {
 
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="Hapartment makes it easy to find and book the perfect apartment. View properties from our network of over 2,000 property managers, pricing and availability updated daily."
         />
 
         <meta

@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
         <title>Hapartment - Privacy Policy</title>
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="Easily view listings directly from top property managers, pricing and availability updated daily. Search through hundreds of pictures of fully furnished apartments directly on your mobile device or desktop. Contact agents directly with a click or text, view property details and virtual tours, see all possible matches, save favorites and get notifications when a new listing comes on the market by signing up to receive updates via email or SMS."
         />
         <meta
           name="keywords"

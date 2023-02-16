@@ -11,7 +11,7 @@ const Faqs = () => {
         <title>Hapartment - FAQS</title>
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="Hapartment is the best apartment search experience on both web and mobile. View the newest inventory directly from your property managers, pricing and availability updated daily. Find your next home in minutes!"
         />
         <meta
           name="keywords"

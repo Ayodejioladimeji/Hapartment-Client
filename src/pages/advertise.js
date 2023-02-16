@@ -14,7 +14,7 @@ const Advert = () => {
 
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="Hapartment is a one-stop apartment search and booking app that brings your top properties in one place. View updated listings from our network of more than 1400 managing agents daily, then book your next apartment with us."
         />
 
         <meta

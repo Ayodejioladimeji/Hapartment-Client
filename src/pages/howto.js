@@ -18,7 +18,7 @@ const HowTo = () => {
         <title>Hapartment - How To Create Listings</title>
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="Receive top-notch apartment listings from some of the most reputable real estate managers. We are committed to delivering the safest apartment search experience on both web and app. View and schedule your visit directly from our site or your mobile device, with all availability and pricing updated daily."
         />
         <meta
           name="keywords"
