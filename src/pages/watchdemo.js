@@ -11,7 +11,7 @@ const WatchDemo = () => {
         <title>Hapartment - Watch a demo</title>
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="Hapartment is a new way to find your new home. We make it simple and convenient, so you can focus on finding a place you love. Use Hapartment to explore hundreds of properties in your area; get detailed information about the apartment that interests you and filter through hundreds of similar apartments for sale with ease."
         />
         <meta
           name="keywords"

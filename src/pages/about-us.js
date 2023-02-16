@@ -13,7 +13,7 @@ const AboutUs = () => {
         /> */}
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="At Hapartment, we believe that a smart apartment search experience should just work. Our apps and website makes the process of searching for an apartment smooth, easy, and safe."
         />
 
         <meta

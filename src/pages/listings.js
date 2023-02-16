@@ -154,7 +154,7 @@ const Listings = () => {
         <title>Hapartment - Property Listings</title>
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="Hapartment provides a secure and reliable digital marketplace for renting apartments."
         />
         <meta
           name="keywords"

@@ -21,6 +21,10 @@ export default function App({ Component, pageProps }) {
           content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
         /> */}
         <meta
+          name="description"
+          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+        />
+        <meta
           name="keywords"
           content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />

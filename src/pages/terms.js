@@ -9,7 +9,7 @@ const Terms = () => {
         <title>Hapartment - Terms of Use</title>
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content="Hapartment delivers the safest apartment search experience on both web and app. View apartment listings directly from top property managers, pricing and availability updated daily."
         />
         <meta
           name="keywords"
