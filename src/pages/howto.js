@@ -17,6 +17,14 @@ const HowTo = () => {
       <Head>
         <title>Hapartment - How To Create Listings</title>
         <meta
+          name="description"
+          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+        />
+        <meta
+          name="keywords"
+          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+        />
+        <meta
           property="og:title"
           content="Hapartment - How to create Listings"
         />
@@ -25,6 +33,22 @@ const HowTo = () => {
           content="A great platform for you to advertise your products for free
           with high volumes of serious agents and renters browsing our
           site."
+        />
+
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/howto"
+        />
+        <meta name="twitter:card" content="Hapartment" />
+
+        <meta name="robots" content="index, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Hapartment Digital Marketplace" />
+
+        <meta
+          property="og:site_name"
+          content="Hapartment Digital Marketplace"
         />
 
         <meta
@@ -51,17 +75,24 @@ const HowTo = () => {
                   src={appstore}
                   alt="picture"
                   className="appstore-image"
+                  title="picture"
                 />
                 <Image
                   src={playstore}
                   alt="picture"
                   className="playstore-image"
+                  title="picture"
                 />
               </div>
             </div>
 
             <div className="col-md-6 how-to-right">
-              <Image src={howtoImage} alt="picture" className="howto-image" />
+              <Image
+                src={howtoImage}
+                alt="picture"
+                className="howto-image"
+                title="picture"
+              />
             </div>
           </div>
         </div>
@@ -90,7 +121,12 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={video} alt="picture" className="video" />
+              <Image
+                src={video}
+                alt="picture"
+                className="video"
+                title="picture"
+              />
             </div>
           </div>
         </div>
@@ -100,7 +136,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={how1} alt="picture" />
+              <Image src={how1} alt="picture" title="picture" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -129,7 +165,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={how2} alt="picture" />
+              <Image src={how2} alt="picture" title="picture" />
             </div>
           </div>
         </div>
@@ -139,7 +175,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={how3} alt="picture" />
+              <Image src={how3} alt="picture" title="picture" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -203,7 +239,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={how4} alt="picture" />
+              <Image src={how4} alt="picture" title="picture" />
             </div>
           </div>
         </div>
@@ -213,7 +249,7 @@ const HowTo = () => {
         <div className="container">
           <div className="row step-one-box">
             <div className="col-md-6 step-one-image-box">
-              <Image src={how5} alt="picture" />
+              <Image src={how5} alt="picture" title="picture" />
             </div>
 
             <div className="col-md-6 step-one-right">
@@ -272,7 +308,7 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 watch-video-image-box">
-              <Image src={how6} alt="picture" />
+              <Image src={how6} alt="picture" title="picture" />
             </div>
           </div>
         </div>

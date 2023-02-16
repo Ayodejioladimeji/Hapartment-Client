@@ -7,10 +7,34 @@ const PrivacyPolicy = () => {
     <>
       <Head>
         <title>Hapartment - Privacy Policy</title>
+        <meta
+          name="description"
+          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+        />
+        <meta
+          name="keywords"
+          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+        />
         <meta property="og:title" content="Hapartment - Privacy Policy" />
         <meta
           property="og:description"
           content="Hapartment is your one place to find apartments and manage your rentals"
+        />
+
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/privacypolicy"
+        />
+        <meta name="twitter:card" content="Hapartment" />
+
+        <meta name="robots" content="index, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Hapartment Digital Marketplace" />
+
+        <meta
+          property="og:site_name"
+          content="Hapartment Digital Marketplace"
         />
 
         <meta

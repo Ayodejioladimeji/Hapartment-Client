@@ -152,10 +152,34 @@ const Listings = () => {
     <>
       <Head>
         <title>Hapartment - Property Listings</title>
+        <meta
+          name="description"
+          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+        />
+        <meta
+          name="keywords"
+          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+        />
         <meta property="og:title" content="Hapartment - Property Listings" />
         <meta
           property="og:description"
           content="Hapartment is your one place to find apartments and manage your rentals"
+        />
+
+        <meta
+          property="og:url"
+          content="https://hapartment-client.vercel.app/listings"
+        />
+        <meta name="twitter:card" content="Hapartment" />
+
+        <meta name="robots" content="index, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Hapartment Digital Marketplace" />
+
+        <meta
+          property="og:site_name"
+          content="Hapartment Digital Marketplace"
         />
 
         <meta
@@ -216,7 +240,7 @@ const Listings = () => {
 
             <div className="col-lg-3 d-none d-lg-block">
               <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="picture" />
+                <Image src={banner4} alt="picture" title="picture" />
               </div>
             </div>
           </div>
@@ -297,16 +321,16 @@ const Listings = () => {
 
             <div className="col-lg-3 ">
               <div className="advert-image-box mb-5">
-                <Image src={banner1} alt="picture" />
+                <Image src={banner1} alt="picture" title="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner5} alt="picture" />
+                <Image src={banner5} alt="picture" title="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner2} alt="picture" />
+                <Image src={banner2} alt="picture" title="picture" />
               </div>
               <div className="advert-image-box mb-5">
-                <Image src={banner3} alt="picture" />
+                <Image src={banner3} alt="picture" title="picture" />
               </div>
               {/* <div className="advert-image-box mb-5">
                 <Image src={banner4} alt="picture" />

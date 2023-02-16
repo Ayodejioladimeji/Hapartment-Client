@@ -18,7 +18,7 @@ const BreadCumb = ({ headingOne, headingTwo, subHeading, body, image }) => {
 
           <div className="col-md-6">
             <div className="breadcumb-image">
-              <Image src={image} alt="heading" />
+              <Image src={image} alt="heading" title="picture" />
             </div>
           </div>
         </div>

@@ -13,8 +13,13 @@ const Advert = () => {
         /> */}
 
         <meta
+          name="description"
+          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+        />
+
+        <meta
           name="keywords"
-          content="Hapartment, hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
+          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,7 +39,7 @@ const Advert = () => {
 
         <meta
           property="og:url"
-          content="https://hapartment-client.vercel.app/"
+          content="https://hapartment-client.vercel.app/advertise"
         />
         <meta name="twitter:card" content="Hapartment" />
 
