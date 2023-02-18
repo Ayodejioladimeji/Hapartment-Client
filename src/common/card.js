@@ -14,6 +14,7 @@ const Card = ({ ...item }) => {
     toilets,
     price,
     images,
+    status,
     updatedAt,
   } = item;
 
@@ -43,6 +44,13 @@ const Card = ({ ...item }) => {
           height="150"
           title="picture"
         />
+
+        <div
+          className="tags"
+          style={{ background: `${status === "pending" ? "orange" : "green"}` }}
+        >
+          {status}
+        </div>
       </div>
 
       <div className="card-content">
