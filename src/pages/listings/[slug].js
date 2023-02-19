@@ -141,15 +141,17 @@ const ListingDetails = (props) => {
                           Description
                         </a>
                       </li>
-                      <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          data-bs-toggle="tab"
-                          href="#map"
-                        >
-                          View map
-                        </a>
-                      </li>
+                      {map[0] !== null && (
+                        <li className="nav-item">
+                          <a
+                            className="nav-link"
+                            data-bs-toggle="tab"
+                            href="#map"
+                          >
+                            View map
+                          </a>
+                        </li>
+                      )}
                     </ul>
                   </div>
 
@@ -162,7 +164,9 @@ const ListingDetails = (props) => {
 
                     <div className="tab-pane" id="map">
                       <div className="package-box mt-4 py-3">
-                        <Map lat={map[0].latitude} lng={map[0].longitude} />
+                        {map[0] !== null && (
+                          <Map lat={map[0].latitude} lng={map[0].longitude} />
+                        )}
                       </div>
                     </div>
                   </div>
