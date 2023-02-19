@@ -42,7 +42,7 @@ export default function Home() {
 
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
+          content="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
         />
         <meta property="og:type" content="website" />
 
@@ -50,10 +50,9 @@ export default function Home() {
           property="og:url"
           content="https://hapartment-client.vercel.app"
         />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="Hapartment Digital Marketplace" />
 

@@ -33,7 +33,7 @@ const Advert = () => {
 
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
+          content="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_2_ifvu7a.jpg"
         />
         <meta property="og:type" content="website" />
 

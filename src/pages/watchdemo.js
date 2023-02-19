@@ -41,7 +41,7 @@ const WatchDemo = () => {
 
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.18_PM_1_za9hx3.jpg"
+          content="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.17_PM_1_qix3ml.jpg"
         />
         <meta property="og:type" content="website" />
       </Head>

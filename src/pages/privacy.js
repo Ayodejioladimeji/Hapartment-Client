@@ -2,7 +2,7 @@ import BreadCumb from "@/common/breadcumb";
 import privacyImage from "../../public/images/privacy.svg";
 import Head from "next/head";
 
-const PrivacyPolicy = () => {
+const Privacy = () => {
   return (
     <>
       <Head>
@@ -333,4 +333,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default Privacy;
