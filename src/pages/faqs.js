@@ -43,7 +43,7 @@ const Faqs = () => {
 
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.19_PM_b9elmi.jpg"
+          content="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
         />
         <meta property="og:type" content="website" />
       </Head>
