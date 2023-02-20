@@ -38,10 +38,7 @@ const AboutUs = () => {
         />
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/about-us"
-        />
+        <meta property="og:url" content="https://hapartment.org/about-us" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

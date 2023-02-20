@@ -44,10 +44,7 @@ const Contact = () => {
         />
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/contact"
-        />
+        <meta property="og:url" content="https://hapartment.org/contact" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

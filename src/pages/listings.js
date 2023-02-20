@@ -166,10 +166,7 @@ const Listings = () => {
           content="Hapartment is your one place to find apartments and manage your rentals"
         />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/listings"
-        />
+        <meta property="og:url" content="https://hapartment.org/listings" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

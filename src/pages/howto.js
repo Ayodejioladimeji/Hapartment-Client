@@ -35,10 +35,7 @@ const HowTo = () => {
           site."
         />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/howto"
-        />
+        <meta property="og:url" content="https://hapartment.org/howto" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
