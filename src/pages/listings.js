@@ -311,7 +311,8 @@ const Listings = () => {
               {visible > sorted.length || loading || sorted.length === 0 ? (
                 ""
               ) : (
-                <LoadMore
+                <LoadM
+                  ore
                   load={load}
                   setLoad={setLoad}
                   setVisible={setVisible}
