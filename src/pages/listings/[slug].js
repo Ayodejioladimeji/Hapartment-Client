@@ -56,10 +56,7 @@ const ListingDetails = (props) => {
         <meta property="og:image" content={images[0].url} />
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client-vercel.app/"
-        />
+        <meta property="og:url" content="https://hapartment.org/" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta name="robots" content="index, nofollow" />
@@ -191,6 +188,25 @@ const ListingDetails = (props) => {
             </div>
 
             <div className="col-lg-3 mt-5">
+              {/* Agent infor section */}
+              <div className="agent-section advert-image-box mb-5">
+                <div className="agent-center">
+                  <div className="agent-image">
+                    <Image src={banner1} alt="picture" />
+                  </div>
+
+                  <div className="agent-content">
+                    <h4>Hapartment Admin</h4>
+                    <p>@hapartment</p>
+                  </div>
+                </div>
+
+                <div className="btn">
+                  <i class="bi bi-telephone-forward"></i>
+                  08023232323
+                </div>
+              </div>
+
               <div className="advert-image-box mb-5">
                 <Image src={banner1} alt="picture" />
               </div>
