@@ -1,4 +1,5 @@
 import Image from "next/image";
+import profileImg from "../../../public/images/profile-img.svg";
 import banner1 from "../../../public/images/banner1.jpeg";
 import banner2 from "../../../public/images/banner2.jpeg";
 import banner3 from "../../../public/images/banner3.jpeg";
@@ -26,6 +27,7 @@ const ListingDetails = (props) => {
     toilets,
     images,
     map,
+    postedBy,
   } = props.listing;
 
   return (
@@ -190,20 +192,36 @@ const ListingDetails = (props) => {
             <div className="col-lg-3 mt-5">
               {/* Agent infor section */}
               <div className="agent-section advert-image-box mb-5">
-                <div className="agent-center">
-                  <div className="agent-image">
-                    <Image src={banner1} alt="picture" />
-                  </div>
+                <div className="top-section">Posted By</div>
 
-                  <div className="agent-content">
-                    <h4>Hapartment Admin</h4>
-                    <p>@hapartment</p>
-                  </div>
-                </div>
+                <div className="bottom-section">
+                  <div className="agent-center">
+                    <div className="agent-image">
+                      {postedBy.image === null ? (
+                        <Image src={profileImg} alt="picture" />
+                      ) : (
+                        <Image
+                          src={postedBy.image}
+                          alt="picture"
+                          width={100}
+                          height={100}
+                        />
+                      )}
+                    </div>
 
-                <div className="btn">
-                  <i class="bi bi-telephone-forward"></i>
-                  08023232323
+                    <div className="agent-content">
+                      <h4>{postedBy.fullname}</h4>
+                    </div>
+                  </div>
+                  <p className="text-center">
+                    <i class="bi bi-envelope-paper"></i>
+                    {postedBy.email}
+                  </p>
+
+                  <div className="btn">
+                    <i class="bi bi-telephone-forward"></i>
+                    08023232323
+                  </div>
                 </div>
               </div>
 
@@ -236,27 +254,40 @@ const ListingDetails = (props) => {
 
 export default ListingDetails;
 
-export async function getStaticPaths() {
+export async function getServerSideProps({ params, query }) {
+  if (query.text) {
+    return { redirect: { destination: "/listings", permanent: false } };
+  }
   const response = await getDataApis("/all_listing");
-  const thePaths = response.data.map((item) => {
-    return { params: { slug: item._id } };
-  });
+  const listings = response.data.filter((item) => item._id === params.slug)[0];
 
-  return {
-    paths: thePaths,
-    fallback: false,
-  };
+  if (!listings) {
+    return { notFound: true };
+  }
+  return { props: { listing: listings } };
 }
 
-export async function getStaticProps(context) {
-  const response = await getDataApis("/all_listing");
-  const thelistings = response.data.filter(
-    (item) => item._id === context.params.slug
-  )[0];
+// export async function getStaticPaths() {
+//   const response = await getDataApis("/all_listing");
+//   const thePaths = response.data.map((item) => {
+//     return { params: { slug: item._id } };
+//   });
 
-  return {
-    props: {
-      listing: thelistings,
-    },
-  };
-}
+//   return {
+//     paths: thePaths,
+//     fallback: false,
+//   };
+// }
+
+// export async function getStaticProps(context) {
+//   const response = await getDataApis("/all_listing");
+//   const thelistings = response.data.filter(
+//     (item) => item._id === context.params.slug
+//   )[0];
+
+//   return {
+//     props: {
+//       listing: thelistings,
+//     },
+//   };
+// }
