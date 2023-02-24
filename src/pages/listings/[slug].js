@@ -12,6 +12,7 @@ import Slider from "@/common/Slider";
 import { getDataApis } from "@/utils/fetchData";
 import Map from "./../../utils/map";
 import Head from "next/head";
+import ReactWhatsapp from "react-whatsapp";
 
 //
 
@@ -19,6 +20,7 @@ const ListingDetails = (props) => {
   const router = useRouter();
 
   const {
+    _id,
     address,
     property_type,
     price,
@@ -40,7 +42,7 @@ const ListingDetails = (props) => {
         />
         <meta
           name="keywords"
-          content="Hapartment, hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -95,6 +97,7 @@ const ListingDetails = (props) => {
                 <div className="col-md-4">
                   <div className="price float-md-end float-sm-start">
                     ₦ {price}
+                    <span> / annum</span>
                   </div>
                 </div>
               </div>
@@ -211,17 +214,24 @@ const ListingDetails = (props) => {
 
                     <div className="agent-content">
                       <h4>{postedBy.fullname}</h4>
+
+                      <small>@{postedBy.username}</small>
                     </div>
                   </div>
                   <p className="text-center">
                     <i class="bi bi-envelope-paper"></i>
-                    {postedBy.email}
+                    {/* {postedBy.email} */}
+                    support@hapartment.org
                   </p>
 
-                  <div className="btn">
-                    <i class="bi bi-telephone-forward"></i>
-                    08023232323
-                  </div>
+                  <ReactWhatsapp
+                    className="btn"
+                    number="+2347048942743"
+                    message={`${property_type} | ${address} | ${price} | https://hapartment.org/listings/${_id}`}
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                    07048942743
+                  </ReactWhatsapp>
                 </div>
               </div>
 

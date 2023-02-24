@@ -47,7 +47,15 @@ const Card = ({ ...item }) => {
 
         <div
           className="tags"
-          style={{ background: `${status === "pending" ? "orange" : "green"}` }}
+          style={{
+            background: `${
+              status === "pending"
+                ? "orange"
+                : status === "declined"
+                ? "red"
+                : "green"
+            }`,
+          }}
         >
           {status}
         </div>

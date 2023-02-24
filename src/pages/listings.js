@@ -32,8 +32,11 @@ const Listings = () => {
   const [error, setError] = useState("");
   // const [callback, setCallback] = useState(false);
 
+  const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+  const sortingData = shuffle(listings);
+
   // Sorting the data
-  const sortdata = filterValue(listings, sort);
+  const sortdata = filterValue(sortingData, sort);
   const sorted = sortValue(sortdata, sorting);
 
   // To get data from the localstorage
@@ -41,6 +44,7 @@ const Listings = () => {
     const data = sessionStorage.getItem("filter");
     const parsedData = JSON.parse(data);
     setLocalData(parsedData);
+    console.log("one");
   }, []);
 
   // a function to get the data
@@ -158,7 +162,7 @@ const Listings = () => {
         />
         <meta
           name="keywords"
-          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
         <meta property="og:title" content="Hapartment - Property Listings" />
         <meta
