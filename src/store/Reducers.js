@@ -35,6 +35,11 @@ const reducers = (state, action) => {
         ...state,
         contactModal: payload,
       };
+    case ACTIONS.CHECKLOAD:
+      return {
+        ...state,
+        checkload: payload,
+      };
 
     default:
       return state;

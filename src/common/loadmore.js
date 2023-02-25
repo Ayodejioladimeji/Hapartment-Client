@@ -1,11 +1,12 @@
 import React from "react";
 import { BallTriangle } from "react-loader-spinner";
 
-const LoadMore = ({ load, setLoad, setVisible, length }) => {
+const LoadMore = ({ load, setLoad, visible, setVisible }) => {
   const showItems = () => {
     setLoad(true);
     setTimeout(() => {
       setVisible((prevState) => prevState + 3);
+      sessionStorage.setItem("visible", Number(visible) + 3);
       setLoad(false);
     }, 2000);
   };

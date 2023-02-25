@@ -23,17 +23,16 @@ import Map from "@/utils/map";
 const Listings = () => {
   const { state, dispatch } = useContext(DataContext);
   const { listings, loading } = state;
-  const { checkload } = state;
   const [load, setLoad] = useState(false);
-  const [visible, setVisible] = useState("");
+  const [visible, setVisible] = useState(9);
   const [sorting, setSorting] = useState("");
   const [sort, setSort] = useState("");
   const [localData, setLocalData] = useState(null);
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
   // const [callback, setCallback] = useState(false);
+  const [checkload, setCheckload] = useState(true);
 
-  // display data randomly on the client side
   // const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
   // const sortingData = shuffle(listings);
 
@@ -42,19 +41,12 @@ const Listings = () => {
   const sorted = sortValue(sortdata, sorting);
 
   // To get data from the localstorage
-
-  useEffect(() => {
-    // if (checkload) {
-    const data = sessionStorage.getItem("filter");
-    const parsedData = JSON.parse(data);
-    setLocalData(parsedData);
-    setVisible(
-      sessionStorage.getItem("visible") !== null
-        ? sessionStorage.getItem("visible")
-        : 9
-    );
-    // }
-  }, []);
+  // useEffect(() => {
+  //   const data = sessionStorage.getItem("filter");
+  //   const parsedData = JSON.parse(data);
+  //   setLocalData(parsedData);
+  //   setCheckload(false);
+  // }, []);
 
   // a function to get the data
   const getSingleData = async () => {
@@ -114,16 +106,16 @@ const Listings = () => {
 
   // useEffect
   useEffect(() => {
-    if (localData !== null && checkload) {
+    if (localData !== null) {
       if (Object?.keys(localData).length === 1) {
         getSingleData();
       } else {
         getMultipleData();
       }
-    } else if (localData === null && checkload) {
+    } else {
       getAllData();
     }
-  }, [localData]);
+  }, [localData, checkload]);
 
   //
 
@@ -324,7 +316,6 @@ const Listings = () => {
                 <LoadMore
                   load={load}
                   setLoad={setLoad}
-                  visible={visible}
                   setVisible={setVisible}
                 />
               )}

@@ -11,6 +11,7 @@ export const DataProvider = ({ children }) => {
     downloadModal: false,
     newsModal: false,
     contactModal: false,
+    checkload: false,
   };
 
   const [state, dispatch] = useReducer(reducers, initialState);

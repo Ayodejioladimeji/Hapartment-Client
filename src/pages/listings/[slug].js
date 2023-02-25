@@ -219,7 +219,7 @@ const ListingDetails = (props) => {
                     </div>
                   </div>
                   <p className="text-center">
-                    <i class="bi bi-envelope-paper"></i>
+                    <i className="bi bi-envelope-paper"></i>
                     {/* {postedBy.email} */}
                     support@hapartment.org
                   </p>
@@ -229,7 +229,7 @@ const ListingDetails = (props) => {
                     number="+2347048942743"
                     message={`${property_type} | ${address} | ${price} | https://hapartment.org/listings/${_id}`}
                   >
-                    <i class="bi bi-whatsapp"></i>
+                    <i className="bi bi-whatsapp"></i>
                     07048942743
                   </ReactWhatsapp>
                 </div>
