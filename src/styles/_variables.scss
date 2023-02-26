@@ -63,7 +63,7 @@ input {
 
 body {
   font-size: var(--font-bold);
-  font-family: var(--lato);
+  font-family: var(--lato), sans-serif;
   -moz-osx-font-smoothing: grayscale !important;
   -webkit-font-smoothing: antialiased !important;
   width: 100%;
@@ -199,7 +199,7 @@ footer {
     small {
       font-weight: 700;
       font-size: var(--p-bold);
-      font-family: var(--lora);
+      font-family: var(--lato), sans-serif;
     }
 
     ul {

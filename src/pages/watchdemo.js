@@ -15,7 +15,7 @@ const WatchDemo = () => {
         />
         <meta
           name="keywords"
-          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
         <meta property="og:title" content="Hapartment -  Terms Of Use" />
         <meta
@@ -23,10 +23,7 @@ const WatchDemo = () => {
           content="We give you the ability to research, compare and see what offers are available for your next permanent residence. You will be able to see before hand if it is a suitable area and provides what you need and want in a home"
         />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/watchdemo"
-        />
+        <meta property="og:url" content="https://hapartment.org/watchdemo" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

@@ -31,6 +31,8 @@
     "react-loading-skeleton": "^3.1.0",
     "react-modal": "^3.16.1",
     "react-transition-group": "^4.4.5",
-    "sass": "^1.57.1"
+    "react-whatsapp": "^0.3.0",
+    "sass": "^1.57.1",
+    "sitemap": "^7.1.1"
   }
 }

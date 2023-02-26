@@ -15,7 +15,7 @@ const Faqs = () => {
         />
         <meta
           name="keywords"
-          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
         <meta
           property="og:title"
@@ -25,10 +25,7 @@ const Faqs = () => {
           property="og:description"
           content="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers"
         />
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/faqs"
-        />
+        <meta property="og:url" content="https://hapartment.org/faqs" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import searchImg from "../../public/images/search-image.svg";
 import { statesdata } from "@/constants/statesdata";
 import { strictAddComma } from "comma-separator";
+import { ACTIONS } from "@/store/Actions";
 
 const initialState = {
   property_type: "",
@@ -56,6 +57,7 @@ const Search = () => {
       max_price: maxPrice,
     };
 
+    dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
     sessionStorage.setItem("filter", JSON.stringify(newData));
     router.push("/listings");
   };

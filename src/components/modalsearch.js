@@ -57,6 +57,7 @@ const Modalsearch = () => {
 
     try {
       dispatch({ type: ACTIONS.LOADING, payload: true });
+      dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
 
       const res = await getDataApis(
         `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${newData.min_price}&max_price=${newData.max_price}`

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import profileImg from "../../../public/images/profile-img.svg";
 import banner1 from "../../../public/images/banner1.jpeg";
 import banner2 from "../../../public/images/banner2.jpeg";
 import banner3 from "../../../public/images/banner3.jpeg";
@@ -11,6 +12,7 @@ import Slider from "@/common/Slider";
 import { getDataApis } from "@/utils/fetchData";
 import Map from "./../../utils/map";
 import Head from "next/head";
+import ReactWhatsapp from "react-whatsapp";
 
 //
 
@@ -18,6 +20,7 @@ const ListingDetails = (props) => {
   const router = useRouter();
 
   const {
+    _id,
     address,
     property_type,
     price,
@@ -26,6 +29,7 @@ const ListingDetails = (props) => {
     toilets,
     images,
     map,
+    postedBy,
   } = props.listing;
 
   return (
@@ -38,7 +42,7 @@ const ListingDetails = (props) => {
         />
         <meta
           name="keywords"
-          content="Hapartment, hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -56,10 +60,7 @@ const ListingDetails = (props) => {
         <meta property="og:image" content={images[0].url} />
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client-vercel.app/"
-        />
+        <meta property="og:url" content="https://hapartment.org/" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta name="robots" content="index, nofollow" />
@@ -96,6 +97,7 @@ const ListingDetails = (props) => {
                 <div className="col-md-4">
                   <div className="price float-md-end float-sm-start">
                     ₦ {price}
+                    <span> / annum</span>
                   </div>
                 </div>
               </div>
@@ -191,6 +193,48 @@ const ListingDetails = (props) => {
             </div>
 
             <div className="col-lg-3 mt-5">
+              {/* Agent infor section */}
+              <div className="agent-section advert-image-box mb-5">
+                <div className="top-section">Posted By</div>
+
+                <div className="bottom-section">
+                  <div className="agent-center">
+                    <div className="agent-image">
+                      {postedBy.image === null ? (
+                        <Image src={profileImg} alt="picture" />
+                      ) : (
+                        <Image
+                          src={postedBy.image}
+                          alt="picture"
+                          width={100}
+                          height={100}
+                        />
+                      )}
+                    </div>
+
+                    <div className="agent-content">
+                      <h4>{postedBy.fullname}</h4>
+
+                      <small>@{postedBy.username}</small>
+                    </div>
+                  </div>
+                  <p className="text-center">
+                    <i className="bi bi-envelope-paper"></i>
+                    {/* {postedBy.email} */}
+                    support@hapartment.org
+                  </p>
+
+                  <ReactWhatsapp
+                    className="btn"
+                    number="+2347048942743"
+                    message={`${property_type} | ${address} | ${price} | https://hapartment.org/listings/${_id}`}
+                  >
+                    <i className="bi bi-whatsapp"></i>
+                    07048942743
+                  </ReactWhatsapp>
+                </div>
+              </div>
+
               <div className="advert-image-box mb-5">
                 <Image src={banner1} alt="picture" />
               </div>
@@ -220,27 +264,40 @@ const ListingDetails = (props) => {
 
 export default ListingDetails;
 
-export async function getStaticPaths() {
+export async function getServerSideProps({ params, query }) {
+  if (query.text) {
+    return { redirect: { destination: "/listings", permanent: false } };
+  }
   const response = await getDataApis("/all_listing");
-  const thePaths = response.data.map((item) => {
-    return { params: { slug: item._id } };
-  });
+  const listings = response.data.filter((item) => item._id === params.slug)[0];
 
-  return {
-    paths: thePaths,
-    fallback: false,
-  };
+  if (!listings) {
+    return { notFound: true };
+  }
+  return { props: { listing: listings } };
 }
 
-export async function getStaticProps(context) {
-  const response = await getDataApis("/all_listing");
-  const thelistings = response.data.filter(
-    (item) => item._id === context.params.slug
-  )[0];
+// export async function getStaticPaths() {
+//   const response = await getDataApis("/all_listing");
+//   const thePaths = response.data.map((item) => {
+//     return { params: { slug: item._id } };
+//   });
 
-  return {
-    props: {
-      listing: thelistings,
-    },
-  };
-}
+//   return {
+//     paths: thePaths,
+//     fallback: false,
+//   };
+// }
+
+// export async function getStaticProps(context) {
+//   const response = await getDataApis("/all_listing");
+//   const thelistings = response.data.filter(
+//     (item) => item._id === context.params.slug
+//   )[0];
+
+//   return {
+//     props: {
+//       listing: thelistings,
+//     },
+//   };
+// }

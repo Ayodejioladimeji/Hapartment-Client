@@ -18,7 +18,7 @@ const AboutUs = () => {
 
         <meta
           name="keywords"
-          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,10 +38,7 @@ const AboutUs = () => {
         />
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/about-us"
-        />
+        <meta property="og:url" content="https://hapartment.org/about-us" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

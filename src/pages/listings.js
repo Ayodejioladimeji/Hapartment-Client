@@ -16,32 +16,46 @@ import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
-import Map from "@/utils/map";
+// import Map from "@/utils/map";
 
 //
 
 const Listings = () => {
   const { state, dispatch } = useContext(DataContext);
   const { listings, loading } = state;
+  const { checkload } = state;
   const [load, setLoad] = useState(false);
-  const [visible, setVisible] = useState(9);
+  const [visible, setVisible] = useState(0);
   const [sorting, setSorting] = useState("");
   const [sort, setSort] = useState("");
   const [localData, setLocalData] = useState(null);
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
-  // const [callback, setCallback] = useState(false);
+
+  // display data randomly on the client side
+  // const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+  // const sortingData = shuffle(listings);
 
   // Sorting the data
   const sortdata = filterValue(listings, sort);
   const sorted = sortValue(sortdata, sorting);
 
   // To get data from the localstorage
+
   useEffect(() => {
-    const data = sessionStorage.getItem("filter");
-    const parsedData = JSON.parse(data);
-    setLocalData(parsedData);
-  }, []);
+    if (checkload) {
+      
+      const data = sessionStorage.getItem("filter");
+      const parsedData = JSON.parse(data);
+      setLocalData(parsedData);
+    }
+
+    // setVisible(
+    //   sessionStorage.getItem("visible") !== null
+    //     ? sessionStorage.getItem("visible")
+    //     : 9
+    // );
+  }, [checkload]);
 
   // a function to get the data
   const getSingleData = async () => {
@@ -101,16 +115,17 @@ const Listings = () => {
 
   // useEffect
   useEffect(() => {
-    if (localData !== null) {
+    if (localData !== null && checkload) {
+     
       if (Object?.keys(localData).length === 1) {
         getSingleData();
       } else {
         getMultipleData();
       }
-    } else {
+    } else if (checkload) {
       getAllData();
     }
-  }, [localData]);
+  }, [checkload]);
 
   //
 
@@ -129,6 +144,8 @@ const Listings = () => {
 
     try {
       dispatch({ type: ACTIONS.LOADING, payload: true });
+      dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
+      
       const newData = {
         cityname,
       };
@@ -158,7 +175,7 @@ const Listings = () => {
         />
         <meta
           name="keywords"
-          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
         <meta property="og:title" content="Hapartment - Property Listings" />
         <meta
@@ -166,10 +183,7 @@ const Listings = () => {
           content="Hapartment is your one place to find apartments and manage your rentals"
         />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/listings"
-        />
+        <meta property="og:url" content="https://hapartment.org/listings" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
@@ -250,10 +264,14 @@ const Listings = () => {
       <section className="white">
         <div className="container">
           <div className="filter mb-5 d-flex align-items-center justify-content-between">
-            <div>
+            {/* <div>
               {sorted.length > visible
                 ? `Results ${visible} of ${sorted.length}`
                 : `Results ${sorted.length} of ${sorted.length}`}
+            </div> */}
+
+            <div>
+              Showing {sorted.length} {sorted.length > 1 ? "results" : 'result'}
             </div>
 
             <div className="filter-container">
@@ -297,7 +315,7 @@ const Listings = () => {
                   <Placeholder />
                 ) : (
                   sorted
-                    .slice(0, visible)
+                    // .slice(0, visible)
                     .map((item) => <Card {...item} key={item._id} />)
                 )}
               </div>
@@ -308,15 +326,16 @@ const Listings = () => {
                 </div>
               )}
 
-              {visible > sorted.length || loading || sorted.length === 0 ? (
+              {/* {visible > sorted.length || loading || sorted.length === 0 ? (
                 ""
               ) : (
                 <LoadMore
                   load={load}
                   setLoad={setLoad}
+                  visible={visible}
                   setVisible={setVisible}
                 />
-              )}
+              )} */}
             </div>
 
             <div className="col-lg-3 ">

@@ -2,10 +2,14 @@ import { FaBath, FaToilet } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import moment from "moment";
+import { ACTIONS } from "@/store/Actions";
+import { useContext } from "react";
+import { DataContext } from "@/store/GlobalState";
 
 //
 
 const Card = ({ ...item }) => {
+  const { dispatch } = useContext(DataContext);
   const {
     _id,
     address,
@@ -31,6 +35,8 @@ const Card = ({ ...item }) => {
       pathname: `/listings/${_id}`,
       query: item,
     });
+
+    dispatch({ type: ACTIONS.CHECKLOAD, payload: false });
   };
 
   return (
@@ -47,7 +53,15 @@ const Card = ({ ...item }) => {
 
         <div
           className="tags"
-          style={{ background: `${status === "pending" ? "orange" : "green"}` }}
+          style={{
+            background: `${
+              status === "pending"
+                ? "orange"
+                : status === "declined"
+                ? "red"
+                : "green"
+            }`,
+          }}
         >
           {status}
         </div>

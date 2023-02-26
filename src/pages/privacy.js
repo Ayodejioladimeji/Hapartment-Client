@@ -13,7 +13,7 @@ const Privacy = () => {
         />
         <meta
           name="keywords"
-          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
         <meta property="og:title" content="Hapartment - Privacy Policy" />
         <meta
@@ -23,7 +23,7 @@ const Privacy = () => {
 
         <meta
           property="og:url"
-          content="https://hapartment-client.vercel.app/privacypolicy"
+          content="https://hapartment.org/privacypolicy"
         />
         <meta name="twitter:card" content="Hapartment" />
 

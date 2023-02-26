@@ -13,7 +13,7 @@ const Terms = () => {
         />
         <meta
           name="keywords"
-          content="Hapartment, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
         <meta property="og:title" content="Hapartment -  Terms Of Use" />
         <meta
@@ -21,10 +21,7 @@ const Terms = () => {
           content="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there."
         />
 
-        <meta
-          property="og:url"
-          content="https://hapartment-client.vercel.app/terms"
-        />
+        <meta property="og:url" content="https://hapartment.org/terms" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
