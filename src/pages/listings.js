@@ -271,7 +271,7 @@ const Listings = () => {
             </div> */}
 
             <div>
-              Showing {sorted.length} results
+              Showing {sorted.length} {sorted.length > 1 ? "results" : 'result'}
             </div>
 
             <div className="filter-container">

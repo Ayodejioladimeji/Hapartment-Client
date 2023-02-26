@@ -59,22 +59,30 @@ const HowTo = () => {
         <div className="container">
           <div className="row how-to-box d-flex">
             <div className="col-md-6 how-to-left">
-              <h1 className="mb-3">How to create Listings</h1>
+              <h1 className="mb-3" data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="400">How to create Listings</h1>
 
-              <p className="mb-3">
+              <p className="mb-3" data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="600">
                 A great platform for you to advertise your products for free
                 with high volumes of serious agents and renters browsing our
                 site.
               </p>
 
               <div className="d-flex align-items-center">
-                <Image
+                <Image data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="800"
                   src={appstore}
                   alt="picture"
                   className="appstore-image"
                   title="picture"
                 />
-                <Image
+                <Image data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="1000"
                   src={playstore}
                   alt="picture"
                   className="playstore-image"
@@ -84,7 +92,9 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 how-to-right">
-              <Image
+              <Image data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="800"
                 src={howtoImage}
                 alt="picture"
                 className="howto-image"
@@ -187,8 +197,8 @@ const HowTo = () => {
                 <b> Follow the below Format</b>
               </p>
               <ol>
-                <li>Address - 12 Akowonjo street, Ikeja lagos</li>
-                <li>Price per annum - 500,000</li>
+                <li>Address - e.g 12 Akowonjo street, Ikeja lagos</li>
+                <li>Price per annum - e.g 500,000</li>
                 <li>
                   Property description- Give full and detailed description about
                   the property
@@ -221,12 +231,12 @@ const HowTo = () => {
                 <b> Follow the below Format</b>
               </p>
               <ol>
-                <li>Number of bathrooms - 2</li>
-                <li>Number of toilets - 2</li>
-                <li>Furnishing - Semi-furnished</li>
-                <li>Home facilities - Tiled floor, Kitchen cabinets etc...</li>
+                <li>Number of bathrooms - e.g 2</li>
+                <li>Number of toilets - e.g 2</li>
+                <li>Furnishing - e.g Semi-furnished</li>
+                <li>Home facilities - e.g Tiled floor, Kitchen cabinets etc...</li>
                 <li>
-                  Area facilities - Hospital, School, Public transport etc...
+                  Area facilities - e.g Hospital, School, Public transport etc...
                 </li>
 
                 <p>
@@ -261,8 +271,8 @@ const HowTo = () => {
                 <b> Follow the below Format</b>
               </p>
               <ol>
-                <li>Category - new</li>
-                <li>Price per annum - 500,000</li>
+                <li>Category - e.g new</li>
+                <li>Price per annum - e.g 500,000</li>
                 <li>
                   Property description- Give full and detailed description about
                   the property
