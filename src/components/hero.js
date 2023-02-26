@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import heroImg from "../../public/images/hero-image.svg";
+import { ACTIONS } from "@/store/Actions";
+import { DataContext } from '@/store/GlobalState';
 
 //
 
@@ -9,6 +11,7 @@ const Hero = () => {
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
+  const {dispatch} = useContext(DataContext)
 
   // handle submit
   const handleSubmit = async (e) => {
@@ -24,6 +27,7 @@ const Hero = () => {
     };
 
     sessionStorage.setItem("filter", JSON.stringify(newData));
+    dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
     router.push("/listings");
   };
 

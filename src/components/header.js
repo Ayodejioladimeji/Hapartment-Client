@@ -1,9 +1,12 @@
 import { ACTIONS } from "@/store/Actions";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { DataContext } from "@/store/GlobalState";
 
 const Header = () => {
   const router = useRouter();
+  const {dispatch } = useContext(DataContext);
 
   // Get all listings on Click
   const handleSubmit = async (e) => {
@@ -11,6 +14,7 @@ const Header = () => {
     sessionStorage.clear();
 
     router.push("/listings");
+    dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
   };
 
   return (
