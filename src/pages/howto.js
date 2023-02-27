@@ -35,7 +35,7 @@ const HowTo = () => {
           site."
         />
 
-        <meta property="og:url" content="https://hapartment.org/howto" />
+        <meta property="og:url" content="https://demo.hapartment.org/howto" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
@@ -59,30 +59,40 @@ const HowTo = () => {
         <div className="container">
           <div className="row how-to-box d-flex">
             <div className="col-md-6 how-to-left">
-              <h1 className="mb-3" data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="400">How to create Listings</h1>
+              <h1
+                className="mb-3"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-delay="400"
+              >
+                How to create Listings
+              </h1>
 
-              <p className="mb-3" data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="600">
+              <p
+                className="mb-3"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-delay="600"
+              >
                 A great platform for you to advertise your products for free
                 with high volumes of serious agents and renters browsing our
                 site.
               </p>
 
               <div className="d-flex align-items-center">
-                <Image data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="800"
+                <Image
+                  data-aos="fade-up"
+                  data-aos-once="true"
+                  data-aos-delay="800"
                   src={appstore}
                   alt="picture"
                   className="appstore-image"
                   title="picture"
                 />
-                <Image data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="1000"
+                <Image
+                  data-aos="fade-up"
+                  data-aos-once="true"
+                  data-aos-delay="1000"
                   src={playstore}
                   alt="picture"
                   className="playstore-image"
@@ -92,9 +102,10 @@ const HowTo = () => {
             </div>
 
             <div className="col-md-6 how-to-right">
-              <Image data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="800"
+              <Image
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-delay="800"
                 src={howtoImage}
                 alt="picture"
                 className="howto-image"
@@ -234,9 +245,12 @@ const HowTo = () => {
                 <li>Number of bathrooms - e.g 2</li>
                 <li>Number of toilets - e.g 2</li>
                 <li>Furnishing - e.g Semi-furnished</li>
-                <li>Home facilities - e.g Tiled floor, Kitchen cabinets etc...</li>
                 <li>
-                  Area facilities - e.g Hospital, School, Public transport etc...
+                  Home facilities - e.g Tiled floor, Kitchen cabinets etc...
+                </li>
+                <li>
+                  Area facilities - e.g Hospital, School, Public transport
+                  etc...
                 </li>
 
                 <p>

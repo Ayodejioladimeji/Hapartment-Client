@@ -60,7 +60,7 @@ const ListingDetails = (props) => {
         <meta property="og:image" content={images[0].url} />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/" />
+        <meta property="og:url" content="https://demo.hapartment.org/" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta name="robots" content="index, nofollow" />
@@ -227,7 +227,7 @@ const ListingDetails = (props) => {
                   <ReactWhatsapp
                     className="btn"
                     number="+2347048942743"
-                    message={`${property_type} | ${address} | ${price} | https://hapartment.org/listings/${_id}`}
+                    message={`${property_type} | ${address} | ${price} | https://demo.hapartment.org/listings/${_id}`}
                   >
                     <i className="bi bi-whatsapp"></i>
                     07048942743

@@ -21,7 +21,7 @@ const Terms = () => {
           content="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there."
         />
 
-        <meta property="og:url" content="https://hapartment.org/terms" />
+        <meta property="og:url" content="https://demo.hapartment.org/terms" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

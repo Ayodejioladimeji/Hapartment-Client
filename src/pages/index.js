@@ -46,7 +46,7 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org" />
+        <meta property="og:url" content="https://demo.hapartment.org" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

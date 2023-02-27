@@ -44,7 +44,6 @@ const Listings = () => {
 
   useEffect(() => {
     if (checkload) {
-      
       const data = sessionStorage.getItem("filter");
       const parsedData = JSON.parse(data);
       setLocalData(parsedData);
@@ -116,7 +115,6 @@ const Listings = () => {
   // useEffect
   useEffect(() => {
     if (localData !== null && checkload) {
-     
       if (Object?.keys(localData).length === 1) {
         getSingleData();
       } else {
@@ -145,7 +143,7 @@ const Listings = () => {
     try {
       dispatch({ type: ACTIONS.LOADING, payload: true });
       dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-      
+
       const newData = {
         cityname,
       };
@@ -183,7 +181,10 @@ const Listings = () => {
           content="Hapartment is your one place to find apartments and manage your rentals"
         />
 
-        <meta property="og:url" content="https://hapartment.org/listings" />
+        <meta
+          property="og:url"
+          content="https://demo.hapartment.org/listings"
+        />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
@@ -271,7 +272,7 @@ const Listings = () => {
             </div> */}
 
             <div>
-              Showing {sorted.length} {sorted.length > 1 ? "results" : 'result'}
+              Showing {sorted.length} {sorted.length > 1 ? "results" : "result"}
             </div>
 
             <div className="filter-container">
