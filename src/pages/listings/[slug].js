@@ -264,40 +264,40 @@ const ListingDetails = (props) => {
 
 export default ListingDetails;
 
-export async function getServerSideProps({ params, query }) {
-  if (query.text) {
-    return { redirect: { destination: "/listings", permanent: false } };
-  }
-  const response = await getDataApis("/all_listing");
-  const listings = response.data.filter((item) => item._id === params.slug)[0];
+// export async function getServerSideProps({ params, query }) {
+//   if (query.text) {
+//     return { redirect: { destination: "/listings", permanent: false } };
+//   }
+//   const response = await getDataApis("/all_listing");
+//   const listings = response.data.filter((item) => item._id === params.slug)[0];
 
-  if (!listings) {
-    return { notFound: true };
-  }
-  return { props: { listing: listings } };
+//   if (!listings) {
+//     return { notFound: true };
+//   }
+//   return { props: { listing: listings } };
+// }
+
+export async function getStaticPaths() {
+  const response = await getDataApis("/all_listing");
+  const thePaths = response.data.map((item) => {
+    return { params: { slug: item._id } };
+  });
+
+  return {
+    paths: thePaths,
+    fallback: false,
+  };
 }
 
-// export async function getStaticPaths() {
-//   const response = await getDataApis("/all_listing");
-//   const thePaths = response.data.map((item) => {
-//     return { params: { slug: item._id } };
-//   });
+export async function getStaticProps(context) {
+  const response = await getDataApis("/all_listing");
+  const thelistings = response.data.filter(
+    (item) => item._id === context.params.slug
+  )[0];
 
-//   return {
-//     paths: thePaths,
-//     fallback: false,
-//   };
-// }
-
-// export async function getStaticProps(context) {
-//   const response = await getDataApis("/all_listing");
-//   const thelistings = response.data.filter(
-//     (item) => item._id === context.params.slug
-//   )[0];
-
-//   return {
-//     props: {
-//       listing: thelistings,
-//     },
-//   };
-// }
+  return {
+    props: {
+      listing: thelistings,
+    },
+  };
+}
