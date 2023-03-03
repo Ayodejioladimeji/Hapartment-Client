@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 import heroImg from "../../public/images/hero-image.svg";
 import { ACTIONS } from "@/store/Actions";
-import { DataContext } from '@/store/GlobalState';
+import { DataContext } from "@/store/GlobalState";
 
 //
 
@@ -11,7 +11,7 @@ const Hero = () => {
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
-  const {dispatch} = useContext(DataContext)
+  const { dispatch } = useContext(DataContext);
 
   // handle submit
   const handleSubmit = async (e) => {
@@ -36,12 +36,7 @@ const Hero = () => {
       <div className="container">
         <div className="row hero">
           <div className="col-lg-6 hero-left">
-            <h1
-              className="mb-4"
-              data-aos="fade-up"
-              data-aos-once="true"
-              
-            >
+            <h1 className="mb-4" data-aos="fade-up" data-aos-once="true">
               Easy <span className="coloured">way</span> to find a perfect
               <span className="coloured"> home</span>
             </h1>
@@ -80,6 +75,7 @@ const Hero = () => {
                     <input
                       type="text"
                       placeholder="Enter your search"
+                      className="form-control"
                       value={cityname}
                       onChange={(e) => setCityname(e.target.value)}
                     />
