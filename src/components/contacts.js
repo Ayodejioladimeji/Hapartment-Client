@@ -86,6 +86,7 @@ const Contacts = () => {
                     value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    className="form-control"
                   />
                   {errors.name && touched.name && (
                     <div className="input_feedback">{errors.name}</div>
@@ -101,6 +102,7 @@ const Contacts = () => {
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    className="form-control"
                   />
                   {errors.email && touched.email && (
                     <div className="input_feedback">{errors.email}</div>
@@ -114,6 +116,7 @@ const Contacts = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     name="message"
+                    className="form-control"
                   />
                   {errors.message && touched.message && (
                     <div className="input_feedback">{errors.message}</div>

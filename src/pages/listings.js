@@ -112,8 +112,6 @@ const Listings = () => {
     }
   };
 
-
-
   // useEffect
   useEffect(() => {
     if (localData !== null && checkload) {
@@ -122,10 +120,11 @@ const Listings = () => {
       } else {
         getMultipleData();
       }
-    } else if (localData !== null && checkload) {
+    } else if (localData === null && checkload) {
+      getAllData();
+    } else {
       getAllData();
     }
-
   }, [checkload, localData]);
 
   //
