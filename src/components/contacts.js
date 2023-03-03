@@ -86,14 +86,14 @@ const Contacts = () => {
                     value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className="form-control"
+                    className="input"
                   />
                   {errors.name && touched.name && (
                     <div className="input_feedback">{errors.name}</div>
                   )}
                 </div>
 
-                <div className="form-control mb-3">
+                <div className="control mb-3">
                   <label>Email</label>
                   <input
                     type="text"
@@ -102,28 +102,27 @@ const Contacts = () => {
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className="form-control"
+                    className="input"
                   />
                   {errors.email && touched.email && (
                     <div className="input_feedback">{errors.email}</div>
                   )}
                 </div>
 
-                <div className="form-control mb-3">
+                <div className="control mb-3">
                   <label>Message</label>
                   <textarea
                     value={values.message}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     name="message"
-                    className="form-control"
                   />
                   {errors.message && touched.message && (
                     <div className="input_feedback">{errors.message}</div>
                   )}
                 </div>
 
-                <div className="form-control">
+                <div className="control">
                   <button type="submit" disabled={isSubmitting}>
                     {isSubmitting ? "SENDING..." : "SEND"}
                   </button>

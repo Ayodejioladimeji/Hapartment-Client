@@ -74,7 +74,7 @@ const HowTo = () => {
                 data-aos-once="true"
                 data-aos-delay="600"
               >
-                A great platform for you to advertise your products for free
+                A great platform for you to advertise your listings for free
                 with high volumes of serious agents and renters browsing our
                 site.
               </p>
@@ -123,11 +123,11 @@ const HowTo = () => {
               <div className="underline mb-3"></div>
               <h3 className="mb-3">Watch Video</h3>
 
-              <p className="mb-3">
+              {/* <p className="mb-3">
                 A great platform for you to advertise your products for free
                 with high volumes of serious agents and renters browsing our
                 site.
-              </p>
+              </p> */}
               <p className="mb-3">
                 You can also follow the steps below to get your Listing approved
                 in just few minutes.
