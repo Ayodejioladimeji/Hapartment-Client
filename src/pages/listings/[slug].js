@@ -119,11 +119,11 @@ const ListingDetails = (props) => {
                 </div>
                 <div className="details-box">
                   <FaBath className="details-icons" />
-                  {bathrooms} Bathrooms
+                  {bathrooms} {bathrooms === "1" ? "Bathroom" : "Bathrooms"}
                 </div>
                 <div className="details-box">
                   <FaToilet className="details-icons" />
-                  {toilets} Toilets
+                  {toilets} {toilets === "1" ? "Toilet" : "Toilets"}
                 </div>
               </div>
 
