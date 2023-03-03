@@ -38,7 +38,7 @@ const ListingDetails = (props) => {
         <title>Listing Details</title>
         <meta
           name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
+          content={`${property_type} | ${address} | ${price}`}
         />
         <meta
           name="keywords"
@@ -47,15 +47,12 @@ const ListingDetails = (props) => {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="title" content="Hapartment - Homepage" />
+        <meta name="title" content="Hapartment-Homepage" />
         <meta
           property="og:title"
-          content="We help users search for apartment easily and provide them with adequate information to help them make well-informed decisions."
+          content={`${property_type} | ${address} | ${price}`}
         />
-        <meta
-          property="og:description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
-        />
+        <meta property="og:description" content="https://demo.hapartment.org" />
 
         <meta property="og:image" content={images[0].url} />
         <meta property="og:type" content="website" />
@@ -227,7 +224,7 @@ const ListingDetails = (props) => {
                   <ReactWhatsapp
                     className="btn"
                     number="+2347048942743"
-                    message={`${property_type} | ${address} | ${price} | https://demo.hapartment.org/listings/${_id}`}
+                    message={`Hello, I'm interested in your property on Hapartment - https://demo.hapartment.org/listings/${_id}`}
                   >
                     <i className="bi bi-whatsapp"></i>
                     07048942743

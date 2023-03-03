@@ -117,16 +117,12 @@ const Listings = () => {
   // useEffect
   useEffect(() => {
     if (localData !== null && checkload) {
-      
       if (Object?.keys(localData).length === 1) {
-        console.log("single")
         getSingleData();
       } else {
-        console.log("multiple")
         getMultipleData();
       }
     } else if (localData !== null && checkload) {
-      console.log("all data");
       getAllData();
     }
 
@@ -328,7 +324,7 @@ const Listings = () => {
                 )}
               </div>
 
-              {!loading && sorted.length === 0 && (
+              {!loading && sorted.length === 0 && localData === null && (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data
                 </div>
