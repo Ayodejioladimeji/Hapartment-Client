@@ -8,11 +8,11 @@ const Error = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "100vh",
-        textAlign:'center'
+        textAlign: "center",
       }}
     >
       <div>
-        <h1>404</h1>
+        <h1 style={{ fontSize: "60px", fontWeight: "700" }}>404</h1>
         <h2>Page not found</h2>
         <Link href="/">Go home</Link>
       </div>

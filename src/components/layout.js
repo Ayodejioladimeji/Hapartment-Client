@@ -5,6 +5,7 @@ import { useContext, useEffect } from "react";
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { getDataApis } from "@/utils/fetchData";
+import Navbar from "./navbar";
 
 const Layout = ({ children }) => {
   const { state, dispatch } = useContext(DataContext);
@@ -30,7 +31,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <Navbar />
       {children}
       <Footer />
     </>
