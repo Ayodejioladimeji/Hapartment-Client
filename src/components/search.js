@@ -3,11 +3,12 @@ import furnishingdata from "@/constants/furnishingdata";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import searchImg from "../../public/images/search-image.svg";
 import { statesdata } from "@/constants/statesdata";
 import { strictAddComma } from "comma-separator";
 import { ACTIONS } from "@/store/Actions";
+import { DataContext } from '@/store/GlobalState';
 
 const initialState = {
   property_type: "",
@@ -23,7 +24,7 @@ const Search = () => {
   const [city, setCity] = useState([]);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-
+  const {dispatch} = useContext(DataContext)
   const router = useRouter();
   const { property_type, statename, cityname, bathrooms, toilets, furnishing } =
     values;

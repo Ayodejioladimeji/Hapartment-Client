@@ -1,12 +1,10 @@
 {
   "name": "hapartmentclient",
   "version": "0.1.0",
-  "homepage": "https://demo.hapartment.org",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },

@@ -40,7 +40,7 @@ const Hero = () => {
               className="mb-4"
               data-aos="fade-up"
               data-aos-once="true"
-              data-aos-delay="400"
+              
             >
               Easy <span className="coloured">way</span> to find a perfect
               <span className="coloured"> home</span>
@@ -50,7 +50,7 @@ const Hero = () => {
               className="mb-3"
               data-aos="fade-up"
               data-aos-once="true"
-              data-aos-delay="700"
+              data-aos-delay="400"
             >
               We help users search for shops and apartments in the best location
               and provide them with adequate information to help them make
@@ -62,7 +62,7 @@ const Hero = () => {
                 className="mb-3 bold"
                 data-aos="fade-right"
                 data-aos-once="true"
-                data-aos-delay="1000"
+                data-aos-delay="600"
               >
                 Quick Search
               </h6>
@@ -73,7 +73,7 @@ const Hero = () => {
                     className="form-control mb-2 d-flex align-items-center"
                     data-aos="fade-up"
                     data-aos-once="true"
-                    data-aos-delay="1300"
+                    data-aos-delay="800"
                     data-aos-offset="50"
                   >
                     <i className="bi bi-geo-alt"></i>
@@ -90,7 +90,7 @@ const Hero = () => {
                 <div
                   data-aos="fade-up"
                   data-aos-once="true"
-                  data-aos-delay="1600"
+                  data-aos-delay="1000"
                   data-aos-offset="50"
                 >
                   <button className="btn hero-btn mt-4">Search</button>
@@ -100,7 +100,7 @@ const Hero = () => {
           </div>
 
           <div className="col-lg-6 hero-right">
-            <div data-aos="fade-up" data-aos-once="true" data-aos-delay="800">
+            <div data-aos="fade-up" data-aos-once="true">
               <Image src={heroImg} alt="picture" priority />
             </div>
           </div>

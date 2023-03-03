@@ -54,7 +54,7 @@ const Listings = () => {
     //     ? sessionStorage.getItem("visible")
     //     : 9
     // );
-  }, [checkload]);
+  }, []);
 
   // a function to get the data
   const getSingleData = async () => {
@@ -112,18 +112,25 @@ const Listings = () => {
     }
   };
 
+
+
   // useEffect
   useEffect(() => {
     if (localData !== null && checkload) {
+      
       if (Object?.keys(localData).length === 1) {
+        console.log("single")
         getSingleData();
       } else {
+        console.log("multiple")
         getMultipleData();
       }
-    } else if (checkload) {
+    } else if (localData !== null && checkload) {
+      console.log("all data");
       getAllData();
     }
-  }, [checkload]);
+
+  }, [checkload, localData]);
 
   //
 
@@ -188,7 +195,7 @@ const Listings = () => {
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="Hapartment Digital Marketplace" />
 

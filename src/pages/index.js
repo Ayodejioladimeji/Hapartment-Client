@@ -10,7 +10,7 @@ import Search from "@/components/search";
 import Steps from "@/components/steps";
 import Head from "next/head";
 
-export default function Home() {
+export default function index() {
   return (
     <>
       <Head>

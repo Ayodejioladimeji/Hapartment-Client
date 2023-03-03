@@ -87,7 +87,7 @@ const Description = ({ item, children }) => {
             <WhatsappShareButton
               url={`https://demo.hapartment.org/listings/${router.query.slug}`}
               title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
-              separator=":: "
+              separator=":"
             >
               <WhatsappIcon size={32} round />
             </WhatsappShareButton>
