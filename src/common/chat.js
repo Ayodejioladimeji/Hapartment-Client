@@ -5,6 +5,7 @@ const Chat = () => {
     <a
       href="https://api.whatsapp.com/send?phone=2347048942743"
       target="_blank"
+      rel="noreferrer"
       style={{
         padding: "10px",
         borderRadius: "50%",
