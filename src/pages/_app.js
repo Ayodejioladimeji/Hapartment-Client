@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="title" content="Hapartment - Homepage" />
+        <meta name="title" content="Hapartment-Homepage" />
         <meta property="og:title" content="Hapartment - Homepage" />
         <meta
           property="og:description"
@@ -44,11 +44,11 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/" />
+        <meta property="og:url" content="https://demo.hapartment.org/" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="Hapartment Digital Marketplace" />
 
@@ -64,6 +64,7 @@ export default function App({ Component, pageProps }) {
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossOrigin="anonymous"
       />
+
       <DataProvider>
         <Layout>
           <Component {...pageProps} />

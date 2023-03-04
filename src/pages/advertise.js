@@ -37,11 +37,14 @@ const Advert = () => {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/advertise" />
+        <meta
+          property="og:url"
+          content="https://demo.hapartment.org/advertise"
+        />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="Hapartment Digital Marketplace" />
 

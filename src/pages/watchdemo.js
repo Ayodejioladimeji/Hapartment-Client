@@ -23,11 +23,14 @@ const WatchDemo = () => {
           content="We give you the ability to research, compare and see what offers are available for your next permanent residence. You will be able to see before hand if it is a suitable area and provides what you need and want in a home"
         />
 
-        <meta property="og:url" content="https://hapartment.org/watchdemo" />
+        <meta
+          property="og:url"
+          content="https://demo.hapartment.org/watchdemo"
+        />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="Hapartment Digital Marketplace" />
 

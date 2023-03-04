@@ -1,3 +1,4 @@
+import Widget from "@/common/widget";
 import Connect from "@/components/connect";
 import Different from "@/components/different";
 import Discover from "@/components/discover";
@@ -10,7 +11,7 @@ import Search from "@/components/search";
 import Steps from "@/components/steps";
 import Head from "next/head";
 
-export default function Home() {
+export default function index() {
   return (
     <>
       <Head>
@@ -46,7 +47,7 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org" />
+        <meta property="og:url" content="https://demo.hapartment.org" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
@@ -70,6 +71,7 @@ export default function Home() {
       <SafetyTips />
       <Places />
       <Download />
+      <Widget />
     </>
   );
 }

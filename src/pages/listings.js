@@ -44,7 +44,6 @@ const Listings = () => {
 
   useEffect(() => {
     if (checkload) {
-      
       const data = sessionStorage.getItem("filter");
       const parsedData = JSON.parse(data);
       setLocalData(parsedData);
@@ -55,7 +54,7 @@ const Listings = () => {
     //     ? sessionStorage.getItem("visible")
     //     : 9
     // );
-  }, [checkload]);
+  }, []);
 
   // a function to get the data
   const getSingleData = async () => {
@@ -116,16 +115,17 @@ const Listings = () => {
   // useEffect
   useEffect(() => {
     if (localData !== null && checkload) {
-     
       if (Object?.keys(localData).length === 1) {
         getSingleData();
       } else {
         getMultipleData();
       }
-    } else if (checkload) {
+    } else if (localData === null && checkload) {
+      getAllData();
+    } else {
       getAllData();
     }
-  }, [checkload]);
+  }, [checkload, localData]);
 
   //
 
@@ -145,7 +145,7 @@ const Listings = () => {
     try {
       dispatch({ type: ACTIONS.LOADING, payload: true });
       dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-      
+
       const newData = {
         cityname,
       };
@@ -183,11 +183,14 @@ const Listings = () => {
           content="Hapartment is your one place to find apartments and manage your rentals"
         />
 
-        <meta property="og:url" content="https://hapartment.org/listings" />
+        <meta
+          property="og:url"
+          content="https://demo.hapartment.org/listings"
+        />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="Hapartment Digital Marketplace" />
 
@@ -271,7 +274,7 @@ const Listings = () => {
             </div> */}
 
             <div>
-              Showing {sorted.length} {sorted.length > 1 ? "results" : 'result'}
+              Showing {sorted.length} {sorted.length > 1 ? "results" : "result"}
             </div>
 
             <div className="filter-container">
@@ -320,7 +323,7 @@ const Listings = () => {
                 )}
               </div>
 
-              {!loading && sorted.length === 0 && (
+              {!loading && sorted.length === 0 && localData === null && (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data
                 </div>

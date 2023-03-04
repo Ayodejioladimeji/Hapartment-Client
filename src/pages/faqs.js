@@ -25,11 +25,11 @@ const Faqs = () => {
           property="og:description"
           content="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers"
         />
-        <meta property="og:url" content="https://hapartment.org/faqs" />
+        <meta property="og:url" content="https://demo.hapartment.org/faqs" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="Hapartment Digital Marketplace" />
 

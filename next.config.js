@@ -8,10 +8,14 @@ const nextConfig = {
   },
   images: {
     domains: ["res.cloudinary.com"],
+    // unoptimized: true,
   },
   experimental: {
     scrollRestoration: true,
   },
+  // useFileSystemPublicRoutes: false,
+  // distDir: "build",
+  // trailingSlash: true,
 };
 
 module.exports = nextConfig;
