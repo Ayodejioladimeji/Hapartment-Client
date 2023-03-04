@@ -1,3 +1,4 @@
+import Widget from "@/common/widget";
 import Connect from "@/components/connect";
 import Different from "@/components/different";
 import Discover from "@/components/discover";
@@ -70,6 +71,7 @@ export default function index() {
       <SafetyTips />
       <Places />
       <Download />
+      <Widget />
     </>
   );
 }

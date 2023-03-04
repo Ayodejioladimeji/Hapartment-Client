@@ -64,6 +64,7 @@ export default function App({ Component, pageProps }) {
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossOrigin="anonymous"
       />
+
       <DataProvider>
         <Layout>
           <Component {...pageProps} />

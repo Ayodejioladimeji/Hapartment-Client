@@ -6,6 +6,8 @@ import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { getDataApis } from "@/utils/fetchData";
 import Navbar from "./navbar";
+import Chat from "@/common/chat";
+// import Widget from "@/common/widget";
 
 const Layout = ({ children }) => {
   const { state, dispatch } = useContext(DataContext);
@@ -31,10 +33,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <Header /> */}
-      <Navbar />
+      <Header />
+      {/* <Navbar /> */}
       {children}
       <Footer />
+      <Chat />
     </>
   );
 };
