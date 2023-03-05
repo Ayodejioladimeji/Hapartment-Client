@@ -179,7 +179,6 @@ const Modalsearch = () => {
             onChange={(e) => setMinPrice(strictAddComma(e.target.value))}
             placeholder="min_price"
             value={minPrice}
-            className="form-control input"
           />
 
           <input
@@ -187,7 +186,6 @@ const Modalsearch = () => {
             onChange={(e) => setMaxPrice(strictAddComma(e.target.value))}
             placeholder="max_price"
             value={maxPrice}
-            className="form-control input"
           />
 
           <button

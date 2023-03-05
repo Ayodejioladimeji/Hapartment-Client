@@ -63,9 +63,11 @@
 
     select,
     input {
-      @include input(var(--border-color));
+      padding: 14px;
       margin-bottom: 20px;
       width: 48%;
+      font-size: 16px !important;
+      height: 50px;
 
       @media (max-width: 565px) {
         width: 100%;
@@ -74,7 +76,7 @@
 
     input {
       &::-webkit-input-placeholder {
-        color: var(--black-color);
+        color: var(--text-color);
       }
     }
 

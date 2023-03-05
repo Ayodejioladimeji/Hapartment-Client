@@ -36,16 +36,15 @@ html {
   width: 100%;
 }
 
-:focus,
-input:focus,
-select:focus,
-textarea:focus,
-button:focus,
-.btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  border: 1px solid var(--primary-color) !important;
-}
+// :focus,
+// input:focus,
+// select:focus,
+// textarea:focus,
+// button:focus,
+// .btn:focus {
+//   outline: none !important;
+//   box-shadow: none !important;
+// }
 textarea {
   resize: none;
 }
@@ -55,10 +54,6 @@ a {
 ul,
 ul li {
   list-style-type: none;
-}
-input {
-  border-radius: 5px !important;
-  font-size: var(--p-medium) !important;
 }
 
 body {
@@ -239,10 +234,10 @@ footer {
         height: 50px !important;
         font-size: 14px !important;
 
-        &:focus {
-          background: transparent;
-          box-shadow: none;
-        }
+        // &:focus {
+        //   background: transparent;
+        //   box-shadow: none;
+        // }
       }
 
       button {
