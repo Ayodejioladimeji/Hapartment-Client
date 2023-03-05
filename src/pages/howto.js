@@ -10,8 +10,18 @@ import how3 from "../../public/images/how3.svg";
 import how4 from "../../public/images/how4.svg";
 import how5 from "../../public/images/how5.svg";
 import how6 from "../../public/images/how6.svg";
+import { useContext } from "react";
+import { DataContext } from "@/store/GlobalState";
+import { ACTIONS } from "@/store/Actions";
+import DownloadWrapper from "@/common/downloadWrapper";
+import DownloadModal from "@/common/downloadmodal";
 
 const HowTo = () => {
+  const { state, dispatch } = useContext(DataContext);
+  const { downloadModal } = state;
+
+  //
+
   return (
     <>
       <Head>
@@ -88,6 +98,9 @@ const HowTo = () => {
                   alt="picture"
                   className="appstore-image"
                   title="picture"
+                  onClick={() =>
+                    dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
+                  }
                 />
                 <Image
                   data-aos="fade-up"
@@ -97,6 +110,9 @@ const HowTo = () => {
                   alt="picture"
                   className="playstore-image"
                   title="picture"
+                  onClick={() =>
+                    dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
+                  }
                 />
               </div>
             </div>
@@ -331,6 +347,12 @@ const HowTo = () => {
           </div>
         </div>
       </section>
+
+      {downloadModal && (
+        <DownloadWrapper>
+          <DownloadModal />
+        </DownloadWrapper>
+      )}
     </>
   );
 };
