@@ -44,8 +44,6 @@ const Footer = () => {
     }
   };
 
-  console.log(newsModal);
-
   return (
     <footer>
       <div className="container">
