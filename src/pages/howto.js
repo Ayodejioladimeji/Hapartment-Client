@@ -10,8 +10,18 @@ import how3 from "../../public/images/how3.svg";
 import how4 from "../../public/images/how4.svg";
 import how5 from "../../public/images/how5.svg";
 import how6 from "../../public/images/how6.svg";
+import { useContext } from "react";
+import { DataContext } from "@/store/GlobalState";
+import { ACTIONS } from "@/store/Actions";
+import DownloadWrapper from "@/common/downloadWrapper";
+import DownloadModal from "@/common/downloadmodal";
 
 const HowTo = () => {
+  const { state, dispatch } = useContext(DataContext);
+  const { downloadModal } = state;
+
+  //
+
   return (
     <>
       <Head>
@@ -88,6 +98,9 @@ const HowTo = () => {
                   alt="picture"
                   className="appstore-image"
                   title="picture"
+                  onClick={() =>
+                    dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
+                  }
                 />
                 <Image
                   data-aos="fade-up"
@@ -97,6 +110,9 @@ const HowTo = () => {
                   alt="picture"
                   className="playstore-image"
                   title="picture"
+                  onClick={() =>
+                    dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
+                  }
                 />
               </div>
             </div>
@@ -162,7 +178,7 @@ const HowTo = () => {
               <h3 className="mb-3">Step One</h3>
 
               <p className="mb-3">
-                Download our mobile app from playstore or appstore and Login
+                Download our mobile app from play store or apple store and Login
                 into your account
               </p>
             </div>
@@ -208,16 +224,13 @@ const HowTo = () => {
                 <b> Follow the below Format</b>
               </p>
               <ol>
-                <li>Address - e.g 12 Akowonjo street, Ikeja lagos</li>
-                <li>Price per annum - e.g 500,000</li>
                 <li>
-                  Property description- Give full and detailed description about
-                  the property
+                  Address - e.g 12 Akowonjo street, Computer village, Ikeja
+                  Lagos
                 </li>
-                <li>
-                  Youtube video link (optional) - Provide the video url (e.g
-                  https://youtube.com/my-video)
-                </li>
+                <li>Property type - e.g Self contain</li>
+                <li>State- e.g Lagos</li>
+                <li>City - e.g Ikeja</li>
                 <p>
                   <b>Click Save and continue...</b>
                 </p>
@@ -285,7 +298,7 @@ const HowTo = () => {
                 <b> Follow the below Format</b>
               </p>
               <ol>
-                <li>Category - e.g new</li>
+                <li>Category - e.g Recent apartment</li>
                 <li>Price per annum - e.g 500,000</li>
                 <li>
                   Property description- Give full and detailed description about
@@ -322,7 +335,7 @@ const HowTo = () => {
               </p>
 
               <p>
-                Once all requierd information about the property has been
+                Once all required information about the property has been
                 provided, click on
                 <b> “Create Listing”</b> to create new property.
               </p>
@@ -334,6 +347,12 @@ const HowTo = () => {
           </div>
         </div>
       </section>
+
+      {downloadModal && (
+        <DownloadWrapper>
+          <DownloadModal />
+        </DownloadWrapper>
+      )}
     </>
   );
 };

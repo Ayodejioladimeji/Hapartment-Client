@@ -215,11 +215,16 @@ const ListingDetails = (props) => {
                       <small>@{postedBy.username}</small>
                     </div>
                   </div>
-                  <p className="text-center">
+                  <a
+                    className="send-mail"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=support@hapartment.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="bi bi-envelope-paper"></i>
                     {/* {postedBy.email} */}
                     support@hapartment.org
-                  </p>
+                  </a>
 
                   <ReactWhatsapp
                     className="btn"

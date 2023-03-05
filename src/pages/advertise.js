@@ -119,7 +119,7 @@ const Advert = () => {
                 <p>
                   Banner adverts are shown in the middle of property listings
                   (e.g. Apartments for rent) or any marketable position on
-                  Hapartment.org. The adverts are shown alongside other banner
+                  Hapartment. The adverts are shown alongside other banner
                   adverts, which means they can be easily seen by people
                   browsing through listings on our website.
                 </p>

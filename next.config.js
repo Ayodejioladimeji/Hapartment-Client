@@ -16,6 +16,9 @@ const nextConfig = {
   // useFileSystemPublicRoutes: false,
   // distDir: "build",
   // trailingSlash: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;

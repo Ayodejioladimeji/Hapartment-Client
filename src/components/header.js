@@ -6,7 +6,7 @@ import { DataContext } from "@/store/GlobalState";
 
 const Header = () => {
   const router = useRouter();
-  const {dispatch } = useContext(DataContext);
+  const { dispatch } = useContext(DataContext);
 
   // Get all listings on Click
   const handleSubmit = async (e) => {
@@ -68,83 +68,47 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navmenu">
             <ul className="navbar-nav nav-top ms-auto">
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${
                     router.pathname === "/about-us" ? "green" : "grey"
                   }`}
                   href="/about-us"
                 >
-                  <span
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navmenu"
-                    aria-controls="navmenu"
-                    className="d-lg-none d-md-block"
-                  >
-                    About Us
-                  </span>
-
-                  <span className="d-lg-block d-none">About Us</span>
-                </Link>
+                  About Us
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${
                     router.pathname === "/advertise" ? "green" : "grey"
                   }`}
                   href="/advertise"
                 >
-                  <span
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navmenu"
-                    aria-controls="navmenu"
-                    className="d-lg-none d-md-block"
-                  >
-                    Advertise
-                  </span>
-
-                  <span className="d-lg-block d-none">Advertise</span>
-                </Link>
+                  Advertise
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${
                     router.pathname === "/howto" ? "green" : "grey"
                   }`}
                   href="/howto"
                 >
-                  <span
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navmenu"
-                    aria-controls="navmenu"
-                    className="d-lg-none d-md-block"
-                  >
-                    How To
-                  </span>
-
-                  <span className="d-lg-block d-none">How To</span>
-                </Link>
+                  How To
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${
                     router.pathname === "/contact" ? "green" : "grey"
                   }`}
                   href="/contact"
                 >
-                  <span
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navmenu"
-                    aria-controls="navmenu"
-                    className="d-lg-none d-md-block"
-                  >
-                    Contact Us
-                  </span>
-
-                  <span className="d-lg-block d-none">Contact Us</span>
-                </Link>
+                  Contact Us
+                </a>
               </li>
             </ul>
 
@@ -159,16 +123,7 @@ const Header = () => {
                   type="button"
                   onClick={handleSubmit}
                 >
-                  <span
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navmenu"
-                    aria-controls="navmenu"
-                    className="d-lg-none d-md-block"
-                  >
-                    Search Listings
-                  </span>
-
-                  <span className="d-lg-block d-none">Search Listings</span>
+                  Search Listings
                 </button>
               </div>
             </ul>

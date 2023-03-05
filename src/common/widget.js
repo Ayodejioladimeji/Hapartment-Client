@@ -2,75 +2,25 @@ import { useEffect } from "react";
 
 const Widget = () => {
   useEffect(() => {
-    var MessageBirdChatWidgetSettings = {
-      widgetId: "1cd39fba-64ba-46c9-8ee2-bb3ecf245640",
-      initializeOnLoad: true,
-    };
-    !(function () {
-      "use strict";
-      if (Boolean(document.getElementById("live-chat-widget-script")))
-        console.error("MessageBirdChatWidget: Snippet loaded twice on page");
-      else {
-        var e, t;
-        (window.MessageBirdChatWidget = {}),
-          (window.MessageBirdChatWidget.queue = []);
-        for (
-          var i = [
-              "init",
-              "setConfig",
-              "toggleChat",
-              "identify",
-              "hide",
-              "on",
-              "shutdown",
-            ],
-            n = function () {
-              var e = i[d];
-              window.MessageBirdChatWidget[e] = function () {
-                for (
-                  var t = arguments.length, i = new Array(t), n = 0;
-                  n < t;
-                  n++
-                )
-                  i[n] = arguments[n];
-                window.MessageBirdChatWidget.queue.push([[e, i]]);
-              };
-            },
-            d = 0;
-          d < i.length;
-          d++
-        )
-          n();
-        var a =
-            (null === (e = window) ||
-            void 0 === e ||
-            null === (t = e.MessageBirdChatWidgetSettings) ||
-            void 0 === t
-              ? void 0
-              : t.widgetId) || "",
-          o = function () {
-            var e,
-              t = document.createElement("script");
-            (t.type = "text/javascript"),
-              (t.src =
-                "https://livechat.messagebird.com/bootstrap.js?widgetId=".concat(
-                  a
-                )),
-              (t.async = !0),
-              (t.id = "live-chat-widget-script");
-            var i = document.getElementsByTagName("script")[0];
-            null == i ||
-              null === (e = i.parentNode) ||
-              void 0 === e ||
-              e.insertBefore(t, i);
-          };
-        "complete" === document.readyState
-          ? o()
-          : window.attachEvent
-          ? window.attachEvent("onload", o)
-          : window.addEventListener("load", o, !1);
-      }
-    })();
+    // window.chatwootSettings = {
+    //   position: "right",
+    //   bottom: 150,
+    // };
+    (function (d, t) {
+      var BASE_URL = "https://app.chatwoot.com";
+      var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+      g.src = BASE_URL + "/packs/js/sdk.js";
+      g.defer = true;
+      g.async = true;
+      s.parentNode.insertBefore(g, s);
+      g.onload = function () {
+        window.chatwootSDK.run({
+          websiteToken: process.env.NEXT_PUBLIC_CHATWOOT_KEY,
+          baseUrl: BASE_URL,
+        });
+      };
+    })(document, "script");
   }, []);
   return null;
 };

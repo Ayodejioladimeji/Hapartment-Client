@@ -1,7 +1,7 @@
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { Children, useContext } from "react";
-import Modal from "react-modal";
+import { Modal } from "react-bootstrap";
 
 const DownloadWrapper = ({ children }) => {
   const { state, dispatch } = useContext(DataContext);
@@ -9,29 +9,10 @@ const DownloadWrapper = ({ children }) => {
 
   return (
     <Modal
-      isOpen={downloadModal}
-      onRequestClose={() =>
-        dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: false })
-      }
-      overlayClassName={{
-        base: "overlay-base",
-        afterOpen: "overlay-after",
-        beforeClose: "overlay-before",
-      }}
-      className={{
-        base: "content-base",
-        afterOpen: "content-after",
-        beforeClose: "content-before",
-      }}
-      closeTimeoutMS={500}
-      ariaHideApp={false}
+      show={downloadModal}
+      onHide={() => dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: false })}
+      className="receive-package"
     >
-      <i
-        onClick={() =>
-          dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: false })
-        }
-        className="bi onclose bi-x-octagon"
-      ></i>
       {children}
     </Modal>
   );

@@ -5,12 +5,10 @@ import { useContext, useEffect } from "react";
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { getDataApis } from "@/utils/fetchData";
-import Navbar from "./navbar";
-import Chat from "@/common/chat";
-// import Widget from "@/common/widget";
+import Widget from "@/common/widget";
 
 const Layout = ({ children }) => {
-  const { state, dispatch } = useContext(DataContext);
+  const { dispatch } = useContext(DataContext);
 
   // Get all listings on Click
 
@@ -34,10 +32,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      {/* <Navbar /> */}
       {children}
       <Footer />
-      <Chat />
+      <Widget />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import placesImg1 from "../../public/images/places-image1.svg";
-import placesImg2 from "../../public/images/places-image2.svg";
+import placesImg1 from "../../public/images/places-1.svg";
+import placesImg2 from "../../public/images/places-2.svg";
 //
 
 const Places = () => {
@@ -44,7 +44,7 @@ const Places = () => {
             </div>
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-6 ">
             <div className=" places-right">
               <Image
                 src={placesImg1}
