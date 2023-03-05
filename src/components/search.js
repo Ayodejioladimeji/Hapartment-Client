@@ -199,9 +199,9 @@ const Search = () => {
                   </select>
 
                   <input
-                    data-aos="fade-up"
-                    data-aos-once="true"
-                    data-aos-delay="1400"
+                    // data-aos="fade-up"
+                    // data-aos-once="true"
+                    // data-aos-delay="1400"
                     type="text"
                     onChange={(e) =>
                       setMinPrice(strictAddComma(e.target.value))
