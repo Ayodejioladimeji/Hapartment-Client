@@ -226,13 +226,13 @@ footer {
       color: var(--primary-color);
 
       input {
-        padding: 10px 0 10px 10px;
+        padding: 10px 0 10px 10px !important;
         background: transparent;
         border: 1px solid var(--text-color);
         color: var(--white-color);
         border-radius: 5px 0 0 5px !important;
-        height: 50px !important;
         font-size: 14px !important;
+        height: 50px;
 
         // &:focus {
         //   background: transparent;

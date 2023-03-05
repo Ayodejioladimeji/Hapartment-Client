@@ -143,7 +143,6 @@ const Footer = () => {
             <div className="input-group mb-3">
               <input
                 type="text"
-                className="form-control text-white"
                 placeholder="Enter email here"
                 aria-label="subscript"
                 aria-describedby="button-addon2"
