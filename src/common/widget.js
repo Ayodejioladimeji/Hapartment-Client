@@ -2,6 +2,10 @@ import { useEffect } from "react";
 
 const Widget = () => {
   useEffect(() => {
+    // window.chatwootSettings = {
+    //   position: "right",
+    //   bottom: 150,
+    // };
     (function (d, t) {
       var BASE_URL = "https://app.chatwoot.com";
       var g = d.createElement(t),
