@@ -318,18 +318,76 @@ const Listings = () => {
           </div>
 
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col">
               <div className="list-box">
                 {loading ? (
                   <Placeholder />
                 ) : (
                   sorted
-                    // .slice(0, visible)
+                    .slice(0, 8)
                     .map((item) => <Card {...item} key={item._id} />)
                 )}
               </div>
 
-              {!loading && sorted.length === 0 && localData === null && (
+              {sorted.length >= 4 && (
+                <div className="list-box mt-5">
+                  <div className="advert-image-box mb-5">
+                    <Image src={banner1} alt="picture" title="picture" />
+                  </div>
+                  <div className="advert-image-box mb-5">
+                    <Image src={banner5} alt="picture" title="picture" />
+                  </div>
+                  <div className="advert-image-box mb-5">
+                    <Image src={banner2} alt="picture" title="picture" />
+                  </div>
+                  <div className="advert-image-box mb-5">
+                    <Image src={banner3} alt="picture" title="picture" />
+                  </div>
+                  {/* <div className="advert-image-box mb-5">
+                <Image src={banner4} alt="picture" />
+              </div> */}
+                  {/* <div className="adverts-box mb-3">
+                Place your Banner Adverts here
+              </div> */}
+                </div>
+              )}
+
+              <div className="list-box">
+                {sorted.slice(9, 17).map((item) => (
+                  <Card {...item} key={item._id} />
+                ))}
+              </div>
+
+              {sorted.length >= 12 && (
+                <div className="list-box mt-5">
+                  <div className="advert-image-box mb-5">
+                    <Image src={banner1} alt="picture" title="picture" />
+                  </div>
+                  <div className="advert-image-box mb-5">
+                    <Image src={banner5} alt="picture" title="picture" />
+                  </div>
+                  <div className="advert-image-box mb-5">
+                    <Image src={banner2} alt="picture" title="picture" />
+                  </div>
+                  <div className="advert-image-box mb-5">
+                    <Image src={banner3} alt="picture" title="picture" />
+                  </div>
+                  {/* <div className="advert-image-box mb-5">
+                <Image src={banner4} alt="picture" />
+              </div> */}
+                  {/* <div className="adverts-box mb-3">
+                Place your Banner Adverts here
+              </div> */}
+                </div>
+              )}
+
+              <div className="list-box">
+                {sorted.slice(19).map((item) => (
+                  <Card {...item} key={item._id} />
+                ))}
+              </div>
+
+              {!loading && (sorted.length === 0 || localData === null) && (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data
                 </div>
@@ -345,27 +403,6 @@ const Listings = () => {
                   setVisible={setVisible}
                 />
               )} */}
-            </div>
-
-            <div className="col-lg-3 ">
-              <div className="advert-image-box mb-5">
-                <Image src={banner1} alt="picture" title="picture" />
-              </div>
-              <div className="advert-image-box mb-5">
-                <Image src={banner5} alt="picture" title="picture" />
-              </div>
-              <div className="advert-image-box mb-5">
-                <Image src={banner2} alt="picture" title="picture" />
-              </div>
-              <div className="advert-image-box mb-5">
-                <Image src={banner3} alt="picture" title="picture" />
-              </div>
-              {/* <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="picture" />
-              </div> */}
-              <div className="adverts-box mb-3">
-                Place your Banner Adverts here
-              </div>
             </div>
           </div>
         </div>
