@@ -8,6 +8,17 @@
     margin-top: 60px;
   }
 
+  .form-section {
+    position: relative;
+
+    .hero-error {
+      position: absolute;
+      left: 5px;
+      bottom: 55px;
+      transition: var(--transition);
+    }
+  }
+
   .hero-right {
     display: flex;
     align-items: center;
@@ -382,7 +393,7 @@
     align-items: center;
     justify-content: flex-end;
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 
     @media (max-width: 767px) {
       justify-content: center;
@@ -392,7 +403,7 @@
     .placesimg {
       width: 80%;
       height: 80%;
-      object-fit: contain;
+      // object-fit: cover;
 
       @media (max-width: 565px) {
         width: 95%;
@@ -406,6 +417,7 @@
 
     .places-img-top {
       position: absolute;
+      transform: translate(-50%, 100%);
     }
   }
 }

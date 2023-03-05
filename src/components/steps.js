@@ -53,7 +53,7 @@ const Steps = () => {
               <h6>2. List Property</h6>
               {toggleState == 2 && (
                 <p>
-                  Select “List Property“ on the account section on the mobile
+                  Select “List Property“ on the account section on our mobile
                   app to start listing properties.
                 </p>
               )}
@@ -72,7 +72,7 @@ const Steps = () => {
               {toggleState === 3 && (
                 <p>
                   Click on basic information, provide the property location and
-                  property type.
+                  property type, etc.
                 </p>
               )}
             </div>
@@ -108,7 +108,7 @@ const Steps = () => {
               {toggleState === 5 && (
                 <p>
                   Click on add description to provide full description and price
-                  of the property
+                  of the property.
                 </p>
               )}
             </div>
@@ -144,7 +144,7 @@ const Steps = () => {
               {toggleState === 7 && (
                 <p>
                   Once all required information about the property has been
-                  provided, click on create listing to add your property to
+                  provided, click on create listing to add your property on
                   Hapartment
                 </p>
               )}

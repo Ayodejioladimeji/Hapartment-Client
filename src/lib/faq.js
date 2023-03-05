@@ -9,7 +9,7 @@ export const agentfaq = [
     id: 2,
     heading: "How do i create listing or add my property on Hapartment?",
     subheading:
-      "To create listing or add properties on our platform, you need to checkout the 'How To' section or download the pdf file attached to the create listing page where we guide you on how to create your listing sucessfully without rejection.",
+      "To create listing or add properties on our platform, you need to checkout the 'How To' section of our website where we guide you on how to create your listing sucessfully without rejection.",
   },
 
   {

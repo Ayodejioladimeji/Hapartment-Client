@@ -19,6 +19,10 @@ const Hero = () => {
 
     if (cityname === "") {
       setError("Please enter city name");
+
+      setTimeout(() => {
+        setError("");
+      }, 2000);
       return;
     }
 
@@ -47,8 +51,8 @@ const Hero = () => {
               data-aos-once="true"
               data-aos-delay="400"
             >
-              We help users search for shops and apartments in the best location
-              and provide them with adequate information to help them make
+              We help users search for apartments in the best location and
+              provide them with adequate information to help them make
               well-informed decisions.
             </p>
 
@@ -62,7 +66,7 @@ const Hero = () => {
                 Quick Search
               </h6>
 
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="form-section">
                 <div className="d-md-flex flex-lg-row flex-md-column">
                   <div
                     className="form-control mb-2 d-flex align-items-center"
@@ -81,7 +85,7 @@ const Hero = () => {
                     />
                   </div>
                 </div>
-                <span className="d-block text-danger">{error}</span>
+                <span className="d-block hero-error text-danger">{error}</span>
 
                 <div
                   data-aos="fade-up"
