@@ -77,7 +77,7 @@ const Contacts = () => {
               </h3>
 
               <form onSubmit={handleSubmit}>
-                <div className="form-control mb-3">
+                <div className="mb-3">
                   <label>Name</label>
                   <input
                     type="text"
@@ -92,7 +92,7 @@ const Contacts = () => {
                   )}
                 </div>
 
-                <div className=" form-control mb-3">
+                <div className="mb-3">
                   <label>Email</label>
                   <input
                     type="text"
@@ -107,7 +107,7 @@ const Contacts = () => {
                   )}
                 </div>
 
-                <div className=" form-control mb-3">
+                <div className="mb-3">
                   <label>Message</label>
                   <textarea
                     value={values.message}
