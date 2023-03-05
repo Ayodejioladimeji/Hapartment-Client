@@ -1,7 +1,7 @@
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { useContext } from "react";
-import Modal from "react-modal";
+import { Modal } from "react-bootstrap";
 
 const NewsletterModal = ({ alert }) => {
   const { state, dispatch } = useContext(DataContext);
@@ -9,27 +9,10 @@ const NewsletterModal = ({ alert }) => {
 
   return (
     <Modal
-      isOpen={newsModal}
-      onRequestClose={() =>
-        dispatch({ type: ACTIONS.NEWS_MODAL, payload: false })
-      }
-      overlayClassName={{
-        base: "overlay-base",
-        afterOpen: "overlay-after",
-        beforeClose: "overlay-before",
-      }}
-      className={{
-        base: "content-base",
-        afterOpen: "content-after",
-        beforeClose: "content-before",
-      }}
-      closeTimeoutMS={500}
-      ariaHideApp={false}
+      show={newsModal}
+      onHide={() => dispatch({ type: ACTIONS.NEWS_MODAL, payload: false })}
+      className="receive-package"
     >
-      <i
-        onClick={() => dispatch({ type: ACTIONS.NEWS_MODAL, payload: false })}
-        className="bi onclose bi-x-octagon"
-      ></i>
       <div className="main-modal">
         <svg
           width="40"
