@@ -162,7 +162,7 @@ const HowTo = () => {
               <h3 className="mb-3">Step One</h3>
 
               <p className="mb-3">
-                Download our mobile app from playstore or appstore and Login
+                Download our mobile app from play store or apple store and Login
                 into your account
               </p>
             </div>
@@ -208,16 +208,13 @@ const HowTo = () => {
                 <b> Follow the below Format</b>
               </p>
               <ol>
-                <li>Address - e.g 12 Akowonjo street, Ikeja lagos</li>
-                <li>Price per annum - e.g 500,000</li>
                 <li>
-                  Property description- Give full and detailed description about
-                  the property
+                  Address - e.g 12 Akowonjo street, Computer village, Ikeja
+                  Lagos
                 </li>
-                <li>
-                  Youtube video link (optional) - Provide the video url (e.g
-                  https://youtube.com/my-video)
-                </li>
+                <li>Property type - e.g Self contain</li>
+                <li>State- e.g Lagos</li>
+                <li>City - e.g Ikeja</li>
                 <p>
                   <b>Click Save and continue...</b>
                 </p>
@@ -285,7 +282,7 @@ const HowTo = () => {
                 <b> Follow the below Format</b>
               </p>
               <ol>
-                <li>Category - e.g new</li>
+                <li>Category - e.g Recent apartment</li>
                 <li>Price per annum - e.g 500,000</li>
                 <li>
                   Property description- Give full and detailed description about
@@ -322,7 +319,7 @@ const HowTo = () => {
               </p>
 
               <p>
-                Once all requierd information about the property has been
+                Once all required information about the property has been
                 provided, click on
                 <b> “Create Listing”</b> to create new property.
               </p>
