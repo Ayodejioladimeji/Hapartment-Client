@@ -1,4 +1,4 @@
-@use "mixins" as *;
+@use "__mixins" as *;
 
 section {
   padding: 100px 0;
@@ -153,7 +153,6 @@ section {
 
       input {
         border: none !important;
-        font-size: 16px;
         border: none;
         font-size: var(--p-medium);
         padding: 8px;

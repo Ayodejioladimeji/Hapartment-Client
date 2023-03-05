@@ -79,7 +79,6 @@ const Hero = () => {
                     <input
                       type="text"
                       placeholder="Enter your search"
-                      className="form-control"
                       value={cityname}
                       onChange={(e) => setCityname(e.target.value)}
                     />

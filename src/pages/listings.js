@@ -254,8 +254,8 @@ const Listings = () => {
             </div>
 
             <div className="col-lg-3 d-none d-lg-block">
-              <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="picture" title="picture" />
+              <div className="adverts-box mb-3" style={{ cursor: "pointer" }}>
+                Place your Banner Adverts here
               </div>
             </div>
           </div>
@@ -387,7 +387,7 @@ const Listings = () => {
                 ))}
               </div>
 
-              {!loading && (sorted.length === 0 || localData === null) && (
+              {!loading && sorted.length === 0 && localData === null && (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data
                 </div>

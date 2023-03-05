@@ -1,7 +1,7 @@
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { useContext } from "react";
-import Modal from "react-modal";
+import { Modal } from "react-bootstrap";
 
 const ContactModal = ({ alert }) => {
   const { state, dispatch } = useContext(DataContext);
@@ -9,29 +9,10 @@ const ContactModal = ({ alert }) => {
 
   return (
     <Modal
-      isOpen={contactModal}
-      onRequestClose={() =>
-        dispatch({ type: ACTIONS.CONTACT_MODAL, payload: false })
-      }
-      overlayClassName={{
-        base: "overlay-base",
-        afterOpen: "overlay-after",
-        beforeClose: "overlay-before",
-      }}
-      className={{
-        base: "content-base",
-        afterOpen: "content-after",
-        beforeClose: "content-before",
-      }}
-      closeTimeoutMS={500}
-      ariaHideApp={false}
+      show={contactModal}
+      onHide={() => dispatch({ type: ACTIONS.CONTACT_MODAL, payload: false })}
+      className="receive-package"
     >
-      <i
-        onClick={() =>
-          dispatch({ type: ACTIONS.CONTACT_MODAL, payload: false })
-        }
-        className="bi onclose bi-x-octagon"
-      ></i>
       <div className="main-modal">
         <svg
           width="60"

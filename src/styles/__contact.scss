@@ -1,12 +1,12 @@
 .contact-container {
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: flex;
     flex-direction: column-reverse;
   }
 
   .map-box {
     height: 100%;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       height: 500px;
       margin-top: 60px;
       padding: 10px;
@@ -18,6 +18,10 @@
   border: 1px solid var(--light-color);
   border-radius: 15px;
   padding: 20px;
+
+  @media (max-width: 565px) {
+    border: none;
+  }
 
   @media (max-width: 565px) {
     padding: 20px 0;
@@ -32,18 +36,14 @@
     margin-bottom: 8px;
   }
 
-  .control {
-    border: none !important;
-  }
-
-  .input {
-    padding: 15px;
+  input {
+    padding: 14px;
+    font-size: 16px !important;
+    height: 55px;
+    margin-bottom: 3px;
     width: 100%;
-    border: 1px solid var(--border-color) !important;
-    outline: none;
-    color: var(--text-color);
-    font-size: 14px !important;
-    height: 60px !important;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
   }
 
   textarea {
@@ -51,7 +51,7 @@
     width: 100%;
     border: 1px solid var(--border-color);
     outline: none;
-    color: var(--text-color);
+    color: var(--black-color);
     resize: none;
     height: 200px !important;
     font-size: 14px !important;

@@ -8,7 +8,7 @@ import searchImg from "../../public/images/search-image.svg";
 import { statesdata } from "@/constants/statesdata";
 import { strictAddComma } from "comma-separator";
 import { ACTIONS } from "@/store/Actions";
-import { DataContext } from '@/store/GlobalState';
+import { DataContext } from "@/store/GlobalState";
 
 const initialState = {
   property_type: "",
@@ -24,7 +24,7 @@ const Search = () => {
   const [city, setCity] = useState([]);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  const {dispatch} = useContext(DataContext)
+  const { dispatch } = useContext(DataContext);
   const router = useRouter();
   const { property_type, statename, cityname, bathrooms, toilets, furnishing } =
     values;
@@ -208,7 +208,6 @@ const Search = () => {
                     }
                     placeholder="min_price"
                     value={minPrice}
-                    className="form-control input"
                   />
 
                   <input
@@ -221,7 +220,6 @@ const Search = () => {
                     }
                     placeholder="max_price"
                     value={maxPrice}
-                    className="form-control input"
                   />
 
                   <button
