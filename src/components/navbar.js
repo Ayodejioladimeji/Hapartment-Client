@@ -27,7 +27,7 @@ function Navbars() {
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar fixed-top py-4">
       <Container className="d-flex align-items-center justify-content-between">
-        <Link className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/">
           <svg
             width="120"
             height="35"
@@ -59,7 +59,7 @@ function Navbars() {
               fill="#449342"
             />
           </svg>
-        </Link>
+        </a>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -67,60 +67,62 @@ function Navbars() {
           <ul className="navbar-nav nav-top ms-auto">
             <Nav>
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${
                     router.pathname === "/about-us" ? "green" : "grey"
                   }`}
                   href="/about-us"
                 >
-                  <Nav.Link href="#about">About Us</Nav.Link>
-                </Link>
+                  About Us
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${
                     router.pathname === "/advertise" ? "green" : "grey"
                   }`}
                   href="/advertise"
                 >
-                  <Nav.Link href="#advertise">Advertise</Nav.Link>
-                </Link>
+                  Advertise
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${
                     router.pathname === "/howto" ? "green" : "grey"
                   }`}
                   href="/howto"
                 >
-                  <Nav.Link href="#howto">How To</Nav.Link>
-                </Link>
+                  How To
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${
                     router.pathname === "/contact" ? "green" : "grey"
                   }`}
                   href="/contact"
                 >
-                  <Nav.Link href="#contact">Contact Us</Nav.Link>
-                </Link>
+                  Contact Us
+                </a>
               </li>
             </Nav>
           </ul>
 
           <ul className="navbar-nav ms-auto">
             <Nav>
-              <button
-                className="btn register-btn"
-                type="button"
-                onClick={handleSubmit}
-              >
-                Search Listings
-              </button>
+              <Nav.Link href="#search">
+                <button
+                  className="btn register-btn"
+                  type="button"
+                  onClick={handleSubmit}
+                >
+                  Search Listings
+                </button>
+              </Nav.Link>
             </Nav>
           </ul>
         </Navbar.Collapse>
