@@ -122,10 +122,8 @@ const Listings = () => {
       }
     } else if (localData === null && checkload) {
       getAllData();
-    } else {
-      getAllData();
     }
-  }, [checkload, localData]);
+  }, [checkload]);
 
   //
 
@@ -273,8 +271,16 @@ const Listings = () => {
                 : `Results ${sorted.length} of ${sorted.length}`}
             </div> */}
 
+            {/* check if the state is still loading */}
             <div>
-              Showing {sorted.length} {sorted.length > 1 ? "results" : "result"}
+              {loading ? (
+                "Loading results"
+              ) : (
+                <>
+                  Showing {sorted.length}{" "}
+                  {sorted.length > 1 ? "results" : "result"}
+                </>
+              )}
             </div>
 
             <div className="filter-container">
