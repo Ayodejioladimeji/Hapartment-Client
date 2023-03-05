@@ -158,17 +158,21 @@
           justify-content: space-between;
           flex-wrap: wrap;
           width: 100%;
-        }
-      }
 
-      select,
-      input {
-        @include input(var(--border-color));
-        margin-bottom: 15px;
-        width: 200px;
+          select,
+          input {
+            @include input(var(--border-color));
+            margin-bottom: 15px;
+            width: 200px;
 
-        @media (max-width: 992px) {
-          width: 100% !important;
+            &::-webkit-input-placeholder {
+              color: var(--black-color);
+            }
+
+            @media (max-width: 992px) {
+              width: 100% !important;
+            }
+          }
         }
       }
 

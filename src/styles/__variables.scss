@@ -36,15 +36,15 @@ html {
   width: 100%;
 }
 
-// :focus,
-// input:focus,
-// select:focus,
-// textarea:focus,
-// button:focus,
-// .btn:focus {
-//   outline: none !important;
-//   box-shadow: none !important;
-// }
+:focus,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 textarea {
   resize: none;
 }
