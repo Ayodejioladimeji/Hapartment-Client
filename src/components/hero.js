@@ -30,7 +30,7 @@ const Hero = () => {
       cityname,
     };
 
-    sessionStorage.setItem("filter", JSON.stringify(newData));
+    localStorage.setItem("filter", JSON.stringify(newData));
     dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
     router.push("/listings");
   };

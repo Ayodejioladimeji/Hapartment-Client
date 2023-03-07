@@ -23,7 +23,7 @@ import { ACTIONS } from "@/store/Actions";
 const Listings = () => {
   const { state, dispatch } = useContext(DataContext);
   const { listings, loading } = state;
-  const { checkload } = state;
+  const { checkload, callback } = state;
   const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(0);
   const [sorting, setSorting] = useState("");
@@ -31,10 +31,6 @@ const Listings = () => {
   const [localData, setLocalData] = useState(null);
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
-
-  // display data randomly on the client side
-  // const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
-  // const sortingData = shuffle(listings);
 
   // Sorting the data
   const sortdata = filterValue(listings, sort);
@@ -44,17 +40,11 @@ const Listings = () => {
 
   useEffect(() => {
     if (checkload) {
-      const data = sessionStorage.getItem("filter");
+      const data = localStorage.getItem("filter");
       const parsedData = JSON.parse(data);
       setLocalData(parsedData);
     }
-
-    // setVisible(
-    //   sessionStorage.getItem("visible") !== null
-    //     ? sessionStorage.getItem("visible")
-    //     : 9
-    // );
-  }, []);
+  }, [callback]);
 
   // a function to get the data
   const getSingleData = async () => {
@@ -116,14 +106,14 @@ const Listings = () => {
   useEffect(() => {
     if (localData !== null && checkload) {
       if (Object?.keys(localData).length === 1) {
-        getSingleData();
-      } else {
+        console.log("single");
+      } else if (Object?.keys(localData).length >= 2) {
         getMultipleData();
+      } else {
+        getAllData();
       }
-    } else if (localData === null && checkload) {
-      getAllData();
     }
-  }, [checkload]);
+  }, [localData]);
 
   //
 
@@ -154,7 +144,7 @@ const Listings = () => {
 
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
-      sessionStorage.setItem("filter", JSON.stringify(newData));
+      localStorage.setItem("filter", JSON.stringify(newData));
     } catch (error) {
       console.log(error);
       dispatch({ type: ACTIONS.LOADING, payload: false });
@@ -387,11 +377,13 @@ const Listings = () => {
                 ))}
               </div>
 
-              {!loading && sorted.length === 0 && localData === null && (
-                <div className="unavailable d-flex align-items-center justify-content-center">
-                  No available data
-                </div>
-              )}
+              {!loading &&
+                sorted.length === 0 &&
+                (localData === null || localData?.statename === "") && (
+                  <div className="unavailable d-flex align-items-center justify-content-center">
+                    No available data
+                  </div>
+                )}
 
               {/* {visible > sorted.length || loading || sorted.length === 0 ? (
                 ""

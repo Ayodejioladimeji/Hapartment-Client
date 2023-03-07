@@ -65,7 +65,7 @@ const Modalsearch = () => {
 
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
-      sessionStorage.setItem("filter", JSON.stringify(newData));
+      localStorage.setItem("filter", JSON.stringify(newData));
     } catch (error) {
       console.log(error);
       dispatch({ type: ACTIONS.LOADING, payload: false });

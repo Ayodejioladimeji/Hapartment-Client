@@ -11,10 +11,13 @@ const Header = () => {
   // Get all listings on Click
   const handleSubmit = async (e) => {
     e.preventDefault();
-    sessionStorage.clear();
 
-    router.push("/listings");
+    const newData = {};
+
+    localStorage.setItem("filter", JSON.stringify(newData));
     dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
+    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+    router.push("/listings");
   };
 
   return (
