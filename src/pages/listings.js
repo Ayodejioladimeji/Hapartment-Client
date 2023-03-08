@@ -106,7 +106,7 @@ const Listings = () => {
   useEffect(() => {
     if (localData !== null && checkload) {
       if (Object?.keys(localData).length === 1) {
-        console.log("single");
+        getSingleData();
       } else if (Object?.keys(localData).length >= 2) {
         getMultipleData();
       } else {
@@ -150,6 +150,9 @@ const Listings = () => {
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
+
+  console.log(sorted.length);
+  console.log(localData);
 
   //
 
@@ -314,7 +317,7 @@ const Listings = () => {
                   <Placeholder />
                 ) : (
                   sorted
-                    .slice(0, 8)
+                    .slice(0, 12)
                     .map((item) => <Card {...item} key={item._id} />)
                 )}
               </div>
@@ -343,7 +346,7 @@ const Listings = () => {
               )}
 
               <div className="list-box">
-                {sorted.slice(9, 17).map((item) => (
+                {sorted.slice(13, 25).map((item) => (
                   <Card {...item} key={item._id} />
                 ))}
               </div>
@@ -372,18 +375,20 @@ const Listings = () => {
               )}
 
               <div className="list-box">
-                {sorted.slice(19).map((item) => (
+                {sorted.slice(25).map((item) => (
                   <Card {...item} key={item._id} />
                 ))}
               </div>
 
-              {!loading &&
-                sorted.length === 0 &&
-                (localData === null || localData?.statename === "") && (
-                  <div className="unavailable d-flex align-items-center justify-content-center">
-                    No available data
-                  </div>
-                )}
+              {(!loading && sorted.length === 0) ||
+              localData === null ||
+              localData?.statename === "" ? (
+                <div className="unavailable d-flex align-items-center justify-content-center">
+                  No available data
+                </div>
+              ) : (
+                ""
+              )}
 
               {/* {visible > sorted.length || loading || sorted.length === 0 ? (
                 ""

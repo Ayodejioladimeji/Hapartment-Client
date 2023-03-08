@@ -408,14 +408,20 @@
       margin-bottom: 30px;
     }
 
+    @media (max-width: 565px) {
+      height: 50vh;
+      align-items: flex-start;
+      margin-bottom: 0px;
+    }
+
     .placesimg {
       width: 80%;
       height: 80%;
       // object-fit: cover;
 
       @media (max-width: 565px) {
-        width: 95%;
-        height: 95%;
+        width: 85%;
+        height: 85%;
       }
     }
 

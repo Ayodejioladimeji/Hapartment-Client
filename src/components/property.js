@@ -5,7 +5,17 @@ import { useContext } from "react";
 
 const Property = () => {
   const router = useRouter();
-  const { dispatch } = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext);
+
+  // Get all listings on Click
+  const handleSubmit = async (e) => {
+    const newData = {};
+
+    localStorage.setItem("filter", JSON.stringify(newData));
+    dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
+    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+    router.push("/listings");
+  };
 
   return (
     <section className="green">
@@ -37,7 +47,7 @@ const Property = () => {
               <button
                 className="btn"
                 onClick={() =>
-                  dispatch({ type: ACTIONS.OPENMODAL, payload: true })
+                  dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
                 }
               >
                 List property
@@ -69,7 +79,7 @@ const Property = () => {
             </p>
 
             <div data-aos="fade-up" data-aos-once="true" data-aos-delay="1400">
-              <button className="btn" onClick={() => router.push("/listings")}>
+              <button className="btn" onClick={handleSubmit}>
                 Search now
                 <i className="bi bi-arrow-right-circle"></i>
               </button>
