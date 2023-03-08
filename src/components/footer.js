@@ -9,6 +9,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useState } from "react";
 import DownloadWrapper from "@/common/downloadWrapper";
+import cogoToast from "cogo-toast";
+import * as EmailValidator from "email-validator";
+
+//
 
 const Footer = () => {
   const { state, dispatch } = useContext(DataContext);
@@ -20,6 +24,12 @@ const Footer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (values === "" || values === null) {
+      cogoToast.error("Please enter your email");
+      return;
+    }
+
+    if (!EmailValidator.validate(values)) {
+      cogoToast.error("Email is not vallid");
       return;
     }
 
@@ -142,17 +152,18 @@ const Footer = () => {
 
             <div className="input-group mb-3">
               <input
-                type="text"
+                type="email"
                 placeholder="Enter email here"
                 aria-label="subscript"
                 aria-describedby="button-addon2"
                 value={values}
                 onChange={(e) => setValues(e.target.value)}
+                required
               />
               <button
                 onClick={handleSubmit}
                 className="btn"
-                type="button"
+                type="submit"
                 id="button-addon2"
               >
                 {loading ? "Sending..." : "Subscribe"}

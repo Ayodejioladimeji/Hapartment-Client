@@ -191,7 +191,7 @@ const ListingDetails = (props) => {
 
             <div className="col-lg-3 mt-5">
               {/* Agent infor section */}
-              <div className="agent-section advert-image-box mb-5">
+              <div className="agent-section mb-5">
                 <div className="top-section">Posted By</div>
 
                 <div className="bottom-section">

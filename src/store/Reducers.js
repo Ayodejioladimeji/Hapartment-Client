@@ -40,6 +40,11 @@ const reducers = (state, action) => {
         ...state,
         checkload: payload,
       };
+    case ACTIONS.CALLBACK:
+      return {
+        ...state,
+        callback: payload,
+      };
 
     default:
       return state;

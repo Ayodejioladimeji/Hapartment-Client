@@ -8,7 +8,7 @@ const DownloadModal = ({ alert }) => {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date("07/15/2023 23:59:59");
+    const target = new Date("05/15/2023 23:59:59");
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -39,7 +39,7 @@ const DownloadModal = ({ alert }) => {
   return (
     <div className="main-modal">
       <h3>Hey Guys😊</h3>
-      <p className="coloured">Our Mobile App is under construction</p>
+      <p className="coloured">Our Mobile App is under development</p>
       <p>Subscribe to our newsletter and get notified when we launch</p>
 
       <div className="timer-wrapper">

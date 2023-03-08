@@ -11,7 +11,7 @@ const Hero = () => {
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
-  const { dispatch } = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext);
 
   // handle submit
   const handleSubmit = async (e) => {
@@ -30,7 +30,8 @@ const Hero = () => {
       cityname,
     };
 
-    sessionStorage.setItem("filter", JSON.stringify(newData));
+    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+    localStorage.setItem("filter", JSON.stringify(newData));
     dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
     router.push("/listings");
   };

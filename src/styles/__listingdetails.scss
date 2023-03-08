@@ -15,10 +15,6 @@
     font-size: var(--p-regular);
     color: var(--primary-color);
 
-    &:focus {
-      border: 1px solid var(--primary-color);
-    }
-
     &:hover {
       .bi {
         color: var(--white-color);
@@ -93,6 +89,14 @@
 
       @media (max-width: 565px) {
         width: 100%;
+
+        &:first-child {
+          border-bottom: none;
+        }
+
+        &:last-child {
+          border-top: none;
+        }
       }
 
       .details-icons {
@@ -117,6 +121,10 @@
             font-family: var(--lato), sans-serif;
             border: none;
             font-size: var(--p-bolder);
+
+            @media (max-width: 565px) {
+              font-size: var(--p-bold);
+            }
           }
         }
 
@@ -293,6 +301,9 @@
   height: auto !important;
   overflow: hidden;
   border-radius: 10px;
+  height: 200px;
+  width: 100%;
+  border: 1px solid var(--primary-color);
 
   .top-section {
     width: 100%;

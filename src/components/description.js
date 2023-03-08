@@ -10,7 +10,7 @@ import {
 } from "next-share";
 import { useRouter } from "next/router";
 
-const Description = ({ item, children }) => {
+const Description = ({ item }) => {
   const router = useRouter();
 
   return (
@@ -87,7 +87,6 @@ const Description = ({ item, children }) => {
             <WhatsappShareButton
               url={`https://demo.hapartment.org/listings/${router.query.slug}`}
               title="Hi, you may be interested in this property on Hapartment"
-              // title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
               separator="-"
             >
               <WhatsappIcon size={32} round />

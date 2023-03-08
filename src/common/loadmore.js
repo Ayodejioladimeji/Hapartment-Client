@@ -6,7 +6,7 @@ const LoadMore = ({ load, setLoad, visible, setVisible }) => {
     setLoad(true);
     setTimeout(() => {
       setVisible((prevState) => prevState + 3);
-      sessionStorage.setItem("visible", Number(visible) + 3);
+      localStorage.setItem("visible", Number(visible) + 3);
       setLoad(false);
     }, 2000);
   };
