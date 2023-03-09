@@ -154,8 +154,6 @@ const Listings = () => {
 
   //
 
-  console.log(localData);
-
   return (
     <>
       <Head>
