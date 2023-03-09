@@ -15,10 +15,6 @@
     font-size: var(--p-regular);
     color: var(--primary-color);
 
-    &:focus {
-      border: 1px solid var(--primary-color);
-    }
-
     &:hover {
       .bi {
         color: var(--white-color);

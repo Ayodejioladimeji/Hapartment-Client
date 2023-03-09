@@ -151,9 +151,6 @@ const Listings = () => {
     }
   };
 
-  console.log(sorted.length);
-  console.log(localData);
-
   //
 
   return (
