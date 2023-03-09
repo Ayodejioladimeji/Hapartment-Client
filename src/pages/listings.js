@@ -144,6 +144,7 @@ const Listings = () => {
 
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
+      dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
       localStorage.setItem("filter", JSON.stringify(newData));
     } catch (error) {
       console.log(error);
@@ -152,6 +153,8 @@ const Listings = () => {
   };
 
   //
+
+  console.log(localData);
 
   return (
     <>
@@ -201,7 +204,8 @@ const Listings = () => {
               <div className="filter-box">
                 <div className="mb-3 d-flex align-items-center">
                   <Goback />
-                  {localData !== null ? (
+                  {localData !== null &&
+                  Object?.keys(localData)?.length !== 0 ? (
                     <h4>
                       Properties for rent in <span>{localData?.cityname}</span>
                     </h4>
