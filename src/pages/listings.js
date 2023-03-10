@@ -154,6 +154,8 @@ const Listings = () => {
 
   //
 
+  console.log(localData);
+
   return (
     <>
       <Head>
@@ -202,7 +204,8 @@ const Listings = () => {
               <div className="filter-box">
                 <div className="mb-3 d-flex align-items-center">
                   <Goback />
-                  {Object?.keys(localData).length !== 0 ? (
+                  {localData !== null &&
+                  Object?.keys(localData)?.length !== 0 ? (
                     <h4>
                       Properties for rent in <span>{localData?.cityname}</span>
                     </h4>
