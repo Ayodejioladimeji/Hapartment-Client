@@ -19,7 +19,6 @@ function Navbars() {
     gtag.event({
       action: "get_all_listings",
       category: "all_listings",
-      
     });
 
     localStorage.setItem("filter", JSON.stringify(newData));

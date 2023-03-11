@@ -5,6 +5,7 @@ import moment from "moment";
 import { ACTIONS } from "@/store/Actions";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
+ import * as gtag from "../lib/gtag";
 
 //
 
@@ -34,6 +35,12 @@ const Card = ({ ...item }) => {
     router.push({
       pathname: `/listings/${_id}`,
       query: item,
+    });
+
+    gtag.event({
+      action: "listing_card",
+      category: "card",
+      label: property_type
     });
 
     dispatch({ type: ACTIONS.CHECKLOAD, payload: false });
