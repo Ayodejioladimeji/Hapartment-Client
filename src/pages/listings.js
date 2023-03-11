@@ -16,6 +16,7 @@ import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
+ import * as gtag from "../lib/gtag";
 // import Map from "@/utils/map";
 
 //
@@ -120,6 +121,12 @@ const Listings = () => {
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    gtag.event({
+      action: "list_search_form",
+      category: "quick_search",
+      label: cityname,
+    });
 
     if (cityname === "") {
       setError("Please enter city name");
