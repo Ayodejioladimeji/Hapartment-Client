@@ -219,7 +219,7 @@ const Listings = () => {
                         <i className="bi bi-geo-alt"></i>
                         <input
                           type="text"
-                          placeholder="Enter your search"
+                          placeholder="Enter your state or city"
                           value={cityname}
                           onChange={(e) => setCityname(e.target.value)}
                         />
