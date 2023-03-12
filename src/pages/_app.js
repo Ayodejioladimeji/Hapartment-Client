@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
     Aos.init({ duration: 700 });
   }, []);
 
-  // Analytics
+  // // Analytics
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
