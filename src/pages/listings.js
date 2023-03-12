@@ -355,7 +355,7 @@ const Listings = () => {
               )}
 
               <div className="list-box">
-                {sorted.slice(13, 25).map((item) => (
+                {sorted.filter(item => item.status !=="declined").slice(13, 25).map((item) => (
                   <Card {...item} key={item._id} />
                 ))}
               </div>
@@ -380,7 +380,7 @@ const Listings = () => {
 
 
               <div className="list-box">
-                {sorted.slice(25).map((item) => (
+                {sorted.filter(item => item.status !=="declined").slice(25).map((item) => (
                   <Card {...item} key={item._id} />
                 ))}
               </div>

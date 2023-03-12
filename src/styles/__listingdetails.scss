@@ -200,6 +200,44 @@
     }
   }
 
+  // Verification status
+  .pending-status{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:80px;
+    margin-top:30px;
+    background:rgba(255, 0, 0, 0.075);
+
+    p{
+      font-size:15px;
+    }
+
+    .bi{
+      margin-right:15px;
+      color:red;
+    }
+  }
+  .verified-status{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:80px;
+    margin-top:30px;
+    background:rgba(0, 255, 34, 0.103);
+
+    p{
+      font-size:15px;
+    }
+
+    .bi{
+      margin-right:15px;
+      color:green;
+    }
+  }
+
   // Disclaimer
   .disclaimer {
     padding: 20px;

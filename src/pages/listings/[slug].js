@@ -28,9 +28,12 @@ const ListingDetails = (props) => {
     bedrooms,
     toilets,
     images,
+    status,
     map,
     postedBy,
   } = props.listing;
+
+
 
   return (
     <>
@@ -126,6 +129,17 @@ const ListingDetails = (props) => {
                   {toilets} {toilets === "1" ? "Toilet" : "Toilets"}
                 </div>
               </div>
+
+              {/* Verification status note */}
+              {status === "pending" ? <div className="pending-status">
+                <i class="bi bi-exclamation-circle-fill"></i>
+                This property is under review for verification
+              </div>
+                :
+              <div className="verified-status">
+                <i class="bi bi-check-circle-fill"></i>
+                This property has been verified
+              </div>}
 
               <div className="details-tab mt-5">
                 <div className="tab-section">
