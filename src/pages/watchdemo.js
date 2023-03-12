@@ -25,7 +25,7 @@ const WatchDemo = () => {
 
         <meta
           property="og:url"
-          content="https://demo.hapartment.org/watchdemo"
+          content="https://hapartment.org/watchdemo"
         />
         <meta name="twitter:card" content="Hapartment" />
 

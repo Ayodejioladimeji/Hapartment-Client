@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hapartment-client.vercel.app/api/my-sitemap
+Sitemap: https://hapartment.org/api/my-sitemap

@@ -40,7 +40,7 @@ const AboutUs = () => {
 
         <meta
           property="og:url"
-          content="https://demo.hapartment.org/about-us"
+          content="https://hapartment.org/about-us"
         />
         <meta name="twitter:card" content="Hapartment" />
 

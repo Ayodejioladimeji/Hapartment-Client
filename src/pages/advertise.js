@@ -39,7 +39,7 @@ const Advert = () => {
 
         <meta
           property="og:url"
-          content="https://demo.hapartment.org/advertise"
+          content="https://hapartment.org/advertise"
         />
         <meta name="twitter:card" content="Hapartment" />
 

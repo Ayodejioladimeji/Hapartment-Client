@@ -184,7 +184,7 @@ const Listings = () => {
 
         <meta
           property="og:url"
-          content="https://demo.hapartment.org/listings"
+          content="https://hapartment.org/listings"
         />
         <meta name="twitter:card" content="Hapartment" />
 
@@ -360,7 +360,7 @@ const Listings = () => {
                 ))}
               </div>
 
-              {sorted.length >= 12 && (
+              {/* {sorted.length >= 12 && (
                 <div className="list-box mt-5">
                   <div className="advert-image-box mb-5">
                     <Image src={banner1} alt="picture" title="picture" />
@@ -374,14 +374,10 @@ const Listings = () => {
                   <div className="advert-image-box mb-5">
                     <Image src={banner3} alt="picture" title="picture" />
                   </div>
-                  {/* <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="picture" />
-              </div> */}
-                  {/* <div className="adverts-box mb-3">
-                Place your Banner Adverts here
-              </div> */}
+                  
                 </div>
-              )}
+              )} */}
+
 
               <div className="list-box">
                 {sorted.slice(25).map((item) => (
