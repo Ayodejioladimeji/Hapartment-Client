@@ -74,10 +74,6 @@ export default function App({ Component, pageProps }) {
         />
         <meta name="twitter:image:alt" content="Hapartment" />
       </Head>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
 
       <Script
         dangerouslySetInnerHTML={{
@@ -90,6 +86,11 @@ export default function App({ Component, pageProps }) {
               });
             `,
         }}
+      />
+
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
 
       <Script
