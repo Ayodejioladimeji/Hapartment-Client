@@ -74,7 +74,10 @@ export default function App({ Component, pageProps }) {
         />
         <meta name="twitter:image:alt" content="Hapartment" />
 
-        <script
+        
+      </Head>
+
+      <Script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -86,7 +89,6 @@ export default function App({ Component, pageProps }) {
             `,
           }}
         />
-      </Head>
 
       <Script
         strategy="afterInteractive"

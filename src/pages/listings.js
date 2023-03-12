@@ -107,13 +107,13 @@ const Listings = () => {
   useEffect(() => {
     if (localData !== null && checkload) {
       if (Object?.keys(localData).length === 1) {
-        console.log("single")
+        // console.log("single")
         getSingleData();
       } else if (Object?.keys(localData).length >= 2) {
-        console.log("multiple")
+        // console.log("multiple")
         getMultipleData();
       } else {
-        console.log("all")
+        // console.log("all")
         getAllData();
       }
     }
