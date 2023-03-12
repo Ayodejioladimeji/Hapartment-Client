@@ -16,6 +16,7 @@ import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
+ import * as gtag from "../lib/gtag";
 // import Map from "@/utils/map";
 
 //
@@ -106,20 +107,28 @@ const Listings = () => {
   useEffect(() => {
     if (localData !== null && checkload) {
       if (Object?.keys(localData).length === 1) {
+        // console.log("single")
         getSingleData();
       } else if (Object?.keys(localData).length >= 2) {
+        // console.log("multiple")
         getMultipleData();
       } else {
+        // console.log("all")
         getAllData();
       }
     }
   }, [localData]);
 
-  //
 
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    gtag.event({
+      action: "list_search_form",
+      category: "quick_search",
+      label: cityname,
+    });
 
     if (cityname === "") {
       setError("Please enter city name");
@@ -144,13 +153,14 @@ const Listings = () => {
 
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
-      dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+      // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
       localStorage.setItem("filter", JSON.stringify(newData));
     } catch (error) {
       console.log(error);
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
+
 
   //
 
@@ -174,7 +184,7 @@ const Listings = () => {
 
         <meta
           property="og:url"
-          content="https://demo.hapartment.org/listings"
+          content="https://hapartment.org/listings"
         />
         <meta name="twitter:card" content="Hapartment" />
 
@@ -350,7 +360,7 @@ const Listings = () => {
                 ))}
               </div>
 
-              {sorted.length >= 12 && (
+              {/* {sorted.length >= 12 && (
                 <div className="list-box mt-5">
                   <div className="advert-image-box mb-5">
                     <Image src={banner1} alt="picture" title="picture" />
@@ -364,14 +374,10 @@ const Listings = () => {
                   <div className="advert-image-box mb-5">
                     <Image src={banner3} alt="picture" title="picture" />
                   </div>
-                  {/* <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="picture" />
-              </div> */}
-                  {/* <div className="adverts-box mb-3">
-                Place your Banner Adverts here
-              </div> */}
+                  
                 </div>
-              )}
+              )} */}
+
 
               <div className="list-box">
                 {sorted.slice(25).map((item) => (
@@ -379,8 +385,8 @@ const Listings = () => {
                 ))}
               </div>
 
-              {(!loading && sorted.length === 0) ||
-              localData === null ||
+              {!loading && sorted.length === 0 ||
+              
               localData?.statename === "" ? (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data

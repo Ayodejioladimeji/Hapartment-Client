@@ -5,6 +5,7 @@ import moment from "moment";
 import { ACTIONS } from "@/store/Actions";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
+ import * as gtag from "../lib/gtag";
 
 //
 
@@ -36,6 +37,12 @@ const Card = ({ ...item }) => {
       query: item,
     });
 
+    gtag.event({
+      action: "listing_card",
+      category: "card",
+      label: property_type
+    });
+
     dispatch({ type: ACTIONS.CHECKLOAD, payload: false });
   };
 
@@ -46,8 +53,8 @@ const Card = ({ ...item }) => {
         <Image
           src={images[0].url}
           alt="card-picture"
-          width="200"
-          height="150"
+          width={100}
+          height={100}
           title="picture"
         />
 

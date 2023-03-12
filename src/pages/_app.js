@@ -32,10 +32,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta
+        {/* <meta
           name="google-site-verification"
           content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
-        />
+        /> */}
         <meta
           name="description"
           content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://demo.hapartment.org/" />
+        <meta property="og:url" content="https://hapartment.org/" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
@@ -73,10 +73,15 @@ export default function App({ Component, pageProps }) {
           content="Hapartment Digital Marketplace"
         />
         <meta name="twitter:image:alt" content="Hapartment" />
+      </Head>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+      />
 
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -84,13 +89,7 @@ export default function App({ Component, pageProps }) {
                 page_path: window.location.pathname,
               });
             `,
-          }}
-        />
-      </Head>
-
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        }}
       />
 
       <Script

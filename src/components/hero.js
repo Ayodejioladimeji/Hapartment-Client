@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import heroImg from "../../public/images/hero-image.svg";
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
+  import * as gtag from "../lib/gtag";
 
 //
 
@@ -13,9 +14,16 @@ const Hero = () => {
   const router = useRouter();
   const { state, dispatch } = useContext(DataContext);
 
+
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    gtag.event({
+      action: "quick_search_form",
+      category: "quick_search",
+      label: cityname,
+    });
 
     if (cityname === "") {
       setError("Please enter city name");

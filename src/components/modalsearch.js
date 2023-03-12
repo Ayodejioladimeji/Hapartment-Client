@@ -17,7 +17,7 @@ const initialState = {
 };
 
 const Modalsearch = () => {
-  const { dispatch } = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext);
   const [values, setValues] = useState(initialState);
   const [city, setCity] = useState([]);
   const [minPrice, setMinPrice] = useState("");
@@ -63,6 +63,7 @@ const Modalsearch = () => {
         `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${newData.min_price}&max_price=${newData.max_price}`
       );
 
+      // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
       localStorage.setItem("filter", JSON.stringify(newData));

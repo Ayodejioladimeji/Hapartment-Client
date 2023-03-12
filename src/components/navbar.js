@@ -3,23 +3,28 @@ import { useRouter } from "next/router";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
+ import * as gtag from "../lib/gtag";
 //
 
 function Navbars() {
   const router = useRouter();
   const { state, dispatch } = useContext(DataContext);
 
+
   // Get all listings on Click
   const handleSubmit = async (e) => {
     const newData = {};
+    gtag.event({
+      action: "get_all_listings",
+      category: "all_listings",
+    });
 
+    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
     localStorage.setItem("filter", JSON.stringify(newData));
     dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
     router.push("/listings");
   };
 
