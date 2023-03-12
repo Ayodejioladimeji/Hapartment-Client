@@ -215,7 +215,7 @@
     }
 
     .bi{
-      margin-right:15px;
+      margin-right:10px;
       color:red;
     }
   }
@@ -233,7 +233,7 @@
     }
 
     .bi{
-      margin-right:15px;
+      margin-right:10px;
       color:green;
     }
   }
@@ -325,9 +325,9 @@
     display: flex;
   }
   .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+    width: 20px;
+    height: 8px;
+    border-radius: 15px;
     margin: 0 5px;
     background: var(--light-color);
     cursor: pointer;
