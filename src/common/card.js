@@ -53,8 +53,8 @@ const Card = ({ ...item }) => {
         <Image
           src={images[0].url}
           alt="card-picture"
-          width="200"
-          height="150"
+          width={100}
+          height={100}
           title="picture"
         />
 

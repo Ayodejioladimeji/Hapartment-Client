@@ -107,16 +107,18 @@ const Listings = () => {
   useEffect(() => {
     if (localData !== null && checkload) {
       if (Object?.keys(localData).length === 1) {
+        console.log("single")
         getSingleData();
       } else if (Object?.keys(localData).length >= 2) {
+        console.log("multiple")
         getMultipleData();
       } else {
+        console.log("all")
         getAllData();
       }
     }
   }, [localData]);
 
-  //
 
   // handle submit
   const handleSubmit = async (e) => {
@@ -151,13 +153,14 @@ const Listings = () => {
 
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
-      dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+      // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
       localStorage.setItem("filter", JSON.stringify(newData));
     } catch (error) {
       console.log(error);
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
+
 
   //
 
@@ -386,8 +389,8 @@ const Listings = () => {
                 ))}
               </div>
 
-              {(!loading && sorted.length === 0) ||
-              localData === null ||
+              {!loading && sorted.length === 0 ||
+              
               localData?.statename === "" ? (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data

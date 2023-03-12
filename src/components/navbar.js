@@ -13,6 +13,7 @@ function Navbars() {
   const router = useRouter();
   const { state, dispatch } = useContext(DataContext);
 
+
   // Get all listings on Click
   const handleSubmit = async (e) => {
     const newData = {};
@@ -21,9 +22,9 @@ function Navbars() {
       category: "all_listings",
     });
 
+    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
     localStorage.setItem("filter", JSON.stringify(newData));
     dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
     router.push("/listings");
   };
 
