@@ -23,7 +23,7 @@ export default function index() {
 
         <meta
           name="description"
-          content="Hapartment makes it easy to find and book the perfect apartment. View properties from our network of over 2,000 property managers, pricing and availability."
+          content="Find the perfect apartment with Hapartment - the easy way to find your home! We help you search over 2,000 properties from our network of property managers."
         />
 
         <meta
