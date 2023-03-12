@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://hapartment.org/api/my-sitemap
+# Host
+Host: https://hapartment.org
+
+# Sitemaps
+Sitemap: https://hapartment.org/sitemap.xml
