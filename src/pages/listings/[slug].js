@@ -33,6 +33,8 @@ const ListingDetails = (props) => {
     postedBy,
   } = props.listing;
 
+  console.log(postedBy)
+
 
 
   return (
@@ -132,12 +134,12 @@ const ListingDetails = (props) => {
 
               {/* Verification status note */}
               {status === "pending" ? <div className="pending-status">
-                <i class="bi bi-exclamation-circle-fill"></i>
+                <i className="bi bi-exclamation-circle-fill"></i>
                 This property is under review for verification
               </div>
                 :
               <div className="verified-status">
-                <i class="bi bi-check-circle-fill"></i>
+                <i className="bi bi-check-circle-fill"></i>
                 This property has been verified
               </div>}
 
