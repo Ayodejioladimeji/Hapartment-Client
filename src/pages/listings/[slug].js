@@ -18,6 +18,8 @@ import ReactWhatsapp from "react-whatsapp";
 
 const ListingDetails = (props) => {
   const router = useRouter();
+  const p = router.asPath.slice(1);
+  const canonicalURL = `https://hapartment.org${p}`.split("?")[0];
 
   const {
     _id,
@@ -39,7 +41,7 @@ const ListingDetails = (props) => {
     <>
       <Head>
         <title>Listing Details</title>
-        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+        <link rel="canonical" href={canonicalURL} />
         <meta
           name="description"
           content={`${property_type} | ${address} | ${price}`}

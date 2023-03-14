@@ -7,7 +7,11 @@ const AboutUs = () => {
     <>
       <Head>
         <title>Hapartment - About Us</title>
-        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+        <link
+          rel="canonical"
+          href="https://hapartment.org/about-us/"
+          key="canonical"
+        />
 
         <meta
           name="description"

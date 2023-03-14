@@ -9,7 +9,11 @@ const WatchDemo = () => {
     <>
       <Head>
         <title>Hapartment - Watch a demo</title>
-        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+        <link
+          rel="canonical"
+          href="https://hapartment.org/watchdemo/"
+          key="canonical"
+        />
         <meta
           name="description"
           content="Hapartment is a new way to find your new home. We make it simple and convenient, so you can focus on finding a place you love. Use Hapartment to explore hundreds of properties in your area; get detailed information about the apartment that interests you and filter through hundreds of similar apartments for sale with ease."

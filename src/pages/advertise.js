@@ -7,7 +7,11 @@ const Advert = () => {
     <>
       <Head>
         <title>Hapartment - Advertise with us</title>
-        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+        <link
+          rel="canonical"
+          href="https://hapartment.org/advertise/"
+          key="canonical"
+        />
 
         <meta
           name="description"

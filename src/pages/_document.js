@@ -10,7 +10,7 @@ export default function Document() {
           sizes="180x180"
           href="/apple-touch-icon.png"
         />
-        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+
         {/* <link
           rel="icon"
           type="image/png"

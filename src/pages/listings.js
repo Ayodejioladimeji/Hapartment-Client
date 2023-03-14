@@ -166,7 +166,11 @@ const Listings = () => {
     <>
       <Head>
         <title>Hapartment - Property Listings</title>
-        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+        <link
+          rel="canonical"
+          href="https://hapartment.org/listings/"
+          key="canonical"
+        />
         <meta
           name="description"
           content="Hapartment provides a secure and reliable digital marketplace for renting apartments."

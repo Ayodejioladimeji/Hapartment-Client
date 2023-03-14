@@ -10,7 +10,11 @@ const Contact = () => {
     <>
       <Head>
         <title>Hapartment - Contact Us</title>
-        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+        <link
+          rel="canonical"
+          href="https://hapartment.org/contact/"
+          key="canonical"
+        />
 
         <meta
           name="description"
