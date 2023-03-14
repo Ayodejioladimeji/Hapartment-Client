@@ -14,12 +14,8 @@ export default function index() {
   return (
     <>
       <Head>
-        {/* <meta
-          name="google-site-verification"
-          content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
-        /> */}
-
         <title>Hapartment - Homepage</title>
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
 
         <meta
           name="description"

@@ -7,6 +7,7 @@ const Privacy = () => {
     <>
       <Head>
         <title>Hapartment - Privacy Policy</title>
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
         <meta
           name="description"
           content="Easily view listings directly from top property managers, pricing and availability updated daily. Search through hundreds of pictures of fully furnished apartments directly on your mobile device or desktop. Contact agents directly with a click or text, view property details and virtual tours, see all possible matches, save favorites and get notifications when a new listing comes on the market by signing up to receive updates via email or SMS."

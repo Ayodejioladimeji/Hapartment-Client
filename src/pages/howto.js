@@ -26,6 +26,7 @@ const HowTo = () => {
     <>
       <Head>
         <title>Hapartment - How To Create Listings</title>
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
         <meta
           name="description"
           content="Receive top-notch apartment listings from some of the most reputable real estate managers. We are committed to delivering the safest apartment search experience on both web and app. View and schedule your visit directly from our site or your mobile device, with all availability and pricing updated daily."

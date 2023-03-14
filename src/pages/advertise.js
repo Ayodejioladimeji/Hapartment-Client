@@ -7,10 +7,7 @@ const Advert = () => {
     <>
       <Head>
         <title>Hapartment - Advertise with us</title>
-        {/* <meta
-          name="google-site-verification"
-          content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
-        /> */}
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
 
         <meta
           name="description"
@@ -37,10 +34,7 @@ const Advert = () => {
         />
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:url"
-          content="https://hapartment.org/advertise"
-        />
+        <meta property="og:url" content="https://hapartment.org/advertise" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

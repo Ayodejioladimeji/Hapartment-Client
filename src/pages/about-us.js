@@ -7,10 +7,8 @@ const AboutUs = () => {
     <>
       <Head>
         <title>Hapartment - About Us</title>
-        {/* <meta
-          name="google-site-verification"
-          content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
-        /> */}
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+
         <meta
           name="description"
           content="At Hapartment, we believe that a smart apartment search experience should just work. Our apps and website makes the process of searching for an apartment smooth, easy, and safe."
@@ -38,10 +36,7 @@ const AboutUs = () => {
         />
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:url"
-          content="https://hapartment.org/about-us"
-        />
+        <meta property="og:url" content="https://hapartment.org/about-us" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

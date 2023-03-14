@@ -7,6 +7,7 @@ const Terms = () => {
     <>
       <Head>
         <title>Hapartment - Terms of Use</title>
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
         <meta
           name="description"
           content="Hapartment delivers the safest apartment search experience on both web and app. View apartment listings directly from top property managers, pricing and availability updated daily."

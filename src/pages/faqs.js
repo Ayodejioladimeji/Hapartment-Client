@@ -9,6 +9,7 @@ const Faqs = () => {
     <>
       <Head>
         <title>Hapartment - FAQS</title>
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
         <meta
           name="description"
           content="Hapartment is the best apartment search experience on both web and mobile. View the newest inventory directly from your property managers, pricing and availability updated daily. Find your next home in minutes!"

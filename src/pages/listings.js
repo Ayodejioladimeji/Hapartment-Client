@@ -16,7 +16,7 @@ import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
- import * as gtag from "../lib/gtag";
+import * as gtag from "../lib/gtag";
 // import Map from "@/utils/map";
 
 //
@@ -119,7 +119,6 @@ const Listings = () => {
     }
   }, [localData]);
 
-
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -161,13 +160,13 @@ const Listings = () => {
     }
   };
 
-
   //
 
   return (
     <>
       <Head>
         <title>Hapartment - Property Listings</title>
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
         <meta
           name="description"
           content="Hapartment provides a secure and reliable digital marketplace for renting apartments."
@@ -182,10 +181,7 @@ const Listings = () => {
           content="Hapartment is your one place to find apartments and manage your rentals"
         />
 
-        <meta
-          property="og:url"
-          content="https://hapartment.org/listings"
-        />
+        <meta property="og:url" content="https://hapartment.org/listings" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
@@ -355,9 +351,12 @@ const Listings = () => {
               )}
 
               <div className="list-box">
-                {sorted.filter(item => item.status !=="declined").slice(13, 25).map((item) => (
-                  <Card {...item} key={item._id} />
-                ))}
+                {sorted
+                  .filter((item) => item.status !== "declined")
+                  .slice(13, 25)
+                  .map((item) => (
+                    <Card {...item} key={item._id} />
+                  ))}
               </div>
 
               {/* {sorted.length >= 12 && (
@@ -378,15 +377,16 @@ const Listings = () => {
                 </div>
               )} */}
 
-
               <div className="list-box">
-                {sorted.filter(item => item.status !=="declined").slice(25).map((item) => (
-                  <Card {...item} key={item._id} />
-                ))}
+                {sorted
+                  .filter((item) => item.status !== "declined")
+                  .slice(25)
+                  .map((item) => (
+                    <Card {...item} key={item._id} />
+                  ))}
               </div>
 
-              {!loading && sorted.length === 0 ||
-              
+              {(!loading && sorted.length === 0) ||
               localData?.statename === "" ? (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data

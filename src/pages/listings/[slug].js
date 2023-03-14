@@ -33,14 +33,13 @@ const ListingDetails = (props) => {
     postedBy,
   } = props.listing;
 
-  console.log(postedBy)
-
-
+  console.log(postedBy);
 
   return (
     <>
       <Head>
         <title>Listing Details</title>
+        <link rel="canonical" href="https://hapartment.org" key="canonical" />
         <meta
           name="description"
           content={`${property_type} | ${address} | ${price}`}
@@ -133,15 +132,17 @@ const ListingDetails = (props) => {
               </div>
 
               {/* Verification status note */}
-              {status === "pending" ? <div className="pending-status">
-                <i className="bi bi-exclamation-circle-fill"></i>
-                This property is under review for verification
-              </div>
-                :
-              <div className="verified-status">
-                <i className="bi bi-check-circle-fill"></i>
-                This property has been verified
-              </div>}
+              {status === "pending" ? (
+                <div className="pending-status">
+                  <i className="bi bi-exclamation-circle-fill"></i>
+                  This property is under review for verification
+                </div>
+              ) : (
+                <div className="verified-status">
+                  <i className="bi bi-check-circle-fill"></i>
+                  This property has been verified
+                </div>
+              )}
 
               <div className="details-tab mt-5">
                 <div className="tab-section">
