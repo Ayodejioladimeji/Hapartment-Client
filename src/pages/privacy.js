@@ -28,7 +28,7 @@ const Privacy = () => {
 
         <meta
           property="og:url"
-          content="https://hapartment.org/privacypolicy"
+          content="https://www.hapartment.org/privacypolicy"
         />
         <meta name="twitter:card" content="Hapartment" />
 
