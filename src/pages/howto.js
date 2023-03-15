@@ -28,7 +28,7 @@ const HowTo = () => {
         <title>Hapartment - How To Create Listings</title>
         <link
           rel="canonical"
-          href="https://hapartment.org/howto/"
+          href="https://www.hapartment.org/howto/"
           key="canonical"
         />
         <meta

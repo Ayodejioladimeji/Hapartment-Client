@@ -19,7 +19,7 @@ import ReactWhatsapp from "react-whatsapp";
 const ListingDetails = (props) => {
   const router = useRouter();
   const p = router.asPath.slice(1);
-  const canonicalURL = `https://hapartment.org${p}`.split("?")[0];
+  const canonicalURL = `https://www.hapartment.org/${p}`.split("?")[0];
 
   const {
     _id,
@@ -35,12 +35,10 @@ const ListingDetails = (props) => {
     postedBy,
   } = props.listing;
 
-  console.log(postedBy);
-
   return (
     <>
       <Head>
-        <title>Listing Details</title>
+        <title>{`${property_type} | ${address} | ${price}`}</title>
         <link rel="canonical" href={canonicalURL} />
         <meta
           name="description"
@@ -53,17 +51,26 @@ const ListingDetails = (props) => {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="title" content="Hapartment-Homepage" />
         <meta
-          property="og:title"
+          name="title"
           content={`${property_type} | ${address} | ${price}`}
         />
-        <meta property="og:description" content="https://hapartment.org" />
+        <meta
+          property="og:title"
+          content={`Hapartment - ${property_type} | ${address} | ${price}`}
+        />
+        <meta
+          property="og:description"
+          content={`https://hapartment.org/listings/${_id}`}
+        />
 
         <meta property="og:image" content={images[0].url} />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/" />
+        <meta
+          property="og:url"
+          content={`https://hapartment.org/listings/${_id}`}
+        />
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta name="robots" content="index, nofollow" />

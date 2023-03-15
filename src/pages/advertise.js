@@ -9,7 +9,7 @@ const Advert = () => {
         <title>Hapartment - Advertise with us</title>
         <link
           rel="canonical"
-          href="https://hapartment.org/advertise/"
+          href="https://www.hapartment.org/advertise/"
           key="canonical"
         />
 

@@ -9,7 +9,7 @@ const AboutUs = () => {
         <title>Hapartment - About Us</title>
         <link
           rel="canonical"
-          href="https://hapartment.org/about-us/"
+          href="https://www.hapartment.org/about-us/"
           key="canonical"
         />
 

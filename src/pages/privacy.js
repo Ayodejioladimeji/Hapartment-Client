@@ -9,7 +9,7 @@ const Privacy = () => {
         <title>Hapartment - Privacy Policy</title>
         <link
           rel="canonical"
-          href="https://hapartment.org/privacy/"
+          href="https://www.hapartment.org/privacy/"
           key="canonical"
         />
         <meta

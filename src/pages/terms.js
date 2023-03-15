@@ -9,7 +9,7 @@ const Terms = () => {
         <title>Hapartment - Terms of Use</title>
         <link
           rel="canonical"
-          href="https://hapartment.org/terms/"
+          href="https://www.hapartment.org/terms/"
           key="canonical"
         />
         <meta

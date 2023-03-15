@@ -11,7 +11,7 @@ const Faqs = () => {
         <title>Hapartment - FAQS</title>
         <link
           rel="canonical"
-          href="https://hapartment.org/faqs/"
+          href="https://www.hapartment.org/faqs/"
           key="canonical"
         />
         <meta

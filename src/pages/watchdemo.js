@@ -11,7 +11,7 @@ const WatchDemo = () => {
         <title>Hapartment - Watch a demo</title>
         <link
           rel="canonical"
-          href="https://hapartment.org/watchdemo/"
+          href="https://www.hapartment.org/watchdemo/"
           key="canonical"
         />
         <meta
@@ -22,7 +22,7 @@ const WatchDemo = () => {
           name="keywords"
           content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
-        <meta property="og:title" content="Hapartment -  Terms Of Use" />
+        <meta property="og:title" content="Hapartment -  Watch a demo" />
         <meta
           property="og:description"
           content="We give you the ability to research, compare and see what offers are available for your next permanent residence. You will be able to see before hand if it is a suitable area and provides what you need and want in a home"

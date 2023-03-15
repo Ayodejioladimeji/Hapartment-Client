@@ -168,7 +168,7 @@ const Listings = () => {
         <title>Hapartment - Property Listings</title>
         <link
           rel="canonical"
-          href="https://hapartment.org/listings/"
+          href="https://www.hapartment.org/listings/"
           key="canonical"
         />
         <meta
