@@ -46,7 +46,7 @@ const ListingDetails = (props) => {
         />
         <meta
           name="keywords"
-          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
+          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -83,6 +83,7 @@ const ListingDetails = (props) => {
           content="Hapartment Digital Marketplace"
         />
         <meta name="twitter:image:alt" content="Hapartment" />
+        <meta charSet="utf-8"></meta>
       </Head>
 
       <section className="white">
@@ -97,7 +98,7 @@ const ListingDetails = (props) => {
 
               <div className="row">
                 <div className="col-md-8">
-                  <h3>{property_type}</h3>
+                  <h1>{property_type}</h1>
                   <div className="address">
                     <i className="bi bi-geo-alt-fill"></i>
                     {address}

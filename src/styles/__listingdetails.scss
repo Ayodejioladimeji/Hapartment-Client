@@ -33,7 +33,7 @@
 }
 
 .listing-details {
-  h3 {
+  h1 {
     font-size: var(--h4);
 
     @media (max-width: 565px) {
@@ -201,40 +201,42 @@
   }
 
   // Verification status
-  .pending-status{
-    display:flex;
+  .pending-status {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height:80px;
-    margin-top:30px;
-    background:rgba(255, 0, 0, 0.075);
+    height: 80px;
+    margin-top: 30px;
+    background: rgba(255, 0, 0, 0.075);
+    padding: 10px;
 
-    p{
-      font-size:15px;
+    p {
+      font-size: 15px;
     }
 
-    .bi{
-      margin-right:10px;
-      color:red;
+    .bi {
+      margin-right: 10px;
+      color: red;
     }
   }
-  .verified-status{
-    display:flex;
+  .verified-status {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height:80px;
-    margin-top:30px;
-    background:rgba(0, 255, 34, 0.103);
+    height: 80px;
+    margin-top: 30px;
+    background: rgba(0, 255, 34, 0.103);
+    padding: 10px;
 
-    p{
-      font-size:15px;
+    p {
+      font-size: 15px;
     }
 
-    .bi{
-      margin-right:10px;
-      color:green;
+    .bi {
+      margin-right: 10px;
+      color: green;
     }
   }
 
@@ -377,10 +379,10 @@
         }
 
         img {
-          width: 100%!important;
-          height: 100%!important;
+          width: 100% !important;
+          height: 100% !important;
           border-radius: 8px;
-          border:1px solid var(--primary-color);
+          border: 1px solid var(--primary-color);
           object-fit: cover;
         }
       }
