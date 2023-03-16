@@ -9,6 +9,7 @@ const WatchDemo = () => {
     <>
       <Head>
         <title>Hapartment - Watch a demo</title>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href="https://www.hapartment.org/watchdemo/"

@@ -10,6 +10,7 @@ const Contact = () => {
     <>
       <Head>
         <title>Hapartment - Contact Us</title>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href="https://www.hapartment.org/contact/"

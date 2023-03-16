@@ -7,6 +7,7 @@ const Terms = () => {
     <>
       <Head>
         <title>Hapartment - Terms of Use</title>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href="https://www.hapartment.org/terms/"

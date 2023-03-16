@@ -166,6 +166,7 @@ const Listings = () => {
     <>
       <Head>
         <title>Hapartment - Property Listings</title>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href="https://www.hapartment.org/listings/"

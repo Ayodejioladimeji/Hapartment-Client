@@ -15,6 +15,7 @@ export default function index() {
     <>
       <Head>
         <title>Hapartment - Homepage</title>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href="https://www.hapartment.org"

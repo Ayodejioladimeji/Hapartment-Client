@@ -7,6 +7,7 @@ const AboutUs = () => {
     <>
       <Head>
         <title>Hapartment - About Us</title>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href="https://www.hapartment.org/about-us/"

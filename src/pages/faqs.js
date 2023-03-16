@@ -9,6 +9,7 @@ const Faqs = () => {
     <>
       <Head>
         <title>Hapartment - FAQS</title>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href="https://www.hapartment.org/faqs/"

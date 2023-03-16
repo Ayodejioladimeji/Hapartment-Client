@@ -26,6 +26,7 @@ const HowTo = () => {
     <>
       <Head>
         <title>Hapartment - How To Create Listings</title>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href="https://www.hapartment.org/howto/"
