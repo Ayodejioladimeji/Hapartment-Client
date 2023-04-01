@@ -4,12 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "export": "next build && next export",
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "sitemap": "next-sitemap --config next-sitemap.config.js",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@next/font": "13.1.6",
