@@ -35,6 +35,13 @@ const ListingDetails = (props) => {
     postedBy,
   } = props.listing;
 
+  console.log(map);
+
+  // const add =
+  //   "Randall Miller %26 Associates 300 E Broadway, Logansport, IN 46947";
+
+  const adds = `${map[0].city} %26 ${map[0].address} ${map[0].country} ${map[0].latitude} ${map[0].longitude}`;
+
   return (
     <>
       <Head>
@@ -142,7 +149,7 @@ const ListingDetails = (props) => {
               </div>
 
               {/* Verification status note */}
-              {status === "pending" ? (
+              {/* {status === "pending" ? (
                 <div className="pending-status">
                   <i className="bi bi-exclamation-circle-fill"></i>
                   This property is under review for verification
@@ -152,7 +159,7 @@ const ListingDetails = (props) => {
                   <i className="bi bi-check-circle-fill"></i>
                   This property has been verified
                 </div>
-              )}
+              )} */}
 
               <div className="details-tab mt-5">
                 <div className="tab-section">
@@ -191,7 +198,18 @@ const ListingDetails = (props) => {
                     <div className="tab-pane" id="map">
                       <div className="package-box mt-4 py-3">
                         {map[0] !== null && (
-                          <Map lat={map[0].latitude} lng={map[0].longitude} />
+                          // <Map lat={map[0].latitude} lng={map[0].longitude} />
+                          <div className="map-box" style={{ height: "400px" }}>
+                            <iframe
+                              src={`https://maps.google.com/maps?q= + ${map[0].latitude} , ${map[0].longitude} &t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                              width="100%"
+                              height="100%"
+                              style={{ border: 0 }}
+                              allowFullScreen=""
+                              loading="lazy"
+                              referrerPolicy="no-referrer-when-downgrade"
+                            />
+                          </div>
                         )}
                       </div>
                     </div>
