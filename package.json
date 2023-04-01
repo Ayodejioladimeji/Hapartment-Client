@@ -1,6 +1,6 @@
 {
   "name": "hapartmentclient",
-  "homepage": "https://www.hapartment.org",
+  "homepage": "https://hapartment.org",
   "version": "0.1.0",
   "private": true,
   "scripts": {
