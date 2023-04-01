@@ -9,15 +9,21 @@ const WatchDemo = () => {
     <>
       <Head>
         <title>Hapartment - Watch a demo</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="canonical"
+          href="https://www.hapartment.org/watchdemo/"
+          key="canonical"
+        />
         <meta
           name="description"
           content="Hapartment is a new way to find your new home. We make it simple and convenient, so you can focus on finding a place you love. Use Hapartment to explore hundreds of properties in your area; get detailed information about the apartment that interests you and filter through hundreds of similar apartments for sale with ease."
         />
         <meta
           name="keywords"
-          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
         />
-        <meta property="og:title" content="Hapartment -  Terms Of Use" />
+        <meta property="og:title" content="Hapartment -  Watch a demo" />
         <meta
           property="og:description"
           content="We give you the ability to research, compare and see what offers are available for your next permanent residence. You will be able to see before hand if it is a suitable area and provides what you need and want in a home"
@@ -25,7 +31,7 @@ const WatchDemo = () => {
 
         <meta
           property="og:url"
-          content="https://hapartment.org/watchdemo"
+          content="https://www.hapartment.org/watchdemo"
         />
         <meta name="twitter:card" content="Hapartment" />
 

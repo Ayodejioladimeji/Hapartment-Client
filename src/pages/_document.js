@@ -10,6 +10,7 @@ export default function Document() {
           sizes="180x180"
           href="/apple-touch-icon.png"
         />
+
         {/* <link
           rel="icon"
           type="image/png"

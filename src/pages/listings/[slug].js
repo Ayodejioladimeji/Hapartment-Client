@@ -18,6 +18,8 @@ import ReactWhatsapp from "react-whatsapp";
 
 const ListingDetails = (props) => {
   const router = useRouter();
+  const p = router.asPath.slice(1);
+  const canonicalURL = `https://www.hapartment.org/${p}`.split("?")[0];
 
   const {
     _id,
@@ -28,6 +30,7 @@ const ListingDetails = (props) => {
     bedrooms,
     toilets,
     images,
+    status,
     map,
     postedBy,
   } = props.listing;
@@ -35,29 +38,39 @@ const ListingDetails = (props) => {
   return (
     <>
       <Head>
-        <title>Listing Details</title>
+        <title>{`${property_type} | ${address} | ${price}`}</title>
+        <link rel="canonical" href={canonicalURL} />
         <meta
           name="description"
           content={`${property_type} | ${address} | ${price}`}
         />
         <meta
           name="keywords"
-          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me hapartments, Hapartments, hapartment, real estate, agents, landlord, tenant, renting website, apartment, rent house, leasing house "
+          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="title" content="Hapartment-Homepage" />
         <meta
-          property="og:title"
+          name="title"
           content={`${property_type} | ${address} | ${price}`}
         />
-        <meta property="og:description" content="https://hapartment.org" />
+        <meta
+          property="og:title"
+          content={`Hapartment - ${property_type} | ${address} | ${price}`}
+        />
+        <meta
+          property="og:description"
+          content={`https://www.hapartment.org/listings/${_id}`}
+        />
 
         <meta property="og:image" content={images[0].url} />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/" />
+        <meta
+          property="og:url"
+          content={`https://www.hapartment.org/listings/${_id}`}
+        />
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta name="robots" content="index, nofollow" />
@@ -70,6 +83,7 @@ const ListingDetails = (props) => {
           content="Hapartment Digital Marketplace"
         />
         <meta name="twitter:image:alt" content="Hapartment" />
+        <meta charSet="utf-8"></meta>
       </Head>
 
       <section className="white">
@@ -84,7 +98,7 @@ const ListingDetails = (props) => {
 
               <div className="row">
                 <div className="col-md-8">
-                  <h3>{property_type}</h3>
+                  <h1>{property_type}</h1>
                   <div className="address">
                     <i className="bi bi-geo-alt-fill"></i>
                     {address}
@@ -126,6 +140,19 @@ const ListingDetails = (props) => {
                   {toilets} {toilets === "1" ? "Toilet" : "Toilets"}
                 </div>
               </div>
+
+              {/* Verification status note */}
+              {status === "pending" ? (
+                <div className="pending-status">
+                  <i className="bi bi-exclamation-circle-fill"></i>
+                  This property is under review for verification
+                </div>
+              ) : (
+                <div className="verified-status">
+                  <i className="bi bi-check-circle-fill"></i>
+                  This property has been verified
+                </div>
+              )}
 
               <div className="details-tab mt-5">
                 <div className="tab-section">
@@ -229,7 +256,7 @@ const ListingDetails = (props) => {
                   <ReactWhatsapp
                     className="btn"
                     number="+2347048942743"
-                    message={`Hello, I'm interested in your property on Hapartment - https://hapartment.org/listings/${_id}`}
+                    message={`Hello, I'm interested in your property on Hapartment - https://www.hapartment.org/listings/${_id}`}
                   >
                     <i className="bi bi-whatsapp"></i>
                     07048942743
@@ -266,40 +293,40 @@ const ListingDetails = (props) => {
 
 export default ListingDetails;
 
-// export async function getServerSideProps({ params, query }) {
-//   if (query.text) {
-//     return { redirect: { destination: "/listings", permanent: false } };
-//   }
-//   const response = await getDataApis("/all_listing");
-//   const listings = response.data.filter((item) => item._id === params.slug)[0];
+export async function getServerSideProps({ params, query }) {
+  if (query.text) {
+    return { redirect: { destination: "/listings", permanent: false } };
+  }
+  const response = await getDataApis("/all_listing");
+  const listings = response.data.filter((item) => item._id === params.slug)[0];
 
-//   if (!listings) {
-//     return { notFound: true };
-//   }
-//   return { props: { listing: listings } };
+  if (!listings) {
+    return { notFound: true };
+  }
+  return { props: { listing: listings } };
+}
+
+// export async function getStaticPaths() {
+//   const response = await getDataApis("/all_listing");
+//   const thePaths = response.data.map((item) => {
+//     return { params: { slug: item._id } };
+//   });
+
+//   return {
+//     paths: thePaths,
+//     fallback: false,
+//   };
 // }
 
-export async function getStaticPaths() {
-  const response = await getDataApis("/all_listing");
-  const thePaths = response.data.map((item) => {
-    return { params: { slug: item._id } };
-  });
+// export async function getStaticProps(context) {
+//   const response = await getDataApis("/all_listing");
+//   const thelistings = response.data.filter(
+//     (item) => item._id === context.params.slug
+//   )[0];
 
-  return {
-    paths: thePaths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps(context) {
-  const response = await getDataApis("/all_listing");
-  const thelistings = response.data.filter(
-    (item) => item._id === context.params.slug
-  )[0];
-
-  return {
-    props: {
-      listing: thelistings,
-    },
-  };
-}
+//   return {
+//     props: {
+//       listing: thelistings,
+//     },
+//   };
+// }

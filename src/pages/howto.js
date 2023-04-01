@@ -26,13 +26,19 @@ const HowTo = () => {
     <>
       <Head>
         <title>Hapartment - How To Create Listings</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="canonical"
+          href="https://www.hapartment.org/howto/"
+          key="canonical"
+        />
         <meta
           name="description"
           content="Receive top-notch apartment listings from some of the most reputable real estate managers. We are committed to delivering the safest apartment search experience on both web and app. View and schedule your visit directly from our site or your mobile device, with all availability and pricing updated daily."
         />
         <meta
           name="keywords"
-          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
         />
         <meta
           property="og:title"
@@ -45,7 +51,7 @@ const HowTo = () => {
           site."
         />
 
-        <meta property="og:url" content="https://hapartment.org/howto" />
+        <meta property="og:url" content="https://www.hapartment.org/howto" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

@@ -36,13 +36,18 @@ export default function App({ Component, pageProps }) {
           name="google-site-verification"
           content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
         /> */}
+        <link
+          rel="canonical"
+          href="https://www.hapartment.org"
+          key="canonical"
+        />
         <meta
           name="description"
           content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
         />
         <meta
           name="keywords"
-          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment digital marketplace,Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -60,7 +65,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/" />
+        <meta property="og:url" content="https://www.hapartment.org/" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
@@ -74,10 +79,6 @@ export default function App({ Component, pageProps }) {
         />
         <meta name="twitter:image:alt" content="Hapartment" />
       </Head>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
 
       <Script
         dangerouslySetInnerHTML={{
@@ -90,6 +91,11 @@ export default function App({ Component, pageProps }) {
               });
             `,
         }}
+      />
+
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
 
       <Script

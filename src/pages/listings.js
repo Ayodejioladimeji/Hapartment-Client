@@ -16,7 +16,7 @@ import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
- import * as gtag from "../lib/gtag";
+import * as gtag from "../lib/gtag";
 // import Map from "@/utils/map";
 
 //
@@ -119,7 +119,6 @@ const Listings = () => {
     }
   }, [localData]);
 
-
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -161,20 +160,25 @@ const Listings = () => {
     }
   };
 
-
   //
 
   return (
     <>
       <Head>
         <title>Hapartment - Property Listings</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="canonical"
+          href="https://www.hapartment.org/listings/"
+          key="canonical"
+        />
         <meta
           name="description"
           content="Hapartment provides a secure and reliable digital marketplace for renting apartments."
         />
         <meta
           name="keywords"
-          content="Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
+          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
         />
         <meta property="og:title" content="Hapartment - Property Listings" />
         <meta
@@ -182,10 +186,7 @@ const Listings = () => {
           content="Hapartment is your one place to find apartments and manage your rentals"
         />
 
-        <meta
-          property="og:url"
-          content="https://hapartment.org/listings"
-        />
+        <meta property="og:url" content="https://www.hapartment.org/listings" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
@@ -214,11 +215,11 @@ const Listings = () => {
                   <Goback />
                   {localData !== null &&
                   Object?.keys(localData)?.length !== 0 ? (
-                    <h4>
+                    <h1>
                       Properties for rent in <span>{localData?.cityname}</span>
-                    </h4>
+                    </h1>
                   ) : (
-                    <h4>All properties for rent</h4>
+                    <h1>All properties for rent</h1>
                   )}
                 </div>
 
@@ -355,9 +356,12 @@ const Listings = () => {
               )}
 
               <div className="list-box">
-                {sorted.slice(13, 25).map((item) => (
-                  <Card {...item} key={item._id} />
-                ))}
+                {sorted
+                  .filter((item) => item.status !== "declined")
+                  .slice(13, 25)
+                  .map((item) => (
+                    <Card {...item} key={item._id} />
+                  ))}
               </div>
 
               {/* {sorted.length >= 12 && (
@@ -378,15 +382,16 @@ const Listings = () => {
                 </div>
               )} */}
 
-
               <div className="list-box">
-                {sorted.slice(25).map((item) => (
-                  <Card {...item} key={item._id} />
-                ))}
+                {sorted
+                  .filter((item) => item.status !== "declined")
+                  .slice(25)
+                  .map((item) => (
+                    <Card {...item} key={item._id} />
+                  ))}
               </div>
 
-              {!loading && sorted.length === 0 ||
-              
+              {(!loading && sorted.length === 0) ||
               localData?.statename === "" ? (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data
