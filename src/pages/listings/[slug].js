@@ -19,7 +19,7 @@ import ReactWhatsapp from "react-whatsapp";
 const ListingDetails = (props) => {
   const router = useRouter();
   const p = router.asPath.slice(1);
-  const canonicalURL = `https://www.hapartment.org/${p}`.split("?")[0];
+  const canonicalURL = `https://hapartment.org/${p}`.split("?")[0];
 
   const {
     _id,
@@ -37,14 +37,11 @@ const ListingDetails = (props) => {
 
   // console.log(map);
 
-  // const add =
-  //   "Randall Miller %26 Associates 300 E Broadway, Logansport, IN 46947";
-
-  const adds = `${map[0].city} %26 ${map[0].address} ${map[0].country} ${map[0].latitude} ${map[0].longitude}`;
+  // const adds = `${map[0].city} %26 ${map[0].address} ${map[0].country} ${map[0].latitude} ${map[0].longitude}`;
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>{`${property_type} | ${address} | ${price}`}</title>
         <link rel="canonical" href={canonicalURL} />
         <meta
@@ -68,7 +65,7 @@ const ListingDetails = (props) => {
         />
         <meta
           property="og:description"
-          content={`https://www.hapartment.org/listings/${_id}`}
+          content={`https://hapartment.org/listings/${_id}`}
         />
 
         <meta property="og:image" content={images[0].url} />
@@ -76,7 +73,7 @@ const ListingDetails = (props) => {
 
         <meta
           property="og:url"
-          content={`https://www.hapartment.org/listings/${_id}`}
+          content={`https://hapartment.org/listings/${_id}`}
         />
         <meta name="twitter:card" content="summary_large_image" />
 
@@ -91,7 +88,7 @@ const ListingDetails = (props) => {
         />
         <meta name="twitter:image:alt" content="Hapartment" />
         <meta charSet="utf-8"></meta>
-      </Head> */}
+      </Head>
 
       <section className="white">
         <div className="container">
@@ -274,7 +271,7 @@ const ListingDetails = (props) => {
                   <ReactWhatsapp
                     className="btn"
                     number="+2347048942743"
-                    message={`Hello, I'm interested in your property on Hapartment - https://www.hapartment.org/listings/${_id}`}
+                    message={`Hello, I'm interested in your property on Hapartment - https://hapartment.org/listings/${_id}`}
                   >
                     <i className="bi bi-whatsapp"></i>
                     07048942743

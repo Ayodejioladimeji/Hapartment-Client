@@ -171,7 +171,7 @@ const Listings = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/listings/"
+          href="https://hapartment.org/listings/"
           key="canonical"
         />
         <meta
@@ -393,8 +393,9 @@ const Listings = () => {
                   ))}
               </div>
 
-              {(!loading && sorted.length === 0) ||
-              localData?.statename === "" ? (
+              {!loading &&
+              sorted.length === 0 &&
+              localData?.statename === undefined ? (
                 <div className="unavailable d-flex align-items-center justify-content-center">
                   No available data
                 </div>

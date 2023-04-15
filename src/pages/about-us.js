@@ -10,7 +10,7 @@ const AboutUs = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/about-us/"
+          href="https://hapartment.org/about-us/"
           key="canonical"
         />
 

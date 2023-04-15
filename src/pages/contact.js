@@ -13,7 +13,7 @@ const Contact = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/contact/"
+          href="https://hapartment.org/contact/"
           key="canonical"
         />
 

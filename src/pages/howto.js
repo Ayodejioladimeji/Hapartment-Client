@@ -29,7 +29,7 @@ const HowTo = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/howto/"
+          href="https://hapartment.org/howto/"
           key="canonical"
         />
         <meta

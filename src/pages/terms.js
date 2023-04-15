@@ -10,7 +10,7 @@ const Terms = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/terms/"
+          href="https://hapartment.org/terms/"
           key="canonical"
         />
         <meta
