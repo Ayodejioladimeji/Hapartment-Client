@@ -19,7 +19,7 @@ const Description = ({ item }) => {
         <h6>Property Location</h6>
         <p>Country : {item.country}</p>
         <p>State : {item.statename}</p>
-        <p>city : {item.cityname}</p>
+        <p>City : {item.cityname}</p>
       </div>
 
       <div className="description-box">

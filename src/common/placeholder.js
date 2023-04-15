@@ -81,6 +81,30 @@ const MapSkeleton = () => {
         <Skeleton height={14} width="100%" count={3} style={{ marginTop: 4 }} />
         <Skeleton height={21} width="100%" style={{ marginTop: 14 }} />
       </div>
+      <div style={styles}>
+        <Skeleton height={200} width="100%" />
+
+        <Skeleton height={24} width="100%" style={{ marginTop: 22 }} />
+        <Skeleton
+          height={20}
+          width="100%"
+          style={{ marginTop: 10, marginBottom: 22 }}
+        />
+        <Skeleton height={14} width="100%" count={3} style={{ marginTop: 4 }} />
+        <Skeleton height={21} width="100%" style={{ marginTop: 14 }} />
+      </div>
+      <div style={styles}>
+        <Skeleton height={200} width="100%" />
+
+        <Skeleton height={24} width="100%" style={{ marginTop: 22 }} />
+        <Skeleton
+          height={20}
+          width="100%"
+          style={{ marginTop: 10, marginBottom: 22 }}
+        />
+        <Skeleton height={14} width="100%" count={3} style={{ marginTop: 4 }} />
+        <Skeleton height={21} width="100%" style={{ marginTop: 14 }} />
+      </div>
     </>
   );
 };

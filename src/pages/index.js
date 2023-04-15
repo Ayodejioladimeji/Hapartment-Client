@@ -18,7 +18,7 @@ export default function index() {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org"
+          href="https://www.hapartment.org/"
           key="canonical"
         />
 
@@ -47,7 +47,7 @@ export default function index() {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://www.hapartment.org" />
+        <meta property="og:url" content="https://hapartment.org" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
