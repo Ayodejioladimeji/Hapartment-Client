@@ -35,7 +35,7 @@ const ListingDetails = (props) => {
     postedBy,
   } = props.listing;
 
-  console.log(map);
+  // console.log(map);
 
   // const add =
   //   "Randall Miller %26 Associates 300 E Broadway, Logansport, IN 46947";
