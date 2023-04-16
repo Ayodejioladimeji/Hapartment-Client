@@ -103,6 +103,8 @@ const Listings = () => {
     }
   };
 
+  // console.log(localData, checkload);
+
   // useEffect
   useEffect(() => {
     if (localData !== null && checkload) {
