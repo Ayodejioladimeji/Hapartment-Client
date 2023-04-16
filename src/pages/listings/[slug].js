@@ -44,7 +44,7 @@ const ListingDetails = (props) => {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{`${property_type} | ${address} | ${price}`}</title>
         <link rel="canonical" href={canonicalURL} />
         <meta
@@ -91,7 +91,7 @@ const ListingDetails = (props) => {
         />
         <meta name="twitter:image:alt" content="Hapartment" />
         <meta charSet="utf-8"></meta>
-      </Head>
+      </Head> */}
 
       <section className="white">
         <div className="container">
