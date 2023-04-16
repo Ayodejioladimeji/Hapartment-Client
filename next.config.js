@@ -14,7 +14,7 @@ const nextConfig = {
     scrollRestoration: true,
   },
   // useFileSystemPublicRoutes: false,
-  distDir: "build",
+  // distDir: "build",
   // trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
