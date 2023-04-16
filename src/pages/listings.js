@@ -328,18 +328,9 @@ const Listings = () => {
                 {loading ? (
                   <Placeholder />
                 ) : (
-                  <>
-                    {(!loading && sorted.length === 0) ||
-                    localData?.statename === "" ? (
-                      <div className="unavailable d-flex align-items-center justify-content-center">
-                        No available data
-                      </div>
-                    ) : (
-                      sorted
-                        .slice(0, 12)
-                        .map((item) => <Card {...item} key={item._id} />)
-                    )}
-                  </>
+                  sorted
+                    .slice(0, 12)
+                    .map((item) => <Card {...item} key={item._id} />)
                 )}
               </div>
 
@@ -401,6 +392,16 @@ const Listings = () => {
                     <Card {...item} key={item._id} />
                   ))}
               </div>
+
+              {!loading &&
+              sorted.length === 0 &&
+              localData?.statename === undefined ? (
+                <div className="unavailable d-flex align-items-center justify-content-center">
+                  No available data
+                </div>
+              ) : (
+                ""
+              )}
 
               {/* {visible > sorted.length || loading || sorted.length === 0 ? (
                 ""
