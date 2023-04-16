@@ -10,7 +10,7 @@ const Privacy = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/privacy/"
+          href="https://hapartment.org/privacy/"
           key="canonical"
         />
         <meta

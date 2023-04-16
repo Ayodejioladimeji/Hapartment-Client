@@ -12,7 +12,7 @@ const WatchDemo = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/watchdemo/"
+          href="https://hapartment.org/watchdemo/"
           key="canonical"
         />
         <meta

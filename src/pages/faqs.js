@@ -12,7 +12,7 @@ const Faqs = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/faqs/"
+          href="https://hapartment.org/faqs/"
           key="canonical"
         />
         <meta

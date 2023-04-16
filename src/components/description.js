@@ -75,7 +75,7 @@ const Description = ({ item }) => {
         <div className="share-box">
           <div>
             <FacebookShareButton
-              url={`https://www.hapartment.org/listings/${router.query.slug}`}
+              url={`https://hapartment.org/listings/${router.query.slug}`}
               quote={`${item.property_type} - ${item.description} - Price : ${item.price}`}
               hashtag={"#hapartment"}
             >
@@ -85,7 +85,7 @@ const Description = ({ item }) => {
 
           <div className="mx-3">
             <WhatsappShareButton
-              url={`https://www.hapartment.org/listings/${router.query.slug}`}
+              url={`https://hapartment.org/listings/${router.query.slug}`}
               title="Hi, you may be interested in this property on Hapartment"
               separator="-"
             >
@@ -95,7 +95,7 @@ const Description = ({ item }) => {
 
           <div>
             <TwitterShareButton
-              url={`https://www.hapartment.org/listings/${router.query.slug}`}
+              url={`https://hapartment.org/listings/${router.query.slug}`}
               title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
             >
               <TwitterIcon size={32} round />

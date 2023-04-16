@@ -10,7 +10,7 @@ const Advert = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://www.hapartment.org/advertise/"
+          href="https://hapartment.org/advertise/"
           key="canonical"
         />
 
