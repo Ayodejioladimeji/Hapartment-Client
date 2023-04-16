@@ -1,9 +1,10 @@
 import axios from "axios";
 
 // bring in the endpoint
+const ENDPOINT = process.env.NEXT_PUBLIC_API_URL;
 // import { ENDPOINT } from "@env";
 
-const ENDPOINT = "https://api.hapartment.org/api/v1";
+// const ENDPOINT = "https://api.hapartment.org/api/v1";
 // const ENDPOINT = "http://localhost:8000/api/v1";
 
 // THE POST DATA API
