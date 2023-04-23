@@ -11,7 +11,7 @@ const Sitemap = async (req, res) => {
     { url: "/howto", changefreq: "daily", priority: 0.3 },
     { url: "/faq", changefreq: "daily", priority: 0.3 },
     { url: "/terms", changefreq: "daily", priority: 0.3 },
-    { url: "/privacypolicy", changefreq: "daily", priority: 0.3 },
+    { url: "/privacy", changefreq: "daily", priority: 0.3 },
     { url: "/listings", changefreq: "daily", priority: 0.3 },
   ];
 

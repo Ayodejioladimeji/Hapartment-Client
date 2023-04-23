@@ -32,11 +32,12 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <link rel="icon" href="/favicon.ico" />
         <meta
           name="google-site-verification"
           content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
         />
-        <link rel="canonical" href="https://hapartment.org" key="canonical" />
+        <link rel="canonical" href="https://hapartment.org/" key="canonical" />
         <meta
           name="description"
           content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
