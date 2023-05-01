@@ -21,7 +21,10 @@ const Layout = ({ children }) => {
         const res = await getDataApis("/all_listing");
 
         dispatch({ type: ACTIONS.ALL_LISTINGS, payload: res.data });
-        dispatch({ type: ACTIONS.LOADING, payload: false });
+
+        setTimeout(() => {
+          dispatch({ type: ACTIONS.LOADING, payload: false });
+        }, 3000);
       } catch (error) {
         console.log(error);
         dispatch({ type: ACTIONS.LOADING, payload: false });
