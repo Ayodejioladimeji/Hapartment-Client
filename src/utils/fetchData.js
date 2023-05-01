@@ -4,7 +4,6 @@ import axios from "axios";
 const ENDPOINT = process.env.NEXT_PUBLIC_API_URL;
 // import { ENDPOINT } from "@env";
 
-// const ENDPOINT = "https://api.hapartment.org/api/v1";
 // const ENDPOINT = "http://localhost:8000/api/v1";
 
 // THE POST DATA API
@@ -57,3 +56,7 @@ export const deleteDataApi = async (url, token) => {
   });
   return res;
 };
+
+// Our platform is designed to make the apartment rental process as easy and stress-free as possible. Renters can easily search for apartments based on location, price range, and other preferences.
+
+// For property agents, our platform offers an easy-to-use listing management system that allows them to quickly and efficiently upload their properties and manage their listings. Our platform also provides valuable data and insights on the performance of their listings

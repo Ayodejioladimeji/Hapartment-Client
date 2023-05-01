@@ -240,7 +240,10 @@ const Search = () => {
 
           <div className="col-md-6 search-right">
             <div data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
-              <Image src={searchImg} alt="picture" className="searchimg" />
+              <div className="loader">
+                <span></span>
+              </div>
+              {/* <Image src={searchImg} alt="picture" className="searchimg" /> */}
             </div>
           </div>
         </div>

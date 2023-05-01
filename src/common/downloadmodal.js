@@ -8,7 +8,7 @@ const DownloadModal = ({ alert }) => {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date("05/15/2023 23:59:59");
+    const target = new Date("06/15/2023 23:59:59");
 
     const interval = setInterval(() => {
       const now = new Date();
