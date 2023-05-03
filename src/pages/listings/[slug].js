@@ -10,14 +10,16 @@ import { FaBath, FaBed, FaToilet } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Slider from "@/common/Slider";
 import { getDataApis } from "@/utils/fetchData";
-import Map from "./../../utils/map";
 import Head from "next/head";
 import ReactWhatsapp from "react-whatsapp";
+import { Modal } from "react-bootstrap";
+import AdvertiseModal from "@/common/advertiseModal";
 
 //
 
 const ListingDetails = (props) => {
   const router = useRouter();
+  const [openModal, setOpenModal] = useState(false);
   const p = router.asPath.slice(1);
   const canonicalURL = `https://hapartment.org/${p}`.split("?")[0];
 
@@ -36,8 +38,6 @@ const ListingDetails = (props) => {
   } = props.listing;
 
   // console.log(map);
-
-  // const adds = `${map[0].city} %26 ${map[0].address} ${map[0].country} ${map[0].latitude} ${map[0].longitude}`;
 
   return (
     <>
@@ -302,6 +302,16 @@ const ListingDetails = (props) => {
           </div>
         </div>
       </section>
+
+      <Modal
+        show={openModal}
+        onHide={() => {
+          setOpenModal(false);
+        }}
+        dialogClassName="advertise-modal"
+      >
+        <AdvertiseModal setOpenModal={setOpenModal} />
+      </Modal>
     </>
   );
 };

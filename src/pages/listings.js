@@ -17,6 +17,8 @@ import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
 import * as gtag from "../lib/gtag";
+import { Modal } from "react-bootstrap";
+import AdvertiseModal from "@/common/advertiseModal";
 // import Map from "@/utils/map";
 
 //
@@ -32,6 +34,7 @@ const Listings = () => {
   const [localData, setLocalData] = useState(null);
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   // Sorting the data
   const sortdata = filterValue(listings, sort);
@@ -258,7 +261,10 @@ const Listings = () => {
               </div>
             </div>
 
-            <div className="col-lg-3 d-none d-lg-block">
+            <div
+              className="col-lg-3 d-none d-lg-block"
+              onClick={() => setOpenModal(true)}
+            >
               <div className="adverts-box mb-3" style={{ cursor: "pointer" }}>
                 Place your Banner Adverts here
               </div>
@@ -447,6 +453,16 @@ const Listings = () => {
           </div>
         </div>
       </div>
+
+      <Modal
+        show={openModal}
+        onHide={() => {
+          setOpenModal(false);
+        }}
+        dialogClassName="advertise-modal"
+      >
+        <AdvertiseModal setOpenModal={setOpenModal} />
+      </Modal>
     </>
   );
 };
