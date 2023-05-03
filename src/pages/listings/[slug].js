@@ -14,6 +14,7 @@ import Head from "next/head";
 import ReactWhatsapp from "react-whatsapp";
 import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
+import { useState } from "react";
 
 //
 
@@ -295,7 +296,10 @@ const ListingDetails = (props) => {
                 <Image src={banner4} alt="picture" priority={true} />
               </div>
 
-              <div className="adverts-box mb-3">
+              <div
+                className="adverts-box mb-3"
+                onClick={() => setOpenModal(true)}
+              >
                 Place your Banner Adverts here
               </div>
             </div>
