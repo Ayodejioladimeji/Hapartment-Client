@@ -146,6 +146,7 @@
         color: var(--primary-color);
 
         @media (max-width: 768px) {
+          margin: 0 auto;
           margin-top: 40px;
         }
       }

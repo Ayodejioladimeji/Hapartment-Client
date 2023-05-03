@@ -238,13 +238,18 @@ const Search = () => {
             </div>
           </div>
 
-          <div className="col-md-6 search-right">
-            {/* <div data-aos="fade-up" data-aos-once="true" data-aos-delay="200"> */}
-            <div className="loader">
-              <span></span>
+          <div className="col-md-6 search-right ">
+            <div
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-delay="200"
+              style={{ borderRadius: "50%", overflow: "hidden" }}
+            >
+              <div className="loader ">
+                <span></span>
+              </div>
+              {/* <Image src={searchImg} alt="picture" className="searchimg" /> */}
             </div>
-            {/* <Image src={searchImg} alt="picture" className="searchimg" /> */}
-            {/* </div> */}
           </div>
         </div>
       </div>
