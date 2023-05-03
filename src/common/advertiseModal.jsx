@@ -13,9 +13,10 @@ const initialState = {
   image: null,
 };
 
-const AdvertiseModal = () => {
+const AdvertiseModal = ({ setOpenModal }) => {
   const [values, setValues] = useState(initialState);
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +36,7 @@ const AdvertiseModal = () => {
       return;
     }
 
-    setLoading(true);
+    setUploading(true);
 
     let formData = new FormData();
     formData.append("file", file);
@@ -58,7 +59,7 @@ const AdvertiseModal = () => {
       ...prevState,
       image: uploadImage,
     }));
-    setLoading(false);
+    setUploading(false);
   };
 
   // remove Image
@@ -70,15 +71,15 @@ const AdvertiseModal = () => {
     try {
       setLoading(true);
       const res = await postDataApi("/destroy", newData);
-      // console.log(res.data.msg);
-      setLoading(false);
+      console.log(res.data.msg);
+      setUploading(false);
       setValues((prevState) => ({
         ...prevState,
         image: null,
       }));
     } catch (error) {
       console.log(error);
-      setLoading(false);
+      setUploading(false);
     }
   };
 
@@ -97,10 +98,12 @@ const AdvertiseModal = () => {
     };
 
     try {
-      console.log(newData);
+      const res = await postDataApi("/advert", newData);
+      cogoToast.success(res.data.msg);
+      setOpenModal(false);
       setLoading(false);
     } catch (error) {
-      cogoToast.error(error.response.message);
+      cogoToast.error(error.response.data.msg);
       setLoading(false);
     }
   };
@@ -110,7 +113,7 @@ const AdvertiseModal = () => {
     <div className="advertise">
       <h1>Please provide your product information</h1>
 
-      <form className="form-div" onSubmit={handleSubmit}>
+      <div className="form-div">
         <div className="form-box">
           <label htmlFor="fullname">Fullname</label>
           <input
@@ -167,7 +170,7 @@ const AdvertiseModal = () => {
           <div className="profile-image">
             {values.image === null && (
               <span>
-                {loading ? "Uploading..." : <i className="bi bi-camera"></i>}
+                {uploading ? "Uploading..." : <i className="bi bi-camera"></i>}
 
                 <input
                   autoComplete="off"
@@ -201,8 +204,29 @@ const AdvertiseModal = () => {
           </div>
         </div>
 
-        <button>Submit</button>
-      </form>
+        <div className="button-container">
+          <button
+            className="close"
+            onClick={() => {
+              setOpenModal(false), removeImage();
+            }}
+          >
+            Close
+          </button>
+
+          <button className="save" onClick={handleSubmit}>
+            Submit
+            {loading && (
+              <Loading
+                height="20"
+                width="20"
+                primaryColor="white"
+                secondaryColor="white"
+              />
+            )}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

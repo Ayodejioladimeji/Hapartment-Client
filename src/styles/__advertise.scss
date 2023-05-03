@@ -30,14 +30,22 @@
 
 // Advertise modal section
 .advertise-modal {
-  width: 40vw;
-  max-width: 40vw;
+  width: 500px;
   padding: 0 !important;
+
+  @media (max-width: 580px) {
+    width: 100% !important;
+    margin: 0 !important;
+  }
 }
 
 .advertise {
   padding: 20px;
   width: 100%;
+
+  @media (max-width: 580px) {
+    padding: 50px 10px;
+  }
 
   h1 {
     font-size: 20px;
@@ -47,6 +55,10 @@
 
   .form-div {
     padding: 20px;
+
+    @media (max-width: 580px) {
+      padding: 20px 0px;
+    }
   }
 
   .form-box {
@@ -134,17 +146,30 @@
       }
     }
   }
-
-  button {
-    @include buttons(black);
-    height: 50px;
-    width: 100%;
+  .button-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: none;
-    margin-top: 30px;
+    justify-content: space-between;
+
+    .save {
+      @include buttons(black);
+      height: 50px;
+      // width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      margin-top: 30px;
+    }
+    .close {
+      @include buttons(var(--light-color));
+      height: 50px;
+      // width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      margin-top: 30px;
+    }
   }
 }
-
-//   profile image

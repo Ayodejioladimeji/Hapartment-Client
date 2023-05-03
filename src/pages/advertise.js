@@ -180,7 +180,7 @@ const Advert = () => {
         }}
         dialogClassName="advertise-modal"
       >
-        <AdvertiseModal />
+        <AdvertiseModal setOpenModal={setOpenModal} />
       </Modal>
     </>
   );
