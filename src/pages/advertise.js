@@ -1,8 +1,14 @@
+import AdvertiseModal from "@/common/advertiseModal";
 import BreadCumb from "@/common/breadcumb";
 import Head from "next/head";
+import { useState } from "react";
+import { Modal } from "react-bootstrap";
 import advertiseImage from "../../public/images/advertise-image.svg";
 
 const Advert = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  //
   return (
     <>
       <Head>
@@ -147,6 +153,13 @@ const Advert = () => {
                 <p style={{ fontWeight: "600" }}>
                   12 Months - ₦21,600 (10% discount)
                 </p>
+
+                <button
+                  onClick={() => setOpenModal(true)}
+                  className="get-started-button"
+                >
+                  Get started
+                </button>
               </div>
             </div>
 
@@ -159,6 +172,10 @@ const Advert = () => {
           </div>
         </div>
       </section>
+
+      <Modal show={openModal} dialogClassName="advertise-modal">
+        <AdvertiseModal setOpenModal={setOpenModal} />
+      </Modal>
     </>
   );
 };

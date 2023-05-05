@@ -1,17 +1,19 @@
-const { MagnifyingGlass } = require("react-loader-spinner");
+const { Oval } = require("react-loader-spinner");
 
-const Loading = () => {
+const Loading = (props) => {
   return (
     <div className="text-center">
-      <MagnifyingGlass
-        visible={true}
-        height="60"
-        width="60"
-        ariaLabel="MagnifyingGlass-loading"
+      <Oval
+        height={props.height}
+        width={props.width}
+        color={props.primaryColor}
         wrapperStyle={{}}
-        wrapperClass="MagnifyingGlass-wrapper"
-        glassColor="#c0efff"
-        color="green"
+        wrapperClass=""
+        visible={true}
+        ariaLabel="oval-loading"
+        secondaryColor={props.secondaryColor}
+        strokeWidth={2}
+        strokeWidthSecondary={2}
       />
     </div>
   );

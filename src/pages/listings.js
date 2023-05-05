@@ -17,6 +17,8 @@ import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
 import * as gtag from "../lib/gtag";
+import { Modal } from "react-bootstrap";
+import AdvertiseModal from "@/common/advertiseModal";
 // import Map from "@/utils/map";
 
 //
@@ -32,6 +34,7 @@ const Listings = () => {
   const [localData, setLocalData] = useState(null);
   const [cityname, setCityname] = useState("");
   const [error, setError] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   // Sorting the data
   const sortdata = filterValue(listings, sort);
@@ -258,7 +261,10 @@ const Listings = () => {
               </div>
             </div>
 
-            <div className="col-lg-3 d-none d-lg-block">
+            <div
+              className="col-lg-3 d-none d-lg-block"
+              onClick={() => setOpenModal(true)}
+            >
               <div className="adverts-box mb-3" style={{ cursor: "pointer" }}>
                 Place your Banner Adverts here
               </div>
@@ -324,83 +330,85 @@ const Listings = () => {
 
           <div className="row">
             <div className="col">
-              <div className="list-box">
-                {loading ? (
+              {loading || !sorted ? (
+                <div className="list-box">
                   <Placeholder />
-                ) : (
-                  sorted
-                    .slice(0, 12)
-                    .map((item) => <Card {...item} key={item._id} />)
-                )}
-              </div>
-
-              {sorted.length >= 4 && (
-                <div className="list-box mt-5">
-                  <div className="advert-image-box mb-5">
-                    <Image src={banner1} alt="picture" title="picture" />
-                  </div>
-                  <div className="advert-image-box mb-5">
-                    <Image src={banner5} alt="picture" title="picture" />
-                  </div>
-                  <div className="advert-image-box mb-5">
-                    <Image src={banner2} alt="picture" title="picture" />
-                  </div>
-                  <div className="advert-image-box mb-5">
-                    <Image src={banner3} alt="picture" title="picture" />
-                  </div>
-                  {/* <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="picture" />
-              </div> */}
-                  {/* <div className="adverts-box mb-3">
-                Place your Banner Adverts here
-              </div> */}
-                </div>
-              )}
-
-              <div className="list-box">
-                {sorted
-                  .filter((item) => item.status !== "declined")
-                  .slice(13, 25)
-                  .map((item) => (
-                    <Card {...item} key={item._id} />
-                  ))}
-              </div>
-
-              {/* {sorted.length >= 12 && (
-                <div className="list-box mt-5">
-                  <div className="advert-image-box mb-5">
-                    <Image src={banner1} alt="picture" title="picture" />
-                  </div>
-                  <div className="advert-image-box mb-5">
-                    <Image src={banner5} alt="picture" title="picture" />
-                  </div>
-                  <div className="advert-image-box mb-5">
-                    <Image src={banner2} alt="picture" title="picture" />
-                  </div>
-                  <div className="advert-image-box mb-5">
-                    <Image src={banner3} alt="picture" title="picture" />
-                  </div>
-                  
-                </div>
-              )} */}
-
-              <div className="list-box">
-                {sorted
-                  .filter((item) => item.status !== "declined")
-                  .slice(25)
-                  .map((item) => (
-                    <Card {...item} key={item._id} />
-                  ))}
-              </div>
-
-              {!loading &&
-              sorted.length === 0 &&
-              localData?.statename === undefined ? (
-                <div className="unavailable d-flex align-items-center justify-content-center">
-                  No available data
                 </div>
               ) : (
-                ""
+                <>
+                  {!loading &&
+                  sorted.length === 0 &&
+                  localData?.statename === undefined ? (
+                    <div className="unavailable d-flex align-items-center justify-content-center">
+                      No available data
+                    </div>
+                  ) : (
+                    <>
+                      <div className="list-box">
+                        {sorted.slice(0, 12).map((item) => (
+                          <Card {...item} key={item._id} />
+                        ))}
+                      </div>
+
+                      {sorted.length >= 4 && (
+                        <div className="list-box mt-5">
+                          <div className="advert-image-box mb-5">
+                            <Image
+                              src={banner1}
+                              alt="picture"
+                              title="picture"
+                            />
+                          </div>
+                          <div className="advert-image-box mb-5">
+                            <Image
+                              src={banner5}
+                              alt="picture"
+                              title="picture"
+                            />
+                          </div>
+                          <div className="advert-image-box mb-5">
+                            <Image
+                              src={banner2}
+                              alt="picture"
+                              title="picture"
+                            />
+                          </div>
+                          <div className="advert-image-box mb-5">
+                            <Image
+                              src={banner3}
+                              alt="picture"
+                              title="picture"
+                            />
+                          </div>
+                          {/* <div className="advert-image-box mb-5">
+                <Image src={banner4} alt="picture" />
+              </div> */}
+                          {/* <div className="adverts-box mb-3">
+                Place your Banner Adverts here
+              </div> */}
+                        </div>
+                      )}
+
+                      <div className="list-box">
+                        {sorted
+                          .filter((item) => item.status !== "declined")
+                          .slice(13, 25)
+                          .map((item) => (
+                            <Card {...item} key={item._id} />
+                          ))}
+                      </div>
+
+                      <div className="list-box">
+                        {sorted
+                          .filter((item) => item.status !== "declined")
+                          .slice(25)
+                          .map((item) => (
+                            <Card {...item} key={item._id} />
+                          ))}
+                      </div>
+                    </>
+                  )}
+                </>
               )}
 
               {/* {visible > sorted.length || loading || sorted.length === 0 ? (
@@ -445,6 +453,16 @@ const Listings = () => {
           </div>
         </div>
       </div>
+
+      <Modal
+        show={openModal}
+        onHide={() => {
+          setOpenModal(false);
+        }}
+        dialogClassName="advertise-modal"
+      >
+        <AdvertiseModal setOpenModal={setOpenModal} />
+      </Modal>
     </>
   );
 };
