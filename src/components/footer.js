@@ -33,6 +33,8 @@ const Footer = () => {
       return;
     }
 
+    setValues("");
+
     try {
       const newData = {
         email: values,

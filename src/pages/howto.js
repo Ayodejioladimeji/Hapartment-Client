@@ -199,6 +199,7 @@ const HowTo = () => {
               <div className="underline mb-3"></div>
               <h3 className="mb-3">Step Two</h3>
 
+              <p className="mb-3">Proceed to the user account settings</p>
               <p className="mb-3">
                 Click on “List Property” to get started with your listings
               </p>
