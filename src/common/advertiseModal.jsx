@@ -17,6 +17,7 @@ const AdvertiseModal = ({ setOpenModal }) => {
   const [values, setValues] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [buttonloading, setButtonloading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -87,7 +88,7 @@ const AdvertiseModal = ({ setOpenModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setLoading(true);
+    setButtonloading(true);
 
     const newData = {
       fullname: values.fullname,
@@ -101,10 +102,10 @@ const AdvertiseModal = ({ setOpenModal }) => {
       const res = await postDataApi("/advert", newData);
       cogoToast.success(res.data.msg);
       setOpenModal(false);
-      setLoading(false);
+      setButtonloading(false);
     } catch (error) {
       cogoToast.error(error.response.data.msg);
-      setLoading(false);
+      setButtonloading(false);
     }
   };
 
@@ -216,7 +217,7 @@ const AdvertiseModal = ({ setOpenModal }) => {
 
           <button className="save" onClick={handleSubmit}>
             Submit
-            {loading && (
+            {buttonloading && (
               <Loading
                 height="20"
                 width="20"
