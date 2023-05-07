@@ -29,7 +29,7 @@ const HowTo = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://hapartment.org/howto/"
+          href="https://www.hapartment.org/howto/"
           key="canonical"
         />
         <meta
@@ -51,7 +51,7 @@ const HowTo = () => {
           site."
         />
 
-        <meta property="og:url" content="https://hapartment.org/howto" />
+        <meta property="og:url" content="https://www.hapartment.org/howto" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

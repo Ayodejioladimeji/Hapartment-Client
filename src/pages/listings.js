@@ -174,7 +174,7 @@ const Listings = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://hapartment.org/listings/"
+          href="https://www.hapartment.org/listings/"
           key="canonical"
         />
         <meta
@@ -191,7 +191,7 @@ const Listings = () => {
           content="Hapartment is your one place to find apartments and manage your rentals"
         />
 
-        <meta property="og:url" content="https://hapartment.org/listings" />
+        <meta property="og:url" content="https://www.hapartment.org/listings" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

@@ -37,7 +37,11 @@ export default function App({ Component, pageProps }) {
           name="google-site-verification"
           content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
         />
-        <link rel="canonical" href="https://hapartment.org/" key="canonical" />
+        <link
+          rel="canonical"
+          href="https://www.hapartment.org/"
+          key="canonical"
+        />
         <meta
           name="description"
           content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
@@ -62,7 +66,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/" />
+        <meta property="og:url" content="https://www.hapartment.org/" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

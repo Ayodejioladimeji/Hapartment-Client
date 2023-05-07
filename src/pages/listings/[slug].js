@@ -22,7 +22,7 @@ const ListingDetails = (props) => {
   const router = useRouter();
   const [openModal, setOpenModal] = useState(false);
   const p = router.asPath.slice(1);
-  const canonicalURL = `https://hapartment.org/${p}`.split("?")[0];
+  const canonicalURL = `https://www.hapartment.org/${p}`.split("?")[0];
 
   const {
     _id,
@@ -66,7 +66,7 @@ const ListingDetails = (props) => {
         />
         <meta
           property="og:description"
-          content={`https://hapartment.org/listings/${_id}`}
+          content={`https://www.hapartment.org/listings/${_id}`}
         />
 
         <meta property="og:image" content={images[0].url} />
@@ -74,7 +74,7 @@ const ListingDetails = (props) => {
 
         <meta
           property="og:url"
-          content={`https://hapartment.org/listings/${_id}`}
+          content={`https://www.hapartment.org/listings/${_id}`}
         />
         <meta name="twitter:card" content="summary_large_image" />
 
@@ -272,7 +272,7 @@ const ListingDetails = (props) => {
                   <ReactWhatsapp
                     className="btn"
                     number="+2347048942743"
-                    message={`Hello, I'm interested in your property on Hapartment - https://hapartment.org/listings/${_id}`}
+                    message={`Hello, I'm interested in your property on Hapartment - https://www.hapartment.org/listings/${_id}`}
                   >
                     <i className="bi bi-whatsapp"></i>
                     07048942743
