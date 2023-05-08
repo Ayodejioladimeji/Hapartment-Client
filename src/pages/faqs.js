@@ -12,7 +12,7 @@ const Faqs = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://hapartment.org/faqs/"
+          href="https://www.hapartment.org/faqs/"
           key="canonical"
         />
         <meta
@@ -31,7 +31,7 @@ const Faqs = () => {
           property="og:description"
           content="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers"
         />
-        <meta property="og:url" content="https://hapartment.org/faqs" />
+        <meta property="og:url" content="https://www.hapartment.org/faqs" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

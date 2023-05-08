@@ -16,7 +16,7 @@ const Advert = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://hapartment.org/advertise/"
+          href="https://www.hapartment.org/advertise/"
           key="canonical"
         />
 
@@ -45,7 +45,10 @@ const Advert = () => {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/advertise/" />
+        <meta
+          property="og:url"
+          content="https://www.hapartment.org/advertise/"
+        />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />

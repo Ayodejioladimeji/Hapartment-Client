@@ -13,7 +13,7 @@ const Contact = () => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="canonical"
-          href="https://hapartment.org/contact/"
+          href="https://www.hapartment.org/contact/"
           key="canonical"
         />
 
@@ -45,7 +45,7 @@ const Contact = () => {
         />
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://hapartment.org/contact" />
+        <meta property="og:url" content="https://www.hapartment.org/contact" />
         <meta name="twitter:card" content="Hapartment" />
 
         <meta name="robots" content="index, nofollow" />
