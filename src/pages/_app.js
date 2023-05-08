@@ -105,6 +105,12 @@ export default function App({ Component, pageProps }) {
         crossOrigin="anonymous"
       />
 
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6391913781421412"
+        crossorigin="anonymous"
+      ></Script>
+
       <DataProvider>
         <Layout>
           <Component {...pageProps} />
