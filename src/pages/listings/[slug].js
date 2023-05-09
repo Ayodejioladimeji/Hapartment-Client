@@ -307,13 +307,7 @@ const ListingDetails = (props) => {
         </div>
       </section>
 
-      <Modal
-        show={openModal}
-        onHide={() => {
-          setOpenModal(false);
-        }}
-        dialogClassName="advertise-modal"
-      >
+      <Modal show={openModal} dialogClassName="advertise-modal">
         <AdvertiseModal setOpenModal={setOpenModal} />
       </Modal>
     </>
