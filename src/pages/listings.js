@@ -261,14 +261,14 @@ const Listings = () => {
               </div>
             </div>
 
-            <div
+            {/* <div
               className="col-lg-3 d-none d-lg-block"
               onClick={() => setOpenModal(true)}
             >
               <div className="adverts-box mb-3" style={{ cursor: "pointer" }}>
                 Place your Banner Adverts here
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -329,7 +329,7 @@ const Listings = () => {
           </div>
 
           <div className="row">
-            <div className="col">
+            <div className="col-lg-9 col-sm-12">
               {loading || !sorted ? (
                 <div className="list-box">
                   <Placeholder />
@@ -343,70 +343,13 @@ const Listings = () => {
                       No available data
                     </div>
                   ) : (
-                    <>
-                      <div className="list-box">
-                        {sorted.slice(0, 12).map((item) => (
+                    <div className="list-box">
+                      {sorted
+                        .filter((item) => item.status !== "declined")
+                        .map((item) => (
                           <Card {...item} key={item._id} />
                         ))}
-                      </div>
-
-                      {sorted.length >= 4 && (
-                        <div className="list-box mt-5">
-                          <div className="advert-image-box mb-5">
-                            <Image
-                              src={banner1}
-                              alt="picture"
-                              title="picture"
-                            />
-                          </div>
-                          <div className="advert-image-box mb-5">
-                            <Image
-                              src={banner5}
-                              alt="picture"
-                              title="picture"
-                            />
-                          </div>
-                          <div className="advert-image-box mb-5">
-                            <Image
-                              src={banner2}
-                              alt="picture"
-                              title="picture"
-                            />
-                          </div>
-                          <div className="advert-image-box mb-5">
-                            <Image
-                              src={banner3}
-                              alt="picture"
-                              title="picture"
-                            />
-                          </div>
-                          {/* <div className="advert-image-box mb-5">
-                <Image src={banner4} alt="picture" />
-              </div> */}
-                          {/* <div className="adverts-box mb-3">
-                Place your Banner Adverts here
-              </div> */}
-                        </div>
-                      )}
-
-                      <div className="list-box">
-                        {sorted
-                          .filter((item) => item.status !== "declined")
-                          .slice(13, 25)
-                          .map((item) => (
-                            <Card {...item} key={item._id} />
-                          ))}
-                      </div>
-
-                      <div className="list-box">
-                        {sorted
-                          .filter((item) => item.status !== "declined")
-                          .slice(25)
-                          .map((item) => (
-                            <Card {...item} key={item._id} />
-                          ))}
-                      </div>
-                    </>
+                    </div>
                   )}
                 </>
               )}
@@ -421,6 +364,21 @@ const Listings = () => {
                   setVisible={setVisible}
                 />
               )} */}
+            </div>
+
+            <div className="col-lg-3 col-sm-12">
+              <div className="advert-image-box mb-5">
+                <Image src={banner1} alt="picture" title="picture" />
+              </div>
+              <div className="advert-image-box mb-5">
+                <Image src={banner5} alt="picture" title="picture" />
+              </div>
+              <div className="advert-image-box mb-5">
+                <Image src={banner2} alt="picture" title="picture" />
+              </div>
+              <div className="advert-image-box mb-5">
+                <Image src={banner3} alt="picture" title="picture" />
+              </div>
             </div>
           </div>
         </div>
