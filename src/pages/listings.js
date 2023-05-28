@@ -261,14 +261,11 @@ const Listings = () => {
               </div>
             </div>
 
-            {/* <div
-              className="col-lg-3 d-none d-lg-block"
-              onClick={() => setOpenModal(true)}
-            >
-              <div className="adverts-box mb-3" style={{ cursor: "pointer" }}>
+            <div className="col-lg-3 d-none d-lg-block">
+              {/* <div className="adverts-box mb-3" style={{ cursor: "pointer" }}>
                 Place your Banner Adverts here
-              </div>
-            </div> */}
+              </div> */}
+            </div>
           </div>
         </div>
       </section>
