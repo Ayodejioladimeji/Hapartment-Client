@@ -16,9 +16,10 @@ import * as EmailValidator from "email-validator";
 
 const Footer = () => {
   const { state, dispatch } = useContext(DataContext);
-  const { newsModal, downloadModal, loading } = state;
+  const { newsModal, downloadModal } = state;
   const [values, setValues] = useState("");
   const [alert, setAlert] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // handleSubmit
   const handleSubmit = async (e) => {
@@ -35,6 +36,8 @@ const Footer = () => {
 
     setValues("");
 
+    setLoading(true);
+
     try {
       const newData = {
         email: values,
@@ -47,12 +50,12 @@ const Footer = () => {
       setAlert(res.data.msg);
 
       dispatch({ type: ACTIONS.NEWS_MODAL, payload: true });
-      dispatch({ type: ACTIONS.LOADING, payload: false });
+      setLoading(false);
     } catch (err) {
       // console.log(err.response.data.msg);
       dispatch({ type: ACTIONS.NEWS_MODAL, payload: true });
       setAlert(err.response.data.msg);
-      dispatch({ type: ACTIONS.LOADING, payload: false });
+      setLoading(false);
     }
   };
 
