@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import heroImg from "../../public/images/hero-image.svg";
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
-  import * as gtag from "../lib/gtag";
+import * as gtag from "../lib/gtag";
 
 //
 
@@ -13,7 +13,6 @@ const Hero = () => {
   const [error, setError] = useState("");
   const router = useRouter();
   const { state, dispatch } = useContext(DataContext);
-
 
   // handle submit
   const handleSubmit = async (e) => {
@@ -35,7 +34,7 @@ const Hero = () => {
     }
 
     const newData = {
-      cityname,
+      cityname: cityname.toLowerCase(),
     };
 
     dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });

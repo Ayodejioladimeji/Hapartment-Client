@@ -11,9 +11,8 @@
     border: 1px solid var(--border-color);
     border-radius: 5px;
     background: var(--light-color);
-    position: relative; 
-    height:200px;
-    
+    position: relative;
+    height: 200px;
 
     img {
       width: 100%;
@@ -51,6 +50,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       width: 90%;
+      text-transform: capitalize;
     }
 
     .address {

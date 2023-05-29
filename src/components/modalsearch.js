@@ -45,12 +45,12 @@ const Modalsearch = () => {
   const handleFilter = async (e) => {
     e.preventDefault();
     const newData = {
-      property_type,
-      statename,
-      cityname,
+      property_type: property_type.toLowerCase(),
+      statename: statename.toLowerCase(),
+      cityname: cityname.toLowerCase(),
       bathrooms,
       toilets,
-      furnishing,
+      furnishing: furnishing.toLowerCase(),
       min_price: minPrice,
       max_price: maxPrice,
     };
@@ -60,7 +60,9 @@ const Modalsearch = () => {
       dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
 
       const res = await getDataApis(
-        `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${newData.min_price}&max_price=${newData.max_price}`
+        `/filter_listing?property_type=${property_type.toLowerCase()}&statename=${statename.toLowerCase()}&cityname=${cityname.toLowerCase()}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing.toLowerCase()}&min_price=${
+          newData.min_price
+        }&max_price=${newData.max_price}`
       );
 
       // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
