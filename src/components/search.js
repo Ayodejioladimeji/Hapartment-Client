@@ -48,12 +48,12 @@ const Search = () => {
   const handleFilter = (e) => {
     e.preventDefault();
     const newData = {
-      property_type,
-      statename,
-      cityname,
+      property_type: property_type.toLowerCase(),
+      statename: statename.toLowerCase(),
+      cityname: cityname.toLowerCase(),
       bathrooms,
       toilets,
-      furnishing,
+      furnishing: furnishing.toLowerCase(),
       min_price: minPrice,
       max_price: maxPrice,
     };

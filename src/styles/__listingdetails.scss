@@ -35,6 +35,7 @@
 .listing-details {
   h1 {
     font-size: var(--h4);
+    text-transform: capitalize;
 
     @media (max-width: 565px) {
       font-size: var(--h6);
@@ -165,6 +166,7 @@
         padding: 20px 0;
         border-bottom: 1px solid var(--light-color);
         margin-bottom: 20px;
+        text-transform: capitalize;
 
         &:last-child {
           border-bottom: none;

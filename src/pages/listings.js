@@ -56,8 +56,8 @@ const Listings = () => {
       dispatch({ type: ACTIONS.LOADING, payload: true });
       const { cityname } = localData;
 
-      const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
-      const res = await getDataApis(`/search_listing/${city}`);
+      // const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
+      const res = await getDataApis(`/search_listing/${cityname}`);
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
     } catch (error) {
@@ -148,16 +148,16 @@ const Listings = () => {
       dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
 
       const newData = {
-        cityname,
+        cityname: cityname.toLowerCase(),
       };
 
-      const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
+      const city = cityname.toLowerCase();
+      // console.log(city);
 
       const res = await getDataApis(`/search_listing/${city}`);
 
       dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
       dispatch({ type: ACTIONS.LOADING, payload: false });
-      // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
       localStorage.setItem("filter", JSON.stringify(newData));
     } catch (error) {
       console.log(error);
@@ -301,7 +301,7 @@ const Listings = () => {
                   <option defaultValue>All Listings</option>
                   <option value="1">Single Room</option>
                   <option value="2">Room & Parlour</option>
-                  <option value="3">Room & Parlour Self contain</option>
+                  <option value="3">Room & Parlour Self Contain</option>
                   <option value="4">Self Contain</option>
                   <option value="5">2 Bedroom Flat</option>
                   <option value="6">3 Bedroom Flat</option>

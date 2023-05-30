@@ -42,23 +42,23 @@ export const sortValue = (listings, sorting) => {
 export const filterValue = (listings, sort) => {
   return listings?.filter((item) => {
     if (sort === "1") {
-      return item.property_type === "Single Room";
+      return item.property_type === "single room";
     } else if (sort === "2") {
-      return item.property_type === "Room & Parlour";
+      return item.property_type === "room & Parlour";
     } else if (sort === "3") {
-      return item.property_type === "Room & Parlour Self Contain";
+      return item.property_type === "room & parlour self contain";
     } else if (sort === "4") {
-      return item.property_type === "Self Contain";
+      return item.property_type === "self contain";
     } else if (sort === "5") {
-      return item.property_type === "2 Bedroom Flat";
+      return item.property_type === "2 bedroom flat";
     } else if (sort === "6") {
-      return item.property_type === "3 Bedroom Flat";
+      return item.property_type === "3 bedroom flat";
     } else if (sort === "7") {
-      return item.property_type === "4 Bedroom Flat";
+      return item.property_type === "4 bedroom flat";
     } else if (sort === "8") {
-      return item.property_type === "5+ Bedroom Flat";
+      return item.property_type === "5+ bedroom flat";
     } else if (sort === "9") {
-      return item.property_type === "Duplex";
+      return item.property_type === "duplex";
     }
     return item;
   });
