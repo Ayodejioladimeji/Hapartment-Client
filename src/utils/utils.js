@@ -44,9 +44,9 @@ export const filterValue = (listings, sort) => {
     if (sort === "1") {
       return item.property_type === "single room";
     } else if (sort === "2") {
-      return item.property_type === "room & Parlour";
+      return item.property_type === "room parlour";
     } else if (sort === "3") {
-      return item.property_type === "room & parlour self contain";
+      return item.property_type === "room parlour self contain";
     } else if (sort === "4") {
       return item.property_type === "self contain";
     } else if (sort === "5") {

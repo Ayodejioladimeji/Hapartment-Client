@@ -1,9 +1,9 @@
 import axios from "axios";
 
 // bring in the endpoint
-const ENDPOINT = process.env.NEXT_PUBLIC_API_URL;
+// const ENDPOINT = process.env.NEXT_PUBLIC_API_URL;
 
-// const ENDPOINT = "http://localhost:8000/api/v1";
+const ENDPOINT = "http://localhost:8000/api/v1";
 
 // THE POST DATA API
 export const postDataApi = async (url, data) => {

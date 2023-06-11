@@ -7,8 +7,8 @@ const propertyData = [
   },
   {
     id: 2,
-    label: "Room & Parlour",
-    value: "Room & Parlour",
+    label: "Room Parlour",
+    value: "Room Parlour",
     values: "2",
   },
   {
@@ -25,8 +25,8 @@ const propertyData = [
   },
   {
     id: 4,
-    label: "Room & Parlour Self Contain",
-    value: "Room & Parlour Self Contain",
+    label: "Room Parlour Self Contain",
+    value: "Room Parlour Self Contain",
     values: "4",
   },
   {

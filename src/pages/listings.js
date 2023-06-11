@@ -300,8 +300,8 @@ const Listings = () => {
                 >
                   <option defaultValue>All Listings</option>
                   <option value="1">Single Room</option>
-                  <option value="2">Room & Parlour</option>
-                  <option value="3">Room & Parlour Self Contain</option>
+                  <option value="2">Room Parlour</option>
+                  <option value="3">Room Parlour Self Contain</option>
                   <option value="4">Self Contain</option>
                   <option value="5">2 Bedroom Flat</option>
                   <option value="6">3 Bedroom Flat</option>

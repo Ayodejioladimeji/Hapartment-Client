@@ -6,13 +6,12 @@ import Navbar from "react-bootstrap/Navbar";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
- import * as gtag from "../lib/gtag";
+import * as gtag from "../lib/gtag";
 //
 
 function Navbars() {
   const router = useRouter();
   const { state, dispatch } = useContext(DataContext);
-
 
   // Get all listings on Click
   const handleSubmit = async (e) => {
@@ -25,7 +24,7 @@ function Navbars() {
     dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
     localStorage.setItem("filter", JSON.stringify(newData));
     dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-    router.push("/listings");
+    window.location.href = "/listings";
   };
 
   //
