@@ -50,7 +50,7 @@ const Card = ({ ...item }) => {
     // <Link href={`/listings/${params_title}`}>
     <div className="card" onClick={sendData}>
       <div className="card-image">
-        <Image
+        <img
           src={images[0].url}
           alt="card-picture"
           width={100}

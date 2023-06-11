@@ -38,6 +38,8 @@ const ListingDetails = (props) => {
     postedBy,
   } = props.listing;
 
+  console.log(images);
+
   // console.log(map);
 
   return (

@@ -125,7 +125,7 @@ function Navbars() {
                   type="button"
                   onClick={handleSubmit}
                 >
-                  Search Listings
+                  All Listings
                 </button>
               </Nav.Link>
             </Nav>
