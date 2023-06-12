@@ -65,7 +65,7 @@ export default function index() {
       <Connect />
       <Steps />
       <Search />
-      <Discover />
+      {/* <Discover /> */}
       <Different />
       <Property />
       <SafetyTips />

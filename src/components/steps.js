@@ -28,7 +28,6 @@ const Steps = () => {
               id={toggleState === 1 ? "active" : ""}
               onClick={() => toggleTab(1)}
               data-aos="fade-up"
-              data-aos-offset="50"
               data-aos-once="true"
               data-aos-delay="200"
             >
@@ -46,7 +45,6 @@ const Steps = () => {
               id={toggleState === 2 ? "active" : ""}
               onClick={() => toggleTab(2)}
               data-aos="fade-up"
-              data-aos-offset="50"
               data-aos-once="true"
               data-aos-delay="400"
             >
@@ -64,7 +62,6 @@ const Steps = () => {
               id={toggleState === 3 ? "active" : ""}
               onClick={() => toggleTab(3)}
               data-aos="fade-up"
-              data-aos-offset="50"
               data-aos-once="true"
               data-aos-delay="600"
             >
@@ -82,7 +79,6 @@ const Steps = () => {
               id={toggleState === 4 ? "active" : ""}
               onClick={() => toggleTab(4)}
               data-aos="fade-up"
-              data-aos-offset="50"
               data-aos-once="true"
               data-aos-delay="800"
             >
@@ -100,7 +96,6 @@ const Steps = () => {
               id={toggleState === 5 ? "active" : ""}
               onClick={() => toggleTab(5)}
               data-aos="fade-up"
-              data-aos-offset="50"
               data-aos-once="true"
               data-aos-delay="1000"
             >
@@ -118,7 +113,6 @@ const Steps = () => {
               id={toggleState === 6 ? "active" : ""}
               onClick={() => toggleTab(6)}
               data-aos="fade-up"
-              data-aos-offset="50"
               data-aos-once="true"
               data-aos-delay="1200"
             >
@@ -136,7 +130,6 @@ const Steps = () => {
               id={toggleState === 7 ? "active" : ""}
               onClick={() => toggleTab(7)}
               data-aos="fade-up"
-              data-aos-offset="50"
               data-aos-once="true"
               data-aos-delay="1400"
             >

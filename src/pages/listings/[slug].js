@@ -15,6 +15,7 @@ import ReactWhatsapp from "react-whatsapp";
 import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
 import { useState } from "react";
+import Map from "@/utils/map";
 
 //
 
@@ -38,9 +39,7 @@ const ListingDetails = (props) => {
     postedBy,
   } = props.listing;
 
-  console.log(images);
-
-  // console.log(map);
+  //
 
   return (
     <>
@@ -198,18 +197,18 @@ const ListingDetails = (props) => {
                     <div className="tab-pane" id="map">
                       <div className="package-box mt-4 py-3">
                         {map[0] !== null && (
-                          // <Map lat={map[0].latitude} lng={map[0].longitude} />
-                          <div className="map-box" style={{ height: "400px" }}>
-                            <iframe
-                              src={`https://maps.google.com/maps?q= + ${map[0].latitude} , ${map[0].longitude} &t=&z=15&ie=UTF8&iwloc=&output=embed`}
-                              width="100%"
-                              height="100%"
-                              style={{ border: 0 }}
-                              allowFullScreen=""
-                              loading="lazy"
-                              referrerPolicy="no-referrer-when-downgrade"
-                            />
-                          </div>
+                          <Map lat={map[0].lat} lng={map[0].lng} />
+                          // <div className="map-box" style={{ height: "400px" }}>
+                          //   <iframe
+                          //     src={`https://maps.google.com/maps?q= + ${map[0].latitude} , ${map[0].longitude} &t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                          //     width="100%"
+                          //     height="100%"
+                          //     style={{ border: 0 }}
+                          //     allowFullScreen=""
+                          //     loading="lazy"
+                          //     referrerPolicy="no-referrer-when-downgrade"
+                          //   />
+                          // </div>
                         )}
                       </div>
                     </div>

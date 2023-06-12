@@ -81,7 +81,6 @@ const Hero = () => {
                     data-aos="fade-up"
                     data-aos-once="true"
                     data-aos-delay="800"
-                    data-aos-offset="50"
                   >
                     <i className="bi bi-geo-alt"></i>
                     <input
@@ -98,7 +97,6 @@ const Hero = () => {
                   data-aos="fade-up"
                   data-aos-once="true"
                   data-aos-delay="1000"
-                  data-aos-offset="50"
                 >
                   <button className="btn hero-btn mt-4">Search</button>
                 </div>

@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   // THE SECTION OF THE AOS
   useEffect(() => {
-    Aos.init({ duration: 700 });
+    Aos.init({ duration: 600 });
   }, []);
 
   // // Analytics
