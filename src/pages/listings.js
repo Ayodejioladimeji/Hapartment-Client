@@ -262,9 +262,9 @@ const Listings = () => {
             </div>
 
             <div className="col-lg-3 d-none d-lg-block">
-              {/* <div className="adverts-box mb-3" style={{ cursor: "pointer" }}>
-                Place your Banner Adverts here
-              </div> */}
+              <div className="advert-image-box mb-5">
+                <Image src={banner1} alt="picture" title="picture" />
+              </div>
             </div>
           </div>
         </div>
@@ -300,8 +300,8 @@ const Listings = () => {
                 >
                   <option defaultValue>All Listings</option>
                   <option value="1">Single Room</option>
-                  <option value="2">Room & Parlour</option>
-                  <option value="3">Room & Parlour Self Contain</option>
+                  <option value="2">Room Parlour</option>
+                  <option value="3">Room Parlour Self Contain</option>
                   <option value="4">Self Contain</option>
                   <option value="5">2 Bedroom Flat</option>
                   <option value="6">3 Bedroom Flat</option>
@@ -326,7 +326,7 @@ const Listings = () => {
           </div>
 
           <div className="row">
-            <div className="col-lg-9 col-sm-12">
+            <div className="col-lg-12 col-sm-12">
               {loading || !sorted ? (
                 <div className="list-box">
                   <Placeholder />
@@ -361,21 +361,6 @@ const Listings = () => {
                   setVisible={setVisible}
                 />
               )} */}
-            </div>
-
-            <div className="col-lg-3 col-sm-12">
-              <div className="advert-image-box mb-5">
-                <Image src={banner1} alt="picture" title="picture" />
-              </div>
-              <div className="advert-image-box mb-5">
-                <Image src={banner5} alt="picture" title="picture" />
-              </div>
-              <div className="advert-image-box mb-5">
-                <Image src={banner2} alt="picture" title="picture" />
-              </div>
-              <div className="advert-image-box mb-5">
-                <Image src={banner3} alt="picture" title="picture" />
-              </div>
             </div>
           </div>
         </div>

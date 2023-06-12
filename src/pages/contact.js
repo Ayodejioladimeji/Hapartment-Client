@@ -35,7 +35,7 @@ const Contact = () => {
           property="og:description"
           content="Our team works tirelessly to make searching for your dream home
           effortless and rewarding , by offering clearly displayed quality
-          listings and slso provide simple mechanisms to contact the
+          listings and also provide simple mechanisms to contact the
           agent"
         />
 
@@ -69,7 +69,7 @@ const Contact = () => {
         subHeading=""
         body="Our team works tirelessly to make searching for your dream home
                 effortless and rewarding , by offering clearly displayed quality
-                listings and slso provide simple mechanisms to contact the
+                listings and also provide simple mechanisms to contact the
                 agent."
         image={contactImage}
       />

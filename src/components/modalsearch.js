@@ -60,9 +60,7 @@ const Modalsearch = () => {
       dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
 
       const res = await getDataApis(
-        `/filter_listing?property_type=${property_type.toLowerCase()}&statename=${statename.toLowerCase()}&cityname=${cityname.toLowerCase()}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing.toLowerCase()}&min_price=${
-          newData.min_price
-        }&max_price=${newData.max_price}`
+        `/filter_listing?property_type=${newData.property_type}&statename=${newData.statename}&cityname=${newData.cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${newData.furnishing}&min_price=${newData.min_price}&max_price=${newData.max_price}`
       );
 
       // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });

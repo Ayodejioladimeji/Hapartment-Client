@@ -5,7 +5,7 @@ import moment from "moment";
 import { ACTIONS } from "@/store/Actions";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
- import * as gtag from "../lib/gtag";
+import * as gtag from "../lib/gtag";
 
 //
 
@@ -40,7 +40,7 @@ const Card = ({ ...item }) => {
     gtag.event({
       action: "listing_card",
       category: "card",
-      label: property_type
+      label: property_type,
     });
 
     dispatch({ type: ACTIONS.CHECKLOAD, payload: false });
@@ -50,9 +50,9 @@ const Card = ({ ...item }) => {
     // <Link href={`/listings/${params_title}`}>
     <div className="card" onClick={sendData}>
       <div className="card-image">
-        <Image
+        <img
           src={images[0].url}
-          alt="card-picture"
+          alt="card-property"
           width={100}
           height={100}
           title="picture"
@@ -75,7 +75,13 @@ const Card = ({ ...item }) => {
       </div>
 
       <div className="card-content">
-        <p>{property_type}</p>
+        <p>
+          {property_type === "room parlour"
+            ? "room & parlour"
+            : property_type === "room parlour self contain"
+            ? "room & parlour self contain"
+            : property_type}
+        </p>
         <h6 className="mb-3">₦{price}</h6>
         <div className="address">
           <i className="bi bi-geo-alt"></i>
