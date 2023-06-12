@@ -52,7 +52,7 @@ const Card = ({ ...item }) => {
       <div className="card-image">
         <img
           src={images[0].url}
-          alt="card-picture"
+          alt="card-property"
           width={100}
           height={100}
           title="picture"
