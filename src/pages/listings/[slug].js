@@ -266,17 +266,16 @@ const ListingDetails = (props) => {
                     rel="noreferrer"
                   >
                     <i className="bi bi-envelope-paper"></i>
-                    {/* {postedBy.email} */}
-                    support@hapartment.org
+                    {postedBy.email}
                   </a>
 
                   <ReactWhatsapp
                     className="btn"
-                    number="+2347048942743"
+                    number={postedBy?.verification[0]?.identity_mobile}
                     message={`Hello, I'm interested in your property on Hapartment - https://www.hapartment.org/listings/${_id}`}
                   >
                     <i className="bi bi-whatsapp"></i>
-                    07048942743
+                    {postedBy?.verification[0]?.identity_mobile}
                   </ReactWhatsapp>
                 </div>
               </div>
