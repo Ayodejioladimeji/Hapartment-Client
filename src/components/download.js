@@ -46,28 +46,35 @@ const Download = () => {
               passion, it is our mission.
             </p>
 
-            <div
-              className="d-flex align-items-center justify-content-between"
-              onClick={() =>
-                dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
-              }
-            >
-              <Image
-                src={appstore}
-                alt="picture"
-                className="appstore-image"
-                data-aos="fade-up"
-                data-aos-once="true"
-                data-aos-delay="1000"
-              />
-              <Image
-                src={playstore}
-                alt="picture"
-                className="playstore-image"
-                data-aos="fade-up"
-                data-aos-once="true"
-                data-aos-delay="1200"
-              />
+            <div className="d-flex align-items-center justify-content-between">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.layobright.hapartment"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src={appstore}
+                  alt="picture"
+                  className="appstore-image"
+                  data-aos="fade-up"
+                  data-aos-once="true"
+                  data-aos-delay="1000"
+                />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.layobright.hapartment"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src={playstore}
+                  alt="picture"
+                  className="playstore-image"
+                  data-aos="fade-up"
+                  data-aos-once="true"
+                  data-aos-delay="1200"
+                />
+              </a>
             </div>
           </div>
 

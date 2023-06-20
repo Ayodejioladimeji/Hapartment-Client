@@ -2,19 +2,23 @@ import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { useRouter } from "next/router";
 import { useContext } from "react";
+import * as gtag from "../lib/gtag";
 
 const Property = () => {
   const router = useRouter();
   const { state, dispatch } = useContext(DataContext);
 
-  // Get all listings on Click
   const handleSubmit = async (e) => {
     const newData = {};
+    gtag.event({
+      action: "get_all_listings",
+      category: "all_listings",
+    });
 
+    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
     localStorage.setItem("filter", JSON.stringify(newData));
     dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
-    router.push("/listings");
+    window.location.href = "/listings";
   };
 
   return (
@@ -44,15 +48,16 @@ const Property = () => {
             </p>
 
             <div data-aos="fade-up" data-aos-once="true" data-aos-delay="1200">
-              <button
-                className="btn"
-                onClick={() =>
-                  dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
-                }
+              <a
+                href="https://play.google.com/store/apps/details?id=com.layobright.hapartment"
+                target="_blank"
+                rel="noreferrer"
               >
-                List property
-                <i className="bi bi-arrow-right-circle"></i>
-              </button>
+                <button className="btn">
+                  List property
+                  <i className="bi bi-arrow-right-circle"></i>
+                </button>
+              </a>
             </div>
           </div>
 

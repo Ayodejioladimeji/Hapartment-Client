@@ -175,30 +175,38 @@ const Footer = () => {
               </button>
             </div>
 
-            <div
-              className="branding d-flex flex-wrap align-items-center"
-              onClick={() =>
-                dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
-              }
-            >
-              <Image
-                src="/images/apple.svg"
-                alt="picture"
-                className="apple"
-                width={100}
-                height={100}
-                quality={100}
-                style={{ width: "auto", height: "auto" }}
-              />
-              <Image
-                src="/images/play.svg"
-                alt="picture"
-                className="play"
-                width={100}
-                height={100}
-                quality={100}
-                style={{ width: "auto", height: "auto" }}
-              />
+            <div className="branding d-flex flex-wrap align-items-center">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.layobright.hapartment"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src="/images/apple.svg"
+                  alt="picture"
+                  className="apple"
+                  width={100}
+                  height={100}
+                  quality={100}
+                  style={{ width: "auto", height: "auto" }}
+                />
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.layobright.hapartment"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src="/images/play.svg"
+                  alt="picture"
+                  className="play"
+                  width={100}
+                  height={100}
+                  quality={100}
+                  style={{ width: "auto", height: "auto" }}
+                />
+              </a>
             </div>
           </div>
         </div>

@@ -2,10 +2,28 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import placesImg1 from "../../public/images/places-1.svg";
 import placesImg2 from "../../public/images/places-2.svg";
+import * as gtag from "../lib/gtag";
+import { useContext } from "react";
+import { DataContext } from "@/store/GlobalState";
+import { ACTIONS } from "@/store/Actions";
 //
 
 const Places = () => {
   const router = useRouter();
+  const { state, dispatch } = useContext(DataContext);
+
+  const handleSubmit = async (e) => {
+    const newData = {};
+    gtag.event({
+      action: "get_all_listings",
+      category: "all_listings",
+    });
+
+    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+    localStorage.setItem("filter", JSON.stringify(newData));
+    dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
+    window.location.href = "/listings";
+  };
 
   return (
     <section className="black">
@@ -34,10 +52,7 @@ const Places = () => {
               </p>
 
               <div data-aos="fade-up" data-aos-once="true" data-aos-delay="800">
-                <button
-                  className="btn"
-                  onClick={() => router.push("/listings")}
-                >
+                <button className="btn" onClick={handleSubmit}>
                   Get started
                 </button>
               </div>

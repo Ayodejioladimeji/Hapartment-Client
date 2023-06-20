@@ -96,30 +96,40 @@ const HowTo = () => {
               </p>
 
               <div className="d-flex align-items-center">
-                <Image
-                  data-aos="fade-up"
-                  data-aos-once="true"
-                  data-aos-delay="800"
-                  src={appstore}
-                  alt="picture"
-                  className="appstore-image"
-                  title="picture"
-                  onClick={() =>
-                    dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
-                  }
-                />
-                <Image
-                  data-aos="fade-up"
-                  data-aos-once="true"
-                  data-aos-delay="1000"
-                  src={playstore}
-                  alt="picture"
-                  className="playstore-image"
-                  title="picture"
-                  onClick={() =>
-                    dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
-                  }
-                />
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.layobright.hapartment"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="800"
+                    src={appstore}
+                    alt="picture"
+                    className="appstore-image"
+                    title="picture"
+                  />
+                </a>
+
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.layobright.hapartment"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    data-aos-delay="1000"
+                    src={playstore}
+                    alt="picture"
+                    className="playstore-image"
+                    title="picture"
+                    onClick={() =>
+                      dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
+                    }
+                  />
+                </a>
               </div>
             </div>
 
