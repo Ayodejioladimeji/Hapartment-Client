@@ -224,15 +224,16 @@ const Search = () => {
                     value={maxPrice}
                   />
 
-                  <button
-                    className="btn"
+                  <span
                     data-aos="fade-up"
                     data-aos-once="true"
                     data-aos-delay="1800"
                   >
-                    Search
-                    <i className="bi bi-arrow-right-circle"></i>
-                  </button>
+                    <button className="btn">
+                      Search
+                      <i className="bi bi-arrow-right-circle"></i>
+                    </button>
+                  </span>
                 </div>
               </form>
             </div>
@@ -245,10 +246,7 @@ const Search = () => {
               data-aos-delay="200"
               style={{ borderRadius: "50%", overflow: "hidden" }}
             >
-              <div className="loader ">
-                <span></span>
-              </div>
-              {/* <Image src={searchImg} alt="picture" className="searchimg" /> */}
+              <Image src={searchImg} alt="picture" className="searchimg" />
             </div>
           </div>
         </div>
