@@ -3,9 +3,9 @@ import { getDataApis } from "@/utils/fetchData";
 import { statesdata } from "@/constants/statesdata";
 import propertyData from "@/constants/propertyData";
 import furnishingdata from "@/constants/furnishingdata";
-import { strictAddComma } from "comma-separator";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
+import { formatMoney } from "@/utils/utils";
 
 const initialState = {
   property_type: "",
@@ -84,7 +84,7 @@ const Modalsearch = () => {
             name="property_type"
             value={property_type}
           >
-            <option defaultValue>Select property type</option>
+            <option defaultValue="">Select property type</option>
             {propertyData.map((item) => {
               return (
                 <option key={item.id} value={item.value}>
@@ -101,7 +101,7 @@ const Modalsearch = () => {
             name="bathrooms"
             value={bathrooms}
           >
-            <option defaultValue>Choose bathroom</option>
+            <option defaultValue="">Choose bathroom</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -116,7 +116,7 @@ const Modalsearch = () => {
             name="toilets"
             value={toilets}
           >
-            <option defaultValue>Choose toilet</option>
+            <option defaultValue="">Choose toilet</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -131,7 +131,7 @@ const Modalsearch = () => {
             name="statename"
             value={statename}
           >
-            <option defaultValue>Select state</option>
+            <option defaultValue="">Select state</option>
             {statesdata.map((item, index) => {
               return (
                 <option key={index} value={item.state}>
@@ -148,7 +148,7 @@ const Modalsearch = () => {
             name="cityname"
             value={cityname}
           >
-            <option defaultValue>Select city</option>
+            <option defaultValue="">Select city</option>
             {city?.map((item, index) => {
               return (
                 <option key={index} value={item}>
@@ -165,7 +165,7 @@ const Modalsearch = () => {
             name="furnishing"
             value={furnishing}
           >
-            <option defaultValue>Choose furnishing</option>
+            <option defaultValue="">Choose furnishing</option>
             {furnishingdata.map((item) => {
               return (
                 <option key={item.id} value={item.value}>
@@ -177,14 +177,14 @@ const Modalsearch = () => {
 
           <input
             type="text"
-            onChange={(e) => setMinPrice(strictAddComma(e.target.value))}
+            onChange={(e) => setMinPrice(formatMoney(e.target.value))}
             placeholder="min_price"
             value={minPrice}
           />
 
           <input
             type="text"
-            onChange={(e) => setMaxPrice(strictAddComma(e.target.value))}
+            onChange={(e) => setMaxPrice(formatMoney(e.target.value))}
             placeholder="max_price"
             value={maxPrice}
           />

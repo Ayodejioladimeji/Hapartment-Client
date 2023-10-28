@@ -94,7 +94,7 @@ const Search = () => {
                     name="property_type"
                     value={property_type}
                   >
-                    <option defaultValue>Select property type</option>
+                    <option defaultValue="">Select property type</option>
                     {propertyData.map((item) => {
                       return (
                         <option key={item.id} value={item.value}>
@@ -114,7 +114,7 @@ const Search = () => {
                     name="bathrooms"
                     value={bathrooms}
                   >
-                    <option defaultValue>Choose bathroom</option>
+                    <option defaultValue="">Choose bathroom</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -132,7 +132,7 @@ const Search = () => {
                     name="toilets"
                     value={toilets}
                   >
-                    <option defaultValue>Choose toilet</option>
+                    <option defaultValue="">Choose toilet</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -150,7 +150,7 @@ const Search = () => {
                     name="statename"
                     value={statename}
                   >
-                    <option defaultValue>Select state</option>
+                    <option defaultValue="">Select state</option>
                     {statesdata.map((item, index) => {
                       return (
                         <option key={index} value={item.state}>
@@ -170,7 +170,7 @@ const Search = () => {
                     name="cityname"
                     value={cityname}
                   >
-                    <option defaultValue>Select city</option>
+                    <option defaultValue="">Select city</option>
                     {city?.map((item, index) => {
                       return (
                         <option key={index} value={item}>
@@ -190,7 +190,7 @@ const Search = () => {
                     name="furnishing"
                     value={furnishing}
                   >
-                    <option defaultValue>Choose furnishing</option>
+                    <option defaultValue="">Choose furnishing</option>
                     {furnishingdata.map((item) => {
                       return (
                         <option key={item.id} value={item.value}>

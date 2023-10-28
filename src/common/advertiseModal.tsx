@@ -158,7 +158,7 @@ const AdvertiseModal = ({ setOpenModal }) => {
             name="pricing"
             value={values.pricing}
           >
-            <option defaultValue>Choose pricing</option>
+            <option defaultValue="">Choose pricing</option>
             <option value="1">1 month (2,000)</option>
             <option value="6">6 months (#10,800)</option>
             <option value="12">12 months (#21,600)</option>

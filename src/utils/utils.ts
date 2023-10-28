@@ -1,4 +1,25 @@
-import { strictRemoveComma } from "comma-separator";
+// add comma
+export const addComma = (num: any) => {
+  if (typeof num === "string") {
+    return num?.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  } else {
+    return num?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+};
+
+// remove non Numeric
+export const removeNum = (num: any) => {
+  if (typeof num === "string") {
+    return num?.replace(/[^0-9]/g, "");
+  } else {
+    return num?.toString().replace(/[^0-9]/g, "");
+  }
+};
+
+// Format money
+export const formatMoney = (data: number | string) => {
+  return addComma(removeNum(data));
+};
 
 export const getDate = (date) => {
   var dateobj = new Date(date);
@@ -32,9 +53,9 @@ export const sortValue = (listings, sorting) => {
   /* eslint-disable */
   return listings.sort((a, b) => {
     if (sorting === "1") {
-      return strictRemoveComma(a.price) > strictRemoveComma(b.price) ? 1 : -1;
+      return removeNum(a.price) > removeNum(b.price) ? 1 : -1;
     } else if (sorting === "2") {
-      return strictRemoveComma(b.price) > strictRemoveComma(a.price) ? 1 : -1;
+      return removeNum(b.price) > removeNum(a.price) ? 1 : -1;
     }
   });
 };
