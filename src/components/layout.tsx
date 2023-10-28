@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
   // Get all listings on Click
 
   useEffect(() => {
-    const getAllData = async (e) => {
+    const getAllData = async () => {
       try {
         dispatch({ type: ACTIONS.LOADING, payload: true });
 

@@ -6,7 +6,7 @@ import { DataContext } from "@/store/GlobalState";
 
 const Header = () => {
   const router = useRouter();
-  const { dispatch } = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext);
 
   // Get all listings on Click
   const handleSubmit = async (e) => {

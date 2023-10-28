@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const DownloadModal = ({ alert }) => {
+const DownloadModal = () => {
   const [partyTime, setPartyTime] = useState(false);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+declare const window: any;
 
 const Widget = () => {
   useEffect(() => {
@@ -9,7 +10,7 @@ const Widget = () => {
     };
     (function (d, t) {
       var BASE_URL = "https://app.chatwoot.com";
-      var g = d.createElement(t),
+      var g: any = d.createElement(t),
         s = d.getElementsByTagName(t)[0];
       g.src = BASE_URL + "/packs/js/sdk.js";
       g.defer = true;

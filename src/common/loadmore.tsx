@@ -1,12 +1,19 @@
 import React from "react";
 import { BallTriangle } from "react-loader-spinner";
 
-const LoadMore = ({ load, setLoad, visible, setVisible }) => {
+type Props = {
+  load: any;
+  setLoad: any;
+  visible: any;
+  setVisible: any;
+};
+
+const LoadMore = ({ load, setLoad, visible, setVisible }: Props) => {
   const showItems = () => {
     setLoad(true);
     setTimeout(() => {
       setVisible((prevState) => prevState + 3);
-      localStorage.setItem("visible", Number(visible) + 3);
+      // localStorage.setItem("visible", Number(visible) + 3);
       setLoad(false);
     }, 2000);
   };
@@ -21,8 +28,6 @@ const LoadMore = ({ load, setLoad, visible, setVisible }) => {
             radius={5}
             color="#4fa94d"
             ariaLabel="ball-triangle-loading"
-            wrapperclassName={{}}
-            wrapperStyle=""
             visible={true}
           />
         </div>

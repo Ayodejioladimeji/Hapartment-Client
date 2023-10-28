@@ -39,7 +39,7 @@ const Contacts = () => {
       }}
       // handling validation
       validate={(values) => {
-        let errors = {};
+        let errors: any = {};
 
         if (!values.name) {
           errors.name = "Please provide your name";

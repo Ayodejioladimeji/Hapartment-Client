@@ -82,6 +82,7 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <Script
+        id="ms-clarity"
         dangerouslySetInnerHTML={{
           __html: `
               window.dataLayer = window.dataLayer || [];
@@ -121,7 +122,7 @@ export default function App({ Component, pageProps }) {
       <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6391913781421412"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></Script>
 
       <DataProvider>

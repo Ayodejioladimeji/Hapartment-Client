@@ -6,9 +6,9 @@ import { useRouter } from "next/router";
 import { useState, useEffect, useContext } from "react";
 import searchImg from "../../public/images/search-image.svg";
 import { statesdata } from "@/constants/statesdata";
-import { strictAddComma } from "comma-separator";
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
+import { formatMoney } from "@/utils/utils";
 
 const initialState = {
   property_type: "",
@@ -205,9 +205,7 @@ const Search = () => {
                     data-aos-once="true"
                     data-aos-delay="1400"
                     type="text"
-                    onChange={(e) =>
-                      setMinPrice(strictAddComma(e.target.value))
-                    }
+                    onChange={(e) => setMinPrice(formatMoney(e.target.value))}
                     placeholder="min_price"
                     value={minPrice}
                   />
@@ -217,9 +215,7 @@ const Search = () => {
                     data-aos-once="true"
                     data-aos-delay="1600"
                     type="text"
-                    onChange={(e) =>
-                      setMaxPrice(strictAddComma(e.target.value))
-                    }
+                    onChange={(e) => setMaxPrice(formatMoney(e.target.value))}
                     placeholder="max_price"
                     value={maxPrice}
                   />
