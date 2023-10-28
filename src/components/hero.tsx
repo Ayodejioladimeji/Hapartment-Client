@@ -18,12 +18,6 @@ const Hero = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    gtag.event({
-      action: "quick_search_form",
-      category: "quick_search",
-      label: cityname,
-    });
-
     if (cityname === "") {
       setError("Please enter city name");
 

@@ -37,12 +37,6 @@ const Card = ({ ...item }) => {
       query: item,
     });
 
-    gtag.event({
-      action: "listing_card",
-      category: "card",
-      label: property_type,
-    });
-
     dispatch({ type: ACTIONS.CHECKLOAD, payload: false });
   };
 
