@@ -5,7 +5,7 @@ import banner2 from "../../../public/images/banner2.jpeg";
 import banner3 from "../../../public/images/banner3.jpeg";
 import banner4 from "../../../public/images/banner4.jpeg";
 import banner5 from "../../../public/images/banner5.jpeg";
-import Description from "./../../components/description";
+import Description from "../../components/description";
 import { FaBath, FaBed, FaToilet } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Slider from "@/common/Slider";
@@ -147,19 +147,6 @@ const ListingDetails = (props) => {
                 </div>
               </div>
 
-              {/* Verification status note */}
-              {/* {status === "pending" ? (
-                <div className="pending-status">
-                  <i className="bi bi-exclamation-circle-fill"></i>
-                  This property is under review for verification
-                </div>
-              ) : (
-                <div className="verified-status">
-                  <i className="bi bi-check-circle-fill"></i>
-                  This property has been verified
-                </div>
-              )} */}
-
               <div className="details-tab mt-5">
                 <div className="tab-section">
                   <div className="deliver-box">
@@ -173,7 +160,7 @@ const ListingDetails = (props) => {
                           Description
                         </a>
                       </li>
-                      {map[0] !== null && (
+                      {/* {map[0] !== null && (
                         <li className="nav-item">
                           <a
                             className="nav-link"
@@ -183,7 +170,7 @@ const ListingDetails = (props) => {
                             View map
                           </a>
                         </li>
-                      )}
+                      )} */}
                     </ul>
                   </div>
 
@@ -194,24 +181,13 @@ const ListingDetails = (props) => {
                       </div>
                     </div>
 
-                    <div className="tab-pane" id="map">
+                    {/* <div className="tab-pane" id="map">
                       <div className="package-box mt-4 py-3">
                         {map[0] !== null && (
                           <Map lat={map[0].lat} lng={map[0].lng} />
-                          // <div className="map-box" style={{ height: "400px" }}>
-                          //   <iframe
-                          //     src={`https://maps.google.com/maps?q= + ${map[0].latitude} , ${map[0].longitude} &t=&z=15&ie=UTF8&iwloc=&output=embed`}
-                          //     width="100%"
-                          //     height="100%"
-                          //     style={{ border: 0 }}
-                          //     allowFullScreen=""
-                          //     loading="lazy"
-                          //     referrerPolicy="no-referrer-when-downgrade"
-                          //   />
-                          // </div>
                         )}
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -298,7 +274,7 @@ const ListingDetails = (props) => {
 
               <div
                 className="adverts-box mb-3"
-                onClick={() => setOpenModal(true)}
+                // onClick={() => setOpenModal(true)}
               >
                 Place your Banner Adverts here
               </div>

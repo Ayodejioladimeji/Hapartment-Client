@@ -48,7 +48,7 @@ const Listings = () => {
       const parsedData = JSON.parse(data);
       setLocalData(parsedData);
     }
-  }, [callback]);
+  }, [callback, checkload]);
 
   // a function to get the data
   const getSingleData = async () => {
@@ -105,8 +105,6 @@ const Listings = () => {
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   };
-
-  // console.log(localData, checkload);
 
   // useEffect
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
-import MapSkeleton from "./../common/placeholder";
+import MapSkeleton from "../common/placeholder";
 import { useState } from "react";
 
 const Map = ({ lat, lng }) => {
