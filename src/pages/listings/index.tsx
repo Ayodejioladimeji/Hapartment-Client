@@ -2,11 +2,11 @@ import { useState, useContext, useEffect } from "react";
 
 import Card from "@/common/card";
 import Image from "next/image";
-import banner1 from "../../public/images/banner1.jpeg";
-import banner2 from "../../public/images/banner2.jpeg";
-import banner3 from "../../public/images/banner3.jpeg";
-import banner4 from "../../public/images/banner4.jpeg";
-import banner5 from "../../public/images/banner5.jpeg";
+import banner1 from "/public/images/banner1.jpeg";
+import banner2 from "/public/images/banner2.jpeg";
+import banner3 from "/public/images/banner3.jpeg";
+import banner4 from "/public/images/banner4.jpeg";
+import banner5 from "/public/images/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
 import Head from "next/head";
@@ -16,7 +16,7 @@ import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
-import * as gtag from "../lib/gtag";
+import * as gtag from "../../lib/gtag";
 import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
 // import Map from "@/utils/map";
@@ -125,12 +125,6 @@ const Listings = () => {
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    gtag.event({
-      action: "list_search_form",
-      category: "quick_search",
-      label: cityname,
-    });
 
     if (cityname === "") {
       setError("Please enter city name");
@@ -296,7 +290,7 @@ const Listings = () => {
                   aria-label="Default select example"
                   onChange={(e) => setSort(e.target.value)}
                 >
-                  <option defaultValue>All Listings</option>
+                  <option defaultValue="">All Listings</option>
                   <option value="1">Single Room</option>
                   <option value="2">Room Parlour</option>
                   <option value="3">Room Parlour Self Contain</option>
@@ -315,7 +309,7 @@ const Listings = () => {
                   aria-label="Default select example"
                   onChange={(e) => setSorting(e.target.value)}
                 >
-                  <option defaultValue>Default</option>
+                  <option defaultValue="">Default</option>
                   <option value="1">Lowest Price</option>
                   <option value="2">Highest Price</option>
                 </select>
@@ -369,7 +363,7 @@ const Listings = () => {
       <div
         className="modal fade"
         id="exampleModal"
-        tabIndex="-1"
+        tabIndex={-1}
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >

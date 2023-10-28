@@ -12,10 +12,11 @@ import Slider from "@/common/Slider";
 import { getDataApis } from "@/utils/fetchData";
 import Head from "next/head";
 import ReactWhatsapp from "react-whatsapp";
+import WhatsAppButton from "react-whatsapp";
 import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
 import { useState } from "react";
-import Map from "@/utils/map";
+import ImageSlider from "@/common/image-slider";
 
 //
 
@@ -248,7 +249,7 @@ const ListingDetails = (props) => {
                   <ReactWhatsapp
                     className="btn"
                     number={postedBy?.verification[0]?.identity_mobile}
-                    message={`Hello, I'm interested in your property on Hapartment - https://www.hapartment.org/listings/${_id}`}
+                    message={`Hello, I'm interested in your property on Hapartment - ${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/listings/${_id}`}
                   >
                     <i className="bi bi-whatsapp"></i>
                     {postedBy?.verification[0]?.identity_mobile}

@@ -157,12 +157,12 @@ const Advert = () => {
                   12 Months - ₦21,600 (10% discount)
                 </p>
 
-                <button
+                {/* <button
                   onClick={() => setOpenModal(true)}
                   className="get-started-button"
                 >
                   Get started
-                </button>
+                </button> */}
               </div>
             </div>
 
