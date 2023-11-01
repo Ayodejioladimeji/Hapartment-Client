@@ -18,13 +18,19 @@ import AdvertiseModal from "@/common/advertiseModal";
 import { useState } from "react";
 import ImageSlider from "@/common/image-slider";
 
+type Props = {
+  children: string | JSX.Element | JSX.Element[];
+};
+
 //
 
 const ListingDetails = (props) => {
   const router = useRouter();
   const [openModal, setOpenModal] = useState(false);
   const p = router.asPath.slice(1);
-  const canonicalURL = `https://www.hapartment.org/${p}`.split("?")[0];
+  const canonicalURL = `${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/${p}`.split(
+    "?"
+  )[0];
 
   const {
     _id,
@@ -39,6 +45,11 @@ const ListingDetails = (props) => {
     map,
     postedBy,
   } = props.listing;
+
+  const buttonProps: any = {
+    number: postedBy?.verification[0]?.identity_mobile,
+    message: `Hello, I'm interested in your property on Hapartment - ${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/listings/${_id}`,
+  };
 
   //
 
@@ -246,11 +257,7 @@ const ListingDetails = (props) => {
                     {postedBy.email}
                   </a>
 
-                  <ReactWhatsapp
-                    className="btn"
-                    number={postedBy?.verification[0]?.identity_mobile}
-                    message={`Hello, I'm interested in your property on Hapartment - ${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/listings/${_id}`}
-                  >
+                  <ReactWhatsapp className="btn" {...buttonProps}>
                     <i className="bi bi-whatsapp"></i>
                     {postedBy?.verification[0]?.identity_mobile}
                   </ReactWhatsapp>
