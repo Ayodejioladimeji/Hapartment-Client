@@ -46,8 +46,9 @@ const ListingDetails = (props) => {
     postedBy,
   } = props.listing;
 
+
   const buttonProps: any = {
-    number: postedBy?.verification[0]?.identity_mobile,
+    number: postedBy?.phone,
     message: `Hello, I'm interested in your property on Hapartment - ${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/listings/${_id}`,
   };
 
@@ -259,7 +260,7 @@ const ListingDetails = (props) => {
 
                   <ReactWhatsapp className="btn" {...buttonProps}>
                     <i className="bi bi-whatsapp"></i>
-                    {postedBy?.verification[0]?.identity_mobile}
+                    {postedBy?.phone}
                   </ReactWhatsapp>
                 </div>
               </div>

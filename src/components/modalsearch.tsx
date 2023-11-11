@@ -6,6 +6,7 @@ import furnishingdata from "@/constants/furnishingdata";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
 import { formatMoney } from "@/utils/utils";
+import { useRouter } from "next/router";
 
 const initialState = {
   property_type: "",
@@ -22,6 +23,7 @@ const Modalsearch = () => {
   const [city, setCity] = useState([]);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  const router = useRouter();
 
   const { property_type, statename, cityname, bathrooms, toilets, furnishing } =
     values;
@@ -45,6 +47,7 @@ const Modalsearch = () => {
   const handleFilter = async (e) => {
     e.preventDefault();
     const newData = {
+      status: "multiple",
       property_type: property_type.toLowerCase(),
       statename: statename.toLowerCase(),
       cityname: cityname.toLowerCase(),
@@ -55,22 +58,10 @@ const Modalsearch = () => {
       max_price: maxPrice,
     };
 
-    try {
-      dispatch({ type: ACTIONS.LOADING, payload: true });
-      dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-
-      const res = await getDataApis(
-        `/filter_listing?property_type=${newData.property_type}&statename=${newData.statename}&cityname=${newData.cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${newData.furnishing}&min_price=${newData.min_price}&max_price=${newData.max_price}`
-      );
-
-      // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
-      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-      localStorage.setItem("filter", JSON.stringify(newData));
-    } catch (error) {
-      console.log(error);
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    }
+    router.push({
+      pathname: router.route,
+      query: newData,
+    });
   };
 
   return (

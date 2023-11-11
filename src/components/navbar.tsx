@@ -14,13 +14,17 @@ function Navbars() {
   const { state, dispatch } = useContext(DataContext);
 
   // Get all listings on Click
-  const handleSubmit = async (e) => {
-    const newData = {};
+  const getListings = async (e) => {
+    router.push({
+      pathname: router.route,
+      query: { status: "all", location: "all" },
+    });
+    // const newData = {};
 
-    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
-    localStorage.setItem("filter", JSON.stringify(newData));
-    dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-    window.location.href = "/listings";
+    // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+    // localStorage.setItem("filter", JSON.stringify(newData));
+    // dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
+    // window.location.href = "/listings";
   };
 
   //
@@ -115,11 +119,11 @@ function Navbars() {
 
           <ul className="navbar-nav ms-auto">
             <Nav>
-              <Nav.Link href="#search">
+              <Nav.Link>
                 <button
                   className="btn register-btn"
                   type="button"
-                  onClick={handleSubmit}
+                  onClick={getListings}
                 >
                   All Listings
                 </button>

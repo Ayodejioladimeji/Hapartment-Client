@@ -19,6 +19,7 @@ import { ACTIONS } from "@/store/Actions";
 import * as gtag from "../../lib/gtag";
 import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
+import { useRouter } from "next/router";
 // import Map from "@/utils/map";
 
 //
@@ -32,9 +33,21 @@ const Listings = () => {
   const [sorting, setSorting] = useState("");
   const [sort, setSort] = useState("");
   const [localData, setLocalData] = useState(null);
-  const [cityname, setCityname] = useState("");
+  const [city, setCity] = useState("");
   const [error, setError] = useState("");
   const [openModal, setOpenModal] = useState(false);
+  const router = useRouter();
+  const { location, status } = router.query;
+  const {
+    property_type,
+    statename,
+    cityname,
+    bathrooms,
+    toilets,
+    furnishing,
+    min_price,
+    max_price,
+  } = router.query;
 
   // Sorting the data
   const sortdata = filterValue(listings, sort);
@@ -50,83 +63,81 @@ const Listings = () => {
     }
   }, [callback, checkload]);
 
-  // a function to get the data
-  const getSingleData = async () => {
-    try {
-      dispatch({ type: ACTIONS.LOADING, payload: true });
-      const { cityname } = localData;
-
-      // const city = cityname?.charAt(0).toUpperCase() + cityname?.slice(1);
-      const res = await getDataApis(`/search_listing/${cityname}`);
-      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    } catch (error) {
-      console.log(error);
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    }
-  };
-
-  const getMultipleData = async () => {
-    try {
-      dispatch({ type: ACTIONS.LOADING, payload: true });
-
-      const {
-        property_type,
-        statename,
-        cityname,
-        bathrooms,
-        toilets,
-        furnishing,
-        min_price,
-        max_price,
-      } = localData;
-
-      const res = await getDataApis(
-        `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
-      );
-
-      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    } catch (error) {
-      console.log(error);
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    }
-  };
-
-  const getAllData = async () => {
-    try {
-      dispatch({ type: ACTIONS.LOADING, payload: true });
-
-      const res = await getDataApis("/all_listing");
-      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    } catch (error) {
-      console.log(error);
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    }
-  };
-
   // useEffect
   useEffect(() => {
-    if (localData !== null && checkload) {
-      if (Object?.keys(localData).length === 1) {
-        // console.log("single")
-        getSingleData();
-      } else if (Object?.keys(localData).length >= 2) {
-        // console.log("multiple")
-        getMultipleData();
-      } else {
-        // console.log("all")
-        getAllData();
-      }
+    if (status === "single" && router.isReady) {
+      const getSingleData = async () => {
+        try {
+          dispatch({ type: ACTIONS.LOADING, payload: true });
+
+          const res = await getDataApis(`/search_listing/${location}`);
+          dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+          dispatch({ type: ACTIONS.LOADING, payload: false });
+        } catch (error) {
+          console.log(error);
+          dispatch({ type: ACTIONS.LOADING, payload: false });
+        }
+      };
+      getSingleData();
     }
-  }, [localData]);
+  }, [dispatch, location, router.isReady, status]);
+
+  useEffect(() => {
+    if (status === "multiple") {
+      const getMultipleData = async () => {
+        try {
+          dispatch({ type: ACTIONS.LOADING, payload: true });
+
+          const res = await getDataApis(
+            `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
+          );
+
+          dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+          dispatch({ type: ACTIONS.LOADING, payload: false });
+        } catch (error) {
+          console.log(error);
+          dispatch({ type: ACTIONS.LOADING, payload: false });
+        }
+      };
+      getMultipleData();
+    }
+  }, [
+    dispatch,
+    status,
+    bathrooms,
+    cityname,
+    furnishing,
+    max_price,
+    min_price,
+    property_type,
+    statename,
+    toilets,
+  ]);
+
+  useEffect(() => {
+    if (status === "all") {
+      const getAllData = async () => {
+        try {
+          dispatch({ type: ACTIONS.LOADING, payload: true });
+
+          const res = await getDataApis("/all_listing");
+          dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
+          dispatch({ type: ACTIONS.LOADING, payload: false });
+        } catch (error) {
+          console.log(error);
+          dispatch({ type: ACTIONS.LOADING, payload: false });
+        }
+      };
+
+      getAllData();
+    }
+  }, [dispatch, status]);
 
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (cityname === "") {
+    if (city === "") {
       setError("Please enter city name");
 
       setTimeout(() => {
@@ -135,26 +146,13 @@ const Listings = () => {
       return;
     }
 
-    try {
-      dispatch({ type: ACTIONS.LOADING, payload: true });
-      dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
+    dispatch({ type: ACTIONS.LOADING, payload: true });
 
-      const newData = {
-        cityname: cityname.toLowerCase(),
-      };
-
-      const city = cityname.toLowerCase();
-      // console.log(city);
-
-      const res = await getDataApis(`/search_listing/${city}`);
-
-      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-      localStorage.setItem("filter", JSON.stringify(newData));
-    } catch (error) {
-      console.log(error);
-      dispatch({ type: ACTIONS.LOADING, payload: false });
-    }
+    const cities = city?.toLowerCase();
+    router.push({
+      pathname: router.route,
+      query: { status: "single", location: cities },
+    });
   };
 
   //
@@ -228,8 +226,8 @@ const Listings = () => {
                         <input
                           type="text"
                           placeholder="Enter your state or city"
-                          value={cityname}
-                          onChange={(e) => setCityname(e.target.value)}
+                          value={city}
+                          onChange={(e) => setCity(e.target.value)}
                         />
                       </div>
 
