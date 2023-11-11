@@ -2,6 +2,12 @@
   background: #f9fcf9 !important;
   padding-bottom: 40px;
 
+  h1 {
+    font-size: 17px;
+    span {
+      color: var(--primary-color);
+    }
+  }
   h4 {
     span {
       color: var(--primary-color);
@@ -153,12 +159,12 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
 
+  // @media (max-width: 1300px) {
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
+
   @media (max-width: 1300px) {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 565px) {
@@ -176,6 +182,7 @@
     background: none;
     margin-top: 30px;
     height: 250px;
+    display: none;
   }
 
   // @media (max-width: 565px) {
@@ -204,4 +211,5 @@
   background: var(--light-color);
   padding: 20px;
   text-align: center;
+  cursor: pointer;
 }

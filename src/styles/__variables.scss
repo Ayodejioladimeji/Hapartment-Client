@@ -211,9 +211,10 @@ footer {
         line-height: 50px;
 
         a {
-          color: var(--border-color);
+          color: var(--border-color) !important;
           transition: var(--transition);
           border: none !important;
+          cursor: pointer !important;
 
           &:hover {
             color: var(--primary-color);
@@ -261,24 +262,27 @@ footer {
         align-items: center;
         padding-left: 0 !important;
 
-        .play {
-          width: 45% !important;
-          object-fit: contain;
-          cursor: pointer;
+        a {
+          width: 50%;
+          .play {
+            width: 100% !important;
+            object-fit: contain;
+            cursor: pointer;
 
-          @media (max-width: 768px) {
-            width: 40% !important;
+            @media (max-width: 768px) {
+              width: 50% !important;
+            }
           }
-        }
 
-        .apple {
-          width: 40% !important;
-          object-fit: contain;
-          cursor: pointer;
-          margin-right: 10px;
+          .apple {
+            width: 85% !important;
+            object-fit: contain;
+            cursor: pointer;
+            margin-right: 10px;
 
-          @media (max-width: 768px) {
-            width: 35% !important;
+            @media (max-width: 768px) {
+              width: 45% !important;
+            }
           }
         }
       }
