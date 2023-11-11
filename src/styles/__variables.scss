@@ -211,9 +211,10 @@ footer {
         line-height: 50px;
 
         a {
-          color: var(--border-color);
+          color: var(--border-color) !important;
           transition: var(--transition);
           border: none !important;
+          cursor: pointer !important;
 
           &:hover {
             color: var(--primary-color);

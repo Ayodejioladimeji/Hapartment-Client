@@ -45,9 +45,10 @@ const Search = () => {
   }, [statename]);
 
   // handlefilter method
-  const handleFilter = (e) => {
+  const handleFilter = async (e) => {
     e.preventDefault();
     const newData = {
+      status: "multiple",
       property_type: property_type.toLowerCase(),
       statename: statename.toLowerCase(),
       cityname: cityname.toLowerCase(),
@@ -58,13 +59,11 @@ const Search = () => {
       max_price: maxPrice,
     };
 
-    dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-    dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
-    localStorage.setItem("filter", JSON.stringify(newData));
-
-    router.push("/listings");
+    router.push({
+      pathname: "/listings",
+      query: newData,
+    });
   };
-
   //
 
   return (

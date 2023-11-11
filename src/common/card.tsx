@@ -5,7 +5,7 @@ import moment from "moment";
 import { ACTIONS } from "@/store/Actions";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
-import * as gtag from "../lib/gtag";
+
 
 //
 
@@ -41,7 +41,7 @@ const Card = ({ ...item }) => {
   };
 
   return (
-    // <Link href={`/listings/${params_title}`}>
+    
     <div className="card" onClick={sendData}>
       <div className="card-image">
         <Image
@@ -79,7 +79,9 @@ const Card = ({ ...item }) => {
         <h6 className="mb-3">₦{price}</h6>
         <div className="address">
           <i className="bi bi-geo-alt"></i>
-          <span>{address}</span>
+          <span>
+            {address}
+          </span>
         </div>
 
         <div className="card-box">
@@ -104,7 +106,7 @@ const Card = ({ ...item }) => {
         </small>
       </div>
     </div>
-    // </Link>
+
   );
 };
 export default Card;

@@ -11,20 +11,13 @@ import * as gtag from "../lib/gtag";
 
 function Navbars() {
   const router = useRouter();
-  const { state, dispatch } = useContext(DataContext);
 
   // Get all listings on Click
   const getListings = async (e) => {
     router.push({
-      pathname: router.route,
+      pathname: "/listings",
       query: { status: "all", location: "all" },
     });
-    // const newData = {};
-
-    // dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
-    // localStorage.setItem("filter", JSON.stringify(newData));
-    // dispatch({ type: ACTIONS.CHECKLOAD, payload: true });
-    // window.location.href = "/listings";
   };
 
   //

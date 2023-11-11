@@ -18,7 +18,6 @@ const initialState = {
 };
 
 const Modalsearch = () => {
-  const { state, dispatch } = useContext(DataContext);
   const [values, setValues] = useState(initialState);
   const [city, setCity] = useState([]);
   const [minPrice, setMinPrice] = useState("");

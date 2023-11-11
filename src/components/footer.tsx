@@ -1,7 +1,6 @@
 import DownloadModal from "@/common/downloadmodal";
 import ModalWrapper from "@/common/contactModal";
 import NewsletterModal from "@/common/newsletterModal";
-import NewsletterModalWrapper from "@/common/newsletterModal";
 import { ACTIONS } from "@/store/Actions";
 import { DataContext } from "@/store/GlobalState";
 import { postDataApi } from "@/utils/fetchData";
@@ -11,6 +10,7 @@ import { useContext, useState } from "react";
 import DownloadWrapper from "@/common/downloadWrapper";
 import cogoToast from "cogo-toast";
 import * as EmailValidator from "email-validator";
+import { useRouter } from "next/router";
 
 //
 
@@ -20,6 +20,7 @@ const Footer = () => {
   const [values, setValues] = useState("");
   const [alert, setAlert] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   // handleSubmit
   const handleSubmit = async (e) => {
@@ -111,8 +112,15 @@ const Footer = () => {
               <li>
                 <Link href="/advertise">Advertise With Us</Link>
               </li>
-              <li>
-                <Link href="/listings">Search Listings</Link>
+              <li
+                onClick={() =>
+                  router.push({
+                    pathname: "/listings",
+                    query: { status: "all", location: "all" },
+                  })
+                }
+              >
+                <a>Search Listings</a>
               </li>
               <li>
                 <Link href="/watchdemo">Watch a Demo</Link>

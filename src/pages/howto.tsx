@@ -12,13 +12,9 @@ import how5 from "../../public/images/how5.svg";
 import how6 from "../../public/images/how6.svg";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
-import { ACTIONS } from "@/store/Actions";
-import DownloadWrapper from "@/common/downloadWrapper";
-import DownloadModal from "@/common/downloadmodal";
 
 const HowTo = () => {
-  const { state, dispatch } = useContext(DataContext);
-  const { downloadModal } = state;
+  const { state } = useContext(DataContext);
 
   //
 
@@ -125,9 +121,6 @@ const HowTo = () => {
                     alt="picture"
                     className="playstore-image"
                     title="picture"
-                    onClick={() =>
-                      dispatch({ type: ACTIONS.DOWNLOAD_MODAL, payload: true })
-                    }
                   />
                 </a>
               </div>
@@ -161,12 +154,16 @@ const HowTo = () => {
                 site.
               </p> */}
               <p className="mb-3">
-                You can also follow the steps below to get your Listing approved
-                in just few minutes.
+                Looking to streamline your listing creation? We've got you
+                covered! Watch our informative video guide designed to help you
+                create listings quickly and effortlessly. Whether you're a
+                beginner or looking for advanced tips, this video has insights
+                to make your process smoother.{" "}
               </p>
               <p className="mb-3">
-                Meanwhile, if you do not follow the guidelines provided your
-                listings might be rejected.
+                Save time, enhance your efficiency, and create standout listings
+                by watching our video guide. Let's make your listings process
+                fast and easy! 🚀
               </p>
             </div>
 
@@ -364,12 +361,6 @@ const HowTo = () => {
           </div>
         </div>
       </section>
-
-      {downloadModal && (
-        <DownloadWrapper>
-          <DownloadModal />
-        </DownloadWrapper>
-      )}
     </>
   );
 };
