@@ -1,5 +1,5 @@
 import React from "react";
-import { BallTriangle } from "react-loader-spinner";
+import { Oval } from "react-loader-spinner";
 
 type Props = {
   load: any;
@@ -22,10 +22,9 @@ const LoadMore = ({ load, setLoad, visible, setVisible }: Props) => {
     <div className="text-center my-5">
       {load ? (
         <div className="d-flex align-items-center justify-content-center">
-          <BallTriangle
+          <Oval
             height={60}
             width={60}
-            radius={5}
             color="#4fa94d"
             ariaLabel="ball-triangle-loading"
             visible={true}

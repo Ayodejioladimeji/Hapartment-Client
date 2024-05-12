@@ -9,8 +9,8 @@ import Property from "@/components/property";
 import SafetyTips from "@/components/safetytips";
 import Search from "@/components/search";
 import Steps from "@/components/steps";
-import Head from "next/head";
 
+//
 export default function index() {
   return (
     <>

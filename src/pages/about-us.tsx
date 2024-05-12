@@ -1,11 +1,16 @@
 import BreadCumb from "@/common/breadcumb";
 import aboutImg from "../../public/images/about-img.svg";
 import Head from "next/head";
+import MetaTags from "@/components/MetaTags";
 
 const AboutUs = () => {
   return (
     <>
-      <MetaTags title="About Us" description="At Hapartment, we believe that a smart apartment search experience should just work. Our apps and website makes the process of searching for an apartment smooth, easy, and safe." route="about-us"/>
+      <MetaTags
+        title="About Us"
+        description="At Hapartment, we believe that a smart apartment search experience should just work. Our apps and website makes the process of searching for an apartment smooth, easy, and safe."
+        route="about-us"
+      />
 
       <BreadCumb
         headingOne="How are we different from others"
