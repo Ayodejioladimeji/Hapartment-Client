@@ -15,13 +15,13 @@ const MetaTags = (props: Props) => {
       {props?.route ? (
         <link
           rel="canonical"
-          href={`https://www.hapartment.org/${props.route}`}
+          href={`${process.env.NEXT_PUBLIC_SITE_URL}/${props.route}`}
           key="canonical"
         />
       ) : (
         <link
           rel="canonical"
-          href="https://www.hapartment.org"
+          href={process.env.NEXT_PUBLIC_SITE_URL}
           key="canonical"
         />
       )}
@@ -48,10 +48,10 @@ const MetaTags = (props: Props) => {
       {props?.route ? (
         <meta
           property="og:url"
-          content={`https://www.hapartment.org/${props.route}`}
+          content={`${process.env.NEXT_PUBLIC_SITE_URL}/${props.route}`}
         />
       ) : (
-        <meta property="og:url" content="https://www.hapartment.org" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_URL} />
       )}
       <meta name="twitter:card" content="Hapartment" />
 
