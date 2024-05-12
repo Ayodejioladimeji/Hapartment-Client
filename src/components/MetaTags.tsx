@@ -10,7 +10,7 @@ interface Props {
 const MetaTags = (props: Props) => {
   return (
     <Head>
-      <title>Hapartment - {props.title}</title>
+      <title>{props.title}</title>
       <link rel="icon" href="/favicon.ico" />
       {props?.route ? (
         <link
