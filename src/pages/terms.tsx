@@ -1,51 +1,16 @@
 import BreadCumb from "@/common/breadcumb";
 import termsImage from "../../public/images/terms-image.svg";
 import Head from "next/head";
+import MetaTags from "@/components/MetaTags";
 
 const Terms = () => {
   return (
     <>
-      <Head>
-        <title>Hapartment - Terms of Use</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/terms/"
-          key="canonical"
-        />
-        <meta
-          name="description"
-          content="Hapartment is the best place to find apartments and rental homes with no hidden fees. Search by location, bedroom/bathroom preferences, pet policies and more."
-        />
-        <meta
-          name="keywords"
-          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
-        />
-        <meta property="og:title" content="Hapartment - Terms Of Use" />
-        <meta
-          property="og:description"
-          content="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there."
-        />
-
-        <meta property="og:url" content="https://www.hapartment.org/terms" />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.17_PM_1_qix3ml.jpg"
-        />
-        <meta property="og:type" content="website" />
-      </Head>
+      <MetaTags
+        title="Terms Of Use"
+        description="Hapartment is the best place to find apartments and rental homes with no hidden fees. Search by location, bedroom/bathroom preferences, pet policies and more."
+        route="terms"
+      />
 
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"

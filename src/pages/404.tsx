@@ -1,3 +1,4 @@
+import MetaTags from "@/components/MetaTags";
 import Link from "next/link";
 
 const Error = () => {
@@ -11,6 +12,7 @@ const Error = () => {
         textAlign: "center",
       }}
     >
+      <MetaTags title="404" description="Page not found" />
       <div>
         <h1 style={{ fontSize: "60px", fontWeight: "700" }}>404</h1>
         <h2>Page not found</h2>

@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import advertiseImage from "../../public/images/advertise-image.svg";
+import MetaTags from "@/components/MetaTags";
 
 const Advert = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -11,60 +12,11 @@ const Advert = () => {
   //
   return (
     <>
-      <Head>
-        <title>Hapartment - Advertise with us</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/advertise/"
-          key="canonical"
-        />
-
-        <meta
-          name="description"
-          content="Hapartment is a one-stop apartment search and booking app that brings your top properties in one place. View updated listings from our network of more than 1400 managing agents daily, then book your next apartment with us."
-        />
-
-        <meta
-          name="keywords"
-          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
-        />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta name="title" content="Hapartment - Advertise with us" />
-        <meta property="og:title" content="Hapartment - Advertise with us" />
-        <meta
-          property="og:description"
-          content="Start advertising your products on Hapartment Digital Marketplace. Post your product for free and start attracting visitors to it. You will be able to track the number of people who end up purchasing through the website, and make changes to your product as needed"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_2_ifvu7a.jpg"
-        />
-        <meta property="og:type" content="website" />
-
-        <meta
-          property="og:url"
-          content="https://www.hapartment.org/advertise/"
-        />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-        <meta
-          name="twitter:image:alt"
-          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
-        />
-      </Head>
+      <MetaTags
+        title="Advertise"
+        description="Hapartment is a one-stop apartment search and booking app that brings your top properties in one place. View updated listings from our network of more than 1400 managing agents daily, then book your next apartment with us"
+        route="advertise"
+      />
 
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"

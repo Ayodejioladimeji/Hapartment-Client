@@ -2,66 +2,18 @@ import BreadCumb from "@/common/breadcumb";
 import Contacts from "@/components/contacts";
 import contactImage from "../../public/images/contact2.svg";
 import Head from "next/head";
+import MetaTags from "@/components/MetaTags";
 
 //
 
 const Contact = () => {
   return (
     <>
-      <Head>
-        <title>Hapartment - Contact Us</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/contact/"
-          key="canonical"
-        />
-
-        <meta
-          name="description"
-          content="Hapartment delivers the safest apartment search experience on both web and app. View apartment listings directly from top property managers, pricing and availability updated daily. Manage all your properties in one place with our Digital Marketplace."
-        />
-
-        <meta
-          name="keywords"
-          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
-        />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta name="title" content="Hapartment - Contact Us Today" />
-        <meta property="og:title" content="Hapartment - Contact Us Today" />
-        <meta
-          property="og:description"
-          content="Our team works tirelessly to make searching for your dream home
-          effortless and rewarding , by offering clearly displayed quality
-          listings and also provide simple mechanisms to contact the
-          agent"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
-        />
-        <meta property="og:type" content="website" />
-
-        <meta property="og:url" content="https://www.hapartment.org/contact" />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-        <meta
-          name="twitter:image:alt"
-          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
-        />
-      </Head>
+      <MetaTags
+        title="Contact Us"
+        description="Hapartment delivers the safest apartment search experience on both web and app. View apartment listings directly from top property managers, pricing and availability updated daily. Manage all your properties in one place with our Digital Marketplace."
+        route="contact"
+      />
 
       <BreadCumb
         headingOne="Hi 👋🏼,"
