@@ -13,11 +13,8 @@ function Navbars() {
   const router = useRouter();
 
   // Get all listings on Click
-  const getListings = async (e) => {
-    router.push({
-      pathname: "/listings",
-      query: { status: "all", location: "all" },
-    });
+  const getListings = (e) => {
+    router.push("/listings");
   };
 
   //

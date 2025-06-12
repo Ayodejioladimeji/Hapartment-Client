@@ -26,10 +26,9 @@ const Hero = () => {
       return;
     }
 
-    const cities = cityname?.toLowerCase();
     router.push({
       pathname: "/listings",
-      query: { status: "single", location: cities },
+      query: { search: cityname.toLowerCase(), page: 1 },
     });
   };
 

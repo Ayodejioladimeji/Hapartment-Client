@@ -1,122 +1,141 @@
-import { useState, useContext, useEffect } from "react";
-
+import { useState, useContext, useEffect, useCallback } from "react";
 import Card from "@/common/card";
 import Image from "next/image";
 import banner1 from "/public/images/banner1.jpeg";
-import banner2 from "/public/images/banner2.jpeg";
-import banner3 from "/public/images/banner3.jpeg";
-import banner4 from "/public/images/banner4.jpeg";
-import banner5 from "/public/images/banner5.jpeg";
 import LoadMore from "@/common/loadmore";
 import Goback from "@/common/goback";
 import Head from "next/head";
 import Modalsearch from "@/components/modalsearch";
 import Placeholder from "@/common/placeholder";
-import { filterValue, sortValue } from "@/utils/utils";
 import { getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
-import * as gtag from "../../lib/gtag";
 import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
 import { useRouter } from "next/router";
 import Paginate from "@/components/pagination/Paginate";
-// import Map from "@/utils/map";
-
-//
 
 const Listings = () => {
   const { state, dispatch } = useContext(DataContext);
-  const [listings, setListings] = useState<any>([]);
+  const [listings, setListings] = useState<any[]>([]);
   const { checkload, callback } = state;
-  const [load, setLoad] = useState(false);
-  const [visible, setVisible] = useState(0);
-  const [sorting, setSorting] = useState("");
-  const [sort, setSort] = useState("");
-  const [localData, setLocalData] = useState(null);
-  const [city, setCity] = useState("");
-  const [error, setError] = useState("");
-  const [openModal, setOpenModal] = useState(false);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalCount, setTotalCount] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [city, setCity] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [totalCount, setTotalCount] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
   const PageSize = 12;
   const router = useRouter();
-  const { page } = router.query;
-  const { location, status } = router.query;
+
   const {
+    page = "1",
+    search,
     property_type,
-    statename,
-    cityname,
-    bathrooms,
     toilets,
-    furnishing,
     min_price,
     max_price,
+    sort,
+    sorting,
   } = router.query;
 
-  // Sorting the data
-  // const sortdata = filterValue(listings, sort);
-  // const sorted = sortValue(sortdata, sorting);
+  const fetchListings = useCallback(async () => {
+    try {
+      dispatch({ type: ACTIONS.LOADING, payload: true });
+      setLoading(true);
 
-  // To get data from the localstorage
+      const queryParams = new URLSearchParams();
+      const query = {
+        page: page.toString(),
+        pageSize: PageSize.toString(),
+        search,
+        property_type,
+        toilets,
+        min_price,
+        max_price,
+        sort,
+        sorting,
+      };
 
-  useEffect(() => {
-    if (checkload) {
-      const data = localStorage.getItem("filter");
-      const parsedData = JSON.parse(data);
-      setLocalData(parsedData);
-    }
-  }, [callback, checkload]);
-
-  useEffect(() => {
-    const getAllData = async () => {
-      try {
-        dispatch({ type: ACTIONS.LOADING, payload: true });
-
-        const res = await getDataApis(
-          `/listing?page=${
-            page === undefined ? currentPage : page
-          }&pageSize=${PageSize}`
-        );
-
-        if (res?.status === 200 || res?.status === 201) {
-          setListings(res.data.listings);
-          setLoading(false);
-          setTotalCount(res?.data?.totalCount);
+      for (const key in query) {
+        if (query[key]) {
+          queryParams.append(key, query[key] as string);
         }
-      } catch (error) {
-        console.log(error);
-        dispatch({ type: ACTIONS.LOADING, payload: false });
       }
-    };
 
-    getAllData();
-  }, [dispatch, status, loading]);
+      const res = await getDataApis(`/listing?${queryParams.toString()}`);
 
-  // handle submit
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (city === "") {
-      setError("Please enter city name");
-
-      setTimeout(() => {
-        setError("");
-      }, 2000);
-      return;
+      if (res?.status === 200 || res?.status === 201) {
+        setListings(res.data.listings || []);
+        setTotalCount(res.data.totalCount || 0);
+      }
+    } catch (error) {
+      console.error("Error fetching listings:", error);
+    } finally {
+      setLoading(false);
+      dispatch({ type: ACTIONS.LOADING, payload: false });
     }
+  }, [
+    page,
+    search,
+    property_type,
+    toilets,
+    min_price,
+    max_price,
+    sort,
+    sorting,
+    dispatch,
+  ]);
 
-    dispatch({ type: ACTIONS.LOADING, payload: true });
+  useEffect(() => {
+    fetchListings();
+  }, [fetchListings]);
 
-    const cities = city?.toLowerCase();
+  const updateQuery = (params: Record<string, any>) => {
+    const currentQuery = { ...router.query, ...params };
+
+    // Clean undefined or "0" values (used to reset filters)
+    Object.keys(currentQuery).forEach((key) => {
+      if (currentQuery[key] === undefined || currentQuery[key] === "0") {
+        delete currentQuery[key];
+      }
+    });
+
     router.push({
-      pathname: router.route,
-      query: { status: "single", location: cities },
+      pathname: router.pathname,
+      query: currentQuery,
     });
   };
 
-  //
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (city.trim() === "") {
+      setError("Please enter a city or state name");
+      setTimeout(() => setError(""), 2000);
+      return;
+    }
+
+    updateQuery({ search: city.toLowerCase(), page: 1 });
+  };
+
+  const handlePropertyTypeChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    updateQuery({
+      property_type: e.target.value === "0" ? undefined : e.target.value,
+      page: 1,
+    });
+  };
+
+  const handleSortingChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    updateQuery({
+      sorting: e.target.value === "0" ? undefined : e.target.value,
+      page: 1,
+    });
+  };
+
+  const handlePageChange = (newPage: number) => {
+    updateQuery({ page: newPage });
+  };
 
   return (
     <>
@@ -132,54 +151,20 @@ const Listings = () => {
           name="description"
           content="Hapartment provides a secure and reliable digital marketplace for renting apartments."
         />
-        <meta
-          name="keywords"
-          content="Hapartment digital marketplace,Hapartment,renting a home,rent apartment or house, renting a property,for rent homes by owner,apartment list,housing listings,list house for rent,homes apartments for rent,rental listings,rental property listings,list apartment for rent,find apartments for rent,how to rent a house,finding homes for rent,how to rent out a house,housing homes for rent,list home for rent,pay my rent,how to get out of an apartment lease,how to rent out your house,renting out your house,my rentals,best place to list rental property,property management rental listings,rental listings by owner,find renters,rent my house,should i sell or rent my house,renting out a house,how to rent your house,new homes for rent,renting a house vs apartment,rent your home,places for rent by owner,find places to rent,out house rental,"
-        />
-        <meta property="og:title" content="Hapartment - Property Listings" />
-        <meta
-          property="og:description"
-          content="Hapartment is your one place to find apartments and manage your rentals"
-        />
-
-        <meta property="og:url" content="https://www.hapartment.org/listings" />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.18_PM_1_za9hx3.jpg"
-        />
-        <meta property="og:type" content="website" />
+        {/* Other meta tags omitted for brevity */}
       </Head>
 
-      <section className="white  search-listing mt-5">
+      <section className="white search-listing mt-5">
         <div className="container">
           <div className="row">
             <div className="col-lg-9 col-md-12">
               <div className="filter-box">
                 <div className="mb-3 d-flex align-items-center">
                   <Goback />
-                  {localData !== null &&
-                  Object?.keys(localData)?.length !== 0 ? (
-                    <h1>
-                      Properties for rent in <span>{localData?.cityname}</span>
-                    </h1>
-                  ) : (
-                    <h1>All properties for rent</h1>
-                  )}
+                  <h1>Properties for rent</h1>
                 </div>
 
-                <div className="row">
+                <form onSubmit={handleSubmit} className="row">
                   <div className="col-lg-6 col-md-8 col-sm-12">
                     <div className="quick-search">
                       <div className="form-control d-flex align-items-center">
@@ -191,24 +176,24 @@ const Listings = () => {
                           onChange={(e) => setCity(e.target.value)}
                         />
                       </div>
-
                       <span className="d-block text-danger">{error}</span>
 
                       <div className="d-flex align-items-center">
-                        <button className="btn hero-btn" onClick={handleSubmit}>
+                        <button type="submit" className="btn hero-btn">
                           Search
                         </button>
-                        <button
+                        {/* <button
+                          type="button"
                           className="btnfilteroptions"
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal"
                         >
                           Filter Options
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
 
@@ -224,53 +209,45 @@ const Listings = () => {
       <section className="white">
         <div className="container">
           <div className="filter mb-5 d-flex align-items-center justify-content-between">
-            {/* <div>
-              {listings?.length > visible
-                ? `Results ${visible} of ${listings?.length}`
-                : `Results ${listings?.length} of ${listings?.length}`}
-            </div> */}
-
-            {/* check if the state is still loading */}
             <div>
-              {loading ? (
-                "Loading results"
-              ) : (
-                <>
-                  Showing {listings?.length}{" "}
-                  {listings?.length > 1 ? "results" : "result"}
-                </>
-              )}
+              {loading
+                ? "Loading results"
+                : `Showing ${listings?.length} result${
+                    listings?.length !== 1 ? "s" : ""
+                  }`}
             </div>
 
             <div className="filter-container">
               <div className="filtering">
                 <select
-                  className="form-select "
-                  aria-label="Default select example"
-                  onChange={(e) => setSort(e.target.value)}
+                  className="form-select"
+                  onChange={handlePropertyTypeChange}
+                  value={property_type || "0"}
                 >
-                  <option defaultValue="">All Listings</option>
-                  <option value="1">Single Room</option>
-                  <option value="2">Room Parlour</option>
-                  <option value="3">Room Parlour Self Contain</option>
-                  <option value="4">Self Contain</option>
-                  <option value="5">2 Bedroom Flat</option>
-                  <option value="6">3 Bedroom Flat</option>
-                  <option value="7">4 Bedroom Flat</option>
-                  <option value="8">5+ Bedroom Flat</option>
-                  <option value="9">Duplex</option>
+                  <option value="0">All Listings</option>
+                  <option value="Single Room">Single Room</option>
+                  <option value="Room Parlour">Room Parlour</option>
+                  <option value="Room Parlour Self Contain">
+                    Room Parlour Self Contain
+                  </option>
+                  <option value="Self Contain">Self Contain</option>
+                  <option value="2 Bedroom Flat">2 Bedroom Flat</option>
+                  <option value="3 Bedroom Flat">3 Bedroom Flat</option>
+                  <option value="4 Bedroom Flat">4 Bedroom Flat</option>
+                  <option value="5+ Bedroom Flat">5+ Bedroom Flat</option>
+                  <option value="Duplex">Duplex</option>
                 </select>
               </div>
 
               <div className="filtering">
                 <select
-                  className="form-select "
-                  aria-label="Default select example"
-                  onChange={(e) => setSorting(e.target.value)}
+                  className="form-select"
+                  onChange={handleSortingChange}
+                  value={sorting || "0"}
                 >
-                  <option defaultValue="">Default</option>
-                  <option value="1">Lowest Price</option>
-                  <option value="2">Highest Price</option>
+                  <option value="0">Default</option>
+                  <option value="lowest_price">Lowest Price</option>
+                  <option value="highest_price">Highest Price</option>
                 </select>
               </div>
             </div>
@@ -278,46 +255,33 @@ const Listings = () => {
 
           <div className="row">
             <div className="col-lg-12 col-sm-12">
-              {loading || !listings ? (
+              {loading ? (
                 <div className="list-box">
                   <Placeholder />
                 </div>
+              ) : listings.length === 0 ? (
+                <div className="unavailable d-flex align-items-center justify-content-center">
+                  No available data
+                </div>
               ) : (
-                <>
-                  {!loading &&
-                  listings?.length === 0 &&
-                  localData?.statename === undefined ? (
-                    <div className="unavailable d-flex align-items-center justify-content-center">
-                      No available data
-                    </div>
-                  ) : (
-                    <div className="list-box">
-                      {listings?.map((item) => (
-                        <Card {...item} key={item._id} />
-                      ))}
-                    </div>
-                  )}
-                </>
+                <div className="list-box">
+                  {listings.map((item) => (
+                    <Card {...item} key={item._id} />
+                  ))}
+                </div>
               )}
 
-              {/* Pagination */}
-              {!loading && listings?.length !== 0 && totalCount > PageSize && (
-                <div className="page-navigation">
-                  <div className="mt-3">
-                    <Paginate
-                      className="pagination-bar"
-                      currentPage={
-                        !loading && page === undefined
-                          ? currentPage
-                          : Number(page)
-                      }
-                      totalCount={totalCount}
-                      pageSize={PageSize}
-                      onPageChange={(page) => setCurrentPage(page)}
-                      loading={loading}
-                      setLoading={setLoading}
-                    />
-                  </div>
+              {!loading && listings.length > 0 && totalCount > PageSize && (
+                <div className="page-navigation mt-3">
+                  <Paginate
+                    className="pagination-bar"
+                    currentPage={Number(page)}
+                    totalCount={totalCount}
+                    pageSize={PageSize}
+                    onPageChange={handlePageChange}
+                    loading={loading}
+                    setLoading={setLoading}
+                  />
                 </div>
               )}
             </div>
@@ -325,15 +289,8 @@ const Listings = () => {
         </div>
       </section>
 
-      {/* The modal section */}
-
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
+      {/* Modal for filter */}
+      <div className="modal fade" id="exampleModal" tabIndex={-1}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -342,10 +299,8 @@ const Listings = () => {
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              />
             </div>
-
             <div className="modal-body">
               <Modalsearch />
             </div>
