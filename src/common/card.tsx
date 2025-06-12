@@ -5,6 +5,7 @@ import moment from "moment";
 import { ACTIONS } from "@/store/Actions";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
+import Description from "./../components/description";
 
 //
 
@@ -12,32 +13,38 @@ const Card = ({ ...item }) => {
   const { dispatch } = useContext(DataContext);
   const {
     _id,
-    address,
-    property_type,
-    bathrooms,
     toilets,
     price,
     title,
     image,
     location,
+    Images,
+    agentName,
+    agentPhones,
+    description,
     updatedAt,
   } = item;
 
   const router = useRouter();
 
-  // const res1 = property_type?.replace(" ", "-");
-  // const res2 = res1?.replace(" ", "-");
-  // const res3 = res2?.replace(" ", "-");
-  // const params_title = res3?.replace(" ", "-");
+  const params = {
+    address: location,
+    title,
+    price,
+    toilets,
+    images: JSON.stringify(Images),
+    agentName,
+    agentPhones,
+    description,
+    image,
+  };
 
   // send data to the details page
   const sendData = () => {
     router.push({
-      pathname: `/listings/${_id}`,
-      query: item,
+      pathname: `/listings/details`,
+      query: params,
     });
-
-    dispatch({ type: ACTIONS.CHECKLOAD, payload: false });
   };
 
   return (

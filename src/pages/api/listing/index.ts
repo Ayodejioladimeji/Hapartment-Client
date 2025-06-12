@@ -117,6 +117,7 @@ const fetchListings = async (req: NextApiRequest, res: NextApiResponse) => {
 
     // Specify the return type for clarity, though Mongoose usually infers this
     const listings: IListing[] = await Listing.find(query)
+      .select("-listingUrl")
       .skip((page - 1) * pageSize)
       .limit(pageSize);
 

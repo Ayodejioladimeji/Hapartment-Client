@@ -24,14 +24,13 @@ const Listings = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [totalCount, setTotalCount] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
-  const PageSize = 12;
+  const PageSize = 48;
   const router = useRouter();
 
   const {
     page = "1",
     search,
     property_type,
-    toilets,
     min_price,
     max_price,
     sort,
@@ -49,7 +48,6 @@ const Listings = () => {
         pageSize: PageSize.toString(),
         search,
         property_type,
-        toilets,
         min_price,
         max_price,
         sort,
@@ -78,7 +76,6 @@ const Listings = () => {
     page,
     search,
     property_type,
-    toilets,
     min_price,
     max_price,
     sort,
@@ -212,7 +209,7 @@ const Listings = () => {
             <div>
               {loading
                 ? "Loading results"
-                : `Showing ${listings?.length} result${
+                : `Showing ${listings?.length} of ${totalCount} result${
                     listings?.length !== 1 ? "s" : ""
                   }`}
             </div>
