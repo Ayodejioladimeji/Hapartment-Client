@@ -20,13 +20,14 @@ import * as gtag from "../../lib/gtag";
 import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
 import { useRouter } from "next/router";
+import Paginate from "@/components/pagination/Paginate";
 // import Map from "@/utils/map";
 
 //
 
 const Listings = () => {
   const { state, dispatch } = useContext(DataContext);
-  const { listings, loading } = state;
+  const [listings, setListings] = useState<any>([]);
   const { checkload, callback } = state;
   const [load, setLoad] = useState(false);
   const [visible, setVisible] = useState(0);
@@ -36,7 +37,12 @@ const Listings = () => {
   const [city, setCity] = useState("");
   const [error, setError] = useState("");
   const [openModal, setOpenModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalCount, setTotalCount] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const PageSize = 12;
   const router = useRouter();
+  const { page } = router.query;
   const { location, status } = router.query;
   const {
     property_type,
@@ -50,8 +56,8 @@ const Listings = () => {
   } = router.query;
 
   // Sorting the data
-  const sortdata = filterValue(listings, sort);
-  const sorted = sortValue(sortdata, sorting);
+  // const sortdata = filterValue(listings, sort);
+  // const sorted = sortValue(sortdata, sorting);
 
   // To get data from the localstorage
 
@@ -63,75 +69,30 @@ const Listings = () => {
     }
   }, [callback, checkload]);
 
-  // useEffect
   useEffect(() => {
-    if (status === "single" && router.isReady) {
-      const getSingleData = async () => {
-        try {
-          dispatch({ type: ACTIONS.LOADING, payload: true });
+    const getAllData = async () => {
+      try {
+        dispatch({ type: ACTIONS.LOADING, payload: true });
 
-          const res = await getDataApis(`/search_listing/${location}`);
-          dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
-          dispatch({ type: ACTIONS.LOADING, payload: false });
-        } catch (error) {
-          console.log(error);
-          dispatch({ type: ACTIONS.LOADING, payload: false });
+        const res = await getDataApis(
+          `/listing?page=${
+            page === undefined ? currentPage : page
+          }&pageSize=${PageSize}`
+        );
+
+        if (res?.status === 200 || res?.status === 201) {
+          setListings(res.data.listings);
+          setLoading(false);
+          setTotalCount(res?.data?.totalCount);
         }
-      };
-      getSingleData();
-    }
-  }, [dispatch, location, router.isReady, status]);
+      } catch (error) {
+        console.log(error);
+        dispatch({ type: ACTIONS.LOADING, payload: false });
+      }
+    };
 
-  useEffect(() => {
-    if (status === "multiple") {
-      const getMultipleData = async () => {
-        try {
-          dispatch({ type: ACTIONS.LOADING, payload: true });
-
-          const res = await getDataApis(
-            `/filter_listing?property_type=${property_type}&statename=${statename}&cityname=${cityname}&bathrooms=${bathrooms}&toilets=${toilets}&furnishing=${furnishing}&min_price=${min_price}&max_price=${max_price}`
-          );
-
-          dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
-          dispatch({ type: ACTIONS.LOADING, payload: false });
-        } catch (error) {
-          console.log(error);
-          dispatch({ type: ACTIONS.LOADING, payload: false });
-        }
-      };
-      getMultipleData();
-    }
-  }, [
-    dispatch,
-    status,
-    bathrooms,
-    cityname,
-    furnishing,
-    max_price,
-    min_price,
-    property_type,
-    statename,
-    toilets,
-  ]);
-
-  useEffect(() => {
-    if (status === "all") {
-      const getAllData = async () => {
-        try {
-          dispatch({ type: ACTIONS.LOADING, payload: true });
-
-          const res = await getDataApis("/all_listing");
-          dispatch({ type: ACTIONS.GET_LISTINGS, payload: res.data });
-          dispatch({ type: ACTIONS.LOADING, payload: false });
-        } catch (error) {
-          console.log(error);
-          dispatch({ type: ACTIONS.LOADING, payload: false });
-        }
-      };
-
-      getAllData();
-    }
-  }, [dispatch, status]);
+    getAllData();
+  }, [dispatch, status, loading]);
 
   // handle submit
   const handleSubmit = async (e) => {
@@ -264,9 +225,9 @@ const Listings = () => {
         <div className="container">
           <div className="filter mb-5 d-flex align-items-center justify-content-between">
             {/* <div>
-              {sorted.length > visible
-                ? `Results ${visible} of ${sorted.length}`
-                : `Results ${sorted.length} of ${sorted.length}`}
+              {listings?.length > visible
+                ? `Results ${visible} of ${listings?.length}`
+                : `Results ${listings?.length} of ${listings?.length}`}
             </div> */}
 
             {/* check if the state is still loading */}
@@ -275,8 +236,8 @@ const Listings = () => {
                 "Loading results"
               ) : (
                 <>
-                  Showing {sorted.length}{" "}
-                  {sorted.length > 1 ? "results" : "result"}
+                  Showing {listings?.length}{" "}
+                  {listings?.length > 1 ? "results" : "result"}
                 </>
               )}
             </div>
@@ -317,40 +278,48 @@ const Listings = () => {
 
           <div className="row">
             <div className="col-lg-12 col-sm-12">
-              {loading || !sorted ? (
+              {loading || !listings ? (
                 <div className="list-box">
                   <Placeholder />
                 </div>
               ) : (
                 <>
                   {!loading &&
-                  sorted.length === 0 &&
+                  listings?.length === 0 &&
                   localData?.statename === undefined ? (
                     <div className="unavailable d-flex align-items-center justify-content-center">
                       No available data
                     </div>
                   ) : (
                     <div className="list-box">
-                      {sorted
-                        .filter((item) => item.status !== "declined")
-                        .map((item) => (
-                          <Card {...item} key={item._id} />
-                        ))}
+                      {listings?.map((item) => (
+                        <Card {...item} key={item._id} />
+                      ))}
                     </div>
                   )}
                 </>
               )}
 
-              {/* {visible > sorted.length || loading || sorted.length === 0 ? (
-                ""
-              ) : (
-                <LoadMore
-                  load={load}
-                  setLoad={setLoad}
-                  visible={visible}
-                  setVisible={setVisible}
-                />
-              )} */}
+              {/* Pagination */}
+              {!loading && listings?.length !== 0 && totalCount > PageSize && (
+                <div className="page-navigation">
+                  <div className="mt-3">
+                    <Paginate
+                      className="pagination-bar"
+                      currentPage={
+                        !loading && page === undefined
+                          ? currentPage
+                          : Number(page)
+                      }
+                      totalCount={totalCount}
+                      pageSize={PageSize}
+                      onPageChange={(page) => setCurrentPage(page)}
+                      loading={loading}
+                      setLoading={setLoading}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

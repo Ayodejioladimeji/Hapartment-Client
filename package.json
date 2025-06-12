@@ -24,6 +24,7 @@
     "google-map-react": "^2.2.0",
     "gsap": "^3.11.4",
     "moment": "^2.29.4",
+    "mongoose": "^8.15.1",
     "next": "13.1.6",
     "next-share": "^0.19.0",
     "next-sitemap": "^4.0.5",

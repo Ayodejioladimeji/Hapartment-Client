@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
       try {
         dispatch({ type: ACTIONS.LOADING, payload: true });
 
-        const res = await getDataApis("/all_listing");
+        const res = await getDataApis("/listing?page=1&paageSize=20");
 
-        dispatch({ type: ACTIONS.ALL_LISTINGS, payload: res.data });
+        dispatch({ type: ACTIONS.ALL_LISTINGS, payload: res.data?.listings });
 
         setTimeout(() => {
           dispatch({ type: ACTIONS.LOADING, payload: false });

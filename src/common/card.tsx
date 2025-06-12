@@ -6,7 +6,6 @@ import { ACTIONS } from "@/store/Actions";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
 
-
 //
 
 const Card = ({ ...item }) => {
@@ -18,8 +17,9 @@ const Card = ({ ...item }) => {
     bathrooms,
     toilets,
     price,
-    images,
-    status,
+    title,
+    image,
+    location,
     updatedAt,
   } = item;
 
@@ -41,61 +41,50 @@ const Card = ({ ...item }) => {
   };
 
   return (
-    
     <div className="card" onClick={sendData}>
       <div className="card-image">
         <Image
-          src={images[0].url}
+          src={image}
           alt="card-property"
           width={100}
           height={100}
           title="picture"
+          unoptimized
         />
 
         <div
           className="tags"
           style={{
-            background: `${
-              status === "pending"
-                ? "orange"
-                : status === "declined"
-                ? "red"
-                : "green"
-            }`,
+            background: "green",
           }}
         >
-          {status}
+          Approved
         </div>
       </div>
 
       <div className="card-content">
-        <p>
-          {property_type === "room parlour"
-            ? "room & parlour"
-            : property_type === "room parlour self contain"
-            ? "room & parlour self contain"
-            : property_type}
-        </p>
-        <h6 className="mb-3">₦{price}</h6>
+        <p>{title}</p>
+        <h6 className="mb-3">₦{price.toLocaleString()}</h6>
         <div className="address">
           <i className="bi bi-geo-alt"></i>
-          <span>
-            {address}
-          </span>
+          <span>{location}</span>
         </div>
 
         <div className="card-box">
-          <div className="bath">
+          {/* <div className="bath">
             <div className="bath-box">
               <FaBath className="bi" />
             </div>
-            <span>{bathrooms} bathrooms</span>
-          </div>
+            <span>{bathrooms}</span>
+          </div> */}
           <div className="bath">
             <div className="bath-box">
               <FaToilet className="bi" />
             </div>
-            <span>{toilets} toilets</span>
+
+            <span>
+              {toilets} {toilets > 1 ? "Toilets" : "Toilet"}
+            </span>
           </div>
         </div>
       </div>
@@ -106,7 +95,6 @@ const Card = ({ ...item }) => {
         </small>
       </div>
     </div>
-
   );
 };
 export default Card;

@@ -13,7 +13,6 @@ const LoadMore = ({ load, setLoad, visible, setVisible }: Props) => {
     setLoad(true);
     setTimeout(() => {
       setVisible((prevState) => prevState + 3);
-      // localStorage.setItem("visible", Number(visible) + 3);
       setLoad(false);
     }, 2000);
   };
