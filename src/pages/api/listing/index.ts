@@ -63,15 +63,7 @@ export default async function handler(
 
 const fetchListings = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const {
-      search,
-      property_type,
-      statename,
-      cityname,
-      toilets,
-      min_price,
-      max_price,
-    } = req.query;
+    const { search, property_type, min_price, max_price } = req.query;
 
     const page = parseInt(req.query.page as string, 10) || 1;
     const pageSize = parseInt(req.query.pageSize as string, 10) || 10;
@@ -89,18 +81,6 @@ const fetchListings = async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (property_type && property_type !== "0") {
       query.title = { $regex: new RegExp(property_type as string, "i") };
-    }
-
-    if (statename) {
-      query.statename = statename;
-    }
-
-    if (cityname) {
-      query.cityname = cityname;
-    }
-
-    if (toilets) {
-      query.toilets = parseInt(toilets as string, 10);
     }
 
     if (min_price || max_price) {

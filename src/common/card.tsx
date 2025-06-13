@@ -41,10 +41,11 @@ const Card = ({ ...item }) => {
 
   // send data to the details page
   const sendData = () => {
-    router.push({
-      pathname: `/listings/details`,
-      query: params,
-    });
+    // router.push({
+    //   pathname: `/listings/details`,
+    //   query: params,
+    // });
+    router.push(`/listings/${_id}`);
   };
 
   return (

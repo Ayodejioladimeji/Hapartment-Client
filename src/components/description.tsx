@@ -17,7 +17,7 @@ const Description = ({ item }) => {
     <div className="description">
       <div className="description-box">
         <h6>Property Location</h6>
-        <p>Location : {item.address}</p>
+        <p>Location : {item.location}</p>
       </div>
 
       <div className="description-box">

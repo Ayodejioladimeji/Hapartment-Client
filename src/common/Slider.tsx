@@ -27,7 +27,7 @@ export default function Slider({ images }) {
 
   return (
     <div className="container-slider">
-      {images.map((obj, index) => {
+      {images?.map((obj, index) => {
         console.log;
         return (
           <div
@@ -35,7 +35,7 @@ export default function Slider({ images }) {
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
             {/* <Image src={obj.url} height={100} width={100} alt="picture" priority /> */}
-            <img src={obj?.url} alt="property-image" />
+            <img src={obj} alt="property-image" />
           </div>
         );
       })}

@@ -39,6 +39,7 @@
     "react-transition-group": "^4.4.5",
     "react-whatsapp": "^0.3.0",
     "sass": "^1.57.1",
+    "sharp": "^0.34.2",
     "sitemap": "^7.1.1"
   },
   "devDependencies": {
