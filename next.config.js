@@ -10,9 +10,9 @@ const nextConfig = {
     domains: ["res.cloudinary.com", "images.nigeriapropertycentre.com"],
     // unoptimized: true,
   },
-  experimental: {
-    scrollRestoration: true,
-  },
+  // experimental: {
+  //   scrollRestoration: true,
+  // },
   // useFileSystemPublicRoutes: false,
   // distDir: "build",
   // trailingSlash: true,
