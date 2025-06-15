@@ -14,6 +14,7 @@ const Card = ({ ...item }) => {
   const {
     _id,
     toilets,
+    bathrooms,
     price,
     title,
     image,
@@ -32,6 +33,7 @@ const Card = ({ ...item }) => {
     title,
     price,
     toilets,
+    bathrooms,
     images: JSON.stringify(Images),
     agentName,
     agentPhones,
@@ -41,10 +43,6 @@ const Card = ({ ...item }) => {
 
   // send data to the details page
   const sendData = () => {
-    // router.push({
-    //   pathname: `/listings/details`,
-    //   query: params,
-    // });
     router.push(`/listings/${_id}`);
   };
 
@@ -79,21 +77,28 @@ const Card = ({ ...item }) => {
         </div>
 
         <div className="card-box">
-          {/* <div className="bath">
-            <div className="bath-box">
-              <FaBath className="bi" />
+          {bathrooms && (
+            <div className="bath">
+              <div className="bath-box">
+                <FaBath className="bi" />
+              </div>
+              <span>
+                {bathrooms} {bathrooms > 1 ? "Bathrooms" : "Bathroom"}
+              </span>
             </div>
-            <span>{bathrooms}</span>
-          </div> */}
-          <div className="bath">
-            <div className="bath-box">
-              <FaToilet className="bi" />
-            </div>
+          )}
 
-            <span>
-              {toilets} {toilets > 1 ? "Toilets" : "Toilet"}
-            </span>
-          </div>
+          {toilets && (
+            <div className="bath">
+              <div className="bath-box">
+                <FaToilet className="bi" />
+              </div>
+
+              <span>
+                {toilets} {toilets > 1 ? "Toilets" : "Toilet"}
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
