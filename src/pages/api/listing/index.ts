@@ -67,10 +67,9 @@ const fetchListings = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const totalCount = await Listing.countDocuments(query);
 
-    const listingsQuery = Listing.find(query) as mongoose.Query<
-      IListing[],
-      IListing
-    >;
+    const listingsQuery = Listing.find(query).sort(
+      "-createdAt"
+    ) as mongoose.Query<IListing[], IListing>;
 
     const listings = await listingsQuery
       .select("-listingUrl")

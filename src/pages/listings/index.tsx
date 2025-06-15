@@ -17,12 +17,11 @@ import Paginate from "@/components/pagination/Paginate";
 
 const Listings = () => {
   const { state, dispatch } = useContext(DataContext);
-  const { listings } = state;
+  const { listings, loading } = state;
   const [city, setCity] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [totalCount, setTotalCount] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(true);
   const PageSize = 48;
   const router = useRouter();
 
@@ -38,9 +37,6 @@ const Listings = () => {
 
   const fetchListings = useCallback(async () => {
     try {
-      dispatch({ type: ACTIONS.LOADING, payload: true });
-      setLoading(true);
-
       const queryParams = new URLSearchParams();
       const query = {
         page: page.toString(),
@@ -61,14 +57,11 @@ const Listings = () => {
 
       const res = await getDataApis(`/listing?${queryParams.toString()}`);
 
-      if (res?.status === 200 || res?.status === 201) {
-        dispatch({ type: ACTIONS.ALL_LISTINGS, payload: res?.data?.listings });
-        setTotalCount(res.data.totalCount || 0);
-      }
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res?.data?.listings });
+      setTotalCount(res.data.totalCount || 0);
     } catch (error) {
       console.error("Error fetching listings:", error);
     } finally {
-      setLoading(false);
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
   }, [
@@ -134,7 +127,7 @@ const Listings = () => {
   };
 
   return (
-    <>
+    <div>
       <Head>
         <title>Hapartment - Property Listings</title>
         <link rel="icon" href="/favicon.ico" />
@@ -255,16 +248,20 @@ const Listings = () => {
                 <div className="list-box">
                   <Placeholder />
                 </div>
-              ) : listings.length === 0 ? (
-                <div className="unavailable d-flex align-items-center justify-content-center">
-                  No available data
-                </div>
               ) : (
-                <div className="list-box">
-                  {listings.map((item) => (
-                    <Card {...item} key={item._id} />
-                  ))}
-                </div>
+                <>
+                  {listings?.length === 0 ? (
+                    <div className="unavailable d-flex align-items-center justify-content-center">
+                      No available data
+                    </div>
+                  ) : (
+                    <div className="list-box">
+                      {listings?.map((item) => (
+                        <Card {...item} key={item._id} />
+                      ))}
+                    </div>
+                  )}
+                </>
               )}
 
               {!loading && listings.length > 0 && totalCount > PageSize && (
@@ -276,7 +273,6 @@ const Listings = () => {
                     pageSize={PageSize}
                     onPageChange={handlePageChange}
                     loading={loading}
-                    setLoading={setLoading}
                   />
                 </div>
               )}
@@ -307,7 +303,7 @@ const Listings = () => {
       <Modal show={openModal} dialogClassName="advertise-modal">
         <AdvertiseModal setOpenModal={setOpenModal} />
       </Modal>
-    </>
+    </div>
   );
 };
 
