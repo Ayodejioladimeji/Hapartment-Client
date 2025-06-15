@@ -269,7 +269,7 @@ const Listings = () => {
               )}
 
               {!loading && listings.length > 0 && totalCount > PageSize && (
-                <div className="page-navigation mt-3">
+                <div className="page-navigation mt-5">
                   <Paginate
                     className="pagination-bar"
                     currentPage={Number(page)}
