@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 
 const Description = ({ item }) => {
   const router = useRouter();
+  const { id } = router.query;
 
   return (
     <div className="description">
@@ -37,7 +38,7 @@ const Description = ({ item }) => {
         <div className="share-box">
           <div>
             <FacebookShareButton
-              url={`https://www.hapartment.org/listings/${router.query.slug}`}
+              url={`https://www.hapartment.org/listings/${id}`}
               quote={`${item.property_type} - ${item.description} - Price : ${item.price}`}
               hashtag={"#hapartment"}
             >
@@ -47,7 +48,7 @@ const Description = ({ item }) => {
 
           <div className="mx-3">
             <WhatsappShareButton
-              url={`https://www.hapartment.org/listings/${router.query.slug}`}
+              url={`https://www.hapartment.org/listings/${id}`}
               title="Hi, you may be interested in this property on Hapartment"
               separator="-"
             >
@@ -57,7 +58,7 @@ const Description = ({ item }) => {
 
           <div>
             <TwitterShareButton
-              url={`https://www.hapartment.org/listings/${router.query.slug}`}
+              url={`https://www.hapartment.org/listings/${id}`}
               title={`${item.property_type} - ${item.description} - Price : ${item.price}`}
             >
               <TwitterIcon size={32} round />

@@ -24,6 +24,7 @@ const ListingDetails = ({ listing }: any) => {
     title,
     price,
     toilets,
+    bathrooms,
     Images: images,
     image,
     agentName,
@@ -105,10 +106,20 @@ const ListingDetails = ({ listing }: any) => {
               </div>
 
               <div className="details">
-                <div className="details-box">
-                  <FaToilet className="details-icons" />
-                  {toilets} Toilets
-                </div>
+                {toilets && (
+                  <div className="details-box">
+                    <FaToilet className="details-icons" />
+                    {toilets} {toilets.length > 1 ? "Toilets" : "Toilet"}
+                  </div>
+                )}
+
+                {bathrooms && (
+                  <div className="details-box">
+                    <FaToilet className="details-icons" />
+                    {bathrooms}{" "}
+                    {bathrooms.length > 1 ? "Bathrooms" : "Bathroom"}
+                  </div>
+                )}
               </div>
 
               <div className="details-tab mt-5">
