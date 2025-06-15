@@ -6,6 +6,10 @@
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; // ensures all cards are same height
 
   .card-image {
     border: 1px solid var(--border-color);
@@ -37,6 +41,7 @@
 
   .card-content {
     margin-top: 10px;
+    flex-grow: 1; // allows this section to take up extra space
 
     h6 {
       color: var(--black-color);
@@ -76,6 +81,7 @@
     .card-box {
       display: flex;
       margin-top: 15px;
+      min-height: 40px; // reserve space even if no toilets/bathrooms
 
       .bath {
         display: flex;
@@ -109,7 +115,9 @@
   }
 
   .card-footer {
+    margin-top: auto;
     text-align: center;
+
     small {
       color: var(--text-color);
       font-size: var(--p-regular);

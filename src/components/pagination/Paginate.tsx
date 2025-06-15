@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import classnames from "classnames";
 import { UsePagination, DOTS } from "./Usepagination";
 import { useRouter } from "next/router";
 import { screenPixels } from "@/utils/screenpx";
+import { ACTIONS } from "@/store/Actions";
+import { DataContext } from "@/store/GlobalState";
 
 //
 
@@ -14,11 +16,10 @@ const Paginate = (props) => {
     currentPage,
     pageSize,
     className,
-    loading,
-    setLoading,
   } = props;
   const [device, setDevice] = useState(false);
   const router = useRouter();
+  const { state, dispatch } = useContext(DataContext);
 
   useEffect(() => {
     screenPixels("375px", setDevice);
@@ -36,25 +37,25 @@ const Paginate = (props) => {
   }
 
   const onNext = () => {
-    setLoading(true);
+    dispatch({ type: ACTIONS.LOADING, payload: true });
     onPageChange(currentPage + 1);
     router.push(`${router.route}?page=${currentPage + 1}`);
   };
 
   const onPrevious = () => {
-    setLoading(true);
+    dispatch({ type: ACTIONS.LOADING, payload: true });
     onPageChange(currentPage - 1);
     router.push(`${router.route}?page=${currentPage - 1}`);
   };
 
   const numChange = (pageNumber: number) => {
-    setLoading(true);
+    dispatch({ type: ACTIONS.LOADING, payload: true });
     onPageChange(pageNumber);
     router.push(`${router.route}?page=${pageNumber}`);
   };
 
   let lastPage =
-    !loading &&
+    !state?.loading &&
     currentPage !== undefined &&
     paginationRange[paginationRange?.length - 1];
 
