@@ -14,6 +14,7 @@ import banner5 from "../../../public/images/banner5.jpeg";
 import { useRouter } from "next/router";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
+import MapBox from "@/components/mapbox";
 
 const ListingDetails = ({ listing }: any) => {
   const router = useRouter();
@@ -93,6 +94,7 @@ const ListingDetails = ({ listing }: any) => {
                     {location}
                   </div>
                 </div>
+
                 <div className="col-md-4">
                   <div className="price float-md-end float-sm-start">
                     ₦ {price?.toLocaleString()}
@@ -135,6 +137,16 @@ const ListingDetails = ({ listing }: any) => {
                           Description
                         </a>
                       </li>
+
+                      <li className="nav-item">
+                        <a
+                          className="nav-link"
+                          data-bs-toggle="tab"
+                          href="#map"
+                        >
+                          Map
+                        </a>
+                      </li>
                     </ul>
                   </div>
 
@@ -142,6 +154,12 @@ const ListingDetails = ({ listing }: any) => {
                     <div className="tab-pane active" id="description">
                       <div className="package-box mt-4 px-4 py-3">
                         <Description item={listing?.listing} />
+                      </div>
+                    </div>
+
+                    <div className="tab-pane" id="map">
+                      <div className="package-box mt-4 px-4 py-3">
+                        <MapBox address={location} />
                       </div>
                     </div>
                   </div>
