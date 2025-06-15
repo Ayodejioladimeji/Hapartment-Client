@@ -367,13 +367,15 @@
 
     .agent-center {
       display: flex;
-      align-items: center;
+      align-items: flex-start; // align top if text wraps
 
       .agent-image {
+        flex-shrink: 0;
         width: 50px;
         height: 50px;
         border-radius: 8px;
         border: 1px solid var(--primary-color);
+        overflow: hidden;
 
         @media (max-width: 1200px) and (min-width: 991px) {
           display: none;
@@ -382,24 +384,29 @@
         img {
           width: 100% !important;
           height: 100% !important;
-          border-radius: 8px;
-          border: 1px solid var(--primary-color);
           object-fit: cover;
+          border-radius: 8px;
         }
       }
 
       .agent-content {
         margin-left: 10px;
+        flex-grow: 1;
+        max-width: calc(100% - 60px); // 50px image + margin
 
         h4 {
           margin: 0;
           padding: 0;
           color: var(--primary-color);
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          overflow: hidden;
-          line-height: 25px;
           font-weight: normal;
+          word-break: break-word; // ✅ wrap long words/names
+          white-space: normal; // ✅ allow line break
+          line-height: 20px;
+        }
+
+        .btn {
+          margin-top: 4px;
+          font-size: 14px;
         }
       }
     }

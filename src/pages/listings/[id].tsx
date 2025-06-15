@@ -189,8 +189,9 @@ const ListingDetails = ({ listing }: any) => {
                         height={100}
                       />
                     </div>
+
                     <div className="agent-content">
-                      <h4>{agentName}</h4>
+                      <h4 className="mb-0">{agentName}</h4>
                       <ReactWhatsapp className="btn" {...buttonProps}>
                         <i className="bi bi-whatsapp"></i>
                         {agentPhones[0]}

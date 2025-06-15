@@ -17,8 +17,7 @@ import Paginate from "@/components/pagination/Paginate";
 
 const Listings = () => {
   const { state, dispatch } = useContext(DataContext);
-  const [listings, setListings] = useState<any[]>([]);
-  const { checkload, callback } = state;
+  const { listings } = state;
   const [city, setCity] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -63,7 +62,7 @@ const Listings = () => {
       const res = await getDataApis(`/listing?${queryParams.toString()}`);
 
       if (res?.status === 200 || res?.status === 201) {
-        setListings(res.data.listings || []);
+        dispatch({ type: ACTIONS.ALL_LISTINGS, payload: res?.data?.listings });
         setTotalCount(res.data.totalCount || 0);
       }
     } catch (error) {
