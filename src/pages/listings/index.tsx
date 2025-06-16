@@ -2,7 +2,6 @@ import { useState, useContext, useEffect, useCallback } from "react";
 import Card from "@/common/card";
 import Image from "next/image";
 import banner1 from "/public/images/banner1.jpeg";
-import LoadMore from "@/common/loadmore"; // This might not be needed anymore with pagination
 import Goback from "@/common/goback";
 import Head from "next/head";
 import Modalsearch from "@/components/modalsearch";
@@ -22,7 +21,6 @@ const Listings = () => {
   const [error, setError] = useState<string>("");
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [totalCount, setTotalCount] = useState<number>(0);
-  const [filterModal, setFilterModal] = useState(false)
   const PageSize = 48; 
   const router = useRouter();
 
