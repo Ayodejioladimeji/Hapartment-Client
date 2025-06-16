@@ -2,7 +2,7 @@ import { useState, useContext, useEffect, useCallback } from "react";
 import Card from "@/common/card";
 import Image from "next/image";
 import banner1 from "/public/images/banner1.jpeg";
-import LoadMore from "@/common/loadmore";
+import LoadMore from "@/common/loadmore"; // This might not be needed anymore with pagination
 import Goback from "@/common/goback";
 import Head from "next/head";
 import Modalsearch from "@/components/modalsearch";
@@ -22,45 +22,43 @@ const Listings = () => {
   const [error, setError] = useState<string>("");
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [totalCount, setTotalCount] = useState<number>(0);
-  const PageSize = 48;
+  const [filterModal, setFilterModal] = useState(false)
+  const PageSize = 48; 
   const router = useRouter();
 
   const {
     page = "1",
-    search,
-    property_type,
-    min_price,
-    max_price,
-    sort,
-    sorting,
+    search = "",
+    property_type = "",
+    min_price = "",
+    max_price = "",
+    sort = "", // This param is not currently used by your select, `sorting` is. Keeping for completeness.
+    sorting = "",
   } = router.query;
 
   const fetchListings = useCallback(async () => {
+    dispatch({ type: ACTIONS.LOADING, payload: true }); // Set loading to true at the start of fetch
     try {
       const queryParams = new URLSearchParams();
-      const query = {
-        page: page.toString(),
-        pageSize: PageSize.toString(),
-        search,
-        property_type,
-        min_price,
-        max_price,
-        sort,
-        sorting,
-      };
+      if (page) queryParams.append("page", page as string);
+      if (PageSize) queryParams.append("pageSize", PageSize.toString()); // Ensure pageSize is always sent
+      if (search) queryParams.append("search", search as string);
+      if (property_type) queryParams.append("property_type", property_type as string);
+      if (min_price) queryParams.append("min_price", min_price as string);
+      if (max_price) queryParams.append("max_price", max_price as string);
+      if (sort) queryParams.append("sort", sort as string);
+      if (sorting) queryParams.append("sorting", sorting as string); // Add sorting parameter
 
-      for (const key in query) {
-        if (query[key]) {
-          queryParams.append(key, query[key] as string);
-        }
-      }
+      console.log("Fetching listings with query:", queryParams.toString()); // Log the actual query
 
       const res = await getDataApis(`/listing?${queryParams.toString()}`);
 
-      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res?.data?.listings });
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: res?.data?.listings || [] });
       setTotalCount(res.data.totalCount || 0);
     } catch (error) {
       console.error("Error fetching listings:", error);
+      dispatch({ type: ACTIONS.GET_LISTINGS, payload: [] }); // Clear listings on error
+      setTotalCount(0);
     } finally {
       dispatch({ type: ACTIONS.LOADING, payload: false });
     }
@@ -73,26 +71,33 @@ const Listings = () => {
     sort,
     sorting,
     dispatch,
+    PageSize // Include PageSize in dependencies as it's used
   ]);
 
   useEffect(() => {
-    fetchListings();
-  }, [fetchListings]);
+    // Only fetch if router.isReady to ensure query params are available
+    if (router.isReady) {
+      fetchListings();
+    }
+  }, [fetchListings, router.isReady]); // Depend on router.isReady
 
   const updateQuery = (params: Record<string, any>) => {
-    const currentQuery = { ...router.query, ...params };
+    const currentQuery = { ...router.query };
 
-    // Clean undefined or "0" values (used to reset filters)
-    Object.keys(currentQuery).forEach((key) => {
-      if (currentQuery[key] === undefined || currentQuery[key] === "0") {
-        delete currentQuery[key];
+    // Apply new parameters
+    for (const key in params) {
+      const value = params[key];
+      if (value === undefined || value === null || value === "" || value === "0") {
+        delete currentQuery[key]; // Remove if undefined, null, empty string, or "0"
+      } else {
+        currentQuery[key] = value;
       }
-    });
+    }
 
     router.push({
       pathname: router.pathname,
       query: currentQuery,
-    });
+    }, undefined, { shallow: true }); // Use shallow routing for client-side transitions
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -111,14 +116,14 @@ const Listings = () => {
   ) => {
     updateQuery({
       property_type: e.target.value === "0" ? undefined : e.target.value,
-      page: 1,
+      page: 1, // Reset to page 1 when filter changes
     });
   };
 
   const handleSortingChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     updateQuery({
       sorting: e.target.value === "0" ? undefined : e.target.value,
-      page: 1,
+      page: 1, // Reset to page 1 when sort changes
     });
   };
 
@@ -140,7 +145,6 @@ const Listings = () => {
           name="description"
           content="Hapartment provides a secure and reliable digital marketplace for renting apartments."
         />
-        {/* Other meta tags omitted for brevity */}
       </Head>
 
       <section className="white search-listing mt-5">
@@ -171,14 +175,6 @@ const Listings = () => {
                         <button type="submit" className="btn hero-btn">
                           Search
                         </button>
-                        {/* <button
-                          type="button"
-                          className="btnfilteroptions"
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"
-                        >
-                          Filter Options
-                        </button> */}
                       </div>
                     </div>
                   </div>
@@ -201,9 +197,8 @@ const Listings = () => {
             <div>
               {loading
                 ? "Loading results"
-                : `Showing ${listings?.length} of ${totalCount} result${
-                    listings?.length !== 1 ? "s" : ""
-                  }`}
+                : `Showing ${listings?.length} of ${totalCount} result${listings?.length !== 1 ? "s" : ""
+                }`}
             </div>
 
             <div className="filter-container">
@@ -211,7 +206,7 @@ const Listings = () => {
                 <select
                   className="form-select"
                   onChange={handlePropertyTypeChange}
-                  value={property_type || "0"}
+                  value={property_type}
                 >
                   <option value="0">All Listings</option>
                   <option value="Single Room">Single Room</option>
@@ -281,7 +276,6 @@ const Listings = () => {
         </div>
       </section>
 
-      {/* Modal for filter */}
       <div className="modal fade" id="exampleModal" tabIndex={-1}>
         <div className="modal-dialog">
           <div className="modal-content">

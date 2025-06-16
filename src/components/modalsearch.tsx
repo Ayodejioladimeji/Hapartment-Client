@@ -88,36 +88,6 @@ const Modalsearch = () => {
             onChange={handleChange}
             className="form-select "
             aria-label="Default select example"
-            name="bathrooms"
-            value={bathrooms}
-          >
-            <option defaultValue="">Choose bathroom</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5+">5+</option>
-          </select>
-
-          <select
-            onChange={handleChange}
-            className="form-select "
-            aria-label="Default select example"
-            name="toilets"
-            value={toilets}
-          >
-            <option defaultValue="">Choose toilet</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5+">5+</option>
-          </select>
-
-          <select
-            onChange={handleChange}
-            className="form-select "
-            aria-label="Default select example"
             name="statename"
             value={statename}
           >
@@ -126,40 +96,6 @@ const Modalsearch = () => {
               return (
                 <option key={index} value={item.state}>
                   {item.state}
-                </option>
-              );
-            })}
-          </select>
-
-          <select
-            onChange={handleChange}
-            className="form-select "
-            aria-label="Default select example"
-            name="cityname"
-            value={cityname}
-          >
-            <option defaultValue="">Select city</option>
-            {city?.map((item, index) => {
-              return (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              );
-            })}
-          </select>
-
-          <select
-            onChange={handleChange}
-            className="form-select "
-            aria-label="Default select example"
-            name="furnishing"
-            value={furnishing}
-          >
-            <option defaultValue="">Choose furnishing</option>
-            {furnishingdata.map((item) => {
-              return (
-                <option key={item.id} value={item.value}>
-                  {item.value}
                 </option>
               );
             })}
