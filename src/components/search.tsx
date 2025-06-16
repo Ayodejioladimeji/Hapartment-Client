@@ -17,45 +17,70 @@ const initialState = {
 
 const Search = () => {
   const [values, setValues] = useState(initialState);
-  const [city, setCity] = useState([]);
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
+  const [city, setCity] = useState<string[]>([]);
+  const [minPrice, setMinPrice] = useState<string>("");
+  const [maxPrice, setMaxPrice] = useState<string>("");
   const { state, dispatch } = useContext(DataContext);
   const router = useRouter();
   const { property_type, search } = values;
 
-  // handleChange method
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
 
-  // get the city method
   useEffect(() => {
-    statesdata.filter((item) => {
-      if (item.state === search) {
-        setCity(item.lgas);
+    if (search) {
+      const selectedState = statesdata.find((item) => item.state === search);
+      if (selectedState) {
+        setCity(selectedState.lgas);
+      } else {
+        setCity([]);
       }
-    });
+    } else {
+      setCity([]);
+    }
   }, [search]);
 
-  // handlefilter method
-  const handleFilter = async (e:any) => {
+  const handleFilter = async (e: React.FormEvent) => {
     e.preventDefault();
-    const newData = {
-      property_type: property_type.toLowerCase(),
-      search: search.toLowerCase(),
-      min_price: removeNum(minPrice),
-      max_price: removeNum(maxPrice),
-      page: 1,
-    };
+
+    const queryParams: Record<string, string | number | undefined> = {};
+
+    if (property_type && property_type !== "Select property type") {
+      queryParams.property_type = property_type.toLowerCase();
+    }
+
+    if (search && search !== "Select state") {
+      queryParams.search = search.toLowerCase();
+    }
+
+    const parsedMinPrice = removeNum(minPrice);
+    if (parsedMinPrice && parsedMinPrice > 0) {
+      queryParams.min_price = parsedMinPrice;
+    }
+
+    const parsedMaxPrice = removeNum(maxPrice);
+    if (parsedMaxPrice && parsedMaxPrice > 0) {
+      queryParams.max_price = parsedMaxPrice;
+    }
+
+    queryParams.page = 1;
+
+    const filteredQueryParams: Record<string, string | number> = {};
+    for (const key in queryParams) {
+      if (queryParams[key] !== undefined) {
+        filteredQueryParams[key] = queryParams[key] as string | number;
+      }
+    }
+
+    console.log("Navigating to listings with query:", filteredQueryParams);
 
     router.push({
       pathname: "/listings",
-      query: newData,
+      query: filteredQueryParams,
     });
   };
-  //
 
   return (
     <section className="white main-search">
@@ -84,7 +109,7 @@ const Search = () => {
                     name="property_type"
                     value={property_type}
                   >
-                    <option defaultValue="">Select property type</option>
+                    <option value="">Select property type</option>
                     {propertyData.map((item) => {
                       return (
                         <option key={item.id} value={item.value}>
@@ -104,7 +129,7 @@ const Search = () => {
                     name="search"
                     value={search}
                   >
-                    <option defaultValue="">Select state</option>
+                    <option value="">Select state</option>
                     {statesdata.map((item, index) => {
                       return (
                         <option key={index} value={item.state}>
@@ -139,7 +164,7 @@ const Search = () => {
                     data-aos-once="true"
                     data-aos-delay="1800"
                   >
-                    <button className="btn">
+                    <button type="submit" className="btn">
                       Search
                       <i className="bi bi-arrow-right-circle"></i>
                     </button>
