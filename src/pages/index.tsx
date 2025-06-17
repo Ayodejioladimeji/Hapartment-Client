@@ -1,3 +1,4 @@
+import Blog from "@/components/blog/blog";
 import Connect from "@/components/connect";
 import Different from "@/components/different";
 import Discover from "@/components/discover";
@@ -65,11 +66,11 @@ export default function index() {
       <Connect />
       <Steps />
       <Search />
-      {/* <Discover /> */}
       <Different />
       <Property />
       <SafetyTips />
       <Places />
+      <Blog />
       <Download />
     </>
   );

@@ -106,6 +106,10 @@ section {
       color: var(--primary-color);
     }
 
+    &.coloured {
+      color: var(--primary-color);
+    }
+
     @media (min-width: 1400px) {
       width: 70%;
       line-height: 45px;

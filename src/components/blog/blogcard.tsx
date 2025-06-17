@@ -23,7 +23,7 @@ const BlogCard = (props) => {
           />
         </div>
         <div className="blog-content">
-          <p className="blog-heading">{props?.title?.slice(0, 28) + "..."}</p>
+          <p className="blog-heading">{props?.title}</p>
           <p className="blog-subheading">
             {props?.content?.slice(0, 50) + "..."}
           </p>
