@@ -32,9 +32,14 @@ const BlogPage: FC = () => {
               <Breadcumb title="Blogs" />
             </div>
 
-            <h1>Insights and Stories from StitchPafet</h1>
+            <h1 className="coloured">
+              Renting Made Easy: Tips & Trends from the Hapartment Blog
+            </h1>
             <p>
-              {`Explore the latest updates, styling tips, and customer success stories from StitchPafet. Dive into our blogs to discover how we’re making a difference in the world of fabrics and fashion.`}
+              Discover expert advice, market trends, and helpful tips to
+              navigate the rental world with ease. Whether you're searching for
+              your next home or looking to make the most of your current space,
+              our blog is your go-to resource.
             </p>
           </div>
         </header>

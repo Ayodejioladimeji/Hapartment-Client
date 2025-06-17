@@ -9,7 +9,7 @@ const BlogCard = (props) => {
   //
   return (
     <div
-      className="col-xl-3 col-lg-4 col-md-6 col-sm-6"
+      className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-5"
       onClick={() => router.push(props?.link)}
     >
       <div className="blog-card">

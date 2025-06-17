@@ -112,15 +112,8 @@ const Footer = () => {
               <li>
                 <Link href="/advertise">Advertise With Us</Link>
               </li>
-              <li
-                onClick={() =>
-                  router.push({
-                    pathname: "/listings",
-                    query: { status: "all", location: "all" },
-                  })
-                }
-              >
-                <a>Search Listings</a>
+              <li>
+                <Link href="/blogs">Blogs</Link>
               </li>
               <li>
                 <Link href="/watchdemo">Watch a Demo</Link>

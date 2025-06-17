@@ -5,10 +5,10 @@
 .blog-card {
   box-shadow: 1.5px 1.5px 16px 0px rgba(113, 113, 115, 0.1);
   background: white;
-  margin-bottom: 40px;
   cursor: pointer;
   border: 1px solid var(--border-color);
   min-height: 100%;
+  margin-bottom: 40px !important;
 
   .blog-image {
     height: 250px;
