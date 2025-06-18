@@ -11,14 +11,14 @@ const BlogPage: FC = () => {
       <MetaTags
         title="How to Decode Rental Ads"
         description="Embarking on the quest for a new living space can feel like stepping into a vast, exciting, but sometimes overwhelming world. Whether you're a first-time renter or a seasoned pro looking for a change, the initial step often involves typing those simple, yet powerful, phrases into a search engine. You might start with 'apartment for rent' or perhaps the more general 'house for rent,' and instantly, a universe of possibilities unfolds before you."
-        image="/images/blog-rental-ads.jpg"
+        image="/listings/one.jpg"
         canonicalUrl="https://www.hapartment.com/blogs/how-to-decode-rental-ads"
       />
 
       <div className="guide-container">
         <header
           className="guide-header"
-          style={{ backgroundImage: `url("/images/blog-rental-ads.jpg")` }}
+          style={{ backgroundImage: `url("/listings/one.jpg")` }}
         >
           <div className="container">
             <div className="heading-section">
