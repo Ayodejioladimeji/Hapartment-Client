@@ -17,15 +17,15 @@ const BlogPage: FC = () => {
   return (
     <>
       <MetaTags
-        title="Blogs | Affordable fabrics online"
-        description="Explore the latest updates, styling tips, and customer success stories from StitchPafet. Dive into our blogs to discover how we’re making a difference in the world of fabrics and fashion."
-        image="/images/fabric13.jpeg"
-        canonicalUrl="https://www.stitchpafet.com/blogs"
+        title="Blogs | Hapartment Blog: Your Guide to Effortless Renting"
+        description="Discover expert advice, market trends, and helpful tips to navigate the rental world with ease. Whether you're searching for your next home or looking to make the most of your current space, our blog is your go-to resource."
+        image="/listings/five.jpg"
+        canonicalUrl="https://www.hapartment.org/blogs"
       />
       <div className="guide-container">
         <header
           className="guide-header"
-          style={{ backgroundImage: `url("/images/fabric13.jpeg")` }}
+          style={{ backgroundImage: `url("/listings/five.jpeg")` }}
         >
           <div className="container">
             <div className="heading-section">
