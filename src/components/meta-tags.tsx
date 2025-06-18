@@ -27,11 +27,11 @@ const MetaTags = (props: any) => {
         rel="canonical"
         href={props?.canonicalUrl || process.env.NEXT_PUBLIC_CLIENT_URL}
       />
-      <title>{`Stitchpafet - ${props.title}`}</title>
-      <meta name="title" content={`Stitchpafet - ${props.title}`} />
+      <title>{`Hapartment - ${props.title}`}</title>
+      <meta name="title" content={`Hapartment - ${props.title}`} />
       <meta
         name="description"
-        content={props?.description || "Welcome to Stitchpafet"}
+        content={props?.description || "Welcome to Hapartment"}
       />
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,24 +39,24 @@ const MetaTags = (props: any) => {
         name="google-adsense-account"
         content="ca-pub-7788679556900505"
       ></meta>
-      <meta property="og:title" content={`Stitchpafet - ${props.title}`} />
+      <meta property="og:title" content={`Hapartment - ${props.title}`} />
       <meta
         property="og:description"
-        content={props?.description || "Welcome to Stitchpafet"}
+        content={props?.description || "Welcome to Hapartment"}
       />
 
       <meta property="og:image" content={props?.image} />
       <meta property="og:type" content="website" />
 
       <meta property="og:url" content={process.env.NEXT_PUBLIC_CLIENT_URL} />
-      <meta name="twitter:card" content="Stitchpafet" />
+      <meta name="twitter:card" content="Hapartment" />
 
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="language" content="English" />
-      <meta name="author" content="Stitchpafet" />
+      <meta name="author" content="Hapartment" />
 
-      <meta property="og:site_name" content="Stitchpafet" />
-      <meta name="twitter:image:alt" content="Stitchpafet" />
+      <meta property="og:site_name" content="Hapartment" />
+      <meta name="twitter:image:alt" content="Hapartment" />
     </Head>
   );
 };
