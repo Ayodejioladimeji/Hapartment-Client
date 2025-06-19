@@ -21,6 +21,7 @@ const ListingDetails = ({ listing }: any) => {
   const [openModal, setOpenModal] = useState(false);
 
   const {
+    _id,
     location,
     title,
     price,
@@ -35,10 +36,10 @@ const ListingDetails = ({ listing }: any) => {
 
   const buttonProps: any = {
     number: agentPhones[0],
-    message: `Hello, I'm interested in your property on Hapartment - ${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/listings/${listing._id}`,
+    message: `Hello, I'm interested in your property on Hapartment - ${process.env.NEXT_PUBLIC_CLIENT_URL}/listings/${_id}`,
   };
 
-  const canonicalURL = `${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/listings/${listing._id}`;
+  const canonicalURL = `${process.env.NEXT_PUBLIC_CLIENT_URL}/listings/${listing._id}`;
 
   return (
     <>
