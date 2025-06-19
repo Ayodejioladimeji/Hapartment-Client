@@ -31,7 +31,7 @@ export default function Slider({ images }) {
         console.log;
         return (
           <div
-            key={obj.id}
+            key={index}
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
             {/* <Image src={obj.url} height={100} width={100} alt="picture" priority /> */}

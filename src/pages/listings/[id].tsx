@@ -41,6 +41,8 @@ const ListingDetails = ({ listing }: any) => {
 
   const canonicalURL = `${process.env.NEXT_PUBLIC_CLIENT_URL}/listings/${listing._id}`;
 
+  console.log(title, location, price, image)
+
   return (
     <>
       <Head>

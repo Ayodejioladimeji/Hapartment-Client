@@ -46,7 +46,6 @@ const Listing = () => {
             if (sort) queryParams.append("sort", sort as string);
             if (sorting) queryParams.append("sorting", sorting as string); // Add sorting parameter
 
-            console.log("Fetching listings with query:", queryParams.toString()); // Log the actual query
 
             const res = await getDataApis(`/listing?${queryParams.toString()}`);
 
