@@ -1,8 +1,5 @@
-import { ACTIONS } from "@/store/Actions";
-import { DataContext } from "@/store/GlobalState";
 import { useRouter } from "next/router";
-import { useContext } from "react";
-import * as gtag from "../lib/gtag";
+
 
 const Property = () => {
   const router = useRouter();

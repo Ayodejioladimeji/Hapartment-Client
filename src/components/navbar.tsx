@@ -1,12 +1,8 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { useContext } from "react";
-import { DataContext } from "@/store/GlobalState";
-import { ACTIONS } from "@/store/Actions";
-import * as gtag from "../lib/gtag";
+
 //
 
 function Navbars() {

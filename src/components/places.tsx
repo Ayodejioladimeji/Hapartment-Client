@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import placesImg1 from "../../public/images/places-1.svg";
 import placesImg2 from "../../public/images/places-2.svg";
-import * as gtag from "../lib/gtag";
 import { useContext } from "react";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
