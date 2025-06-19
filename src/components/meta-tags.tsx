@@ -35,10 +35,7 @@ const MetaTags = (props: any) => {
       />
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta
-        name="google-adsense-account"
-        content="ca-pub-7788679556900505"
-      ></meta>
+      
       <meta property="og:title" content={`Hapartment - ${props.title}`} />
       <meta
         property="og:description"

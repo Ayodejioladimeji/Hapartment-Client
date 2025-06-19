@@ -36,6 +36,15 @@ export default function Document() {
           rel="stylesheet"
         />
         <link rel="manifest" href="/site.webmanifest" />
+
+        <meta
+          name="google-site-verification"
+          content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
+        />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-7788679556900505"
+        ></meta>
       </Head>
       <body>
         <Main />
