@@ -41,10 +41,8 @@ export default function Document() {
           name="google-site-verification"
           content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
         />
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-7788679556900505"
-        ></meta>
+
+        <meta name="google-adsense-account" content="ca-pub-6391913781421412"></meta>
       </Head>
       <body>
         <Main />
