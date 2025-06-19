@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import heroImg from "../../public/images/hero-image.svg";
-import { ACTIONS } from "@/store/Actions";
-import { DataContext } from "@/store/GlobalState";
-import * as gtag from "../lib/gtag";
 
 //
 
