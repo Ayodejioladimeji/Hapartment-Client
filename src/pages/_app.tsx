@@ -83,20 +83,6 @@ export default function App({ Component, pageProps }) {
 
       <Script
         id="ms-clarity"
-        dangerouslySetInnerHTML={{
-          __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gtag.GA_TRACKING_ID}', {
-                page_path: window.location.pathname,
-              });
-            `,
-        }}
-      />
-
-      <Script
-        id="ms-clarity"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -107,11 +93,6 @@ export default function App({ Component, pageProps }) {
       })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_KEY}")`,
         }}
       ></Script>
-
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
 
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
