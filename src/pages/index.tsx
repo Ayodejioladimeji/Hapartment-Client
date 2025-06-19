@@ -14,7 +14,7 @@ import Head from "next/head";
 export default function index() {
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Hapartment - Homepage</title>
         <link rel="icon" href="/favicon.ico" />
         <link
@@ -60,7 +60,7 @@ export default function index() {
           content="Hapartment Digital Marketplace"
         />
         <meta name="twitter:image:alt" content="Hapartment" />
-      </Head>
+      </Head> */}
 
       <Hero />
       <Connect />

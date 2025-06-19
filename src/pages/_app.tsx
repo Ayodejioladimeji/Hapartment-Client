@@ -6,7 +6,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Head from "next/head";
-import * as gtag from "../lib/gtag";
 import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
@@ -16,22 +15,12 @@ export default function App({ Component, pageProps }) {
     Aos.init({ duration: 600 });
   }, []);
 
-  // // Analytics
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
 
   //
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="google-site-verification"
@@ -79,7 +68,7 @@ export default function App({ Component, pageProps }) {
           content="Hapartment Digital Marketplace"
         />
         <meta name="twitter:image:alt" content="Hapartment" />
-      </Head>
+      </Head> */}
 
       <Script
         id="ms-clarity"
