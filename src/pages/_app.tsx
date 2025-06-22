@@ -20,55 +20,6 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      {/* <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="google-site-verification"
-          content="vN0oQ_7GfBdOye17B6gsByAeSRHS1UE47iqXKj0d9ak"
-        />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/"
-          key="canonical"
-        />
-        <meta
-          name="description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
-        />
-        <meta
-          name="keywords"
-          content="Hapartment digital marketplace,Hapartment,Available apartments,Apartment for rent,Available apartment near me,Home for rent near me, hapartment, real estate, agents, landlord, tenant, rentingwebsite, apartment, renthouse, leasinghouse "
-        />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta name="title" content="Hapartment-Homepage" />
-        <meta property="og:title" content="Hapartment - Homepage" />
-        <meta
-          property="og:description"
-          content="Hapartment is bringing agents with renters together by providing them with the simplest and most cost-effective route to renting properties online"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
-        />
-        <meta property="og:type" content="website" />
-
-        <meta property="og:url" content="https://www.hapartment.org/" />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-        <meta name="twitter:image:alt" content="Hapartment" />
-      </Head> */}
 
       <Script
         id="ms-clarity"
@@ -94,6 +45,24 @@ export default function App({ Component, pageProps }) {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6391913781421412"
         crossOrigin="anonymous"
       ></Script>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Hapartment",
+            url: "https://www.hapartment.org",
+            logo: "https://res.cloudinary.com/devsource/image/upload/v1671309144/hapartment/logo512_otvwxg.png",
+            sameAs: [
+              "https://web.facebook.com/hapartmentdigitalmarketplace/",
+              "https://x.com/Hapartment11?t=cmOAR5aAypWeGzbLvebt-A&s=09",
+              "https://instagram.com/hapartment",
+            ],
+          }),
+        }}
+      />
 
       <DataProvider>
         <Layout>
