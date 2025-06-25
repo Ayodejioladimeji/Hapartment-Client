@@ -50,7 +50,7 @@ const Card = ({ ...item }) => {
     <div className="card" onClick={sendData}>
       <div className="card-image">
         <Image
-          src={image}
+          src={image || "/images/image-placeholder.png"}
           alt="card-property"
           width={100}
           height={100}
