@@ -35,7 +35,7 @@ export default function Slider({ images }) {
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
             {/* <Image src={obj.url} height={100} width={100} alt="picture" priority /> */}
-            <img src={obj} alt="property-image" />
+            <img src={obj || "/images/image-placeholder.png"} alt="property-image" />
           </div>
         );
       })}
