@@ -3,6 +3,7 @@
 import connectDB from "../utils/connectDB";
 import { NextApiRequest, NextApiResponse } from "next";
 import Listing, { IListing } from "../models/listingModel";
+import { deleteImagesWithFilename } from "../utils/deleteCloudinaryImages";
 import mongoose from "mongoose";
 
 connectDB();
@@ -15,6 +16,9 @@ export default async function handler(
     case "GET":
       await fetchListings(req, res);
       break;
+    case "DELETE":
+      await deleteListing(req, res);
+      break;  
     default:
       res.status(405).json({ err: "Method Not Allowed" });
       break;
@@ -89,5 +93,34 @@ const fetchListings = async (req: NextApiRequest, res: NextApiResponse) => {
     return res
       .status(500)
       .json({ message: error.message || "Internal Server Error" });
+  }
+};
+
+const deleteListing = async (req: NextApiRequest, res: NextApiResponse) => {
+  const { id } = req.query;
+
+  if (!id || typeof id !== 'string') {
+    return res.status(400).json({ message: 'Missing or invalid listing ID' });
+  }
+
+  try {
+    const listing = await Listing.findById(id).lean();
+    if (!listing) {
+      return res.status(404).json({ message: 'Listing not found' });
+    }
+
+    const imageUrl: string = listing?.image;
+    const fileName = imageUrl.split('/').pop()?.split('-').slice(-1)[0];
+
+    if (fileName) {
+      await deleteImagesWithFilename(fileName);
+    }
+
+    await Listing.findByIdAndDelete(id);
+
+    res.status(200).json({ message: 'Listing and related images deleted' });
+  } catch (error: any) {
+    console.error("Error in deleteListing:", error);
+    return res.status(500).json({ message: error.message || "Internal Server Error" });
   }
 };

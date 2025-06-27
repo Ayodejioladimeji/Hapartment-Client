@@ -2,34 +2,44 @@
 import mongoose, { Document, Schema, Model } from "mongoose";
 
 export interface IListing extends Document {
-  toilets: number;
   description: string;
-  name: string;
+  title: string;
   address: string;
   descriptions: string;
   property_type: string;
-  statename: string;
+  location: string;
   cityname: string;
   price: number;
-  agent_name: string;
+  pricePeriod: String;
+  agentName: string;
+  agentPhones:any;
+  agentAddress:string;
   createdAt: Date;
   updatedAt: Date;
   listingUrl?: string;
+  image?:string;
+  bedrooms:number;
+  toilets:number;
+  bathrooms:number
+  Images?:any
 }
 
 const ListingSchema: Schema<IListing> = new Schema(
   {
-    toilets: { type: Number, required: true },
-    description: { type: String, required: true },
-    name: { type: String, required: true },
-    address: { type: String, required: true },
-    descriptions: { type: String, required: true },
-    property_type: { type: String, required: true },
-    statename: { type: String, required: true },
-    cityname: { type: String, required: true },
-    price: { type: Number, required: true },
-    agent_name: { type: String, required: true },
-    listingUrl: { type: String },
+    title: { type: String, required: true },
+    image: { type: String, default: null },
+    price: { type: Number, default: null },
+    pricePeriod: { type: String, default: null },
+    location: { type: String, default: null },
+    listingUrl: { type: String, required: true, unique: true },
+    bedrooms: { type: Number, default: null },
+    toilets: { type: Number, default: null },
+    bathrooms: { type: Number, default: null },
+    description: { type: String, default: null },
+    Images: { type: [String], default: null },
+    agentName: { type: String, default: null },
+    agentPhones: { type: [String], default: null },
+    agentAddress: { type: String, default: null },
   },
   {
     timestamps: true,

@@ -12,11 +12,29 @@ const Contact = () => {
         <title>Hapartment - Contact Us</title>
         <link rel="icon" href="/favicon.ico" />
         <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link
           rel="canonical"
-          href="https://www.hapartment.org/contact/"
+          href="https://www.hapartment.org/contact"
           key="canonical"
         />
 
+        <meta name="title" content="Hapartment - Contact Us Today" />
         <meta
           name="description"
           content="Hapartment delivers the safest apartment search experience on both web and app. View apartment listings directly from top property managers, pricing and availability updated daily. Manage all your properties in one place with our Digital Marketplace."
@@ -80,7 +98,6 @@ const Contact = () => {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="title" content="Hapartment - Contact Us Today" />
         <meta property="og:title" content="Hapartment - Contact Us Today" />
         <meta
           property="og:description"

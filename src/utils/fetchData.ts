@@ -47,10 +47,8 @@ export const patchApi = async (url, token) => {
 };
 
 // THE DELETE DATA API
-export const deleteDataApi = async (url, token) => {
-  const res = await axios.delete(ENDPOINT + url, {
-    headers: { Authorization: token },
-  });
+export const deleteDataApi = async (url) => {
+  const res = await axios.delete(ENDPOINT + url);
   return res;
 };
 

@@ -1511,6 +1511,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cloudinary@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "cloudinary@npm:2.7.0"
+  dependencies:
+    lodash: ^4.17.21
+    q: ^1.5.1
+  checksum: 58d06372457a1fea24d9aeaaa81ac2ce99d2635adac6b06f607471214dfd7e86fbc96a1957327f27bf0db6b285746986fbc5724e98344ee41eaac31ecfcd3d59
+  languageName: node
+  linkType: hard
+
 "cogo-toast@npm:^4.2.3":
   version: 4.2.3
   resolution: "cogo-toast@npm:4.2.3"
@@ -2670,6 +2680,7 @@ __metadata:
     aos: ^2.3.4
     axios: ^1.3.2
     bootstrap: ^5.2.3
+    cloudinary: ^2.7.0
     cogo-toast: ^4.2.3
     comma-separator: ^1.0.7
     email-validator: ^2.0.4
@@ -4120,6 +4131,13 @@ __metadata:
   version: 2.3.1
   resolution: "punycode@npm:2.3.1"
   checksum: bb0a0ceedca4c3c57a9b981b90601579058903c62be23c5e8e843d2c2d4148a3ecf029d5133486fb0e1822b098ba8bba09e89d6b21742d02fa26bda6441a6fb2
+  languageName: node
+  linkType: hard
+
+"q@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "q@npm:1.5.1"
+  checksum: 147baa93c805bc1200ed698bdf9c72e9e42c05f96d007e33a558b5fdfd63e5ea130e99313f28efc1783e90e6bdb4e48b67a36fcc026b7b09202437ae88a1fb12
   languageName: node
   linkType: hard
 

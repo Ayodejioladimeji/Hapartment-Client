@@ -1,7 +1,4 @@
-// Listing.tsx
-
 import { useState, useContext, useEffect, useCallback } from "react";
-import Card from "@/common/card";
 import Image from "next/image";
 import banner1 from "/public/images/banner1.jpeg";
 import Goback from "@/common/goback";
@@ -14,6 +11,7 @@ import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
 import { useRouter } from "next/router";
 import Paginate from "@/components/pagination/Paginate";
+import Card from "../components/card";
 
 const Listing = () => {
     const { state, dispatch } = useContext(DataContext);
@@ -31,22 +29,23 @@ const Listing = () => {
         property_type = "",
         min_price = "",
         max_price = "",
-        sort = "",
+        sort = "", 
         sorting = "",
     } = router.query;
 
     const fetchListings = useCallback(async () => {
-        dispatch({ type: ACTIONS.LOADING, payload: true });
+        dispatch({ type: ACTIONS.LOADING, payload: true }); 
         try {
             const queryParams = new URLSearchParams();
             if (page) queryParams.append("page", page as string);
-            if (PageSize) queryParams.append("pageSize", PageSize.toString());
+            if (PageSize) queryParams.append("pageSize", PageSize.toString()); // Ensure pageSize is always sent
             if (search) queryParams.append("search", search as string);
             if (property_type) queryParams.append("property_type", property_type as string);
             if (min_price) queryParams.append("min_price", min_price as string);
             if (max_price) queryParams.append("max_price", max_price as string);
             if (sort) queryParams.append("sort", sort as string);
-            if (sorting) queryParams.append("sorting", sorting as string);
+            if (sorting) queryParams.append("sorting", sorting as string); // Add sorting parameter
+
 
             const res = await getDataApis(`/listing?${queryParams.toString()}`);
 
@@ -54,7 +53,7 @@ const Listing = () => {
             setTotalCount(res.data.totalCount || 0);
         } catch (error) {
             console.error("Error fetching listings:", error);
-            dispatch({ type: ACTIONS.GET_LISTINGS, payload: [] });
+            dispatch({ type: ACTIONS.GET_LISTINGS, payload: [] }); // Clear listings on error
             setTotalCount(0);
         } finally {
             dispatch({ type: ACTIONS.LOADING, payload: false });
@@ -68,22 +67,24 @@ const Listing = () => {
         sort,
         sorting,
         dispatch,
-        PageSize
+        PageSize // Include PageSize in dependencies as it's used
     ]);
 
     useEffect(() => {
+        // Only fetch if router.isReady to ensure query params are available
         if (router.isReady) {
             fetchListings();
         }
-    }, [fetchListings, router.isReady]);
+    }, [fetchListings, router.isReady, state.callback]); // Depend on router.isReady
 
     const updateQuery = (params: Record<string, any>) => {
         const currentQuery = { ...router.query };
 
+        // Apply new parameters
         for (const key in params) {
             const value = params[key];
-            if (value === undefined || value === null || value === "" || String(value) === "0") {
-                delete currentQuery[key];
+            if (value === undefined || value === null || value === "" || value === "0") {
+                delete currentQuery[key]; // Remove if undefined, null, empty string, or "0"
             } else {
                 currentQuery[key] = value;
             }
@@ -92,7 +93,7 @@ const Listing = () => {
         router.push({
             pathname: router.pathname,
             query: currentQuery,
-        }, undefined, { shallow: true });
+        }, undefined, { shallow: true }); // Use shallow routing for client-side transitions
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -104,7 +105,6 @@ const Listing = () => {
         }
 
         updateQuery({ search: city.toLowerCase(), page: 1 });
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on search
     };
 
     const handlePropertyTypeChange = (
@@ -112,23 +112,19 @@ const Listing = () => {
     ) => {
         updateQuery({
             property_type: e.target.value === "0" ? undefined : e.target.value,
-            page: 1,
+            page: 1, // Reset to page 1 when filter changes
         });
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on filter change
     };
 
     const handleSortingChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         updateQuery({
             sorting: e.target.value === "0" ? undefined : e.target.value,
-            page: 1,
+            page: 1, // Reset to page 1 when sort changes
         });
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on sort change
     };
 
     const handlePageChange = (newPage: number) => {
         updateQuery({ page: newPage });
-        // Add this line to scroll to the top of the page
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
