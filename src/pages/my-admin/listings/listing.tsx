@@ -11,7 +11,7 @@ import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
 import { useRouter } from "next/router";
 import Paginate from "@/components/pagination/Paginate";
-import Card from "../components/card";
+import Card from "../_components/card";
 
 const Listing = () => {
     const { state, dispatch } = useContext(DataContext);

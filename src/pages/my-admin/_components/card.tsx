@@ -86,7 +86,7 @@ const Card = ({ ...item }) => {
 
       <div className="card-content">
         <p>{title}</p>
-        <h6 className="mb-3">₦{price.toLocaleString()}</h6>
+        <h6 className="mb-3">₦{price?.toLocaleString()}</h6>
         <div className="address">
           <i className="bi bi-geo-alt"></i>
           <span>{location}</span>
