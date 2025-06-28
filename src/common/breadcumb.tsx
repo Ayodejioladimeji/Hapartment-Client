@@ -56,7 +56,7 @@ const BreadCumb = ({ headingOne, headingTwo, subHeading, body, image }) => {
               data-aos-once="true"
               data-aos-delay="800"
             >
-              <Image src={image} alt="heading" title="picture" />
+              <Image src={image} alt="heading" title="picture" width={100} height={100}/>
             </div>
           </div>
         </div>

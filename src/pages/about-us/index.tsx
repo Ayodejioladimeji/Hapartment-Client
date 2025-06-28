@@ -1,5 +1,4 @@
 import BreadCumb from "@/common/breadcumb";
-import aboutImg from "../../public/images/about-img.svg";
 import Head from "next/head";
 
 const AboutUs = () => {
@@ -117,7 +116,7 @@ const AboutUs = () => {
         body="Hapartment offers instant access to apartment listings ranging
         from luxirious homes to apartments in lower price ranges. We
         provide clear and comprehensive categories for easy navigation."
-        image={aboutImg}
+        image="/images/about-img.svg"
       />
 
       <section className="green">

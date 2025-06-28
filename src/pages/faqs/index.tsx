@@ -1,5 +1,4 @@
 import BreadCumb from "@/common/breadcumb";
-import faqImage from "../../public/images/faq-image.svg";
 import Head from "next/head";
 import AgentAccordion from "@/common/agentaccordion";
 import RenterAccordion from "../../common/renteraccordion";
@@ -107,7 +106,7 @@ const Faqs = () => {
         headingTwo=""
         subHeading="Boost your knowledge about Hapartment."
         body="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers. "
-        image={faqImage}
+        image="/images/faq-image.svg"
       />
 
       <section className="white">

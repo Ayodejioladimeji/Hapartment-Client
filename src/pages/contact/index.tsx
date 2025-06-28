@@ -1,6 +1,5 @@
 import BreadCumb from "@/common/breadcumb";
 import Contacts from "@/components/contacts";
-import contactImage from "../../public/images/contact2.svg";
 import Head from "next/head";
 
 //
@@ -139,7 +138,7 @@ const Contact = () => {
                 effortless and rewarding , by offering clearly displayed quality
                 listings and also provide simple mechanisms to contact the
                 agent."
-        image={contactImage}
+        image="/images/contact2.svg"
       />
 
       <section className="white border-top">
