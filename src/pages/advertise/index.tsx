@@ -3,7 +3,7 @@ import BreadCumb from "@/common/breadcumb";
 import Head from "next/head";
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
-
+import advertiseImage from "/public/images/advertise-image.svg";
 
 const Advert = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -122,7 +122,7 @@ const Advert = () => {
         headingTwo=""
         subHeading="Advertise with us for free"
         body="Start advertising your products on Hapartment Digital Marketplace. Post your product for free and start attracting visitors to it. You will be able to track the number of people who end up purchasing through the website, and make changes to your product as needed"
-        image="/images/adversise-image.svg"
+        image={advertiseImage}
       />
 
       <section className="white">
