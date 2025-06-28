@@ -1,7 +1,6 @@
 import Blog from "@/components/blog/blog";
 import Connect from "@/components/connect";
 import Different from "@/components/different";
-import Discover from "@/components/discover";
 import Download from "@/components/download";
 import Hero from "@/components/hero";
 import Places from "@/components/places";
