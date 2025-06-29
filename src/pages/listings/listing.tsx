@@ -14,6 +14,7 @@ import { Modal } from "react-bootstrap";
 import AdvertiseModal from "@/common/advertiseModal";
 import { useRouter } from "next/router";
 import Paginate from "@/components/pagination/Paginate";
+import MetaTags from "@/components/meta-tags";
 
 const Listing = () => {
     const { state, dispatch } = useContext(DataContext);
@@ -104,7 +105,7 @@ const Listing = () => {
         }
 
         updateQuery({ search: city.toLowerCase(), page: 1 });
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on search
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handlePropertyTypeChange = (
@@ -114,7 +115,7 @@ const Listing = () => {
             property_type: e.target.value === "0" ? undefined : e.target.value,
             page: 1,
         });
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on filter change
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handleSortingChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -122,7 +123,7 @@ const Listing = () => {
             sorting: e.target.value === "0" ? undefined : e.target.value,
             page: 1,
         });
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on sort change
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handlePageChange = (newPage: number) => {
@@ -133,6 +134,12 @@ const Listing = () => {
 
     return (
         <div>
+            <MetaTags
+                title="Hapartment Listings - Browse Apartments & Houses for Rent in Nigeria"
+                description="Explore thousands of verified listings for apartments, houses, and properties for rent across Nigeria. Find your ideal home in Lagos, Abuja, Port Harcourt, and other cities with Hapartment."
+                image="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
+                canonicalUrl="https://www.hapartment.org/listings"
+            />
             <section className="white search-listing mt-5">
                 <div className="container">
                     <div className="row">

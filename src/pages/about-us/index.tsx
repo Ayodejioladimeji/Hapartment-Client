@@ -1,114 +1,15 @@
 import BreadCumb from "@/common/breadcumb";
-import aboutImg from "../../public/images/about-img.svg";
-import Head from "next/head";
+import MetaTags from "@/components/meta-tags";
 
 const AboutUs = () => {
   return (
     <>
-      <Head>
-        <title>Hapartment - About Us</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/about-us/"
-          key="canonical"
-        />
-
-        <meta
-          name="description"
-          content="At Hapartment, we believe that a smart apartment search experience should just work. Our apps and website makes the process of searching for an apartment smooth, easy, and safe."
-        />
-
-        <meta
-          name="keywords"
-          content="
-      Hapartment,
-      apartment for rent,
-      house for rent,
-      property for rent,
-      homes for rent,
-      rental properties Nigeria,
-      Lagos apartments,
-      Abuja houses,
-      Port Harcourt rentals,
-      property for sale Nigeria,
-      buy house Lagos,
-      land for sale Nigeria,
-      commercial properties Nigeria,
-      office space for rent,
-      shop for rent,
-      warehouse for rent,
-      mini flats Lagos,
-      self-contained apartments Abuja,
-      serviced apartments Lagos,
-      short-let apartments Nigeria,
-      luxury homes Nigeria,
-      affordable houses Nigeria,
-      student accommodation Nigeria,
-      real estate Nigeria,
-      Nigerian property market,
-      find homes Nigeria,
-      property listings Nigeria,
-      rental listings Nigeria,
-      Nigerian real estate portal,
-      property search Nigeria,
-      apartments by owner,
-      houses by owner,
-      rent a flat Nigeria,
-      buy land Lagos,
-      residential properties Nigeria,
-      new homes Nigeria,
-      property managers Nigeria,
-      real estate agents Nigeria,
-      buy property in Lekki,
-      rent house in Ikoyi,
-      flats for rent Surulere,
-      duplex for rent Gwarimpa,
-      bungalow for sale Ibadan,
-      estate agent Nigeria,
-      property finder Nigeria,
-      home rentals Nigeria,
-      commercial real estate Nigeria,
-      property deals Nigeria,
-      verified properties Nigeria,
-      property news Nigeria
-    "
-        />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta name="title" content="Hapartment - About Us" />
-        <meta property="og:title" content="Hapartment - About Us" />
-        <meta
-          property="og:description"
-          content="Hapartment offers instant access to apartment listings ranging
-        from luxirious homes to apartments in lower price ranges. We
-        provide clear and comprehensive categories for easy navigation."
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
-        />
-        <meta property="og:type" content="website" />
-
-        <meta property="og:url" content="https://www.hapartment.org/about-us" />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-        <meta
-          name="twitter:image:alt"
-          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
-        />
-      </Head>
+      <MetaTags
+        title="About Hapartment - Nigeria's Trusted Property Rental Marketplace"
+        description="Learn about Hapartment, Nigeria’s reliable platform for renting verified apartments, houses, and properties. We connect property managers and renters with ease and transparency."
+        image="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
+        canonicalUrl="https://www.hapartment.org/about-us"
+      />
 
       <BreadCumb
         headingOne="How are we different from others"

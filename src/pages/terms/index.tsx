@@ -1,102 +1,16 @@
 import BreadCumb from "@/common/breadcumb";
 import termsImage from "/public/images/terms-image.svg";
-import Head from "next/head";
+import MetaTags from "@/components/meta-tags";
 
 const Terms = () => {
   return (
     <>
-      <Head>
-        <title>Hapartment - Terms of Use</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/terms/"
-          key="canonical"
-        />
-        <meta
-          name="description"
-          content="Hapartment is the best place to find apartments and rental homes with no hidden fees. Search by location, bedroom/bathroom preferences, pet policies and more."
-        />
-        <meta
-          name="keywords"
-          content="
-      Hapartment,
-      apartment for rent,
-      house for rent,
-      property for rent,
-      homes for rent,
-      rental properties Nigeria,
-      Lagos apartments,
-      Abuja houses,
-      Port Harcourt rentals,
-      property for sale Nigeria,
-      buy house Lagos,
-      land for sale Nigeria,
-      commercial properties Nigeria,
-      office space for rent,
-      shop for rent,
-      warehouse for rent,
-      mini flats Lagos,
-      self-contained apartments Abuja,
-      serviced apartments Lagos,
-      short-let apartments Nigeria,
-      luxury homes Nigeria,
-      affordable houses Nigeria,
-      student accommodation Nigeria,
-      real estate Nigeria,
-      Nigerian property market,
-      find homes Nigeria,
-      property listings Nigeria,
-      rental listings Nigeria,
-      Nigerian real estate portal,
-      property search Nigeria,
-      apartments by owner,
-      houses by owner,
-      rent a flat Nigeria,
-      buy land Lagos,
-      residential properties Nigeria,
-      new homes Nigeria,
-      property managers Nigeria,
-      real estate agents Nigeria,
-      buy property in Lekki,
-      rent house in Ikoyi,
-      flats for rent Surulere,
-      duplex for rent Gwarimpa,
-      bungalow for sale Ibadan,
-      estate agent Nigeria,
-      property finder Nigeria,
-      home rentals Nigeria,
-      commercial real estate Nigeria,
-      property deals Nigeria,
-      verified properties Nigeria,
-      property news Nigeria
-    "
-        />
-        <meta property="og:title" content="Hapartment - Terms Of Use" />
-        <meta
-          property="og:description"
-          content="Book with us and you won’t have to do any of the hassle. We will do all of the research and comparison for you, so you can sit back and relax knowing that your home away from home will be ready when you get there."
-        />
-
-        <meta property="og:url" content="https://www.hapartment.org/terms" />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.17_PM_1_qix3ml.jpg"
-        />
-        <meta property="og:type" content="website" />
-      </Head>
+      <MetaTags
+        title="Hapartment Terms of Service - Nigeria's Property Rental Platform Rules"
+        description="Read Hapartment’s Terms of Service to learn about your rights and responsibilities when using our property rental and listing platform in Nigeria."
+        image="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.17_PM_1_qix3ml.jpg"
+        canonicalUrl="https://www.hapartment.org/terms"
+      />
 
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"

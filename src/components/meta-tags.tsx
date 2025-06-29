@@ -27,8 +27,8 @@ const MetaTags = (props: any) => {
         rel="canonical"
         href={props?.canonicalUrl || process.env.NEXT_PUBLIC_CLIENT_URL}
       />
-      <title>{`Hapartment - ${props.title}`}</title>
-      <meta name="title" content={`Hapartment - ${props.title}`} />
+
+      <title>{`${props.title}`}</title>
       <meta
         name="description"
         content={props?.description || "Welcome to Hapartment"}
@@ -36,7 +36,7 @@ const MetaTags = (props: any) => {
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       
-      <meta property="og:title" content={`Hapartment - ${props.title}`} />
+      <meta property="og:title" content={`${props.title}`} />
       <meta
         property="og:description"
         content={props?.description || "Welcome to Hapartment"}
@@ -46,14 +46,14 @@ const MetaTags = (props: any) => {
       <meta property="og:type" content="website" />
 
       <meta property="og:url" content={process.env.NEXT_PUBLIC_CLIENT_URL} />
-      <meta name="twitter:card" content="Hapartment" />
-
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content={props?.image} />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="language" content="English" />
-      <meta name="author" content="Hapartment" />
+      <meta name="author" content="Hapartment Digital Marketplace" />
 
-      <meta property="og:site_name" content="Hapartment" />
-      <meta name="twitter:image:alt" content="Hapartment" />
+      <meta property="og:site_name" content="Hapartment Digital Marketplace" />
+      <meta name="twitter:image:alt" content="Hapartment Digital Marketplace" />
     </Head>
   );
 };

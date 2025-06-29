@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import advertiseImage from "/public/images/advertise-image.svg";
+import MetaTags from "@/components/meta-tags";
 
 const Advert = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -11,111 +12,12 @@ const Advert = () => {
   //
   return (
     <>
-      <Head>
-        <title>Hapartment - Advertise with us</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/advertise/"
-          key="canonical"
-        />
-
-        <meta
-          name="description"
-          content="Hapartment is a one-stop apartment search and booking app that brings your top properties in one place. View updated listings from our network of more than 1400 managing agents daily, then book your next apartment with us."
-        />
-
-        <meta
-          name="keywords"
-          content="
-      Hapartment,
-      apartment for rent,
-      house for rent,
-      property for rent,
-      homes for rent,
-      rental properties Nigeria,
-      Lagos apartments,
-      Abuja houses,
-      Port Harcourt rentals,
-      property for sale Nigeria,
-      buy house Lagos,
-      land for sale Nigeria,
-      commercial properties Nigeria,
-      office space for rent,
-      shop for rent,
-      warehouse for rent,
-      mini flats Lagos,
-      self-contained apartments Abuja,
-      serviced apartments Lagos,
-      short-let apartments Nigeria,
-      luxury homes Nigeria,
-      affordable houses Nigeria,
-      student accommodation Nigeria,
-      real estate Nigeria,
-      Nigerian property market,
-      find homes Nigeria,
-      property listings Nigeria,
-      rental listings Nigeria,
-      Nigerian real estate portal,
-      property search Nigeria,
-      apartments by owner,
-      houses by owner,
-      rent a flat Nigeria,
-      buy land Lagos,
-      residential properties Nigeria,
-      new homes Nigeria,
-      property managers Nigeria,
-      real estate agents Nigeria,
-      buy property in Lekki,
-      rent house in Ikoyi,
-      flats for rent Surulere,
-      duplex for rent Gwarimpa,
-      bungalow for sale Ibadan,
-      estate agent Nigeria,
-      property finder Nigeria,
-      home rentals Nigeria,
-      commercial real estate Nigeria,
-      property deals Nigeria,
-      verified properties Nigeria,
-      property news Nigeria
-    "
-        />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta name="title" content="Hapartment - Advertise with us" />
-        <meta property="og:title" content="Hapartment - Advertise with us" />
-        <meta
-          property="og:description"
-          content="Start advertising your products on Hapartment Digital Marketplace. Post your product for free and start attracting visitors to it. You will be able to track the number of people who end up purchasing through the website, and make changes to your product as needed"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_2_ifvu7a.jpg"
-        />
-        <meta property="og:type" content="website" />
-
-        <meta
-          property="og:url"
-          content="https://www.hapartment.org/advertise/"
-        />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-        <meta
-          name="twitter:image:alt"
-          content="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
-        />
-      </Head>
+      <MetaTags
+        title="Advertise on Hapartment - List Your Property for Rent in Nigeria"
+        description="Reach thousands of renters by advertising your apartment, house, or property on Hapartment. Nigeria’s trusted platform for verified rental listings and property management."
+        image="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
+        canonicalUrl="https://www.hapartment.org/advertise"
+      />
 
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"

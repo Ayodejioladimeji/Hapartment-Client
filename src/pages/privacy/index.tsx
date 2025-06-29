@@ -1,102 +1,16 @@
 import BreadCumb from "@/common/breadcumb";
 import privacyImage from "/public/images/privacy.svg";
-import Head from "next/head";
+import MetaTags from "@/components/meta-tags";
 
 const Privacy = () => {
   return (
     <>
-      <Head>
-        <title>Hapartment - Privacy Policy</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/privacy/"
-          key="canonical"
-        />
-        <meta
-          name="description"
-          content="Easily view listings directly from top property managers, pricing and availability updated daily. Search through hundreds of pictures of fully furnished apartments directly on your mobile device or desktop. Contact agents directly with a click or text, view property details and virtual tours, see all possible matches, save favorites and get notifications when a new listing comes on the market by signing up to receive updates via email or SMS."
-        />
-        <meta
-          name="keywords"
-          content="
-      Hapartment,
-      apartment for rent,
-      house for rent,
-      property for rent,
-      homes for rent,
-      rental properties Nigeria,
-      Lagos apartments,
-      Abuja houses,
-      Port Harcourt rentals,
-      property for sale Nigeria,
-      buy house Lagos,
-      land for sale Nigeria,
-      commercial properties Nigeria,
-      office space for rent,
-      shop for rent,
-      warehouse for rent,
-      mini flats Lagos,
-      self-contained apartments Abuja,
-      serviced apartments Lagos,
-      short-let apartments Nigeria,
-      luxury homes Nigeria,
-      affordable houses Nigeria,
-      student accommodation Nigeria,
-      real estate Nigeria,
-      Nigerian property market,
-      find homes Nigeria,
-      property listings Nigeria,
-      rental listings Nigeria,
-      Nigerian real estate portal,
-      property search Nigeria,
-      apartments by owner,
-      houses by owner,
-      rent a flat Nigeria,
-      buy land Lagos,
-      residential properties Nigeria,
-      new homes Nigeria,
-      property managers Nigeria,
-      real estate agents Nigeria,
-      buy property in Lekki,
-      rent house in Ikoyi,
-      flats for rent Surulere,
-      duplex for rent Gwarimpa,
-      bungalow for sale Ibadan,
-      estate agent Nigeria,
-      property finder Nigeria,
-      home rentals Nigeria,
-      commercial real estate Nigeria,
-      property deals Nigeria,
-      verified properties Nigeria,
-      property news Nigeria
-    "
-        />
-        <meta property="og:title" content="Hapartment - Privacy Policy" />
-        <meta
-          property="og:description"
-          content="Hapartment is your one place to find apartments and manage your rentals"
-        />
-
-        <meta property="og:url" content="https://www.hapartment.org/policy" />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
-        />
-        <meta property="og:type" content="website" />
-      </Head>
+      <MetaTags
+        title="Hapartment Privacy Policy - Your Data & Rental Search Security"
+        description="Review Hapartment’s Privacy Policy to understand how we protect your data while you search for apartments, houses, and rental properties across Nigeria."
+        image="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
+        canonicalUrl="https://www.hapartment.org/privacy"
+      />
 
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"

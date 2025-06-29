@@ -2,104 +2,17 @@ import BreadCumb from "@/common/breadcumb";
 import Head from "next/head";
 import AgentAccordion from "@/common/agentaccordion";
 import RenterAccordion from "../../common/renteraccordion";
+import MetaTags from "@/components/meta-tags";
 
 const Faqs = () => {
   return (
     <>
-      <Head>
-        <title>Hapartment - FAQS</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href="https://www.hapartment.org/faqs/"
-          key="canonical"
-        />
-        <meta
-          name="description"
-          content="Hapartment is the best apartment search experience on both web and mobile. View the newest inventory directly from your property managers, pricing and availability updated daily. Find your next home in minutes!"
-        />
-        <meta
-          name="keywords"
-          content="
-      Hapartment,
-      apartment for rent,
-      house for rent,
-      property for rent,
-      homes for rent,
-      rental properties Nigeria,
-      Lagos apartments,
-      Abuja houses,
-      Port Harcourt rentals,
-      property for sale Nigeria,
-      buy house Lagos,
-      land for sale Nigeria,
-      commercial properties Nigeria,
-      office space for rent,
-      shop for rent,
-      warehouse for rent,
-      mini flats Lagos,
-      self-contained apartments Abuja,
-      serviced apartments Lagos,
-      short-let apartments Nigeria,
-      luxury homes Nigeria,
-      affordable houses Nigeria,
-      student accommodation Nigeria,
-      real estate Nigeria,
-      Nigerian property market,
-      find homes Nigeria,
-      property listings Nigeria,
-      rental listings Nigeria,
-      Nigerian real estate portal,
-      property search Nigeria,
-      apartments by owner,
-      houses by owner,
-      rent a flat Nigeria,
-      buy land Lagos,
-      residential properties Nigeria,
-      new homes Nigeria,
-      property managers Nigeria,
-      real estate agents Nigeria,
-      buy property in Lekki,
-      rent house in Ikoyi,
-      flats for rent Surulere,
-      duplex for rent Gwarimpa,
-      bungalow for sale Ibadan,
-      estate agent Nigeria,
-      property finder Nigeria,
-      home rentals Nigeria,
-      commercial real estate Nigeria,
-      property deals Nigeria,
-      verified properties Nigeria,
-      property news Nigeria
-    "
-        />
-        <meta
-          property="og:title"
-          content="Hapartment - Frequently Asked Questions"
-        />
-        <meta
-          property="og:description"
-          content="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers"
-        />
-        <meta property="og:url" content="https://www.hapartment.org/faqs" />
-        <meta name="twitter:card" content="Hapartment" />
-
-        <meta name="robots" content="index, nofollow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
-        />
-        <meta property="og:type" content="website" />
-      </Head>
+      <MetaTags
+        title="Hapartment FAQs - Your Rental Listings Questions Answered"
+        description="Find answers to common questions about renting, listing, and managing properties on Hapartment. Get the help you need to navigate Nigeria’s rental market with ease."
+        image="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
+        canonicalUrl="https://www.hapartment.org/faqs"
+      />
 
       <BreadCumb
         headingOne="Get answers to all questions you have"
