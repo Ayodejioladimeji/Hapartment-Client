@@ -2,7 +2,6 @@ import Head from "next/head";
 import React from "react";
 
 const MetaTags = (props: any) => {
-  // stitch pafet
   return (
     <Head>
       <link rel="icon" href="/favicon.ico" />
@@ -31,7 +30,7 @@ const MetaTags = (props: any) => {
       <title>{`${props.title}`}</title>
       <meta
         name="description"
-        content={props?.description || "Welcome to Hapartment"}
+        content={props?.description || "Hapartment Digital Marketplace"}
       />
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,7 +38,7 @@ const MetaTags = (props: any) => {
       <meta property="og:title" content={`${props.title}`} />
       <meta
         property="og:description"
-        content={props?.description || "Welcome to Hapartment"}
+        content={props?.description || "Hapartment Digital Marketplace"}
       />
 
       <meta property="og:image" content={props?.image} />
