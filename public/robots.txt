@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /my-admin/
+Allow: /
+
 
 Sitemap: https://www.hapartment.org/api/my-sitemap
