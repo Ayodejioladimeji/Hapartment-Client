@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import * as gtag from "@/lib/gtag"
+
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -27,11 +27,11 @@ export default function App({ Component, pageProps }) {
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_KEY}")`,
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_KEY}")`,
           }}
         ></Script>
 
@@ -66,24 +66,25 @@ export default function App({ Component, pageProps }) {
         />
 
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           strategy="afterInteractive"
         />
 
         <Script
-          id="ga-init"
+          id="gtag-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${gtag.GA_TRACKING_ID}', {
-        page_path: window.location.pathname,
-      });
-    `,
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', "${process.env.NEXT_PUBLIC_GA_ID}", {
+              page_path: window.location.pathname,
+            });
+          `,
           }}
         />
+
 
       </Head>
 
