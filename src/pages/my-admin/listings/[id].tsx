@@ -44,39 +44,6 @@ const ListingDetails = ({ listing }: any) => {
 
   return (
     <>
-      <Head>
-        <title>{`${title} | ${location} | ${price}`}</title>
-        <link rel="canonical" href={canonicalURL} />
-        <meta
-          name="description"
-          content={`${title} | ${location} | ${price}`}
-        />
-        <meta
-          name="keywords"
-          content="Hapartment digital marketplace,...more keywords"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="title" content={`${title} | ${location} | ${price}`} />
-        <meta
-          property="og:title"
-          content={`Hapartment - ${title} | ${location} | ${price}`}
-        />
-        <meta property="og:description" content={description as string} />
-        <meta property="og:image" content={image as string} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalURL} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content="Hapartment Digital Marketplace" />
-        <meta
-          property="og:site_name"
-          content="Hapartment Digital Marketplace"
-        />
-        <meta name="twitter:image:alt" content="Hapartment" />
-        <meta charSet="utf-8" />
-      </Head>
-
       <section className="white">
         <div className="container">
           <div className="row">

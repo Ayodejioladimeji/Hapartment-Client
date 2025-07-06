@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import * as gtag from "@/lib/gtag"
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -46,7 +47,7 @@ export default function App({ Component, pageProps }) {
           crossOrigin="anonymous"
         ></Script>
 
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -63,6 +64,27 @@ export default function App({ Component, pageProps }) {
             }),
           }}
         />
+
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          strategy="afterInteractive"
+        />
+
+        <Script
+          id="ga-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${gtag.GA_TRACKING_ID}', {
+        page_path: window.location.pathname,
+      });
+    `,
+          }}
+        />
+
       </Head>
 
       <DataProvider>
