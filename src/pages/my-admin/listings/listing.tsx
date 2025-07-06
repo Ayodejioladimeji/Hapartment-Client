@@ -22,6 +22,7 @@ const Listing = () => {
     const [totalCount, setTotalCount] = useState<number>(0);
     const PageSize = 48;
     const router = useRouter();
+    const [isLoading, setIsLoading] = useState(true)
 
     const {
         page = "1",
@@ -126,6 +127,8 @@ const Listing = () => {
     const handlePageChange = (newPage: number) => {
         updateQuery({ page: newPage });
     };
+
+    if (isLoading) return null
 
     return (
         <div>
