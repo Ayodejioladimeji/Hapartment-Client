@@ -31,15 +31,15 @@ export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
         { url: "/blogs/find-apartment-for-rent", changefreq: "monthly", priority: 0.5 },
     ];
 
-    const listings = await fetchListings();
+    // const listings = await fetchListings();
 
-    listings.forEach((listing: any) => {
-        links.push({
-            url: `/listings/${listing._id}`,
-            changefreq: "weekly",
-            priority: 0.9,
-        });
-    });
+    // listings.forEach((listing: any) => {
+    //     links.push({
+    //         url: `/listings/${listing._id}`,
+    //         changefreq: "weekly",
+    //         priority: 0.9,
+    //     });
+    // });
 
     const stream = new SitemapStream({ hostname: baseUrl });
 
