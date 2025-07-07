@@ -21,7 +21,27 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
+    
+        <Script
+          src={"https://www.googletagmanager.com/gtag/js?id=G-F4GYGT02Z2"}
+          strategy="afterInteractive"
+        />
+
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', "G-F4GYGT02Z2", {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
+
         <Script
           id="ms-clarity"
           strategy="afterInteractive"
@@ -64,29 +84,7 @@ export default function App({ Component, pageProps }) {
             }),
           }}
         />
-
-        <Script
-          src={"https://www.googletagmanager.com/gtag/js?id=G-F4GYGT02Z2"}
-          strategy="afterInteractive"
-        />
-
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', "G-F4GYGT02Z2", {
-              page_path: window.location.pathname,
-            });
-          `,
-          }}
-        />
-
-
-      </Head>
+      
 
       <DataProvider>
         <Layout>
