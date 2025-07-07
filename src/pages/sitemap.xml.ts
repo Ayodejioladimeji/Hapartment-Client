@@ -5,7 +5,7 @@ import { SitemapStream, streamToPromise } from "sitemap";
 import { Readable } from "stream";
 
 const fetchListings = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/listing?pageSize=10000`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/listing?pageSize=10`);
     const data = await res.json();
     return data.listings || [];
 };
@@ -31,15 +31,15 @@ export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
         { url: "/blogs/find-apartment-for-rent", changefreq: "monthly", priority: 0.5 },
     ];
 
-    // const listings = await fetchListings();
+    const listings = await fetchListings();
 
-    // listings.forEach((listing: any) => {
-    //     links.push({
-    //         url: `/listings/${listing._id}`,
-    //         changefreq: "weekly",
-    //         priority: 0.9,
-    //     });
-    // });
+    listings.forEach((listing: any) => {
+        links.push({
+            url: `/listings/${listing._id}`,
+            changefreq: "weekly",
+            priority: 0.9,
+        });
+    });
 
     const stream = new SitemapStream({ hostname: baseUrl });
 
