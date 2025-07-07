@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 
-Sitemap: https://www.hapartment.org/api/my-sitemap
+Sitemap: https://www.hapartment.org/sitemap.xml
