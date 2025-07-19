@@ -2,6 +2,9 @@ import connectDB from "../../utils/connectDB";
 import mongoose, { Document, Schema, Types } from "mongoose";
 import { NextApiRequest, NextApiResponse } from "next";
 
+
+// middle ware function for the cors
+
 interface IListing extends Document {
   toilets: number;
   description: string;

@@ -3,8 +3,10 @@
 import connectDB from "../utils/connectDB";
 import { NextApiRequest, NextApiResponse } from "next";
 import Listing, { IListing } from "../models/listingModel";
-import { deleteImagesWithFilename } from "../utils/deleteCloudinaryImages";
+import { deleteImagesWithFilename, deleteImagesWithFilenames } from "../utils/deleteCloudinaryImages";
 import mongoose from "mongoose";
+
+
 
 connectDB();
 
@@ -17,7 +19,7 @@ export default async function handler(
       await fetchListings(req, res);
       break;
     case "DELETE":
-      await deleteListing(req, res);
+      await deleteListings(req, res);
       break;  
     default:
       res.status(405).json({ err: "Method Not Allowed" });
@@ -124,3 +126,50 @@ const deleteListing = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(500).json({ message: error.message || "Internal Server Error" });
   }
 };
+
+const deleteListings = async (req: NextApiRequest, res: NextApiResponse) => {
+  const { ids } = req.body; 
+
+  if (!Array.isArray(ids) || ids.length === 0) {
+    return res.status(400).json({ message: "Missing or invalid listing IDs" });
+  }
+
+  try {
+    // Fetch all listings by IDs
+    const listings = await Listing.find({ _id: { $in: ids } }).lean();
+    if (!listings || listings.length === 0) {
+      return res.status(404).json({ message: "Listings not found" });
+    }
+
+    // Extract image filenames from all listings
+    const fileNames: string[] = listings
+      .map((listing) => {
+        const imageUrl: string = listing?.image;
+        const fileName = imageUrl
+          ?.split("/")
+          .pop()
+          ?.split("-")
+          .slice(-1)[0]; // Adjust logic to extract correct filename
+        return fileName || null;
+      })
+      .filter((name): name is string => name !== null);
+
+    // Delete all related images on Cloudinary
+    // if (fileNames.length > 0) {
+    //   await deleteImagesWithFilenames(fileNames);
+    // }
+
+    // Delete all listings
+    await Listing.deleteMany({ _id: { $in: ids } });
+
+    return res
+      .status(200)
+      .json({ message: `${listings.length} listings and related images deleted` });
+  } catch (error: any) {
+    console.error("Error in deleteListings:", error);
+    return res
+      .status(500)
+      .json({ message: error.message || "Internal Server Error" });
+  }
+};
+

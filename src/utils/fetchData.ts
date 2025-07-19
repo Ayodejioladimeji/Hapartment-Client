@@ -1,4 +1,5 @@
 import axios from "axios";
+import cogoToast from "cogo-toast";
 
 // bring in the endpoint
 const ENDPOINT = process.env.NEXT_PUBLIC_API_URL;
@@ -50,6 +51,24 @@ export const patchApi = async (url, token) => {
 export const deleteDataApi = async (url) => {
   const res = await axios.delete(ENDPOINT + url);
   return res;
+};
+
+export const DeleteRequest = async (url: string, data: any) => {
+  try {
+    const res = await axios.delete(ENDPOINT + url, {
+      data, 
+    });
+
+    return res;
+  } catch (error: any) {
+    if (error?.response?.data?.message) {
+      cogoToast.error(error.response.data.message);
+    } else {
+      cogoToast.error("Something went wrong");
+    }
+
+    return error?.response?.data?.message;
+  }
 };
 
 // Our platform is designed to make the apartment rental process as easy and stress-free as possible. Renters can easily search for apartments based on location, price range, and other preferences.

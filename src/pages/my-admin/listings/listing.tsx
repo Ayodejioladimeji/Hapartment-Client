@@ -4,7 +4,7 @@ import banner1 from "/public/images/banner1.jpeg";
 import Goback from "@/common/goback";
 import Modalsearch from "@/components/modalsearch";
 import Placeholder from "@/common/placeholder";
-import { getDataApis } from "@/utils/fetchData";
+import { DeleteRequest, getDataApis } from "@/utils/fetchData";
 import { DataContext } from "@/store/GlobalState";
 import { ACTIONS } from "@/store/Actions";
 import { Modal } from "react-bootstrap";
@@ -12,6 +12,8 @@ import AdvertiseModal from "@/common/advertiseModal";
 import { useRouter } from "next/router";
 import Paginate from "@/components/pagination/Paginate";
 import Card from "../_components/card";
+import cogoToast from "cogo-toast";
+import Loading from "@/common/loading";
 
 const Listing = () => {
     const { state, dispatch } = useContext(DataContext);
@@ -23,6 +25,10 @@ const Listing = () => {
     const PageSize = 48;
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(true)
+    const [selectedListings, setSelectedListings] = useState<string[]>([]);
+    const [selectAll, setSelectAll] = useState(false);
+    const [deleteLoading, setDeleteLoading] = useState(false)
+
 
     const {
         page = "1",
@@ -30,22 +36,22 @@ const Listing = () => {
         property_type = "",
         min_price = "",
         max_price = "",
-        sort = "", 
+        sort = "",
         sorting = "",
     } = router.query;
 
     const fetchListings = useCallback(async () => {
-        dispatch({ type: ACTIONS.LOADING, payload: true }); 
+        dispatch({ type: ACTIONS.LOADING, payload: true });
         try {
             const queryParams = new URLSearchParams();
             if (page) queryParams.append("page", page as string);
-            if (PageSize) queryParams.append("pageSize", PageSize.toString()); // Ensure pageSize is always sent
+            if (PageSize) queryParams.append("pageSize", PageSize.toString());
             if (search) queryParams.append("search", search as string);
             if (property_type) queryParams.append("property_type", property_type as string);
             if (min_price) queryParams.append("min_price", min_price as string);
             if (max_price) queryParams.append("max_price", max_price as string);
             if (sort) queryParams.append("sort", sort as string);
-            if (sorting) queryParams.append("sorting", sorting as string); // Add sorting parameter
+            if (sorting) queryParams.append("sorting", sorting as string);
 
 
             const res = await getDataApis(`/listing?${queryParams.toString()}`);
@@ -68,15 +74,15 @@ const Listing = () => {
         sort,
         sorting,
         dispatch,
-        PageSize // Include PageSize in dependencies as it's used
+        PageSize
     ]);
 
     useEffect(() => {
-        // Only fetch if router.isReady to ensure query params are available
+
         if (router.isReady) {
             fetchListings();
         }
-    }, [fetchListings, router.isReady, state.callback]); // Depend on router.isReady
+    }, [fetchListings, router.isReady, state.callback]);
 
     const updateQuery = (params: Record<string, any>) => {
         const currentQuery = { ...router.query };
@@ -127,6 +133,44 @@ const Listing = () => {
     const handlePageChange = (newPage: number) => {
         updateQuery({ page: newPage });
     };
+
+    const handleCheckboxChange = (id: string) => {
+        setSelectedListings((prev) =>
+            prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+        );
+    };
+
+    const handleSelectAll = () => {
+        if (selectAll) {
+            setSelectedListings([]);
+        } else {
+            setSelectedListings(listings.map((item) => item._id));
+        }
+        setSelectAll(!selectAll);
+    };
+
+    const handleDeleteSelected = async () => {
+        const selectedIds = listings
+            .filter((listing) => selectedListings.includes(listing._id))
+            .map((listing) => listing._id);
+
+        setDeleteLoading(true)
+
+        const payload = {
+            ids: selectedIds
+        }
+
+        const res = await DeleteRequest(`/listing`, payload);
+        if (res?.status === 200 || res?.status === 201) {
+            dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+            cogoToast.success(res?.data?.message);
+        }
+        setDeleteLoading(false)
+        setSelectedListings([]);
+        setSelectAll(false);
+    };
+
+
 
     if (isLoading) return null
 
@@ -235,11 +279,34 @@ const Listing = () => {
                                             No available data
                                         </div>
                                     ) : (
-                                        <div className="list-box">
-                                            {listings?.map((item) => (
-                                                <Card {...item} key={item._id} />
-                                            ))}
-                                        </div>
+                                        <>
+                                            <div className="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={selectAll}
+                                                        onChange={handleSelectAll}
+                                                    /> Select All
+                                                </div>
+
+                                                {selectedListings.length > 0 && (
+                                                    <button
+                                                        className="d-flex item-center gap-2 px-3 py-1 text-xs bg-danger "
+                                                        onClick={handleDeleteSelected}
+                                                    >
+                                                        Delete Selected ({selectedListings.length})
+                                                        {deleteLoading && <Loading />}
+                                                    </button>
+                                                )}
+                                            </div>
+
+                                            <div className="list-box">
+
+                                                {listings?.map((item) => (
+                                                    <Card {...item} key={item._id} selectedListings={selectedListings} handleCheckboxChange={handleCheckboxChange} />
+                                                ))}
+                                            </div>
+                                        </>
                                     )}
                                 </>
                             )}

@@ -9,12 +9,10 @@ import { deleteDataApi } from "@/utils/fetchData";
 import cogoToast from "cogo-toast";
 import Loading from "@/common/loading";
 
-
-//
-
-const Card = ({ ...item }) => {
+const Card = ({ selectedListings, handleCheckboxChange, ...item }: any) => {
   const { state, dispatch } = useContext(DataContext);
-  const [deleteLoading, setDeleteLoading] = useState(false)
+  const [deleteLoading, setDeleteLoading] = useState(false);
+
   const {
     _id,
     toilets,
@@ -32,38 +30,38 @@ const Card = ({ ...item }) => {
 
   const router = useRouter();
 
-  const params = {
-    address: location,
-    title,
-    price,
-    toilets,
-    bathrooms,
-    images: JSON.stringify(Images),
-    agentName,
-    agentPhones,
-    description,
-    image,
-  };
-
-  // send data to the details page
+  // Navigate to details page
   const sendData = () => {
     router.push(`/listings/${_id}`);
   };
 
-  const handleDelete = async(e) => {
-    e.stopPropagation()
-    setDeleteLoading(true)
-    const res = await deleteDataApi(`/listing?id=${_id}`)
-    if(res?.status === 200 || res?.status === 201){
-      dispatch({type:ACTIONS.CALLBACK, payload: !state.callback})
-      cogoToast.success(res?.data?.message)
+  // Delete listing
+  const handleDelete = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setDeleteLoading(true);
+    const res = await deleteDataApi(`/listing?id=${_id}`);
+    if (res?.status === 200 || res?.status === 201) {
+      dispatch({ type: ACTIONS.CALLBACK, payload: !state.callback });
+      cogoToast.success(res?.data?.message);
     }
-    setDeleteLoading(false)
-  }
+    setDeleteLoading(false);
+  };
+
+  // Stop routing when checkbox is clicked
+  const handleCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.stopPropagation();
+    handleCheckboxChange(item._id);
+  };
 
   return (
-    <div className="card" onClick={sendData}>
+    <div className="card">
       <div className="card-image">
+        <input
+          type="checkbox"
+          checked={selectedListings.includes(item._id)}
+          onChange={handleCheckboxClick}
+          className="checkbox"
+        />
         <Image
           src={image || "/images/image-placeholder.png"}
           alt="card-property"
@@ -71,20 +69,19 @@ const Card = ({ ...item }) => {
           height={100}
           title="picture"
           unoptimized
+          onClick={sendData}
         />
 
         <div
           className="tags d-flex align-items-center gap-2 cursor"
-          style={{
-            background: "red",
-          }}
+          style={{ background: "red" }}
           onClick={handleDelete}
         >
-          Delete {deleteLoading && <Loading/>}
+          Delete {deleteLoading && <Loading />}
         </div>
       </div>
 
-      <div className="card-content">
+      <div className="card-content" onClick={sendData}>
         <p>{title}</p>
         <h6 className="mb-3">₦{price?.toLocaleString()}</h6>
         <div className="address">
@@ -109,7 +106,6 @@ const Card = ({ ...item }) => {
               <div className="bath-box">
                 <FaToilet className="bi" />
               </div>
-
               <span>
                 {toilets} {toilets > 1 ? "Toilets" : "Toilet"}
               </span>
@@ -120,10 +116,11 @@ const Card = ({ ...item }) => {
 
       <div className="card-footer mt-4">
         <small>
-          Last updated : {moment(updatedAt).format("MMMM Do YYYY")}{" "}
+          Last updated : {moment(updatedAt).format("MMMM Do YYYY")}
         </small>
       </div>
     </div>
   );
 };
+
 export default Card;
