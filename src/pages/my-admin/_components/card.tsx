@@ -58,7 +58,7 @@ const Card = ({ selectedListings, handleCheckboxChange, ...item }: any) => {
       <div className="card-image">
         <input
           type="checkbox"
-          checked={selectedListings.includes(item._id)}
+          checked={selectedListings?.includes(item._id)}
           onChange={handleCheckboxClick}
           className="checkbox"
         />
