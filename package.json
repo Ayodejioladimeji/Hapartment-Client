@@ -9,17 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.11.0",
+    "bootstrap": "^5.3.7",
+    "cogo-toast": "^4.2.3",
+    "email-validator": "^2.0.4",
+    "formik": "^2.4.6",
+    "moment": "^2.30.1",
+    "next": "15.4.5",
+    "next-share": "^0.27.0",
     "react": "19.1.0",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "19.1.0",
-    "next": "15.4.5"
+    "react-icons": "^5.5.0",
+    "react-loading-skeleton": "^3.5.0",
+    "react-modal": "^3.16.3",
+    "react-whatsapp": "^0.3.0",
+    "sass": "^1.57.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
   }
 }

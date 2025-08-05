@@ -1,0 +1,80 @@
+@use "mixins" as *;
+
+
+.contact-container {
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .map-box {
+    height: 100%;
+    @media (max-width: 767px) {
+      height: 500px;
+      margin-top: 60px;
+      padding: 10px;
+    }
+  }
+}
+
+.contact-box {
+  border: 1px solid var(--light-color);
+  border-radius: 15px;
+  padding: 20px;
+
+  @media (max-width: 565px) {
+    border: none;
+  }
+
+  @media (max-width: 565px) {
+    padding: 20px 0;
+  }
+
+  h3 {
+    font-size: var(--h5);
+    color: var(--primary-color);
+  }
+
+  label {
+    margin-bottom: 8px;
+  }
+
+  input {
+    padding: 14px;
+    font-size: 16px !important;
+    height: 55px;
+    margin-bottom: 3px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+  }
+
+  textarea {
+    padding: 15px;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    outline: none;
+    color: var(--black-color);
+    resize: none;
+    height: 200px !important;
+    font-size: 14px !important;
+    border-radius: 5px;
+  }
+
+  button {
+    background: var(--secondary-color);
+    padding: 13px;
+    color: var(--white-color);
+    outline: none;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 4;
+    cursor: pointer;
+  }
+
+  .input_feedback {
+    color: red;
+    margin-top: 5px;
+    font-size: 13px;
+  }
+}

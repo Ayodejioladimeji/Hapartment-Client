@@ -1,0 +1,20 @@
+.modal {
+  .modal-header {
+    background: var(--primary-color);
+
+    h5 {
+      color: var(--white-color);
+      font-weight: 600;
+    }
+
+    .bi {
+      color: var(--white-color);
+      font-size: var(--h4);
+
+      &:focus {
+        border: none !important;
+        outline: none !important;
+      }
+    }
+  }
+}

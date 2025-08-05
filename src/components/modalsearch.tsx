@@ -1,0 +1,127 @@
+"use client"
+import { useState, useEffect, useContext } from "react";
+import { statesdata } from "@/constants/statesdata";
+import propertyData from "@/constants/propertyData";
+import { formatMoney } from "@/utils/utils";
+import { useRouter } from "next/navigation";
+
+const initialState = {
+  property_type: "",
+  statename: "",
+  cityname: "",
+  bathrooms: "",
+  toilets: "",
+  furnishing: "",
+};
+
+const Modalsearch = () => {
+  const [values, setValues] = useState(initialState);
+  const [city, setCity] = useState([]);
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const router = useRouter();
+
+  const { property_type, statename, cityname, bathrooms, toilets, furnishing } =
+    values;
+
+  // handleChange method
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  // get the city method
+  useEffect(() => {
+    statesdata.filter((item) => {
+      if (item.state === statename) {
+        setCity(item.lgas);
+      }
+    });
+  }, [statename]);
+
+  // handlefilter method
+  const handleFilter = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newData = {
+      status: "multiple",
+      property_type: property_type.toLowerCase(),
+      statename: statename.toLowerCase(),
+      cityname: cityname.toLowerCase(),
+      bathrooms,
+      toilets,
+      furnishing: furnishing.toLowerCase(),
+      min_price: minPrice,
+      max_price: maxPrice,
+    };
+    const params = new URLSearchParams(newData as any).toString();
+    router.push(`/listings?${params}`);
+  };
+
+  return (
+    <div className="modalsearch">
+      <div className="filter-box">
+        <div className="box">
+          <select
+            onChange={handleChange}
+            className="form-select "
+            aria-label="Default select example"
+            name="property_type"
+            value={property_type}
+          >
+            <option defaultValue="">Select property type</option>
+            {propertyData.map((item) => {
+              return (
+                <option key={item.id} value={item.value}>
+                  {item.value}
+                </option>
+              );
+            })}
+          </select>
+
+          <select
+            onChange={handleChange}
+            className="form-select "
+            aria-label="Default select example"
+            name="statename"
+            value={statename}
+          >
+            <option defaultValue="">Select state</option>
+            {statesdata.map((item, index) => {
+              return (
+                <option key={index} value={item.state}>
+                  {item.state}
+                </option>
+              );
+            })}
+          </select>
+
+          <input
+            type="text"
+            onChange={(e) => setMinPrice(formatMoney(e.target.value))}
+            placeholder="min_price"
+            value={minPrice}
+          />
+
+          <input
+            type="text"
+            onChange={(e) => setMaxPrice(formatMoney(e.target.value))}
+            placeholder="max_price"
+            value={maxPrice}
+          />
+
+          <button
+            onClick={handleFilter}
+            className="btn search-button"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            Search
+            <i className="bi bi-arrow-right-circle"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Modalsearch;

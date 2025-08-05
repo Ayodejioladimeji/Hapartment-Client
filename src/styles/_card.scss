@@ -1,0 +1,138 @@
+@use "mixins" as *;
+
+
+.card-link {
+  border: none !important;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+
+  .card-image {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--light-color);
+    position: relative;
+    height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tags {
+      padding: 5px;
+      font-size: var(--p-regular);
+      width: 100px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: var(--white-color);
+      font-weight: 600;
+      text-transform: capitalize;
+      border-top-right-radius: 10px;
+      text-align: center;
+    }
+
+    .checkbox{
+      position: absolute;
+      right:10px;
+      top:10px;
+      height:28px;
+      width:28px;
+      cursor:pointer;
+    }
+  }
+
+  .card-content {
+    margin-top: 10px;
+    flex-grow: 1; // allows this section to take up extra space
+
+    h6 {
+      color: var(--black-color);
+    }
+
+    p {
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 90%;
+      text-transform: capitalize;
+    }
+
+    .address {
+      display: flex;
+      align-items: center;
+
+      .bi {
+        font-size: var(--p-bold);
+        color: var(--text-color);
+        margin-right: 10px;
+      }
+      span {
+        font-size: var(--p-medium);
+        color: var(--text-color);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 80%;
+        display: block;
+      }
+    }
+
+    .card-box {
+      display: flex;
+      margin-top: 15px;
+      min-height: 40px; // reserve space even if no toilets/bathrooms
+
+      .bath {
+        display: flex;
+        align-items: center;
+
+        &:first-child {
+          margin-right: 10px;
+        }
+
+        .bath-box {
+          height: 25px;
+          width: 25px;
+          background: var(--light-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 10px;
+          border-radius: 50%;
+
+          .bi {
+            font-size: var(--p-regular);
+          }
+        }
+
+        span {
+          color: var(--text-color);
+          font-size: var(--p-medium);
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    margin-top: auto;
+    text-align: center;
+
+    small {
+      color: var(--text-color);
+      font-size: var(--p-regular);
+    }
+  }
+}

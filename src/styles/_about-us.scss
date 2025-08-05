@@ -1,0 +1,44 @@
+@use "mixins" as *;
+
+
+.about-box {
+  margin-top: 70px;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .about-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    h3 {
+      color: var(--primary-color);
+    }
+  }
+
+  .about-image-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @media (max-width: 767px) {
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .aboutimg {
+      border: none;
+      height: 100%;
+      width: 70%;
+    }
+  }
+
+  .bi {
+    font-size: var(--p-bolder);
+    margin-left: 5px;
+  }
+}
