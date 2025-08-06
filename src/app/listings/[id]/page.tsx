@@ -2,7 +2,7 @@ import ListingDetailsClient from "./listen-client";
 import type { Metadata } from "next";
 
 interface ListingProps {
-  params: Promise<{ id: string }>;
+  params: any;
 }
 
 export async function generateMetadata({ params }: ListingProps): Promise<Metadata> {

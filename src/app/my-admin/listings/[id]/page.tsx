@@ -3,7 +3,7 @@ import ListingClient from "./listen-client";
 
 
 interface ListingDetailsProps {
-  params: { id: string };
+  params: any;
 }
 
 export default async function ListingDetails({ params }: ListingDetailsProps) {
