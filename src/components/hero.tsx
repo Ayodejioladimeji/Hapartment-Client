@@ -35,8 +35,8 @@ const Hero = () => {
 
   return (
     <section className="white">
-      <div className="container">
-        <div className="row hero">
+      <div className="container mt-5">
+        <div className="row hero pt-5">
           <div className="col-lg-6 hero-left">
             <h1 className="mb-4" data-aos="fade-up" data-aos-once="true">
               Easy <span className="coloured">way</span> to find a perfect

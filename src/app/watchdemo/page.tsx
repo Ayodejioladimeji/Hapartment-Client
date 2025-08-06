@@ -1,7 +1,7 @@
 import BreadCumb from "@/common/breadcumb";
 import Image from "next/image";
-import videoImage from "/public/images/video-image.svg";
-import watchdemoImage from "/public/images/watchdemo-image.svg";
+import videoImage from "@/../public/images/video-image.svg";
+import watchdemoImage from "@/../public/images/watchdemo-image.svg";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
