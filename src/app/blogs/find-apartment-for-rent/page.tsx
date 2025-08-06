@@ -1,5 +1,4 @@
 import Breadcumb from "@/components/breadcumb";
-import { useRouter } from "next/navigation";
 import { FC } from "react";
 
 import type { Metadata } from "next";
@@ -38,7 +37,6 @@ export const metadata: Metadata = {
 };
 
 const BlogPage: FC = () => {
-    const router = useRouter();
 
     return (
         <>
