@@ -1,19 +1,44 @@
 import Breadcumb from "@/components/breadcumb";
-import MetaTags from "@/components/meta-tags";
-import { useRouter } from "next/navigation";
 import { FC } from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Homes for Rent and Lease: Finding Your Sanctuary in Nigeria",
+    description:
+        "The terms 'homes for rent' and 'lease' extend beyond mere transactions, embodying the search for a true living sanctuary. This article explores the deeper meaning behind these keywords, guiding you through the emotional and practical aspects of securing a long-term residence, from understanding lease agreements to finding a property that genuinely feels like home.",
+    openGraph: {
+        title: "Homes for Rent and Lease: Finding Your Sanctuary in Nigeria",
+        description:
+            "Explore the emotional and practical journey of securing a long-term residence in Nigeria — from lease agreements to creating a home that truly feels like yours.",
+        url: "https://www.hapartment.com/blogs/homes-for-lease",
+        siteName: "Hapartment",
+        images: [
+            {
+                url: "/listings/three.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Homes for Rent and Lease in Nigeria",
+            },
+        ],
+        locale: "en_NG",
+        type: "article",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Homes for Rent and Lease: Finding Your Sanctuary in Nigeria",
+        description:
+            "Discover how 'homes for rent' and 'lease' represent more than transactions in Nigeria. Learn the essentials of securing a true living sanctuary.",
+        images: ["/listings/three.jpg"],
+    },
+    alternates: {
+        canonical: "https://www.hapartment.com/blogs/homes-for-lease",
+    },
+};
 
 const BlogPage: FC = () => {
-    const router = useRouter();
 
     return (
         <>
-            <MetaTags
-                title="Homes for Rent and Lease: Finding Your Sanctuary in Nigeria"
-                description="The terms 'homes for rent' and 'lease' extend beyond mere transactions, embodying the search for a true living sanctuary. This article explores the deeper meaning behind these keywords, guiding you through the emotional and practical aspects of securing a long-term residence, from understanding lease agreements to finding a property that genuinely feels like home."
-                image="/listings/three.jpg"
-                canonicalUrl="https://www.hapartment.com/blogs/homes-for-lease"
-            />
 
             <div className="guide-container">
                 <header

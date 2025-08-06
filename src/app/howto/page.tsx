@@ -9,7 +9,42 @@ import how3 from "../../../public/images/how3.svg";
 import how4 from "../../../public/images/how4.svg";
 import how5 from "../../../public/images/how5.svg";
 import how6 from "../../../public/images/how6.svg";
-import MetaTags from "@/components/meta-tags";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hapartment How To - Your Rental Listings on How To Create Listings",
+  description:
+    "Receive top-notch apartment listings from some of the most reputable real estate managers. We are committed to delivering the safest apartment search experience on both web and app. View and schedule your visit directly from our site or your mobile device, with all availability and pricing updated daily.",
+  openGraph: {
+    title: "Hapartment How To - Your Rental Listings on How To Create Listings",
+    description:
+      "Step-by-step guide to creating property listings on Hapartment. Learn how to post, manage, and optimize your listings for maximum visibility.",
+    url: "https://www.hapartment.org/howto",
+    siteName: "Hapartment",
+    images: [
+      {
+        url: "https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hapartment How To",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hapartment How To - Your Rental Listings on How To Create Listings",
+    description:
+      "Step-by-step guide to creating property listings on Hapartment.",
+    images: [
+      "https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg",
+    ],
+  },
+  alternates: {
+    canonical: "https://www.hapartment.org/howto",
+  },
+};
 
 const HowTo = () => {
 
@@ -17,13 +52,6 @@ const HowTo = () => {
 
   return (
     <>
-      <MetaTags
-        title="Hapartment How To - Your Rental Listings on How To Create Listings"
-        description="Receive top-notch apartment listings from some of the most reputable real estate managers. We are committed to delivering the safest apartment search experience on both web and app. View and schedule your visit directly from our site or your mobile device, with all availability and pricing updated daily."
-        image="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
-        canonicalUrl="https://www.hapartment.org/howto"
-      />
-
       <section className="white">
         <div className="container">
           <div className="row how-to-box d-flex">

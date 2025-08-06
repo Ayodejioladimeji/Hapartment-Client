@@ -1,28 +1,51 @@
 import BreadCumb from "@/common/breadcumb";
 import Contacts from "@/components/contacts";
-import MetaTags from "@/components/meta-tags";
+import type { Metadata } from "next";
 
-
-//
+export const metadata: Metadata = {
+  title: "Contact Hapartment - Reach Nigeria's Leading Rental Listings Platform",
+  description:
+    "Get in touch with Hapartment for help with property rentals, listings, and customer support. We're here to help you find your next home in Nigeria quickly and easily.",
+  openGraph: {
+    title: "Contact Hapartment - Reach Nigeria's Leading Rental Listings Platform",
+    description:
+      "Get in touch with Hapartment for help with property rentals, listings, and customer support. We're here to help you find your next home in Nigeria quickly and easily.",
+    url: "https://www.hapartment.org/contact",
+    siteName: "Hapartment",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Hapartment",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Hapartment - Reach Nigeria's Leading Rental Listings Platform",
+    description:
+      "Get in touch with Hapartment for help with property rentals, listings, and customer support.",
+    images: [
+      "https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg",
+    ],
+  },
+  alternates: {
+    canonical: "https://www.hapartment.org/contact",
+  },
+};
 
 const Contact = () => {
   return (
     <>
-      <MetaTags
-        title="Contact Hapartment - Reach Nigeria's Leading Rental Listings Platform"
-        description="Get in touch with Hapartment for help with property rentals, listings, and customer support. We're here to help you find your next home in Nigeria quickly and easily."
-        image="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
-        canonicalUrl="https://www.hapartment.org/contact"
-      />
-
       <BreadCumb
         headingOne="Hi 👋🏼,"
         headingTwo="Connect with us Today"
         subHeading=""
-        body="Our team works tirelessly to make searching for your dream home
-                effortless and rewarding , by offering clearly displayed quality
-                listings and also provide simple mechanisms to contact the
-                agent."
+        body="Our team works tirelessly to make searching for your dream home effortless and rewarding, 
+              by offering clearly displayed quality listings and also provide simple mechanisms to contact the agent."
         image="/images/contact2.svg"
       />
 

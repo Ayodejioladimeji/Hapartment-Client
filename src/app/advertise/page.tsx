@@ -1,22 +1,44 @@
-import AdvertiseModal from "@/common/advertiseModal";
 import BreadCumb from "@/common/breadcumb";
-// import { useState } from "react";
-import { Modal } from "react-bootstrap";
-import MetaTags from "@/components/meta-tags";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Advertise on Hapartment - List Your Property for Rent in Nigeria",
+  description:
+    "Reach thousands of renters by advertising your apartment, house, or property on Hapartment. Nigeria’s trusted platform for verified rental listings and property management.",
+  openGraph: {
+    title: "Advertise on Hapartment - List Your Property for Rent in Nigeria",
+    description:
+      "Reach thousands of renters by advertising your apartment, house, or property on Hapartment. Nigeria’s trusted platform for verified rental listings and property management.",
+    url: "https://www.hapartment.org/advertise",
+    siteName: "Hapartment",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Advertise on Hapartment - Trusted Property Rental Marketplace",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Advertise on Hapartment - List Your Property for Rent in Nigeria",
+    description:
+      "Reach thousands of renters by advertising your apartment, house, or property on Hapartment.",
+    images: [
+      "https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg",
+    ],
+  },
+  alternates: {
+    canonical: "https://www.hapartment.org/advertise",
+  },
+};
 
 const Advert = () => {
-  // const [openModal, setOpenModal] = useState(false);
-
-  //
   return (
     <>
-      <MetaTags
-        title="Advertise on Hapartment - List Your Property for Rent in Nigeria"
-        description="Reach thousands of renters by advertising your apartment, house, or property on Hapartment. Nigeria’s trusted platform for verified rental listings and property management."
-        image="https://res.cloudinary.com/dewqmrtqo/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.18_PM_img0qq.jpg"
-        canonicalUrl="https://www.hapartment.org/advertise"
-      />
-
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"
         headingTwo=""
@@ -107,13 +129,6 @@ const Advert = () => {
                 <p style={{ fontWeight: "600" }}>
                   12 Months - ₦21,600 (10% discount)
                 </p>
-
-                {/* <button
-                  onClick={() => setOpenModal(true)}
-                  className="get-started-button"
-                >
-                  Get started
-                </button> */}
               </div>
             </div>
 
@@ -126,10 +141,6 @@ const Advert = () => {
           </div>
         </div>
       </section>
-{/* 
-      <Modal show={openModal} dialogClassName="advertise-modal">
-        <AdvertiseModal setOpenModal={setOpenModal} />
-      </Modal> */}
     </>
   );
 };

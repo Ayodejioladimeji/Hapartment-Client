@@ -1,15 +1,44 @@
 import BreadCumb from "@/common/breadcumb";
-import MetaTags from "@/components/meta-tags";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hapartment Privacy Policy - Your Data & Rental Search Security",
+  description:
+    "Review Hapartment’s Privacy Policy to understand how we protect your data while you search for apartments, houses, and rental properties across Nigeria.",
+  openGraph: {
+    title: "Hapartment Privacy Policy - Your Data & Rental Search Security",
+    description:
+      "Review Hapartment’s Privacy Policy to understand how we protect your data while you search for apartments, houses, and rental properties across Nigeria.",
+    url: "https://www.hapartment.org/privacy",
+    siteName: "Hapartment",
+    images: [
+      {
+        url: "https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hapartment Privacy Policy",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hapartment Privacy Policy - Your Data & Rental Search Security",
+    description:
+      "Learn how Hapartment protects your personal data and ensures a secure rental search experience across Nigeria.",
+    images: [
+      "https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg",
+    ],
+  },
+  alternates: {
+    canonical: "https://www.hapartment.org/privacy",
+  },
+};
 
 const Privacy = () => {
   return (
     <>
-      <MetaTags
-        title="Hapartment Privacy Policy - Your Data & Rental Search Security"
-        description="Review Hapartment’s Privacy Policy to understand how we protect your data while you search for apartments, houses, and rental properties across Nigeria."
-        image="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
-        canonicalUrl="https://www.hapartment.org/privacy"
-      />
 
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"

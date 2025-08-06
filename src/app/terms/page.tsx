@@ -1,16 +1,45 @@
 import BreadCumb from "@/common/breadcumb";
-import MetaTags from "@/components/meta-tags";
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hapartment Terms of Service - Nigeria's Property Rental Platform Rules",
+  description:
+    "Read Hapartment’s Terms of Service to learn about your rights and responsibilities when using our property rental and listing platform in Nigeria.",
+  openGraph: {
+    title: "Hapartment Terms of Service - Nigeria's Property Rental Platform Rules",
+    description:
+      "Read Hapartment’s Terms of Service to learn about your rights and responsibilities when using our property rental and listing platform in Nigeria.",
+    url: "https://www.hapartment.org/terms",
+    siteName: "Hapartment",
+    images: [
+      {
+        url: "https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.17_PM_1_qix3ml.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hapartment Terms of Service",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hapartment Terms of Service - Nigeria's Property Rental Platform Rules",
+    description:
+      "Understand your rights and responsibilities when using Hapartment, Nigeria's trusted property rental and listing platform.",
+    images: [
+      "https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.17_PM_1_qix3ml.jpg",
+    ],
+  },
+  alternates: {
+    canonical: "https://www.hapartment.org/terms",
+  },
+};
 
 const Terms = () => {
   return (
     <>
-      <MetaTags
-        title="Hapartment Terms of Service - Nigeria's Property Rental Platform Rules"
-        description="Read Hapartment’s Terms of Service to learn about your rights and responsibilities when using our property rental and listing platform in Nigeria."
-        image="https://res.cloudinary.com/hapartments/image/upload/v1676329182/WhatsApp_Image_2023-02-11_at_2.50.17_PM_1_qix3ml.jpg"
-        canonicalUrl="https://www.hapartment.org/terms"
-      />
-
       <BreadCumb
         headingOne="Hapartment Digital Marketplace"
         headingTwo=""

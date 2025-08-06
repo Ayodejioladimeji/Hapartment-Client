@@ -1,21 +1,47 @@
 import Breadcumb from "@/components/breadcumb";
-import MetaTags from "@/components/meta-tags";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Your Quest for the Perfect Apartment for Rent: A Comprehensive Guide",
+    description:
+        "The 'apartment for rent' keyword is a cornerstone for urban dwellers and those seeking community living in Nigeria. This comprehensive guide delves into finding the ideal apartment, from navigating multi-unit complexes to understanding the nuances of flat living in bustling Nigerian cities, ensuring your search is efficient, fruitful, and tailored to your needs.",
+    openGraph: {
+        title: "Your Quest for the Perfect Apartment for Rent: A Comprehensive Guide",
+        description:
+            "The 'apartment for rent' keyword is a cornerstone for urban dwellers and those seeking community living in Nigeria. This comprehensive guide delves into finding the ideal apartment, from navigating multi-unit complexes to understanding the nuances of flat living in bustling Nigerian cities.",
+        url: "https://www.hapartment.com/blogs/find-apartment-for-rent",
+        siteName: "Hapartment",
+        images: [
+            {
+                url: "/listings/five.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Apartment for Rent in Nigeria",
+            },
+        ],
+        locale: "en_NG",
+        type: "article",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Your Quest for the Perfect Apartment for Rent: A Comprehensive Guide",
+        description:
+            "The 'apartment for rent' keyword is a cornerstone for urban dwellers and those seeking community living in Nigeria. Discover how to find the perfect apartment in bustling Nigerian cities.",
+        images: ["/listings/five.jpg"],
+    },
+    alternates: {
+        canonical: "https://www.hapartment.com/blogs/find-apartment-for-rent",
+    },
+};
 
 const BlogPage: FC = () => {
     const router = useRouter();
 
     return (
         <>
-            <MetaTags
-                title="Your Quest for the Perfect Apartment for Rent: A Comprehensive Guide"
-                description="The 'apartment for rent' keyword is a cornerstone for urban dwellers and those seeking community living in Nigeria. This comprehensive guide delves into finding the ideal apartment, from navigating multi-unit complexes to understanding the nuances of flat living in bustling Nigerian cities, ensuring your search is efficient, fruitful, and tailored to your needs."
-                image="/listings/five.jpg"
-                canonicalUrl="https://www.hapartment.com/blogs/find-apartment-for-rent"
-            />
-
             <div className="guide-container">
                 <header
                     className="guide-header"

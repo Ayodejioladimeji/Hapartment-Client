@@ -1,23 +1,51 @@
 import BreadCumb from "@/common/breadcumb";
 import AgentAccordion from "@/common/agentaccordion";
 import RenterAccordion from "../../common/renteraccordion";
-import MetaTags from "@/components/meta-tags";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hapartment FAQs - Your Rental Listings Questions Answered",
+  description:
+    "Find answers to common questions about renting, listing, and managing properties on Hapartment. Get the help you need to navigate Nigeria’s rental market with ease.",
+  openGraph: {
+    title: "Hapartment FAQs - Your Rental Listings Questions Answered",
+    description:
+      "Find answers to common questions about renting, listing, and managing properties on Hapartment.",
+    url: "https://www.hapartment.org/faqs",
+    siteName: "Hapartment",
+    images: [
+      {
+        url: "https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hapartment FAQs",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hapartment FAQs - Your Rental Listings Questions Answered",
+    description:
+      "Find answers to common questions about renting, listing, and managing properties on Hapartment.",
+    images: [
+      "https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg",
+    ],
+  },
+  alternates: {
+    canonical: "https://www.hapartment.org/faqs",
+  },
+};
 
 const Faqs = () => {
   return (
     <>
-      <MetaTags
-        title="Hapartment FAQs - Your Rental Listings Questions Answered"
-        description="Find answers to common questions about renting, listing, and managing properties on Hapartment. Get the help you need to navigate Nigeria’s rental market with ease."
-        image="https://res.cloudinary.com/hapartments/image/upload/v1676329183/WhatsApp_Image_2023-02-11_at_2.50.17_PM_kf0udz.jpg"
-        canonicalUrl="https://www.hapartment.org/faqs"
-      />
-
       <BreadCumb
         headingOne="Get answers to all questions you have"
         headingTwo=""
         subHeading="Boost your knowledge about Hapartment."
-        body="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers. "
+        body="Welcome to our FAQ center, Here you will find answers to some of the most common questions we receive from customers."
         image="/images/faq-image.svg"
       />
 
