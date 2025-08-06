@@ -1,5 +1,5 @@
 "use client";
-import { useState, useContext, useEffect, useCallback } from "react";
+import { useState, useContext, useEffect, useCallback, Suspense } from "react";
 import Image from "next/image";
 import banner1 from "@/../public/images/banner1.jpeg";
 import Goback from "@/common/goback";
@@ -16,7 +16,7 @@ import Card from "../_components/card";
 import cogoToast from "cogo-toast";
 import Loading from "@/common/loading";
 
-const Listing = () => {
+const ListingContent = () => {
     const { state, dispatch } = useContext(DataContext);
     const { listings, loading } = state;
     const [city, setCity] = useState<string>("");
@@ -336,4 +336,10 @@ const Listing = () => {
     );
 };
 
-export default Listing;
+export default function Listing() {
+    return (
+        <Suspense fallback={<div>Loading listings...</div>}>
+            <ListingContent />
+        </Suspense>
+    );
+  }

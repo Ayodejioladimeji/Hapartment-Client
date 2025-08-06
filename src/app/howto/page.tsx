@@ -54,7 +54,7 @@ const HowTo = () => {
     <>
       <section className="white">
         <div className="container">
-          <div className="row how-to-box d-flex">
+          <div className="row how-to-box d-flex mt-5">
             <div className="col-md-6 how-to-left">
               <h1
                 className="mb-3"

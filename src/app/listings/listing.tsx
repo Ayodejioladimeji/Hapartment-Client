@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useContext, useEffect, useCallback } from "react";
+import { useState, useContext, useEffect, useCallback, Suspense } from "react";
 import Card from "@/common/card";
 import Image from "next/image";
 import Goback from "@/common/goback";
@@ -14,7 +14,7 @@ import AdvertiseModal from "@/common/advertiseModal";
 import { useRouter, useSearchParams } from "next/navigation";
 import Paginate from "@/components/pagination/Paginate";
 
-const Listing = () => {
+const ListingContent = () => {
     const { state, dispatch } = useContext(DataContext);
     const { listings, loading } = state;
     const [city, setCity] = useState<string>("");
@@ -125,6 +125,8 @@ const Listing = () => {
         updateQuery({ page: newPage });
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
+
+
 
     return (
         <div>
@@ -282,4 +284,10 @@ const Listing = () => {
     );
 };
 
-export default Listing;
+export default function Listing() {
+    return (
+        <Suspense fallback={<div>Loading listings...</div>}>
+            <ListingContent />
+        </Suspense>
+    );
+  }
