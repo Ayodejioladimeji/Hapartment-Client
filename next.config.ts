@@ -12,9 +12,9 @@ const nextConfig: NextConfig = {
   // useFileSystemPublicRoutes: false,
   // distDir: "build",
   // trailingSlash: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
 };
 
 export default nextConfig;
