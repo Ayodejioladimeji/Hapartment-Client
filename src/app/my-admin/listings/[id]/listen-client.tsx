@@ -6,11 +6,6 @@ import ReactWhatsapp from "react-whatsapp";
 import Slider from "@/common/Slider";
 import Description from "@/components/description";
 import AdvertiseModal from "@/common/advertiseModal";
-import banner1 from "/public/images/banner1.jpeg";
-import banner2 from "/public/images/banner2.jpeg";
-import banner3 from "/public/images/banner3.jpeg";
-import banner4 from "/public/images/banner4.jpeg";
-import banner5 from "/public/images/banner5.jpeg";
 import { useRouter } from "next/navigation";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
@@ -164,19 +159,19 @@ export default function ListingClient({ listing }: any) {
                             </div>
 
                             <div className="advert-image-box mb-5">
-                                <Image src={banner1} alt="ad" />
+                                <Image src="/images/banner1.jpeg" alt="ad" width={300} height={200} />
                             </div>
                             <div className="advert-image-box mb-5">
-                                <Image src={banner5} alt="ad" />
+                                <Image src="/images/banner5.jpeg" alt="ad" width={300} height={200} />
                             </div>
                             <div className="advert-image-box mb-5">
-                                <Image src={banner2} alt="ad" />
+                                <Image src="/images/banner2.jpeg" alt="ad" width={300} height={200} />
                             </div>
                             <div className="advert-image-box mb-5">
-                                <Image src={banner3} alt="ad" />
+                                <Image src="/images/banner3.jpeg" alt="ad" width={300} height={200} />
                             </div>
                             <div className="advert-image-box mb-5">
-                                <Image src={banner4} alt="ad" priority />
+                                <Image src="/images/banner4.jpeg" alt="ad" width={300} height={200} priority />
                             </div>
 
                             <div className="adverts-box mb-3">
