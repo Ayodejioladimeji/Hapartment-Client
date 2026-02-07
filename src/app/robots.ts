@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/',
         },
+        // update fixes
         sitemap: 'https://www.hapartment.org/sitemap.xml',
     }
 }
